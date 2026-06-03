@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, sans-serif;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        h1 { color: #6366f1; text-align: center; margin-bottom: 40px; font-size: 2.5em; }
+        h2 { color: #8b5cf6; border-bottom: 3px solid #6366f1; padding-bottom: 10px; margin: 30px 0 20px; }
+        section { margin-bottom: 40px; }
+        .demo { background: #f9fafb; padding: 30px; border-radius: 10px; margin: 20px 0; text-align: center; }
+        code { background: #f3f4f6; padding: 2px 8px; border-radius: 4px; color: #d63384; font-family: monospace; }
+        pre { background: #1f2937; color: #f9fafb; padding: 20px; border-radius: 8px; margin: 15px 0; }
+        pre code { background: transparent; color: inherit; }
+        .info-box { background: #e8eaf6; border-left: 4px solid #6366f1; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        
+        /* Responsive examples */
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            h1 { font-size: 2em; }
+        }
+        
+        @media (max-width: 480px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Accessibility</h1>
+        <section>
+            <h2>Introduction</h2>
+            <div class="info-box">
+                <p>Understanding Accessibility for modern web development.</p>
+            </div>
+        </section>
+        <section>
+            <h2>Key Concepts</h2>
+            <div class="demo">
+                <p>Resize your browser to see responsive behavior</p>
+            </div>
+        </section>
+        <section>
+            <h2>Examples</h2>
+            <pre><code>/* Responsive CSS example */
+@media (max-width: 768px) {
+    .element {
+        /* Mobile styles */
+    }
+}</code></pre>
+        </section>
+        <section>
+            <h2>Best Practices</h2>
+            <div class="info-box">
+                <ul>
+                    <li>Mobile-first approach</li>
+                    <li>Use relative units</li>
+                    <li>Test on real devices</li>
+                    <li>Consider accessibility</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

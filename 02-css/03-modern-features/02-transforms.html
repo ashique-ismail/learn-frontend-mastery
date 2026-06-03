@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transforms</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #764ba2;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #555;
+            margin: 20px 0 15px 0;
+        }
+
+        .demo-label {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        /* Demo Container */
+        .demo-container {
+            background: #f9fafb;
+            border-radius: 10px;
+            padding: 40px;
+            margin: 20px 0;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* Base Box */
+        .box {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 2D Transforms */
+        .translate-box {
+            transform: translate(50px, 30px);
+        }
+
+        .translateX-box {
+            transform: translateX(40px);
+        }
+
+        .translateY-box {
+            transform: translateY(-40px);
+        }
+
+        .scale-box:hover {
+            transform: scale(1.5);
+        }
+
+        .scaleX-box:hover {
+            transform: scaleX(1.5);
+        }
+
+        .scaleY-box:hover {
+            transform: scaleY(1.5);
+        }
+
+        .rotate-box:hover {
+            transform: rotate(45deg);
+        }
+
+        .rotate-full:hover {
+            transform: rotate(360deg);
+        }
+
+        .skewX-box:hover {
+            transform: skewX(20deg);
+        }
+
+        .skewY-box:hover {
+            transform: skewY(20deg);
+        }
+
+        .skew-box:hover {
+            transform: skew(15deg, 15deg);
+        }
+
+        /* Combined Transforms */
+        .combined-box:hover {
+            transform: translate(20px, -20px) rotate(25deg) scale(1.2);
+        }
+
+        /* 3D Transforms */
+        .demo-3d {
+            perspective: 1000px;
+            background: #1f2937;
+            border-radius: 10px;
+            padding: 60px 40px;
+            margin: 20px 0;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .box-3d {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d;
+        }
+
+        .rotateX-box:hover {
+            transform: rotateX(60deg);
+        }
+
+        .rotateY-box:hover {
+            transform: rotateY(60deg);
+        }
+
+        .rotateZ-box:hover {
+            transform: rotateZ(45deg);
+        }
+
+        .translateZ-box:hover {
+            transform: translateZ(50px);
+        }
+
+        .rotate3d-box:hover {
+            transform: rotate3d(1, 1, 1, 45deg);
+        }
+
+        /* Flip Card */
+        .flip-container {
+            perspective: 1000px;
+            width: 250px;
+            height: 200px;
+        }
+
+        .flip-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .flip-container:hover .flip-card {
+            transform: rotateY(180deg);
+        }
+
+        .flip-front,
+        .flip-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .flip-front {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .flip-back {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        /* Cube */
+        .cube-container {
+            perspective: 1000px;
+            width: 200px;
+            height: 200px;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(-20deg) rotateY(20deg);
+            animation: rotateCube 10s infinite linear;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255,255,255,0.3);
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .cube-front  { background: #667eea; transform: translateZ(100px); }
+        .cube-back   { background: #764ba2; transform: translateZ(-100px) rotateY(180deg); }
+        .cube-right  { background: #f093fb; transform: rotateY(90deg) translateZ(100px); }
+        .cube-left   { background: #f5576c; transform: rotateY(-90deg) translateZ(100px); }
+        .cube-top    { background: #4ade80; transform: rotateX(90deg) translateZ(100px); }
+        .cube-bottom { background: #fb923c; transform: rotateX(-90deg) translateZ(100px); }
+
+        @keyframes rotateCube {
+            from { transform: rotateX(-20deg) rotateY(0deg); }
+            to { transform: rotateX(-20deg) rotateY(360deg); }
+        }
+
+        /* Transform Origin */
+        .origin-demo {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .origin-box {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .origin-center:hover {
+            transform: rotate(45deg);
+            transform-origin: center;
+        }
+
+        .origin-top-left:hover {
+            transform: rotate(45deg);
+            transform-origin: top left;
+        }
+
+        .origin-top-right:hover {
+            transform: rotate(45deg);
+            transform-origin: top right;
+        }
+
+        .origin-bottom:hover {
+            transform: rotate(45deg);
+            transform-origin: bottom;
+        }
+
+        /* Hover Effects */
+        .effects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .effect-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .effect-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .effect-lift:hover {
+            transform: translateY(-10px);
+        }
+
+        .effect-grow:hover {
+            transform: scale(1.1);
+        }
+
+        .effect-rotate:hover {
+            transform: rotate(5deg);
+        }
+
+        .effect-perspective:hover {
+            transform: perspective(500px) rotateY(10deg);
+        }
+
+        .effect-3d:hover {
+            transform: perspective(500px) translateZ(20px);
+        }
+
+        .effect-bounce:hover {
+            animation: bounce 0.6s;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #e8eaf6;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .info-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        pre {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        pre code {
+            background: transparent;
+            color: inherit;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+        }
+
+        .interactive-note {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Transforms</h1>
+        <p class="subtitle">Move, rotate, scale, and skew elements in 2D and 3D</p>
+
+        <div class="interactive-note">
+            Hover over elements to see transforms in action!
+        </div>
+
+        <!-- 2D Translate -->
+        <section>
+            <h2>2D Transforms: Translate (Move)</h2>
+            <span class="demo-label">translate(), translateX(), translateY()</span>
+
+            <div class="demo-container">
+                <div class="box">Original</div>
+                <div class="box translate-box">translate(50px, 30px)</div>
+                <div class="box translateX-box">translateX(40px)</div>
+                <div class="box translateY-box">translateY(-40px)</div>
+            </div>
+
+            <div class="info-box">
+                <h4>How Translate Works</h4>
+                <ul>
+                    <li><code>translate(x, y)</code> - Move element horizontally and vertically</li>
+                    <li><code>translateX(value)</code> - Move horizontally only</li>
+                    <li><code>translateY(value)</code> - Move vertically only</li>
+                    <li>Positive X moves right, positive Y moves down</li>
+                    <li>Doesn't affect document flow (doesn't push other elements)</li>
+                </ul>
+            </div>
+
+            <pre><code>.element {
+  transform: translate(50px, 30px);  /* Move right 50px, down 30px */
+  transform: translateX(40px);        /* Move right 40px */
+  transform: translateY(-40px);       /* Move up 40px */
+}</code></pre>
+        </section>
+
+        <!-- 2D Scale -->
+        <section>
+            <h2>2D Transforms: Scale (Resize)</h2>
+            <span class="demo-label">scale(), scaleX(), scaleY()</span>
+            <p class="interactive-note">Hover over boxes to see scaling</p>
+
+            <div class="demo-container">
+                <div class="box scale-box">scale(1.5)</div>
+                <div class="box scaleX-box">scaleX(1.5)</div>
+                <div class="box scaleY-box">scaleY(1.5)</div>
+            </div>
+
+            <div class="info-box">
+                <h4>How Scale Works</h4>
+                <ul>
+                    <li><code>scale(factor)</code> - Scale uniformly (1.5 = 150% size)</li>
+                    <li><code>scale(x, y)</code> - Different horizontal and vertical scaling</li>
+                    <li><code>scaleX(factor)</code> - Scale width only</li>
+                    <li><code>scaleY(factor)</code> - Scale height only</li>
+                    <li>1 = original size, > 1 = larger, < 1 = smaller</li>
+                    <li>0.5 = 50% size, 2 = 200% size</li>
+                </ul>
+            </div>
+
+            <pre><code>.button:hover {
+  transform: scale(1.1);     /* Grow to 110% */
+}
+
+.shrink {
+  transform: scale(0.8);     /* 80% of original size */
+}</code></pre>
+        </section>
+
+        <!-- 2D Rotate -->
+        <section>
+            <h2>2D Transforms: Rotate</h2>
+            <span class="demo-label">rotate()</span>
+            <p class="interactive-note">Hover to see rotation</p>
+
+            <div class="demo-container">
+                <div class="box rotate-box">rotate(45deg)</div>
+                <div class="box rotate-full">rotate(360deg)</div>
+            </div>
+
+            <div class="info-box">
+                <h4>How Rotate Works</h4>
+                <ul>
+                    <li><code>rotate(angle)</code> - Rotate clockwise (positive) or counter-clockwise (negative)</li>
+                    <li>Use <code>deg</code> (degrees), <code>rad</code> (radians), or <code>turn</code> (full rotations)</li>
+                    <li>45deg = eighth turn, 90deg = quarter turn, 180deg = half turn</li>
+                    <li>1turn = 360deg = full circle</li>
+                </ul>
+            </div>
+
+            <pre><code>.element {
+  transform: rotate(45deg);    /* Rotate 45 degrees */
+  transform: rotate(-90deg);   /* Rotate counter-clockwise */
+  transform: rotate(0.5turn);  /* Half rotation (180deg) */
+}</code></pre>
+        </section>
+
+        <!-- 2D Skew -->
+        <section>
+            <h2>2D Transforms: Skew (Tilt)</h2>
+            <span class="demo-label">skew(), skewX(), skewY()</span>
+            <p class="interactive-note">Hover to see skewing</p>
+
+            <div class="demo-container">
+                <div class="box skewX-box">skewX(20deg)</div>
+                <div class="box skewY-box">skewY(20deg)</div>
+                <div class="box skew-box">skew(15deg, 15deg)</div>
+            </div>
+
+            <div class="info-box">
+                <h4>How Skew Works</h4>
+                <ul>
+                    <li><code>skewX(angle)</code> - Tilt horizontally</li>
+                    <li><code>skewY(angle)</code> - Tilt vertically</li>
+                    <li><code>skew(x, y)</code> - Tilt both directions</li>
+                    <li>Creates a parallelogram effect</li>
+                    <li>Use sparingly - can be disorienting</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Combined Transforms -->
+        <section>
+            <h2>Combined Transforms</h2>
+            <span class="demo-label">Multiple transforms in one</span>
+            <p class="interactive-note">Hover for combined effect</p>
+
+            <div class="demo-container">
+                <div class="box combined-box">
+                    Hover Me!
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>Combining Transforms</h4>
+                <p>Space-separate multiple transforms. They apply left-to-right (order matters!):</p>
+            </div>
+
+            <pre><code>.card:hover {
+  /* Move right & up, rotate, then scale */
+  transform: translate(20px, -20px) rotate(25deg) scale(1.2);
+}
+
+/* Order matters! These produce different results: */
+transform: rotate(45deg) translateX(100px);  /* Rotate, then move */
+transform: translateX(100px) rotate(45deg);  /* Move, then rotate */</code></pre>
+        </section>
+
+        <!-- Transform Origin -->
+        <section>
+            <h2>Transform Origin</h2>
+            <span class="demo-label">transform-origin</span>
+            <p class="interactive-note">Hover boxes to see different rotation points</p>
+
+            <div class="demo-container">
+                <div class="origin-demo">
+                    <div class="origin-box origin-center">Center (default)</div>
+                    <div class="origin-box origin-top-left">Top Left</div>
+                    <div class="origin-box origin-top-right">Top Right</div>
+                    <div class="origin-box origin-bottom">Bottom</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>How Transform Origin Works</h4>
+                <ul>
+                    <li>Sets the point around which transforms happen</li>
+                    <li>Default is <code>center center</code> (50% 50%)</li>
+                    <li>Can use keywords: top, bottom, left, right, center</li>
+                    <li>Can use percentages or pixel values</li>
+                    <li>Format: <code>transform-origin: x y</code></li>
+                </ul>
+            </div>
+
+            <pre><code>.element {
+  transform-origin: top left;      /* Rotate from top-left corner */
+  transform-origin: bottom center; /* Rotate from bottom center */
+  transform-origin: 20px 30px;     /* Specific pixel point */
+  transform-origin: 75% 25%;       /* Percentage position */
+}</code></pre>
+        </section>
+
+        <!-- 3D Transforms -->
+        <section>
+            <h2>3D Transforms</h2>
+            <span class="demo-label">rotateX(), rotateY(), rotateZ(), translateZ()</span>
+            <p class="interactive-note">Hover over boxes to see 3D effects</p>
+
+            <div class="demo-3d">
+                <div class="box-3d rotateX-box">rotateX(60deg)</div>
+                <div class="box-3d rotateY-box">rotateY(60deg)</div>
+                <div class="box-3d rotateZ-box">rotateZ(45deg)</div>
+                <div class="box-3d translateZ-box">translateZ(50px)</div>
+                <div class="box-3d rotate3d-box">rotate3d(1,1,1,45deg)</div>
+            </div>
+
+            <div class="info-box">
+                <h4>Understanding 3D Transforms</h4>
+                <ul>
+                    <li><code>rotateX()</code> - Rotate around horizontal axis (top-to-bottom flip)</li>
+                    <li><code>rotateY()</code> - Rotate around vertical axis (left-to-right flip)</li>
+                    <li><code>rotateZ()</code> - Same as 2D rotate() - spin in plane</li>
+                    <li><code>translateZ()</code> - Move toward/away from viewer</li>
+                    <li><code>rotate3d(x, y, z, angle)</code> - Rotate around custom axis</li>
+                    <li>Requires <code>perspective</code> on parent to see 3D effect</li>
+                </ul>
+            </div>
+
+            <pre><code>/* Parent needs perspective */
+.container {
+  perspective: 1000px;  /* Lower value = more dramatic 3D */
+}
+
+.element {
+  transform-style: preserve-3d;  /* Enable 3D for children */
+  transform: rotateY(45deg);
+}</code></pre>
+        </section>
+
+        <!-- Flip Card -->
+        <section>
+            <h2>Practical Example: Flip Card</h2>
+            <span class="demo-label">3D flip effect</span>
+            <p class="interactive-note">Hover to flip</p>
+
+            <div class="demo-container">
+                <div class="flip-container">
+                    <div class="flip-card">
+                        <div class="flip-front">FRONT</div>
+                        <div class="flip-back">BACK</div>
+                    </div>
+                </div>
+            </div>
+
+            <pre><code>.flip-container {
+  perspective: 1000px;
+}
+
+.flip-card {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flip-container:hover .flip-card {
+  transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}</code></pre>
+        </section>
+
+        <!-- 3D Cube -->
+        <section>
+            <h2>Advanced: 3D Cube</h2>
+            <span class="demo-label">Full 3D object</span>
+
+            <div class="demo-container" style="background: #1f2937;">
+                <div class="cube-container">
+                    <div class="cube">
+                        <div class="cube-face cube-front">Front</div>
+                        <div class="cube-face cube-back">Back</div>
+                        <div class="cube-face cube-right">Right</div>
+                        <div class="cube-face cube-left">Left</div>
+                        <div class="cube-face cube-top">Top</div>
+                        <div class="cube-face cube-bottom">Bottom</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>Creating 3D Objects</h4>
+                <p>Position six faces using translateZ and rotate transforms to create a cube. Each face is positioned to form a side of the cube in 3D space.</p>
+            </div>
+        </section>
+
+        <!-- Hover Effects -->
+        <section>
+            <h2>Practical Hover Effects</h2>
+            <span class="demo-label">Real-world uses</span>
+
+            <div class="effects-grid">
+                <div class="effect-card effect-lift">
+                    <h4>Lift</h4>
+                    <p>translateY(-10px)</p>
+                </div>
+                <div class="effect-card effect-grow">
+                    <h4>Grow</h4>
+                    <p>scale(1.1)</p>
+                </div>
+                <div class="effect-card effect-rotate">
+                    <h4>Tilt</h4>
+                    <p>rotate(5deg)</p>
+                </div>
+                <div class="effect-card effect-perspective">
+                    <h4>Perspective</h4>
+                    <p>rotateY(10deg)</p>
+                </div>
+                <div class="effect-card effect-3d">
+                    <h4>3D Lift</h4>
+                    <p>translateZ(20px)</p>
+                </div>
+                <div class="effect-card effect-bounce">
+                    <h4>Bounce</h4>
+                    <p>Animation</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Properties Reference -->
+        <section>
+            <h2>Transform Properties Reference</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>translate()</code></td>
+                        <td>Move element in 2D</td>
+                        <td>translate(50px, 100px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>scale()</code></td>
+                        <td>Resize element</td>
+                        <td>scale(1.5) or scale(2, 0.5)</td>
+                    </tr>
+                    <tr>
+                        <td><code>rotate()</code></td>
+                        <td>Rotate element</td>
+                        <td>rotate(45deg)</td>
+                    </tr>
+                    <tr>
+                        <td><code>skew()</code></td>
+                        <td>Skew element</td>
+                        <td>skew(20deg, 10deg)</td>
+                    </tr>
+                    <tr>
+                        <td><code>perspective</code></td>
+                        <td>Set 3D viewing distance</td>
+                        <td>perspective: 1000px</td>
+                    </tr>
+                    <tr>
+                        <td><code>transform-origin</code></td>
+                        <td>Set transform pivot point</td>
+                        <td>transform-origin: top left</td>
+                    </tr>
+                    <tr>
+                        <td><code>transform-style</code></td>
+                        <td>Enable 3D for children</td>
+                        <td>transform-style: preserve-3d</td>
+                    </tr>
+                    <tr>
+                        <td><code>backface-visibility</code></td>
+                        <td>Show/hide back of element</td>
+                        <td>backface-visibility: hidden</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Best Practices -->
+        <section>
+            <h2>Best Practices</h2>
+
+            <div class="info-box">
+                <h4>1. Use with Transitions</h4>
+                <p>Always add <code>transition</code> for smooth animations:</p>
+                <pre><code>.card {
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+}</code></pre>
+            </div>
+
+            <div class="info-box">
+                <h4>2. Transform Order Matters</h4>
+                <p>Transforms apply left-to-right. Different orders = different results.</p>
+            </div>
+
+            <div class="info-box">
+                <h4>3. Hardware Acceleration</h4>
+                <p>Transforms use GPU acceleration (especially translate3d and translateZ). Great for performance!</p>
+                <pre><code>/* Force GPU acceleration for smooth animations */
+.element {
+  transform: translateZ(0);
+  /* or */
+  will-change: transform;
+}</code></pre>
+            </div>
+
+            <div class="info-box">
+                <h4>4. Don't Transform Text</h4>
+                <p>Scaling text can make it blurry. Use font-size or adjust layout instead.</p>
+            </div>
+
+            <div class="info-box">
+                <h4>5. Accessibility</h4>
+                <ul>
+                    <li>Don't use transforms for critical layout</li>
+                    <li>Respect <code>prefers-reduced-motion</code> for animations</li>
+                    <li>Ensure transformed elements remain accessible to screen readers</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section>
+            <h2>Summary</h2>
+
+            <div class="info-box">
+                <h4>Key Takeaways</h4>
+                <ul>
+                    <li><strong>2D Transforms:</strong> translate, scale, rotate, skew</li>
+                    <li><strong>3D Transforms:</strong> rotateX/Y/Z, translateZ, perspective</li>
+                    <li><strong>Combine:</strong> Space-separate multiple transforms</li>
+                    <li><strong>Origin:</strong> Set pivot point with transform-origin</li>
+                    <li><strong>Performance:</strong> Hardware accelerated, great for animations</li>
+                    <li><strong>No Layout Impact:</strong> Transforms don't affect document flow</li>
+                    <li><strong>Browser Support:</strong> Excellent (IE10+)</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

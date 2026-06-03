@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #764ba2;
+        }
+
+        .demo-label {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* Static Positioning (Default) */
+        .static-demo {
+            border: 2px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            background: #f8f9ff;
+        }
+
+        .static-box {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            /* position: static is the default */
+        }
+
+        /* Relative Positioning */
+        .relative-demo {
+            border: 2px dashed #764ba2;
+            padding: 40px;
+            margin: 20px 0;
+            background: #faf5ff;
+            position: relative;
+            min-height: 200px;
+        }
+
+        .relative-box {
+            background: #764ba2;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .relative-shifted {
+            position: relative;
+            top: 30px;
+            left: 50px;
+            background: #9c27b0;
+        }
+
+        .original-space {
+            border: 2px dashed #ff6b6b;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 200px;
+            height: 66px;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        /* Absolute Positioning */
+        .absolute-demo {
+            border: 2px solid #f39c12;
+            padding: 40px;
+            margin: 20px 0;
+            background: #fff9e6;
+            position: relative;
+            min-height: 300px;
+        }
+
+        .absolute-box {
+            position: absolute;
+            background: #f39c12;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+
+        .abs-top-left {
+            top: 10px;
+            left: 10px;
+        }
+
+        .abs-top-right {
+            top: 10px;
+            right: 10px;
+        }
+
+        .abs-bottom-left {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .abs-bottom-right {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .abs-center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Fixed Positioning */
+        .fixed-demo {
+            border: 2px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            background: #e8f8f5;
+        }
+
+        .fixed-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #27ae60;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(39, 174, 96, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .fixed-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.6);
+        }
+
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(102, 126, 234, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 15px 20px;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .fixed-header.show {
+            display: block;
+        }
+
+        /* Sticky Positioning */
+        .sticky-demo {
+            border: 2px solid #e74c3c;
+            margin: 20px 0;
+            background: #ffe8e8;
+            height: 400px;
+            overflow-y: scroll;
+            padding: 20px;
+        }
+
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: #e74c3c;
+            color: white;
+            padding: 15px;
+            margin: 0 -20px 20px -20px;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 20px;
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Z-Index Demo */
+        .z-index-demo {
+            position: relative;
+            height: 300px;
+            border: 2px solid #9b59b6;
+            margin: 20px 0;
+            background: #f4ecf7;
+        }
+
+        .z-box {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .z-box1 {
+            background: #e74c3c;
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+        }
+
+        .z-box2 {
+            background: #3498db;
+            top: 80px;
+            left: 80px;
+            z-index: 2;
+        }
+
+        .z-box3 {
+            background: #2ecc71;
+            top: 140px;
+            left: 140px;
+            z-index: 3;
+        }
+
+        .z-box-negative {
+            background: #95a5a6;
+            top: 50px;
+            left: 250px;
+            z-index: -1;
+        }
+
+        /* Practical Examples */
+        .modal-trigger {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .modal-trigger:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .card-with-badge {
+            position: relative;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #333;
+        }
+
+        .tooltip-container:hover .tooltip {
+            opacity: 1;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .dropdown-toggle {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            min-width: 200px;
+            margin-top: 10px;
+            display: none;
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f0f0f0;
+        }
+
+        .dropdown-menu a:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .dropdown-menu a:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+
+        .info-box {
+            background: #e8eaf6;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .content-spacer {
+            height: 200px;
+            background: #f0f0f0;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CSS Positioning</h1>
+        <p>Master the art of element positioning in CSS</p>
+    </div>
+
+    <div class="fixed-header" id="fixedHeader">
+        Fixed Header (appears when you scroll down)
+    </div>
+
+    <div class="container">
+        <!-- Static Positioning -->
+        <section>
+            <h2>Static Positioning (Default)</h2>
+            <span class="demo-label">position: static</span>
+
+            <div class="info-box">
+                <h3>What is Static?</h3>
+                <p>This is the default positioning for all elements. Elements appear in the normal document flow. Top, right, bottom, left, and z-index properties have no effect.</p>
+            </div>
+
+            <div class="static-demo">
+                <div class="static-box">Box 1 - Static (default)</div>
+                <div class="static-box">Box 2 - Static (default)</div>
+                <div class="static-box">Box 3 - Static (default)</div>
+            </div>
+
+            <p>These boxes follow the normal document flow, stacking vertically as block elements do.</p>
+        </section>
+
+        <!-- Relative Positioning -->
+        <section>
+            <h2>Relative Positioning</h2>
+            <span class="demo-label">position: relative</span>
+
+            <div class="info-box">
+                <h3>What is Relative?</h3>
+                <p>Elements are positioned relative to their normal position. The element still occupies its original space in the document flow, but visually appears offset.</p>
+            </div>
+
+            <div class="relative-demo">
+                <div class="original-space"></div>
+                <div class="relative-box">Original Position</div>
+                <div class="relative-box relative-shifted">
+                    Shifted with<br>
+                    top: 30px<br>
+                    left: 50px
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>Key Points</h3>
+                <ul>
+                    <li>Original space is preserved (shown by dashed red box)</li>
+                    <li>Uses <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> for offset</li>
+                    <li>Great for small adjustments without affecting layout</li>
+                    <li>Creates positioning context for absolute children</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Absolute Positioning -->
+        <section>
+            <h2>Absolute Positioning</h2>
+            <span class="demo-label">position: absolute</span>
+
+            <div class="info-box">
+                <h3>What is Absolute?</h3>
+                <p>Elements are removed from normal document flow and positioned relative to their nearest positioned ancestor (any position except static). If no positioned ancestor exists, it positions relative to the viewport.</p>
+            </div>
+
+            <div class="absolute-demo">
+                <div class="absolute-box abs-top-left">top: 10px<br>left: 10px</div>
+                <div class="absolute-box abs-top-right">top: 10px<br>right: 10px</div>
+                <div class="absolute-box abs-center">Centered<br>(transform trick)</div>
+                <div class="absolute-box abs-bottom-left">bottom: 10px<br>left: 10px</div>
+                <div class="absolute-box abs-bottom-right">bottom: 10px<br>right: 10px</div>
+            </div>
+
+            <div class="info-box">
+                <h3>Centering with Absolute</h3>
+                <code>
+                    position: absolute;<br>
+                    top: 50%;<br>
+                    left: 50%;<br>
+                    transform: translate(-50%, -50%);
+                </code>
+            </div>
+
+            <div class="info-box">
+                <h3>Key Points</h3>
+                <ul>
+                    <li>Removed from document flow (doesn't affect other elements)</li>
+                    <li>Positioned relative to nearest positioned ancestor</li>
+                    <li>Perfect for overlays, tooltips, dropdowns, badges</li>
+                    <li>Can use negative values for offset</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Fixed Positioning -->
+        <section>
+            <h2>Fixed Positioning</h2>
+            <span class="demo-label">position: fixed</span>
+
+            <div class="info-box">
+                <h3>What is Fixed?</h3>
+                <p>Elements are positioned relative to the viewport and stay in the same place even when scrolling. Perfect for navigation bars, back-to-top buttons, and notification badges.</p>
+            </div>
+
+            <div class="fixed-demo">
+                <p><strong>Look at the bottom-right corner!</strong> There's a fixed button that stays in place as you scroll.</p>
+                <p>Scroll down on this page to see the fixed header appear at the top.</p>
+                <p>Fixed positioning is perfect for:</p>
+                <ul>
+                    <li>Navigation bars</li>
+                    <li>Chat widgets</li>
+                    <li>Cookie consent banners</li>
+                    <li>Back to top buttons</li>
+                    <li>Shopping cart icons</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Key Points</h3>
+                <ul>
+                    <li>Always positioned relative to viewport</li>
+                    <li>Stays in place during scrolling</li>
+                    <li>Removed from normal document flow</li>
+                    <li>Often combined with high z-index</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sticky Positioning -->
+        <section>
+            <h2>Sticky Positioning</h2>
+            <span class="demo-label">position: sticky</span>
+
+            <div class="info-box">
+                <h3>What is Sticky?</h3>
+                <p>A hybrid of relative and fixed. Elements are relative until they reach a specified scroll position, then become fixed. Scroll the box below to see it in action!</p>
+            </div>
+
+            <div class="sticky-demo">
+                <h3 class="sticky-header">I stick to the top when scrolling! (position: sticky; top: 0)</h3>
+                <div class="content-spacer">Scroll this container</div>
+                <div class="content-spacer">Keep scrolling...</div>
+                <div class="content-spacer">Notice the header sticks!</div>
+                <div class="content-spacer">It stays at the top</div>
+                <div class="content-spacer">Until you reach the bottom</div>
+            </div>
+
+            <div class="two-column">
+                <div>
+                    <h3>Sticky Sidebar Example</h3>
+                    <div class="sticky-sidebar">
+                        I'm sticky too!<br>
+                        (top: 20px)
+                    </div>
+                    <div class="content-spacer">Content</div>
+                    <div class="content-spacer">Content</div>
+                    <div class="content-spacer">Content</div>
+                </div>
+                <div>
+                    <div class="info-box">
+                        <h3>Key Points</h3>
+                        <ul>
+                            <li>Must specify threshold: <code>top</code>, <code>bottom</code>, etc.</li>
+                            <li>Only sticks within parent container</li>
+                            <li>Great for table headers and sidebars</li>
+                            <li>Good browser support (IE not supported)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Z-Index -->
+        <section>
+            <h2>Z-Index (Stacking Order)</h2>
+            <span class="demo-label">z-index property</span>
+
+            <div class="info-box">
+                <h3>What is Z-Index?</h3>
+                <p>Controls the stacking order of positioned elements. Higher values appear in front. Only works on positioned elements (not static).</p>
+            </div>
+
+            <div class="z-index-demo">
+                <div class="z-box z-box1">z-index: 1</div>
+                <div class="z-box z-box2">z-index: 2</div>
+                <div class="z-box z-box3">z-index: 3</div>
+                <div class="z-box z-box-negative">z-index: -1<br>(behind parent)</div>
+            </div>
+
+            <div class="info-box">
+                <h3>Stacking Context</h3>
+                <p>Elements create a new stacking context when they have:</p>
+                <ul>
+                    <li>Position + z-index (not auto)</li>
+                    <li>Opacity < 1</li>
+                    <li>Transform, filter, perspective</li>
+                    <li>Flex/grid items with z-index</li>
+                </ul>
+                <p>Children of a stacking context can't appear between elements of another context, no matter the z-index.</p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Z-Index Value</th>
+                        <th>Common Use</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>-1</td>
+                        <td>Behind parent background</td>
+                    </tr>
+                    <tr>
+                        <td>0-10</td>
+                        <td>Normal content layers</td>
+                    </tr>
+                    <tr>
+                        <td>100-999</td>
+                        <td>Dropdowns, tooltips</td>
+                    </tr>
+                    <tr>
+                        <td>1000-9999</td>
+                        <td>Modals, overlays</td>
+                    </tr>
+                    <tr>
+                        <td>10000+</td>
+                        <td>Critical UI (notifications)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Practical Examples -->
+        <section>
+            <h2>Practical Examples</h2>
+
+            <h3>1. Modal Dialog</h3>
+            <button class="modal-trigger" onclick="document.getElementById('modal').classList.add('active')">
+                Open Modal
+            </button>
+
+            <div class="modal-overlay" id="modal">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('active')">×</button>
+                    <h2>Modal Dialog</h2>
+                    <p>This modal uses fixed positioning for the overlay and centers the content with absolute positioning.</p>
+                    <p>The overlay covers the entire viewport, and the content is centered using the transform technique.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">2. Badge Notification</h3>
+            <div class="card-with-badge">
+                Card with Badge
+                <span class="badge">5</span>
+            </div>
+
+            <h3 style="margin-top: 40px;">3. Tooltip</h3>
+            <div class="tooltip-container">
+                <button class="modal-trigger">Hover for Tooltip</button>
+                <div class="tooltip">This is a tooltip!</div>
+            </div>
+
+            <h3 style="margin-top: 40px;">4. Dropdown Menu</h3>
+            <div class="dropdown">
+                <button class="dropdown-toggle">Hover for Menu</button>
+                <div class="dropdown-menu">
+                    <a href="#">Option 1</a>
+                    <a href="#">Option 2</a>
+                    <a href="#">Option 3</a>
+                    <a href="#">Option 4</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section>
+            <h2>Position Properties Comparison</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Positioned Relative To</th>
+                        <th>Occupies Space</th>
+                        <th>Scrolls</th>
+                        <th>Common Use Cases</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>static</code></td>
+                        <td>Normal flow</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>Default, normal content</td>
+                    </tr>
+                    <tr>
+                        <td><code>relative</code></td>
+                        <td>Self</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>Small adjustments, positioning context</td>
+                    </tr>
+                    <tr>
+                        <td><code>absolute</code></td>
+                        <td>Nearest positioned ancestor</td>
+                        <td>No</td>
+                        <td>With container</td>
+                        <td>Overlays, tooltips, dropdowns</td>
+                    </tr>
+                    <tr>
+                        <td><code>fixed</code></td>
+                        <td>Viewport</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>Headers, buttons, notifications</td>
+                    </tr>
+                    <tr>
+                        <td><code>sticky</code></td>
+                        <td>Container + viewport</td>
+                        <td>Yes</td>
+                        <td>Until threshold</td>
+                        <td>Table headers, sidebars</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Best Practices -->
+        <section>
+            <h2>Best Practices & Tips</h2>
+
+            <div class="info-box">
+                <h3>1. Positioning Context</h3>
+                <p>When using absolute positioning, wrap it in a relative container:</p>
+                <code>
+                    .container { position: relative; }<br>
+                    .absolute-child { position: absolute; top: 0; right: 0; }
+                </code>
+            </div>
+
+            <div class="info-box">
+                <h3>2. Z-Index Strategy</h3>
+                <p>Create a z-index scale and stick to it:</p>
+                <ul>
+                    <li>Use increments (100, 200, 300) not (1, 2, 3)</li>
+                    <li>Document your z-index layers</li>
+                    <li>Avoid z-index: 99999</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>3. Accessibility</h3>
+                <ul>
+                    <li>Fixed elements should not obscure content</li>
+                    <li>Ensure keyboard navigation works with positioned elements</li>
+                    <li>Use <code>aria-hidden</code> for decorative positioned elements</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>4. Performance</h3>
+                <ul>
+                    <li>Fixed and sticky can cause repaint issues</li>
+                    <li>Use <code>will-change</code> sparingly for smooth animations</li>
+                    <li>Minimize layers with high z-index</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>5. Common Pitfalls</h3>
+                <ul>
+                    <li><strong>Z-index not working?</strong> Element must be positioned (not static)</li>
+                    <li><strong>Absolute element overflow?</strong> Parent needs <code>overflow: hidden</code></li>
+                    <li><strong>Sticky not sticking?</strong> Check parent height and overflow</li>
+                    <li><strong>Fixed element too wide?</strong> Set explicit width or use left+right</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="content-spacer">Scroll down to see fixed elements in action</div>
+        <div class="content-spacer">Keep scrolling...</div>
+        <div class="content-spacer">Notice the fixed button?</div>
+    </div>
+
+    <button class="fixed-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        Back to Top
+    </button>
+
+    <script>
+        // Show fixed header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('fixedHeader');
+            if (window.scrollY > 300) {
+                header.classList.add('show');
+            } else {
+                header.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>

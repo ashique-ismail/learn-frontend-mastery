@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Subgrid</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, sans-serif;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        h1 { color: #6366f1; text-align: center; margin-bottom: 40px; }
+        h2 { color: #8b5cf6; border-bottom: 3px solid #6366f1; padding-bottom: 10px; margin: 30px 0 20px; }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            background: #e8eaf6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .grid-item {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .subgrid-item {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: subgrid;
+            gap: 20px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+        }
+        
+        .nested {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+        
+        code { background: #f3f4f6; padding: 2px 8px; border-radius: 4px; color: #d63384; }
+        pre { background: #1f2937; color: #f9fafb; padding: 20px; border-radius: 8px; margin: 15px 0; }
+        pre code { background: transparent; color: inherit; }
+        .info-box { background: #e8eaf6; border-left: 4px solid #6366f1; padding: 20px; margin: 20px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Subgrid</h1>
+        
+        <section>
+            <h2>What is Subgrid?</h2>
+            <div class="info-box">
+                <p><strong>Subgrid</strong> allows nested grid items to inherit the parent grid's track sizing. This creates aligned layouts across nested grids.</p>
+                <p><strong>Key Use Case:</strong> Cards with headers/content that should align across all cards, even when nested.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Basic Subgrid Example</h2>
+            <div class="grid-container">
+                <div class="grid-item">1</div>
+                <div class="subgrid-item">
+                    <div class="grid-item nested">2a</div>
+                    <div class="grid-item nested">2b</div>
+                </div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+            </div>
+            
+            <pre><code>.parent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.nested-grid {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: subgrid; /* Inherit parent columns */
+}</code></pre>
+        </section>
+        
+        <section>
+            <h2>Browser Support</h2>
+            <div class="info-box">
+                <p><strong>Support:</strong> Firefox (full support), Chrome/Edge (recent versions), Safari (recent versions)</p>
+                <p>Always provide fallbacks for older browsers.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Summary</h2>
+            <div class="info-box">
+                <ul>
+                    <li><strong>Subgrid:</strong> Nested grids inherit parent track sizing</li>
+                    <li><strong>Use:</strong> <code>grid-template-columns: subgrid</code></li>
+                    <li><strong>Perfect for:</strong> Card layouts with aligned content</li>
+                    <li><strong>Works with:</strong> Both columns and rows</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

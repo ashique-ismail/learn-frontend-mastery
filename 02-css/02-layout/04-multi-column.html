@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Multi-Column Layout</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        /* Basic Multi-Column */
+        .basic-columns {
+            column-count: 3;
+            column-gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .basic-columns p {
+            margin: 0 0 15px 0;
+            text-align: justify;
+        }
+
+        /* Column Width Based */
+        .width-columns {
+            column-width: 200px;
+            column-gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* Column Rules */
+        .ruled-columns {
+            column-count: 3;
+            column-gap: 40px;
+            column-rule: 3px solid #667eea;
+            margin-bottom: 40px;
+        }
+
+        .ruled-columns-fancy {
+            column-count: 2;
+            column-gap: 60px;
+            column-rule: 5px double #764ba2;
+            column-rule-width: 5px;
+            column-rule-style: double;
+            column-rule-color: #764ba2;
+            margin-bottom: 40px;
+        }
+
+        /* Column Span */
+        .span-heading {
+            column-span: all;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .span-columns {
+            column-count: 3;
+            column-gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* Column Fill */
+        .balanced-columns {
+            column-count: 3;
+            column-gap: 30px;
+            column-fill: balance;
+            height: 300px;
+            border: 2px solid #667eea;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .auto-fill-columns {
+            column-count: 3;
+            column-gap: 30px;
+            column-fill: auto;
+            height: 300px;
+            border: 2px solid #764ba2;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* Break Control */
+        .break-control {
+            column-count: 3;
+            column-gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .no-break {
+            break-inside: avoid;
+            page-break-inside: avoid;
+            background: #f0f0f0;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .break-before {
+            break-before: column;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        /* Orphans and Widows */
+        .orphan-widow-control {
+            column-count: 3;
+            column-gap: 30px;
+            orphans: 3;
+            widows: 3;
+            margin-bottom: 40px;
+        }
+
+        /* Magazine Layout */
+        .magazine-layout {
+            column-count: 2;
+            column-gap: 40px;
+            column-rule: 1px solid #ddd;
+            text-align: justify;
+            margin-bottom: 40px;
+        }
+
+        .magazine-layout .drop-cap:first-letter {
+            float: left;
+            font-size: 4em;
+            line-height: 0.8;
+            margin: 0.1em 0.1em 0 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .magazine-layout img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .magazine-layout .figure {
+            break-inside: avoid;
+            margin: 20px 0;
+        }
+
+        .magazine-layout figcaption {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        /* Responsive Columns */
+        .responsive-columns {
+            column-width: 250px;
+            column-gap: 30px;
+            column-rule: 2px solid #667eea;
+            margin-bottom: 40px;
+        }
+
+        /* Mixed Content */
+        .mixed-content {
+            column-count: 3;
+            column-gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .mixed-content .card {
+            break-inside: avoid;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .mixed-content .card h3 {
+            margin-top: 0;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+        }
+
+        /* List Columns */
+        .list-columns {
+            column-count: 4;
+            column-gap: 20px;
+            column-rule: 1px dashed #667eea;
+            margin-bottom: 40px;
+        }
+
+        .list-columns ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .list-columns li {
+            break-inside: avoid;
+            margin-bottom: 8px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            color: #764ba2;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .demo-label {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #e8eaf6;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        /* Masonry-like Effect */
+        .masonry {
+            column-count: 3;
+            column-gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .masonry-item:nth-child(odd) {
+            border-color: #764ba2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .basic-columns,
+            .ruled-columns,
+            .span-columns,
+            .balanced-columns,
+            .auto-fill-columns,
+            .break-control,
+            .orphan-widow-control,
+            .magazine-layout,
+            .mixed-content,
+            .masonry {
+                column-count: 2;
+            }
+
+            .list-columns {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .basic-columns,
+            .ruled-columns,
+            .span-columns,
+            .balanced-columns,
+            .auto-fill-columns,
+            .break-control,
+            .orphan-widow-control,
+            .magazine-layout,
+            .mixed-content,
+            .list-columns,
+            .masonry {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏛️ CSS Multi-Column Layout</h1>
+        <p class="subtitle">Master newspaper and magazine-style layouts</p>
+
+        <!-- Basic Columns -->
+        <section>
+            <h2>Basic Column Count</h2>
+            <span class="demo-label">column-count: 3</span>
+            <div class="basic-columns">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+        </section>
+
+        <!-- Column Width -->
+        <section>
+            <h2>Column Width Based</h2>
+            <span class="demo-label">column-width: 200px (auto-adjusts)</span>
+            <div class="width-columns">
+                <p>With column-width, the browser automatically calculates how many columns will fit. This is more responsive than using column-count. Resize your browser to see the effect!</p>
+                <p>The browser will create as many columns as possible that are at least the specified width. This creates a naturally responsive layout without media queries.</p>
+                <p>This is particularly useful when you don't know the exact width of the container or want the layout to adapt smoothly.</p>
+            </div>
+        </section>
+
+        <!-- Column Rules -->
+        <section>
+            <h2>Column Rules (Dividers)</h2>
+            <span class="demo-label">column-rule: 3px solid</span>
+            <div class="ruled-columns">
+                <p>Column rules act like borders between columns. They don't take up space and won't push columns apart - they appear in the gap between columns.</p>
+                <p>You can style them just like borders using width, style (solid, dashed, dotted, double), and color. They're purely decorative and don't affect layout.</p>
+                <p>Perfect for creating newspaper or magazine-style layouts with visual separation between columns.</p>
+            </div>
+
+            <span class="demo-label">column-rule: 5px double</span>
+            <div class="ruled-columns-fancy">
+                <p>Here's a fancier double-line rule. Column rules can use any border style: solid, dashed, dotted, double, groove, ridge, inset, or outset.</p>
+                <p>You can set the rule using the shorthand property (column-rule) or individual properties (column-rule-width, column-rule-style, column-rule-color).</p>
+                <p>The rule will only appear if there are multiple columns. With a single column, no rule is displayed.</p>
+            </div>
+        </section>
+
+        <!-- Column Span -->
+        <section>
+            <h2>Column Spanning</h2>
+            <span class="demo-label">column-span: all</span>
+            <div class="span-columns">
+                <p>Sometimes you want an element to span across all columns, like a heading or figure. That's where column-span comes in.</p>
+
+                <h3 class="span-heading">This Heading Spans All Columns!</h3>
+
+                <p>After a spanning element, the content continues in columns below it. This is perfect for section headings or full-width images in a multi-column article.</p>
+                <p>Note that column-span only accepts two values: 'none' (default) or 'all'. You can't span just 2 out of 3 columns, for example.</p>
+                <p>This creates natural breaks in your content and helps organize long articles into readable sections while maintaining the multi-column flow.</p>
+            </div>
+        </section>
+
+        <!-- Column Fill -->
+        <section>
+            <h2>Column Fill (Balance)</h2>
+
+            <h3>Balanced (default)</h3>
+            <span class="demo-label">column-fill: balance</span>
+            <div class="balanced-columns">
+                <p>With balanced fill, the browser tries to distribute content evenly across all columns, making them approximately the same height.</p>
+                <p>This is the default behavior and works well for most content.</p>
+                <p>It creates a more aesthetically pleasing layout.</p>
+            </div>
+
+            <h3>Auto Fill</h3>
+            <span class="demo-label">column-fill: auto</span>
+            <div class="auto-fill-columns">
+                <p>With auto fill, columns are filled sequentially. The first column is filled completely before moving to the next.</p>
+                <p>This can result in uneven column heights.</p>
+                <p>Use this when order matters more than visual balance.</p>
+            </div>
+        </section>
+
+        <!-- Break Control -->
+        <section>
+            <h2>Break Control</h2>
+            <span class="demo-label">break-inside: avoid</span>
+            <div class="break-control">
+                <div class="no-break">
+                    <h4>Keep Together Block 1</h4>
+                    <p>This entire block will stay together in one column. It won't break across columns, keeping the heading and content unified.</p>
+                </div>
+                <div class="no-break">
+                    <h4>Keep Together Block 2</h4>
+                    <p>Another block that stays together. This is perfect for cards, callouts, or any content that should remain unified.</p>
+                </div>
+                <p class="break-before">This paragraph has break-before: column, so it starts a new column.</p>
+                <div class="no-break">
+                    <h4>Keep Together Block 3</h4>
+                    <p>Break control is essential for maintaining readability in multi-column layouts.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>Break Properties</h3>
+                <ul>
+                    <li><code>break-inside: avoid</code> - Prevents breaks inside element</li>
+                    <li><code>break-before: column</code> - Forces break before element</li>
+                    <li><code>break-after: column</code> - Forces break after element</li>
+                    <li><code>break-inside: avoid-column</code> - Specifically for columns</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Magazine Layout -->
+        <section>
+            <h2>Magazine-Style Layout</h2>
+            <div class="magazine-layout">
+                <p class="drop-cap">This is a classic magazine layout with a drop cap. The first letter is enlarged and floats to the left, creating an elegant entry point for the article. This technique has been used in print media for centuries and translates beautifully to web layouts.</p>
+
+                <div class="figure">
+                    <div style="background: linear-gradient(135deg, #667eea, #764ba2); height: 150px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5em;">
+                        📸 Image Placeholder
+                    </div>
+                    <figcaption>Figure 1: Images in multi-column layouts stay within their column boundaries</figcaption>
+                </div>
+
+                <p>Multi-column layouts are perfect for long-form content like articles, blog posts, and documentation. They improve readability by keeping line lengths comfortable for the eye.</p>
+
+                <p>Research shows that optimal line length for reading is between 45-75 characters. Multi-column layouts help maintain this range even on wide screens.</p>
+
+                <p>Combined with proper typography, spacing, and break control, you can create sophisticated reading experiences that rival traditional print media.</p>
+            </div>
+        </section>
+
+        <!-- Mixed Content -->
+        <section>
+            <h2>Mixed Content with Cards</h2>
+            <span class="demo-label">Cards in columns with break-inside: avoid</span>
+            <div class="mixed-content">
+                <div class="card">
+                    <h3>Feature One</h3>
+                    <p>Cards in multi-column layouts create interesting visual effects.</p>
+                </div>
+                <p>Regular paragraph content flows around the cards naturally.</p>
+                <div class="card">
+                    <h3>Feature Two</h3>
+                    <p>Each card stays together as a unit and won't break across columns.</p>
+                </div>
+                <div class="card">
+                    <h3>Feature Three</h3>
+                    <p>This creates a Pinterest-like masonry effect effortlessly.</p>
+                </div>
+                <p>More text content that flows between the cards.</p>
+                <div class="card">
+                    <h3>Feature Four</h3>
+                    <p>The browser automatically distributes cards across columns.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- List Columns -->
+        <section>
+            <h2>Multi-Column Lists</h2>
+            <span class="demo-label">Perfect for long lists</span>
+            <div class="list-columns">
+                <ul>
+                    <li>Apple</li>
+                    <li>Banana</li>
+                    <li>Cherry</li>
+                    <li>Date</li>
+                    <li>Elderberry</li>
+                    <li>Fig</li>
+                    <li>Grape</li>
+                    <li>Honeydew</li>
+                    <li>Kiwi</li>
+                    <li>Lemon</li>
+                    <li>Mango</li>
+                    <li>Nectarine</li>
+                    <li>Orange</li>
+                    <li>Papaya</li>
+                    <li>Quince</li>
+                    <li>Raspberry</li>
+                    <li>Strawberry</li>
+                    <li>Tangerine</li>
+                    <li>Ugli fruit</li>
+                    <li>Watermelon</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Masonry Effect -->
+        <section>
+            <h2>Masonry-Like Effect</h2>
+            <span class="demo-label">Pinterest-style layout</span>
+            <div class="masonry">
+                <div class="masonry-item" style="height: 120px;">
+                    <h4>Item 1</h4>
+                    <p>Short content</p>
+                </div>
+                <div class="masonry-item" style="height: 180px;">
+                    <h4>Item 2</h4>
+                    <p>Medium length content that takes up more vertical space in the layout.</p>
+                </div>
+                <div class="masonry-item" style="height: 100px;">
+                    <h4>Item 3</h4>
+                    <p>Brief</p>
+                </div>
+                <div class="masonry-item" style="height: 200px;">
+                    <h4>Item 4</h4>
+                    <p>Longer content that spans more height. Multi-column layout automatically creates a masonry effect.</p>
+                </div>
+                <div class="masonry-item" style="height: 140px;">
+                    <h4>Item 5</h4>
+                    <p>Variable heights create visual interest.</p>
+                </div>
+                <div class="masonry-item" style="height: 160px;">
+                    <h4>Item 6</h4>
+                    <p>Each item flows naturally into columns.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section>
+            <h2>Best Practices & Tips</h2>
+            <div class="info-box">
+                <h3>When to Use Multi-Column</h3>
+                <ul>
+                    <li><strong>Long-form text:</strong> Articles, blog posts, documentation</li>
+                    <li><strong>Lists:</strong> Long lists that benefit from horizontal scanning</li>
+                    <li><strong>Gallery layouts:</strong> Card-based or masonry-style designs</li>
+                    <li><strong>Magazine layouts:</strong> Editorial content with images and text</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Key Properties</h3>
+                <ul>
+                    <li><code>column-count</code> - Number of columns</li>
+                    <li><code>column-width</code> - Minimum width (responsive)</li>
+                    <li><code>column-gap</code> - Space between columns</li>
+                    <li><code>column-rule</code> - Border between columns</li>
+                    <li><code>column-span</code> - Span across columns (none/all)</li>
+                    <li><code>column-fill</code> - Balance or auto fill</li>
+                    <li><code>break-inside</code> - Control breaks</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Shorthand Properties</h3>
+                <ul>
+                    <li><code>columns: 3 200px</code> - Sets both count and width</li>
+                    <li><code>column-rule: 2px solid #333</code> - All rule properties</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Browser Support</h3>
+                <p>Excellent support across all modern browsers. Use prefixes for older browsers:</p>
+                <code>-webkit-column-count</code>, <code>-moz-column-count</code>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

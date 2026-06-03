@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Custom Properties (Variables)</title>
+    <style>
+        :root {
+            /* Color Palette */
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #ec4899;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+
+            /* Neutral Colors */
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-700: #374151;
+            --gray-900: #111827;
+
+            /* Spacing Scale */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+
+            /* Font Sizes */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+
+            /* Font Weights */
+            --font-normal: 400;
+            --font-medium: 500;
+            --font-semibold: 600;
+            --font-bold: 700;
+
+            /* Border Radius */
+            --radius-sm: 0.25rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+            /* Transitions */
+            --transition-fast: 150ms ease-in-out;
+            --transition-base: 300ms ease-in-out;
+            --transition-slow: 500ms ease-in-out;
+
+            /* Z-Index Scale */
+            --z-dropdown: 1000;
+            --z-sticky: 1020;
+            --z-fixed: 1030;
+            --z-modal-backdrop: 1040;
+            --z-modal: 1050;
+            --z-tooltip: 1070;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: var(--space-xl);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: var(--space-3xl) var(--space-2xl);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-xl);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: var(--text-4xl);
+            font-weight: var(--font-bold);
+            text-align: center;
+            margin-bottom: var(--space-sm);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--gray-500);
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-3xl);
+        }
+
+        section {
+            margin-bottom: var(--space-3xl);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: var(--text-2xl);
+            font-weight: var(--font-semibold);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        h3 {
+            color: var(--gray-700);
+            font-size: var(--text-xl);
+            font-weight: var(--font-semibold);
+            margin: var(--space-lg) 0 var(--space-md);
+        }
+
+        /* Demo Label */
+        .demo-label {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: var(--font-semibold);
+            margin-bottom: var(--space-md);
+        }
+
+        /* Color Palette Demo */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .color-swatch {
+            text-align: center;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-base);
+        }
+
+        .color-swatch:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .color-swatch-color {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: var(--font-bold);
+        }
+
+        .color-swatch-label {
+            padding: var(--space-sm);
+            background: var(--gray-50);
+            font-size: var(--text-sm);
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Themed Components */
+        .theme-demo {
+            --theme-color: var(--primary-color);
+            --theme-bg: var(--gray-50);
+
+            background: var(--theme-bg);
+            border: 2px solid var(--theme-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin: var(--space-lg) 0;
+        }
+
+        .theme-demo.secondary {
+            --theme-color: var(--secondary-color);
+        }
+
+        .theme-demo.success {
+            --theme-color: var(--success-color);
+        }
+
+        .theme-demo h4 {
+            color: var(--theme-color);
+            margin-bottom: var(--space-sm);
+        }
+
+        .theme-demo .btn {
+            background: var(--theme-color);
+            color: white;
+            border: none;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-md);
+            font-weight: var(--font-medium);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .theme-demo .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Button System */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .btn {
+            --btn-bg: var(--primary-color);
+            --btn-color: white;
+
+            background: var(--btn-bg);
+            color: var(--btn-color);
+            border: none;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-md);
+            font-size: var(--text-base);
+            font-weight: var(--font-medium);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            --btn-bg: var(--secondary-color);
+        }
+
+        .btn-success {
+            --btn-bg: var(--success-color);
+        }
+
+        .btn-warning {
+            --btn-bg: var(--warning-color);
+        }
+
+        .btn-danger {
+            --btn-bg: var(--danger-color);
+        }
+
+        /* Dark Mode Theme */
+        .dark-theme {
+            --primary-color: #818cf8;
+            --secondary-color: #a78bfa;
+            --text-color: #f9fafb;
+            --bg-color: #1f2937;
+            --surface-color: #374151;
+
+            background: var(--bg-color);
+            color: var(--text-color);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .dark-theme h4 {
+            color: var(--primary-color);
+        }
+
+        .dark-theme .card {
+            background: var(--surface-color);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin-top: var(--space-md);
+        }
+
+        /* Spacing Scale Demo */
+        .spacing-demo {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .spacing-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .spacing-box {
+            background: var(--primary-color);
+            height: 40px;
+        }
+
+        .spacing-label {
+            font-family: 'Courier New', monospace;
+            color: var(--gray-700);
+            font-size: var(--text-sm);
+        }
+
+        /* Dynamic Calculation */
+        .calc-demo {
+            --base-size: 1rem;
+            --multiplier: 2;
+
+            background: var(--gray-100);
+            padding: calc(var(--base-size) * var(--multiplier));
+            border-radius: var(--radius-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .calc-box {
+            background: var(--accent-color);
+            color: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            font-size: calc(var(--text-base) * 1.5);
+        }
+
+        /* Info Box */
+        .info-box {
+            background: var(--gray-50);
+            border-left: 4px solid var(--primary-color);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            border-radius: var(--radius-md);
+        }
+
+        .info-box.warning {
+            border-left-color: var(--warning-color);
+            background: #fffbeb;
+        }
+
+        .info-box.success {
+            border-left-color: var(--success-color);
+            background: #f0fdf4;
+        }
+
+        .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: var(--space-sm);
+        }
+
+        .info-box.warning h4 {
+            color: var(--warning-color);
+        }
+
+        .info-box.success h4 {
+            color: var(--success-color);
+        }
+
+        code {
+            background: var(--gray-200);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            font-family: 'Courier New', monospace;
+            color: var(--danger-color);
+            font-size: var(--text-sm);
+        }
+
+        pre {
+            background: var(--gray-900);
+            color: var(--gray-50);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            margin: var(--space-md) 0;
+        }
+
+        pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        /* CSS Variable Inspector */
+        .variable-inspector {
+            background: var(--gray-900);
+            color: var(--gray-50);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            font-family: 'Courier New', monospace;
+            font-size: var(--text-sm);
+            margin: var(--space-lg) 0;
+        }
+
+        .variable-line {
+            padding: var(--space-xs) 0;
+            border-bottom: 1px solid var(--gray-700);
+        }
+
+        .var-name {
+            color: #60a5fa;
+        }
+
+        .var-value {
+            color: #34d399;
+        }
+
+        /* Fallback Demo */
+        .fallback-demo {
+            background: var(--gray-100);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .fallback-box {
+            /* If --custom-color doesn't exist, use #6366f1 */
+            background: var(--custom-color, #6366f1);
+            color: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+        }
+
+        /* Nested Variables */
+        .nested-demo {
+            --size-base: 1rem;
+            --size-double: calc(var(--size-base) * 2);
+            --size-quad: calc(var(--size-double) * 2);
+
+            background: var(--gray-100);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .nested-box-1 {
+            padding: var(--size-base);
+            background: var(--primary-color);
+            color: white;
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .nested-box-2 {
+            padding: var(--size-double);
+            background: var(--secondary-color);
+            color: white;
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .nested-box-3 {
+            padding: var(--size-quad);
+            background: var(--accent-color);
+            color: white;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Responsive Variables */
+        @media (max-width: 768px) {
+            :root {
+                --text-4xl: 1.875rem;
+                --text-3xl: 1.5rem;
+                --space-3xl: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Custom Properties</h1>
+        <p class="subtitle">Modern CSS variables for maintainable, themeable designs</p>
+
+        <!-- Introduction -->
+        <section>
+            <h2>What are CSS Custom Properties?</h2>
+
+            <div class="info-box">
+                <h4>Definition</h4>
+                <p>CSS Custom Properties (also called CSS Variables) let you store and reuse values throughout your stylesheet. They're declared with <code>--</code> prefix and accessed with <code>var()</code>.</p>
+            </div>
+
+            <div class="info-box success">
+                <h4>Why Use Them?</h4>
+                <ul>
+                    <li>Reduce repetition and make code DRY</li>
+                    <li>Easy theming and dark mode</li>
+                    <li>Dynamic updates with JavaScript</li>
+                    <li>Better maintainability</li>
+                    <li>Cascade and inherit like normal CSS properties</li>
+                </ul>
+            </div>
+
+            <h3>Basic Syntax</h3>
+            <pre><code>/* Declare variables */
+:root {
+  --primary-color: #6366f1;
+  --spacing: 1rem;
+}
+
+/* Use variables */
+.button {
+  background: var(--primary-color);
+  padding: var(--spacing);
+}</code></pre>
+        </section>
+
+        <!-- Color System -->
+        <section>
+            <h2>Color System with Variables</h2>
+            <span class="demo-label">Centralized color palette</span>
+
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-swatch-color" style="background: var(--primary-color);">Primary</div>
+                    <div class="color-swatch-label">--primary-color</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-swatch-color" style="background: var(--secondary-color);">Secondary</div>
+                    <div class="color-swatch-label">--secondary-color</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-swatch-color" style="background: var(--accent-color);">Accent</div>
+                    <div class="color-swatch-label">--accent-color</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-swatch-color" style="background: var(--success-color);">Success</div>
+                    <div class="color-swatch-label">--success-color</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-swatch-color" style="background: var(--warning-color);">Warning</div>
+                    <div class="color-swatch-label">--warning-color</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-swatch-color" style="background: var(--danger-color);">Danger</div>
+                    <div class="color-swatch-label">--danger-color</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>Benefits of Color Variables</h4>
+                <p>Change your entire color scheme by modifying a few variables. Perfect for theming, branding updates, or A/B testing different color palettes.</p>
+            </div>
+        </section>
+
+        <!-- Scoped Theming -->
+        <section>
+            <h2>Scoped Theming</h2>
+            <span class="demo-label">Component-level variable overrides</span>
+
+            <div class="theme-demo">
+                <h4>Primary Theme</h4>
+                <p>This component uses <code>--theme-color: var(--primary-color)</code></p>
+                <button class="btn">Primary Button</button>
+            </div>
+
+            <div class="theme-demo secondary">
+                <h4>Secondary Theme</h4>
+                <p>This overrides: <code>--theme-color: var(--secondary-color)</code></p>
+                <button class="btn">Secondary Button</button>
+            </div>
+
+            <div class="theme-demo success">
+                <h4>Success Theme</h4>
+                <p>This overrides: <code>--theme-color: var(--success-color)</code></p>
+                <button class="btn">Success Button</button>
+            </div>
+
+            <div class="info-box">
+                <h4>How It Works</h4>
+                <p>Variables cascade! Set a default in <code>:root</code>, then override it in specific components. Child elements inherit the overridden value.</p>
+            </div>
+        </section>
+
+        <!-- Design System -->
+        <section>
+            <h2>Complete Design System</h2>
+
+            <h3>Button System</h3>
+            <span class="demo-label">All buttons use CSS variables</span>
+
+            <div class="button-group">
+                <button class="btn">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-warning">Warning</button>
+                <button class="btn btn-danger">Danger</button>
+            </div>
+
+            <h3>Spacing Scale</h3>
+            <span class="demo-label">Consistent spacing throughout</span>
+
+            <div class="spacing-demo">
+                <div class="spacing-item">
+                    <div class="spacing-box" style="width: var(--space-xs);"></div>
+                    <span class="spacing-label">--space-xs (0.25rem)</span>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-box" style="width: var(--space-sm);"></div>
+                    <span class="spacing-label">--space-sm (0.5rem)</span>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-box" style="width: var(--space-md);"></div>
+                    <span class="spacing-label">--space-md (1rem)</span>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-box" style="width: var(--space-lg);"></div>
+                    <span class="spacing-label">--space-lg (1.5rem)</span>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-box" style="width: var(--space-xl);"></div>
+                    <span class="spacing-label">--space-xl (2rem)</span>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-box" style="width: var(--space-2xl);"></div>
+                    <span class="spacing-label">--space-2xl (3rem)</span>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-box" style="width: var(--space-3xl);"></div>
+                    <span class="spacing-label">--space-3xl (4rem)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dark Mode -->
+        <section>
+            <h2>Dark Mode with Variables</h2>
+            <span class="demo-label">Easy theme switching</span>
+
+            <div class="dark-theme">
+                <h4>Dark Mode Enabled</h4>
+                <p>This component redefines color variables for a dark theme. All child elements automatically adapt.</p>
+                <div class="card">
+                    <h5 style="margin-bottom: 0.5rem;">Card Component</h5>
+                    <p style="margin: 0;">Uses <code>var(--surface-color)</code> which is redefined in dark mode.</p>
+                </div>
+            </div>
+
+            <pre><code>.dark-theme {
+  --text-color: #f9fafb;
+  --bg-color: #1f2937;
+  --surface-color: #374151;
+
+  background: var(--bg-color);
+  color: var(--text-color);
+}</code></pre>
+
+            <div class="info-box">
+                <h4>Implementing Dark Mode</h4>
+                <p>Add a class like <code>.dark-mode</code> to your root element and redefine color variables. All components using those variables automatically update!</p>
+            </div>
+        </section>
+
+        <!-- Calculations -->
+        <section>
+            <h2>Calculations with Variables</h2>
+            <span class="demo-label">calc() + CSS variables</span>
+
+            <div class="calc-demo">
+                <div class="calc-box">
+                    Padding: calc(var(--base-size) * var(--multiplier)) = 2rem<br>
+                    Font-size: calc(var(--text-base) * 1.5) = 1.5rem
+                </div>
+            </div>
+
+            <pre><code>.element {
+  --base-size: 1rem;
+  --multiplier: 2;
+
+  padding: calc(var(--base-size) * var(--multiplier));
+  margin: calc(var(--space-md) * 2);
+}</code></pre>
+
+            <div class="nested-demo">
+                <h4 style="margin-bottom: 1rem;">Nested Variable Calculations</h4>
+                <div class="nested-box-1">Base padding: var(--size-base) = 1rem</div>
+                <div class="nested-box-2">Double padding: var(--size-double) = 2rem</div>
+                <div class="nested-box-3">Quad padding: var(--size-quad) = 4rem</div>
+            </div>
+        </section>
+
+        <!-- Fallback Values -->
+        <section>
+            <h2>Fallback Values</h2>
+            <span class="demo-label">var(--name, fallback)</span>
+
+            <div class="fallback-demo">
+                <div class="fallback-box">
+                    This uses <code>var(--custom-color, #6366f1)</code><br>
+                    Since --custom-color doesn't exist, it falls back to #6366f1
+                </div>
+                <div class="fallback-box" style="--custom-color: #ec4899;">
+                    This defines --custom-color locally, so no fallback needed
+                </div>
+            </div>
+
+            <pre><code>.button {
+  /* Use brand color, or fallback to blue */
+  background: var(--brand-color, #3b82f6);
+
+  /* Chain fallbacks */
+  color: var(--text-color, var(--fallback-text, black));
+}</code></pre>
+        </section>
+
+        <!-- JavaScript Integration -->
+        <section>
+            <h2>JavaScript Integration</h2>
+            <span class="demo-label">Dynamic updates</span>
+
+            <div class="info-box">
+                <h4>Reading Variables</h4>
+                <pre><code>// Get computed value
+const root = document.documentElement;
+const primaryColor = getComputedStyle(root)
+  .getPropertyValue('--primary-color');</code></pre>
+            </div>
+
+            <div class="info-box">
+                <h4>Setting Variables</h4>
+                <pre><code>// Set variable dynamically
+document.documentElement.style
+  .setProperty('--primary-color', '#ff0000');
+
+// Set on specific element
+element.style.setProperty('--theme-color', '#00ff00');</code></pre>
+            </div>
+
+            <div class="info-box success">
+                <h4>Use Cases</h4>
+                <ul>
+                    <li>User-customizable themes</li>
+                    <li>Dynamic animations based on user input</li>
+                    <li>Real-time color picker</li>
+                    <li>Responsive breakpoints</li>
+                    <li>Progress indicators</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Variable Inspector -->
+        <section>
+            <h2>Variable Reference</h2>
+            <span class="demo-label">All variables in this page</span>
+
+            <div class="variable-inspector">
+                <div class="variable-line"><span class="var-name">--primary-color:</span> <span class="var-value">#6366f1</span></div>
+                <div class="variable-line"><span class="var-name">--secondary-color:</span> <span class="var-value">#8b5cf6</span></div>
+                <div class="variable-line"><span class="var-name">--accent-color:</span> <span class="var-value">#ec4899</span></div>
+                <div class="variable-line"><span class="var-name">--space-md:</span> <span class="var-value">1rem</span></div>
+                <div class="variable-line"><span class="var-name">--space-lg:</span> <span class="var-value">1.5rem</span></div>
+                <div class="variable-line"><span class="var-name">--radius-md:</span> <span class="var-value">0.5rem</span></div>
+                <div class="variable-line"><span class="var-name">--shadow-md:</span> <span class="var-value">0 4px 6px rgba(0,0,0,0.1)</span></div>
+                <div class="variable-line"><span class="var-name">--transition-base:</span> <span class="var-value">300ms ease-in-out</span></div>
+                <div style="padding-top: 1rem; color: #9ca3af;">...and many more</div>
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section>
+            <h2>Best Practices</h2>
+
+            <div class="info-box">
+                <h4>1. Use :root for Global Variables</h4>
+                <p>Define global design tokens in <code>:root</code> (same as <code>html</code> but with higher specificity).</p>
+            </div>
+
+            <div class="info-box">
+                <h4>2. Naming Conventions</h4>
+                <ul>
+                    <li>Use descriptive names: <code>--primary-color</code> not <code>--color1</code></li>
+                    <li>Group related variables: <code>--space-sm</code>, <code>--space-md</code></li>
+                    <li>Use semantic names: <code>--text-color</code> not <code>--black</code></li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>3. Create Design Tokens</h4>
+                <p>Define scales for spacing, typography, colors, shadows - everything that repeats in your design.</p>
+            </div>
+
+            <div class="info-box">
+                <h4>4. Scope Variables Appropriately</h4>
+                <ul>
+                    <li>Global tokens in <code>:root</code></li>
+                    <li>Component-specific in component selector</li>
+                    <li>Theme overrides in theme classes</li>
+                </ul>
+            </div>
+
+            <div class="info-box warning">
+                <h4>Browser Support</h4>
+                <p>Excellent support in all modern browsers. IE11 does not support custom properties. For IE11, use a preprocessor or PostCSS plugin to transform variables to static values.</p>
+            </div>
+        </section>
+
+        <!-- Comparison -->
+        <section>
+            <h2>CSS Variables vs Preprocessor Variables</h2>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                <thead>
+                    <tr style="background: var(--gray-100);">
+                        <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--gray-300);">Feature</th>
+                        <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--gray-300);">CSS Variables</th>
+                        <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--gray-300);">Sass/Less Variables</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">Scope</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">Runtime (DOM)</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">Compile-time only</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">Dynamic</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">Yes (JS can change)</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">No (static)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">Cascade</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">Yes (inherit)</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">No</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">Media Queries</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">Can change per query</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">Static value</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">DevTools</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">Visible & editable</td>
+                        <td style="padding: 0.75rem; border-bottom: 1px solid var(--gray-200);">Compiled away</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box success">
+                <h4>Best of Both Worlds</h4>
+                <p>Use Sass for logic (loops, mixins, functions) and CSS variables for dynamic theming. They complement each other!</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section>
+            <h2>Summary</h2>
+
+            <div class="info-box success">
+                <h4>Key Takeaways</h4>
+                <ul>
+                    <li>CSS variables are declared with <code>--name</code> and used with <code>var(--name)</code></li>
+                    <li>They cascade and inherit like normal CSS properties</li>
+                    <li>Perfect for theming, design systems, and dynamic styling</li>
+                    <li>Can be updated with JavaScript in real-time</li>
+                    <li>Use <code>var(--name, fallback)</code> for fallback values</li>
+                    <li>Works great with <code>calc()</code> for dynamic calculations</li>
+                    <li>Excellent browser support (except IE11)</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>When to Use CSS Variables</h4>
+                <ul>
+                    <li>Design systems and tokens</li>
+                    <li>Theming (light/dark mode)</li>
+                    <li>Component variants</li>
+                    <li>Responsive design (changing values per breakpoint)</li>
+                    <li>Dynamic styling with JavaScript</li>
+                    <li>Reducing repetition in stylesheets</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #6366f1;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        
+        section {
+            margin-bottom: 50px;
+        }
+        
+        h2 {
+            color: #8b5cf6;
+            border-bottom: 3px solid #6366f1;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .demo-box {
+            width: 200px;
+            height: 100px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        /* Basic Transition */
+        .basic-transition {
+            transition: background-color 0.5s;
+        }
+        
+        .basic-transition:hover {
+            background-color: #ec4899;
+        }
+        
+        /* Duration Examples */
+        .fast { transition: transform 0.15s; }
+        .medium { transition: transform 0.5s; }
+        .slow { transition: transform 1.5s; }
+        
+        .fast:hover, .medium:hover, .slow:hover {
+            transform: translateX(100px);
+        }
+        
+        /* Easing Functions */
+        .ease { transition: transform 0.5s ease; }
+        .linear { transition: transform 0.5s linear; }
+        .ease-in { transition: transform 0.5s ease-in; }
+        .ease-out { transition: transform 0.5s ease-out; }
+        .ease-in-out { transition: transform 0.5s ease-in-out; }
+        
+        .ease:hover, .linear:hover, .ease-in:hover, .ease-out:hover, .ease-in-out:hover {
+            transform: translateX(100px);
+        }
+        
+        /* Multiple Properties */
+        .multiple {
+            transition: transform 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+        }
+        
+        .multiple:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #ec4899;
+            border-radius: 50%;
+        }
+        
+        /* All Properties */
+        .all-transition {
+            transition: all 0.3s ease;
+        }
+        
+        .all-transition:hover {
+            transform: scale(1.2);
+            background-color: #10b981;
+            color: #fff;
+        }
+        
+        /* Delay */
+        .delay {
+            transition: transform 0.3s ease 0.5s;
+        }
+        
+        .delay:hover {
+            transform: scale(1.2);
+        }
+        
+        /* Button Examples */
+        .btn {
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-grow:hover {
+            transform: scale(1.1);
+        }
+        
+        .btn-color:hover {
+            background: #ec4899;
+        }
+        
+        code {
+            background: #f3f4f6;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+        
+        pre {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        pre code {
+            background: transparent;
+            color: inherit;
+        }
+        
+        .info-box {
+            background: #e8eaf6;
+            border-left: 4px solid #6366f1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .interactive-note {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Transitions</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 40px;">Smooth animations between property changes</p>
+        
+        <p class="interactive-note">Hover over elements to see transitions in action!</p>
+        
+        <section>
+            <h2>Basic Transition</h2>
+            <div class="demo-box basic-transition">
+                Hover Me!
+            </div>
+            <pre><code>.element {
+  transition: background-color 0.5s;
+}
+.element:hover {
+  background-color: #ec4899;
+}</code></pre>
+        </section>
+        
+        <section>
+            <h2>Duration (Speed)</h2>
+            <div class="demo-box fast">Fast (0.15s)</div>
+            <div class="demo-box medium">Medium (0.5s)</div>
+            <div class="demo-box slow">Slow (1.5s)</div>
+        </section>
+        
+        <section>
+            <h2>Timing Functions (Easing)</h2>
+            <div class="demo-box ease">ease (default)</div>
+            <div class="demo-box linear">linear</div>
+            <div class="demo-box ease-in">ease-in</div>
+            <div class="demo-box ease-out">ease-out</div>
+            <div class="demo-box ease-in-out">ease-in-out</div>
+        </section>
+        
+        <section>
+            <h2>Multiple Properties</h2>
+            <div class="demo-box multiple">Hover for Multiple Changes</div>
+            <pre><code>.element {
+  transition: transform 0.3s ease, 
+              background-color 0.3s ease, 
+              border-radius 0.3s ease;
+}</code></pre>
+        </section>
+        
+        <section>
+            <h2>Transition All</h2>
+            <div class="demo-box all-transition">Hover Me!</div>
+            <pre><code>.element {
+  transition: all 0.3s ease; /* Transitions all animatable properties */
+}</code></pre>
+            <div class="info-box">
+                <p><strong>Note:</strong> <code>all</code> is convenient but can impact performance. Specify individual properties when possible.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Transition Delay</h2>
+            <div class="demo-box delay">Hover and Wait 0.5s</div>
+            <pre><code>.element {
+  transition: transform 0.3s ease 0.5s; /* 0.5s delay before starting */
+}</code></pre>
+        </section>
+        
+        <section>
+            <h2>Practical Button Effects</h2>
+            <button class="btn btn-lift">Lift Effect</button>
+            <button class="btn btn-grow">Grow Effect</button>
+            <button class="btn btn-color">Color Change</button>
+        </section>
+        
+        <section>
+            <h2>Syntax</h2>
+            <pre><code>/* Shorthand: property duration timing-function delay */
+transition: transform 0.3s ease 0s;
+
+/* Multiple properties */
+transition: background 0.3s ease, transform 0.5s ease-in-out;
+
+/* All properties */
+transition: all 0.3s ease;
+
+/* Individual properties */
+transition-property: transform;
+transition-duration: 0.3s;
+transition-timing-function: ease;
+transition-delay: 0s;</code></pre>
+        </section>
+        
+        <section>
+            <h2>Best Practices</h2>
+            <div class="info-box">
+                <h4>1. Performance</h4>
+                <p>Transition <code>transform</code> and <code>opacity</code> for best performance (GPU accelerated).</p>
+            </div>
+            <div class="info-box">
+                <h4>2. Accessibility</h4>
+                <p>Respect <code>prefers-reduced-motion</code> for users who prefer less animation:</p>
+                <pre><code>@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}</code></pre>
+            </div>
+            <div class="info-box">
+                <h4>3. Choose Appropriate Duration</h4>
+                <ul>
+                    <li>Fast (100-200ms): Small UI changes, hover effects</li>
+                    <li>Medium (200-500ms): Most transitions, modals</li>
+                    <li>Slow (500ms+): Large movements, page transitions</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Summary</h2>
+            <div class="info-box">
+                <ul>
+                    <li><strong>Syntax:</strong> <code>transition: property duration timing-function delay</code></li>
+                    <li><strong>Properties:</strong> Specify which properties to animate</li>
+                    <li><strong>Duration:</strong> How long the transition takes (s or ms)</li>
+                    <li><strong>Timing:</strong> ease, linear, ease-in, ease-out, ease-in-out, cubic-bezier</li>
+                    <li><strong>Delay:</strong> Wait before starting</li>
+                    <li><strong>Performance:</strong> Use transform and opacity for smooth animations</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

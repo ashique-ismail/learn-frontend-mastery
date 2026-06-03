@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Float & Clear</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #f5576c;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-style: italic;
+            font-size: 1.2em;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            color: #f5576c;
+            border-bottom: 3px solid #f093fb;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .demo-label {
+            display: inline-block;
+            background: #f5576c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* Basic Float Examples */
+        .float-demo {
+            border: 2px solid #f093fb;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fef5fb;
+            overflow: auto; /* Contains floats */
+        }
+
+        .float-left {
+            float: left;
+            width: 200px;
+            height: 150px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            margin: 0 20px 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .float-right {
+            float: right;
+            width: 200px;
+            height: 150px;
+            background: linear-gradient(135deg, #f5576c, #f093fb);
+            color: white;
+            margin: 0 0 20px 20px;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Image Float Examples */
+        .article-demo {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .article-image {
+            width: 250px;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            margin: 0 20px 15px 0;
+        }
+
+        .article-image.left {
+            float: left;
+        }
+
+        .article-image.right {
+            float: right;
+            margin: 0 0 15px 20px;
+        }
+
+        /* Multiple Floats */
+        .gallery {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: auto;
+        }
+
+        .gallery-item {
+            float: left;
+            width: calc(25% - 15px);
+            margin: 0 15px 15px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Clear Examples */
+        .clear-demo {
+            background: #fff5f8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .float-box {
+            float: left;
+            width: 150px;
+            height: 100px;
+            background: #f5576c;
+            color: white;
+            margin: 0 15px 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .clear-left {
+            clear: left;
+        }
+
+        .clear-right {
+            clear: right;
+        }
+
+        .clear-both {
+            clear: both;
+        }
+
+        /* Clearfix Technique */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .collapsed-demo {
+            background: #ffe5e5;
+            border: 3px dashed #f5576c;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .fixed-demo {
+            background: #e5ffe5;
+            border: 3px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        /* Float Layouts (Legacy) */
+        .three-column {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: auto;
+        }
+
+        .column {
+            float: left;
+            width: calc(33.333% - 20px);
+            margin-right: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .column:last-child {
+            margin-right: 0;
+        }
+
+        /* Float with Shape-Outside Preview */
+        .shape-demo {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: auto;
+        }
+
+        .circle-float {
+            float: left;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            margin: 0 20px 20px 0;
+            shape-outside: circle(50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #e8eaf6;
+            border-left: 5px solid #f5576c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .info-box h3 {
+            color: #f5576c;
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #f5576c;
+            color: white;
+        }
+
+        /* Two Column Layout Example */
+        .sidebar-layout {
+            overflow: auto;
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .sidebar {
+            float: left;
+            width: 250px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-right: 30px;
+        }
+
+        .main-content {
+            float: left;
+            width: calc(100% - 280px);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* Responsive Helper */
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: calc(50% - 10px);
+            }
+
+            .gallery-item:nth-child(4n) {
+                margin-right: 15px;
+            }
+
+            .gallery-item:nth-child(2n) {
+                margin-right: 0;
+            }
+
+            .column {
+                float: none;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .sidebar,
+            .main-content {
+                float: none;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .float-left,
+            .float-right,
+            .article-image {
+                float: none;
+                width: 100%;
+                margin: 0 0 20px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Float & Clear</h1>
+        <p class="subtitle">Understanding legacy layout techniques (mostly replaced by Flexbox/Grid)</p>
+
+        <!-- Introduction -->
+        <section>
+            <div class="warning-box">
+                <h3>Historical Note</h3>
+                <p>Float and Clear were originally designed for wrapping text around images, not for layouts. While they were heavily used for layouts before Flexbox and Grid, modern CSS provides better alternatives.</p>
+                <p><strong>Modern Recommendation:</strong> Use Flexbox or Grid for layouts. Use Float mainly for its original purpose: wrapping text around elements.</p>
+            </div>
+        </section>
+
+        <!-- Basic Float -->
+        <section>
+            <h2>Basic Float Properties</h2>
+
+            <h3>Float Left</h3>
+            <span class="demo-label">float: left</span>
+            <div class="float-demo">
+                <div class="float-left">Floated Left</div>
+                <p>When an element is floated left, it's taken out of the normal document flow and moved to the left side of its container. Text and inline elements wrap around it on the right side.</p>
+                <p>Notice how this text flows around the floated box naturally. This is the original purpose of float - to wrap text around images in articles, just like in magazines and newspapers.</p>
+                <p>The floated element still affects the layout of surrounding content, unlike absolutely positioned elements which are completely removed from the flow.</p>
+            </div>
+
+            <h3>Float Right</h3>
+            <span class="demo-label">float: right</span>
+            <div class="float-demo">
+                <div class="float-right">Floated Right</div>
+                <p>Float right works the same way but moves the element to the right side. Text and inline content wrap around it on the left.</p>
+                <p>Floated elements stack horizontally. If you float multiple elements in the same direction, they'll line up next to each other (if there's space).</p>
+                <p>This is useful for pull quotes, sidebar images, or any content you want text to flow around naturally.</p>
+            </div>
+        </section>
+
+        <!-- Image Float in Article -->
+        <section>
+            <h2>Floating Images in Articles</h2>
+            <span class="demo-label">Classic use case</span>
+
+            <div class="article-demo">
+                <div class="article-image left">Image</div>
+                <h3>Article with Floated Image</h3>
+                <p>This is the perfect use case for float! In this article-style layout, the image floats to the left while text wraps around it naturally, creating a professional magazine-style appearance.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="article-demo">
+                <div class="article-image right">Image</div>
+                <h3>Article with Right-Floated Image</h3>
+                <p>Here's the same concept but with the image floated right. The text flows around it on the left side instead.</p>
+                <p>This technique has been used in print media for centuries and translates perfectly to web design. It's much more natural than trying to achieve this with Flexbox or Grid.</p>
+                <p>The key is using appropriate margins on the floated element to create breathing room between the image and text. Without margins, the text would be right up against the image, which looks cramped.</p>
+            </div>
+        </section>
+
+        <!-- Multiple Floats -->
+        <section>
+            <h2>Multiple Floated Elements</h2>
+            <span class="demo-label">Gallery-style layout</span>
+
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div class="gallery-image">1</div>
+                    <div class="gallery-caption">Item 1</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">2</div>
+                    <div class="gallery-caption">Item 2</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">3</div>
+                    <div class="gallery-caption">Item 3</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">4</div>
+                    <div class="gallery-caption">Item 4</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">5</div>
+                    <div class="gallery-caption">Item 5</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">6</div>
+                    <div class="gallery-caption">Item 6</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">7</div>
+                    <div class="gallery-caption">Item 7</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">8</div>
+                    <div class="gallery-caption">Item 8</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>About This Layout</h3>
+                <p>While this gallery uses float for demonstration, <strong>Grid would be better</strong> for this layout in production. Float can't create true equal-height rows or align items vertically.</p>
+            </div>
+        </section>
+
+        <!-- Clear Property -->
+        <section>
+            <h2>The Clear Property</h2>
+            <span class="demo-label">Controlling float behavior</span>
+
+            <div class="info-box">
+                <h3>What is Clear?</h3>
+                <p>Clear prevents an element from appearing next to floated elements. It forces the element to move below any floats.</p>
+            </div>
+
+            <h3>Without Clear</h3>
+            <div class="clear-demo">
+                <div class="float-box">Float 1</div>
+                <div class="float-box">Float 2</div>
+                <p style="background: #e8f5e9; padding: 10px; border-radius: 5px;">This paragraph appears next to the floated boxes.</p>
+            </div>
+
+            <h3>With Clear: Both</h3>
+            <span class="demo-label">clear: both</span>
+            <div class="clear-demo">
+                <div class="float-box">Float 1</div>
+                <div class="float-box">Float 2</div>
+                <p class="clear-both" style="background: #e8f5e9; padding: 10px; border-radius: 5px;">This paragraph clears both left and right floats, so it appears below them.</p>
+            </div>
+
+            <h3>Clear Values</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Value</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>none</code></td>
+                        <td>Default - allows floating elements on both sides</td>
+                    </tr>
+                    <tr>
+                        <td><code>left</code></td>
+                        <td>Clears left floats - no float allowed on left side</td>
+                    </tr>
+                    <tr>
+                        <td><code>right</code></td>
+                        <td>Clears right floats - no float allowed on right side</td>
+                    </tr>
+                    <tr>
+                        <td><code>both</code></td>
+                        <td>Clears both left and right floats (most common)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Parent Collapse Issue -->
+        <section>
+            <h2>The Parent Collapse Problem</h2>
+
+            <div class="info-box">
+                <h3>The Issue</h3>
+                <p>When all children are floated, the parent collapses to zero height because floated elements are removed from normal flow.</p>
+            </div>
+
+            <h3>Collapsed Parent (Problem)</h3>
+            <div class="collapsed-demo">
+                <div class="float-box">Float 1</div>
+                <div class="float-box">Float 2</div>
+                <div class="float-box">Float 3</div>
+            </div>
+            <p>See how the dashed border barely contains the floated boxes? The parent doesn't grow to wrap its floated children.</p>
+
+            <h3>Fixed with Clearfix (Solution)</h3>
+            <div class="fixed-demo clearfix">
+                <div class="float-box">Float 1</div>
+                <div class="float-box">Float 2</div>
+                <div class="float-box">Float 3</div>
+            </div>
+            <p>Now the solid border properly contains the floated boxes!</p>
+
+            <div class="info-box">
+                <h3>Clearfix Technique</h3>
+                <p>The modern clearfix uses a pseudo-element to clear floats:</p>
+                <code>
+                    .clearfix::after {<br>
+                    &nbsp;&nbsp;content: "";<br>
+                    &nbsp;&nbsp;display: table;<br>
+                    &nbsp;&nbsp;clear: both;<br>
+                    }
+                </code>
+                <p style="margin-top: 15px;"><strong>Alternative:</strong> Add <code>overflow: auto</code> or <code>overflow: hidden</code> to the parent (creates a Block Formatting Context).</p>
+            </div>
+        </section>
+
+        <!-- Float Layouts (Legacy) -->
+        <section>
+            <h2>Float-Based Layouts (Legacy)</h2>
+
+            <div class="warning-box">
+                <h3>Not Recommended for Modern Development</h3>
+                <p>Before Flexbox and Grid, float was the primary tool for multi-column layouts. This is no longer best practice but you may encounter it in legacy code.</p>
+            </div>
+
+            <h3>Three-Column Layout</h3>
+            <div class="three-column">
+                <div class="column">
+                    <h4>Column 1</h4>
+                    <p>All three columns are floated left with calculated widths.</p>
+                </div>
+                <div class="column">
+                    <h4>Column 2</h4>
+                    <p>This creates columns but with many limitations compared to Grid.</p>
+                </div>
+                <div class="column">
+                    <h4>Column 3</h4>
+                    <p>Notice they can't be equal height without hacks.</p>
+                </div>
+            </div>
+
+            <h3>Sidebar + Content Layout</h3>
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <h4>Sidebar</h4>
+                    <p>Fixed width sidebar floated left.</p>
+                    <p>Common in older website designs.</p>
+                </div>
+                <div class="main-content">
+                    <h4>Main Content</h4>
+                    <p>The main content area has a calculated width to fill remaining space.</p>
+                    <p>This layout pattern was everywhere before Flexbox. Now you'd use <code>display: flex</code> instead:</p>
+                    <code>
+                        .container { display: flex; }<br>
+                        .sidebar { width: 250px; }<br>
+                        .content { flex: 1; }
+                    </code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shape Outside -->
+        <section>
+            <h2>Modern Enhancement: Shape-Outside</h2>
+            <span class="demo-label">CSS Shapes Module</span>
+
+            <div class="shape-demo">
+                <div class="circle-float">Circular<br>Float</div>
+                <p>The <code>shape-outside</code> property lets text wrap around non-rectangular shapes! Here, text flows around this circular element rather than its square bounding box.</p>
+                <p>This only works with floated elements. You can create circles, ellipses, polygons, and even wrap text around images with transparent backgrounds.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>This is a modern enhancement that makes float more powerful for its original purpose - creative text wrapping around visual elements.</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Shape-Outside Values</h3>
+                <ul>
+                    <li><code>circle(50%)</code> - Circular shape</li>
+                    <li><code>ellipse(50% 30%)</code> - Elliptical shape</li>
+                    <li><code>polygon(...)</code> - Custom polygon points</li>
+                    <li><code>url(image.png)</code> - Shape from image alpha channel</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section>
+            <h2>Best Practices & Modern Alternatives</h2>
+
+            <div class="info-box">
+                <h3>When to Use Float</h3>
+                <ul>
+                    <li>Wrapping text around images or pull quotes</li>
+                    <li>Magazine/article-style layouts with flowing text</li>
+                    <li>With <code>shape-outside</code> for creative text wrapping</li>
+                    <li>Maintaining legacy codebases</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h3>When NOT to Use Float</h3>
+                <ul>
+                    <li><strong>Multi-column layouts:</strong> Use CSS Grid instead</li>
+                    <li><strong>Centering elements:</strong> Use Flexbox instead</li>
+                    <li><strong>Equal-height columns:</strong> Use Flexbox or Grid</li>
+                    <li><strong>Vertical alignment:</strong> Use Flexbox or Grid</li>
+                    <li><strong>Reordering elements:</strong> Use Flexbox order or Grid placement</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Common Issues & Solutions</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Problem</th>
+                            <th>Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Parent collapses</td>
+                            <td>Add clearfix or <code>overflow: auto</code> to parent</td>
+                        </tr>
+                        <tr>
+                            <td>Floats stacking wrong</td>
+                            <td>Use <code>clear: both</code> on appropriate elements</td>
+                        </tr>
+                        <tr>
+                            <td>Text touches floated element</td>
+                            <td>Add margins to the floated element</td>
+                        </tr>
+                        <tr>
+                            <td>Responsive issues</td>
+                            <td>Use <code>float: none</code> in media queries</td>
+                        </tr>
+                        <tr>
+                            <td>Unequal column heights</td>
+                            <td>Don't use float - use Flexbox or Grid</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <h3>Migration Guide</h3>
+                <p><strong>Float Layout → Modern Equivalent:</strong></p>
+                <ul>
+                    <li>Float columns → <code>display: grid; grid-template-columns: ...</code></li>
+                    <li>Float left/right for alignment → <code>display: flex; justify-content: space-between</code></li>
+                    <li>Float for centering → <code>display: flex; justify-content: center</code></li>
+                    <li>Keep float for text wrapping around images</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section>
+            <h2>Summary</h2>
+
+            <div class="info-box">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li><strong>Original Purpose:</strong> Wrapping text around images/elements</li>
+                    <li><strong>Values:</strong> <code>left</code>, <code>right</code>, <code>none</code></li>
+                    <li><strong>Clear:</strong> Prevents wrapping with <code>left</code>, <code>right</code>, <code>both</code></li>
+                    <li><strong>Clearfix:</strong> Solves parent collapse with <code>::after</code> pseudo-element</li>
+                    <li><strong>Modern Use:</strong> Primarily for text wrapping, not layouts</li>
+                    <li><strong>Alternatives:</strong> Flexbox and Grid for almost everything else</li>
+                    <li><strong>Enhancement:</strong> <code>shape-outside</code> for creative text wrapping</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h3>Final Recommendation</h3>
+                <p>Learn float to understand legacy code and for its original purpose (text wrapping), but embrace Flexbox and Grid for modern layouts. They're more powerful, intuitive, and solve the problems that float was never designed to handle.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
