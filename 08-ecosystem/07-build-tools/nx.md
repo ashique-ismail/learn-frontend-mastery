@@ -1,0 +1,986 @@
+# Nx: Smart Monorepo Build System
+
+## Overview
+
+Nx is an intelligent build system and monorepo toolkit created by Nrwl (now Nx) that revolutionizes how large-scale applications are developed and maintained. It provides powerful code generation, dependency graph visualization, computation caching, and task orchestration to make monorepo development fast and maintainable.
+
+**Key Features:**
+- Intelligent monorepo workspace management
+- Powerful code generators for scaffolding
+- Task orchestration with dependency awareness
+- Distributed computation caching (local and remote)
+- Affected command to test/build only changed code
+- Integrated tooling for testing, linting, building
+- Support for multiple frameworks (React, Angular, Node, Next.js, etc.)
+- Plugin ecosystem for extensibility
+- Visual dependency graph
+- Modern build tools integration (Vite, esbuild, webpack)
+
+Nx is designed to scale from single-project workspaces to massive monorepos with hundreds of projects and thousands of developers.
+
+## Installation and Setup
+
+### Create New Workspace
+
+```bash
+# Create new Nx workspace
+npx create-nx-workspace@latest my-workspace
+
+# During setup, choose:
+# - Workspace type (Integrated, Package-based, Standalone)
+# - Framework (React, Angular, Node, Next.js, etc.)
+# - Package manager (npm, yarn, pnpm)
+
+# Example: React with TypeScript
+npx create-nx-workspace@latest my-org --preset=react-monorepo
+cd my-org
+```
+
+### Workspace Types
+
+```bash
+# 1. Integrated Monorepo (recommended for new projects)
+# Single version policy, shared dependencies
+npx create-nx-workspace --preset=react-monorepo
+
+# 2. Package-based Monorepo
+# Independent versions, package.json per project
+npx create-nx-workspace --preset=npm
+
+# 3. Standalone Application
+# Single app with Nx features
+npx create-nx-workspace --preset=react-standalone
+```
+
+### Add Nx to Existing Monorepo
+
+```bash
+# Add Nx to existing workspace
+npx nx@latest init
+
+# Or for more control
+npm install -D nx
+npx nx init
+```
+
+## Core Concepts
+
+### 1. Workspace Structure
+
+```
+my-workspace/
+├── apps/                    # Applications
+│   ├── web/                # React/Angular app
+│   │   ├── src/
+│   │   ├── project.json    # Project configuration
+│   │   └── tsconfig.json
+│   └── api/                # Backend API
+│       ├── src/
+│       └── project.json
+├── libs/                   # Shared libraries
+│   ├── ui/                 # UI component library
+│   │   ├── src/
+│   │   └── project.json
+│   ├── data-access/        # API clients
+│   └── utils/              # Utilities
+├── tools/                  # Custom scripts/generators
+├── nx.json                 # Nx configuration
+├── package.json            # Dependencies
+└── tsconfig.base.json      # Shared TypeScript config
+```
+
+### 2. Project Configuration
+
+```json
+// apps/web/project.json
+{
+  "name": "web",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/web/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/web",
+        "index": "apps/web/src/index.html",
+        "main": "apps/web/src/main.tsx"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "sourceMap": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/webpack:dev-server",
+      "options": {
+        "buildTarget": "web:build",
+        "port": 4200
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "apps/web/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/web/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": ["scope:web", "type:app"]
+}
+```
+
+### 3. Generators (Code Scaffolding)
+
+Nx generators create and modify code:
+
+```bash
+# Generate React application
+nx g @nx/react:app my-app
+
+# Generate React library
+nx g @nx/react:lib ui-components
+
+# Generate React component
+nx g @nx/react:component Button --project=ui-components
+
+# Generate Node API
+nx g @nx/node:app api
+
+# Generate Next.js application
+nx g @nx/next:app my-next-app
+```
+
+### 4. Executors (Task Running)
+
+Executors run tasks like build, test, lint:
+
+```bash
+# Run executor targets
+nx build my-app
+nx test my-lib
+nx lint my-app
+nx serve my-app
+
+# With configuration
+nx build my-app --configuration=production
+
+# Run multiple targets
+nx run-many --target=build --all
+nx run-many --target=test --projects=web,api
+```
+
+## Workspace Management
+
+### Creating Projects
+
+```bash
+# React application
+nx g @nx/react:app customer-portal
+# Creates: apps/customer-portal/
+
+# Shared UI library
+nx g @nx/react:lib ui --directory=shared
+# Creates: libs/shared/ui/
+
+# Component in library
+nx g @nx/react:component Button --project=shared-ui --export
+# Creates: libs/shared/ui/src/lib/button/
+
+# Node.js library
+nx g @nx/node:lib auth --directory=backend
+# Creates: libs/backend/auth/
+
+# Express API
+nx g @nx/express:app api
+# Creates: apps/api/
+```
+
+### Library Types
+
+```typescript
+// 1. UI Component Library
+// libs/ui/src/index.ts
+export { Button } from './lib/button/button';
+export { Input } from './lib/input/input';
+export type { ButtonProps, InputProps } from './lib/types';
+
+// 2. Data Access Library (API clients)
+// libs/data-access/src/index.ts
+export { ApiClient } from './lib/api-client';
+export { useUsers, usePosts } from './lib/hooks';
+
+// 3. Utility Library
+// libs/utils/src/index.ts
+export { formatDate, parseDate } from './lib/date-utils';
+export { debounce, throttle } from './lib/function-utils';
+
+// 4. Feature Library
+// libs/feature-dashboard/src/index.ts
+export { Dashboard } from './lib/dashboard';
+export { DashboardProvider } from './lib/dashboard-provider';
+
+// Usage in app
+import { Button } from '@my-org/ui';
+import { ApiClient } from '@my-org/data-access';
+import { formatDate } from '@my-org/utils';
+import { Dashboard } from '@my-org/feature-dashboard';
+```
+
+### Dependency Graph
+
+```bash
+# Visualize project dependencies
+nx graph
+
+# Opens browser with interactive graph showing:
+# - All projects and their dependencies
+# - Library boundaries
+# - Circular dependencies
+# - Project clusters
+
+# Generate static graph
+nx graph --file=output.html
+
+# Show affected projects
+nx affected:graph
+
+# Focus on specific project
+nx graph --focus=my-app
+```
+
+## Task Orchestration
+
+### Running Tasks
+
+```bash
+# Run single task
+nx build my-app
+nx test my-lib
+nx lint my-app
+
+# Run with options
+nx build my-app --configuration=production
+nx test my-lib --watch
+nx serve my-app --port=4200
+
+# Run target for all projects
+nx run-many --target=build --all
+
+# Run for specific projects
+nx run-many --target=test --projects=web,api,ui
+
+# Parallel execution (default: 3)
+nx run-many --target=build --all --parallel=5
+
+# Run affected projects only
+nx affected --target=build
+nx affected --target=test --base=main
+```
+
+### Task Dependencies
+
+```json
+// project.json
+{
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      // Build depends on building dependencies first
+      "dependsOn": ["^build"],
+      "options": {
+        "outputPath": "dist/apps/web"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      // Test depends on build of same project
+      "dependsOn": ["build"]
+    }
+  }
+}
+
+// nx.json - Global task dependencies
+{
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"], // Build all dependencies first
+      "cache": true
+    },
+    "test": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production"
+      ]
+    }
+  }
+}
+```
+
+## Computation Caching
+
+### Local Caching
+
+```bash
+# First build (no cache)
+nx build my-app
+# Time: 30 seconds
+
+# Second build (with cache)
+nx build my-app
+# Time: <1 second (cache hit!)
+# Output: "Nx read the output from the cache"
+
+# Cache location: node_modules/.cache/nx
+
+# Clear cache
+nx reset
+
+# Skip cache
+nx build my-app --skip-nx-cache
+```
+
+### Cache Configuration
+
+```json
+// nx.json
+{
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "test", "lint"],
+        "cacheDirectory": "node_modules/.cache/nx"
+      }
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "inputs": [
+        "production",
+        "^production"
+      ],
+      "outputs": ["{options.outputPath}"]
+    },
+    "test": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/jest.preset.js"
+      ]
+    }
+  }
+}
+```
+
+### Remote Caching (Nx Cloud)
+
+```bash
+# Connect to Nx Cloud for distributed caching
+nx connect-to-nx-cloud
+
+# Configuration added to nx.json
+{
+  "nxCloudAccessToken": "your-token",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "test", "lint"],
+        "accessToken": "your-token"
+      }
+    }
+  }
+}
+
+# Now cache is shared across:
+# - All developers
+# - CI/CD pipelines
+# - Different machines
+
+# Benefits:
+# - Faster CI builds (reuse teammate builds)
+# - Skip redundant work
+# - Consistent results
+```
+
+## Affected Commands
+
+### Testing Only Changed Code
+
+```bash
+# Test only affected projects
+nx affected --target=test
+
+# Build only affected projects
+nx affected --target=build
+
+# Lint only affected projects
+nx affected --target=lint
+
+# Compare against specific base
+nx affected --target=test --base=main
+nx affected --target=build --base=origin/main --head=HEAD
+
+# See what's affected
+nx affected:graph
+nx print-affected --base=main
+
+# Affected by specific commits
+nx affected --target=test --base=HEAD~1
+```
+
+### CI/CD Optimization
+
+```yaml
+# .github/workflows/ci.yml
+name: CI
+
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Important for affected commands
+      
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Set base and head for affected
+        run: |
+          echo "BASE=${{ github.event.pull_request.base.sha }}" >> $GITHUB_ENV
+          echo "HEAD=${{ github.sha }}" >> $GITHUB_ENV
+      
+      - name: Test affected
+        run: npx nx affected --target=test --base=$BASE --head=$HEAD
+      
+      - name: Build affected
+        run: npx nx affected --target=build --base=$BASE --head=$HEAD --configuration=production
+```
+
+## Advanced Features
+
+### 1. Module Boundaries
+
+Enforce architectural constraints:
+
+```json
+// .eslintrc.json
+{
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "scope:web",
+                "onlyDependOnLibsWithTags": [
+                  "scope:web",
+                  "scope:shared"
+                ]
+              },
+              {
+                "sourceTag": "scope:api",
+                "onlyDependOnLibsWithTags": [
+                  "scope:api",
+                  "scope:shared"
+                ]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:ui",
+                  "type:data-access",
+                  "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": [
+                  "type:ui",
+                  "type:util"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+
+// project.json tags
+{
+  "name": "web",
+  "tags": ["scope:web", "type:app"]
+}
+
+// Error if web app tries to import from api-only lib
+import { ApiUtil } from '@my-org/api-utils'; // ❌ Violation!
+```
+
+### 2. Custom Generators
+
+```typescript
+// tools/generators/feature/index.ts
+import { Tree, formatFiles, generateFiles } from '@nx/devkit';
+import * as path from 'path';
+
+interface FeatureGeneratorSchema {
+  name: string;
+  project: string;
+}
+
+export default async function (tree: Tree, options: FeatureGeneratorSchema) {
+  const projectRoot = `libs/${options.project}/src/lib`;
+  
+  // Generate files from templates
+  generateFiles(
+    tree,
+    path.join(__dirname, 'files'),
+    projectRoot,
+    {
+      ...options,
+      tmpl: '', // Remove .template from filenames
+      className: classify(options.name),
+      fileName: dasherize(options.name)
+    }
+  );
+  
+  // Format all generated files
+  await formatFiles(tree);
+}
+
+// tools/generators/feature/files/{{fileName}}.tsx.template
+import React from 'react';
+
+export interface {{className}}Props {
+  name: string;
+}
+
+export function {{className}}({ name }: {{className}}Props) {
+  return (
+    <div>
+      <h1>{{className}}</h1>
+      <p>{name}</p>
+    </div>
+  );
+}
+
+export default {{className}};
+
+// Usage
+nx g @my-org/feature:feature UserProfile --project=features
+```
+
+### 3. Custom Executors
+
+```typescript
+// tools/executors/deploy/executor.ts
+import { ExecutorContext } from '@nx/devkit';
+
+export interface DeployExecutorSchema {
+  environment: 'staging' | 'production';
+  bucket: string;
+}
+
+export default async function deployExecutor(
+  options: DeployExecutorSchema,
+  context: ExecutorContext
+) {
+  const projectName = context.projectName!;
+  const outputPath = `dist/apps/${projectName}`;
+  
+  console.log(`Deploying ${projectName} to ${options.environment}...`);
+  
+  try {
+    // Deploy logic here
+    await uploadToBucket(outputPath, options.bucket);
+    
+    console.log('✓ Deploy successful!');
+    return { success: true };
+  } catch (error) {
+    console.error('✗ Deploy failed:', error);
+    return { success: false };
+  }
+}
+
+// project.json
+{
+  "targets": {
+    "deploy": {
+      "executor": "@my-org/deploy:deploy",
+      "options": {
+        "environment": "staging",
+        "bucket": "my-app-staging"
+      },
+      "configurations": {
+        "production": {
+          "environment": "production",
+          "bucket": "my-app-production"
+        }
+      }
+    }
+  }
+}
+
+// Usage
+nx deploy my-app --configuration=production
+```
+
+### 4. Path Mapping
+
+```json
+// tsconfig.base.json
+{
+  "compilerOptions": {
+    "paths": {
+      "@my-org/ui": ["libs/ui/src/index.ts"],
+      "@my-org/data-access": ["libs/data-access/src/index.ts"],
+      "@my-org/utils": ["libs/utils/src/index.ts"],
+      "@my-org/*": ["libs/*/src/index.ts"]
+    }
+  }
+}
+
+// Usage in any project
+import { Button } from '@my-org/ui';
+import { ApiClient } from '@my-org/data-access';
+import { formatDate } from '@my-org/utils';
+
+// No relative paths needed!
+// import { Button } from '../../../libs/ui/src/lib/button'; ❌
+```
+
+### 5. Plugin Development
+
+```typescript
+// libs/nx-plugin/src/generators/my-generator/generator.ts
+import {
+  addProjectConfiguration,
+  formatFiles,
+  generateFiles,
+  Tree
+} from '@nx/devkit';
+import * as path from 'path';
+
+export async function myGenerator(tree: Tree, options: any) {
+  const projectRoot = `libs/${options.name}`;
+  
+  // Add project to workspace
+  addProjectConfiguration(tree, options.name, {
+    root: projectRoot,
+    projectType: 'library',
+    sourceRoot: `${projectRoot}/src`,
+    targets: {
+      build: {
+        executor: '@nx/js:tsc',
+        options: {
+          outputPath: `dist/${projectRoot}`,
+          main: `${projectRoot}/src/index.ts`,
+          tsConfig: `${projectRoot}/tsconfig.lib.json`
+        }
+      }
+    }
+  });
+  
+  // Generate files
+  generateFiles(
+    tree,
+    path.join(__dirname, 'files'),
+    projectRoot,
+    options
+  );
+  
+  await formatFiles(tree);
+}
+
+// Publish as npm package
+// npm publish @my-org/nx-plugin
+```
+
+## Migration and Upgrades
+
+### Migrating to Nx
+
+```bash
+# From Lerna
+nx migrate lerna-to-nx
+npm install
+nx migrate --run-migrations
+
+# From Yarn Workspaces
+npx nx@latest init
+
+# From Create React App
+npx nx@latest init
+nx g @nx/react:app my-app --bundler=webpack
+
+# From Angular CLI
+ng add @nx/workspace
+```
+
+### Updating Nx
+
+```bash
+# Update to latest version
+nx migrate latest
+
+# Or specific version
+nx migrate 17.0.0
+
+# Review changes in migrations.json
+cat migrations.json
+
+# Apply migrations
+nx migrate --run-migrations
+
+# Clean up
+rm migrations.json
+```
+
+## Common Mistakes
+
+### 1. Not Using Affected Commands
+
+```bash
+# Wrong: Running all tests in CI
+nx run-many --target=test --all
+# Time: 30 minutes (wastes time and resources)
+
+# Correct: Test only affected
+nx affected --target=test --base=origin/main
+# Time: 2 minutes (only changed projects)
+```
+
+### 2. Incorrect Library Dependencies
+
+```typescript
+// Wrong: Circular dependency
+// libs/feature-a/src/index.ts
+import { FeatureB } from '@my-org/feature-b';
+
+// libs/feature-b/src/index.ts
+import { FeatureA } from '@my-org/feature-a'; // ❌ Circular!
+
+// Correct: Extract shared code
+// libs/shared/src/index.ts
+export { SharedUtil } from './lib/shared-util';
+
+// Both features import from shared
+import { SharedUtil } from '@my-org/shared'; // ✓
+```
+
+### 3. Ignoring Module Boundaries
+
+```typescript
+// Wrong: Importing internal implementation
+import { InternalHelper } from '@my-org/ui/src/lib/internal/helper';
+// ❌ Accessing non-exported internals
+
+// Correct: Use public API
+import { Helper } from '@my-org/ui';
+// ✓ Using exported API
+```
+
+### 4. Not Configuring Cache Inputs
+
+```json
+// Wrong: Cache without proper inputs
+{
+  "targets": {
+    "build": {
+      "cache": true
+      // Missing: what invalidates the cache?
+    }
+  }
+}
+
+// Correct: Specify cache inputs
+{
+  "targets": {
+    "build": {
+      "cache": true,
+      "inputs": [
+        "production",
+        "^production",
+        { "env": "API_URL" }
+      ],
+      "outputs": ["{options.outputPath}"]
+    }
+  }
+}
+```
+
+## Best Practices
+
+### 1. Organize Libraries by Type
+
+```
+libs/
+├── features/          # Feature modules
+│   ├── dashboard/
+│   └── user-profile/
+├── ui/               # UI components
+│   ├── buttons/
+│   └── forms/
+├── data-access/      # API clients
+│   ├── users/
+│   └── posts/
+└── utils/            # Utilities
+    ├── date/
+    └── validation/
+```
+
+### 2. Use Tags for Boundaries
+
+```json
+{
+  "name": "feature-dashboard",
+  "tags": ["scope:web", "type:feature"],
+  
+  "name": "ui-buttons",
+  "tags": ["scope:shared", "type:ui"],
+  
+  "name": "data-access-users",
+  "tags": ["scope:shared", "type:data-access"]
+}
+```
+
+### 3. Leverage Nx Cloud for Teams
+
+```bash
+# Connect workspace to Nx Cloud
+nx connect-to-nx-cloud
+
+# Benefits:
+# - Distributed caching across team
+# - Faster CI/CD
+# - Build insights and analytics
+# - Distributed task execution (DTE)
+```
+
+### 4. Use Affected in CI/CD
+
+```bash
+# Only build/test what changed
+nx affected --target=build --base=origin/main --head=HEAD
+nx affected --target=test --base=origin/main --head=HEAD
+```
+
+## When to Use Nx
+
+### Ideal Use Cases
+
+1. **Monorepos**: Managing multiple apps/libraries in one repository
+2. **Micro-frontend Architectures**: Shared component libraries
+3. **Full-stack Applications**: Frontend + Backend + Shared code
+4. **Large Teams**: Enforcing architectural boundaries
+5. **Complex CI/CD**: Optimizing build times with affected commands
+
+### When to Consider Alternatives
+
+```javascript
+// Use Turborepo if:
+const useTurborepo = [
+  'Prefer simpler, more opinionated tool',
+  'Package-based monorepo with independent versions',
+  'Minimal configuration preference',
+  'Primarily JavaScript/TypeScript focus'
+];
+
+// Use Lerna if:
+const useLerna = [
+  'Legacy monorepo already using Lerna',
+  'Independent package versioning critical',
+  'Publishing multiple npm packages',
+  'Simpler monorepo without advanced features'
+];
+
+// Use Single Repo if:
+const useSingleRepo = [
+  'Single application',
+  'No code sharing needs',
+  'Small team',
+  'Simple project structure'
+];
+```
+
+## Interview Questions
+
+### 1. How does Nx's computation caching work?
+
+**Answer:** Nx caches task results based on inputs (source files, dependencies, environment variables) and stores outputs in `.cache/nx`. When running a task, Nx computes a hash from inputs and checks if cached results exist. On cache hit, it restores outputs instead of re-running the task. Remote caching via Nx Cloud shares cache across developers and CI/CD, dramatically reducing build times. Cache invalidation happens automatically when inputs change.
+
+### 2. What are affected commands and why are they important?
+
+**Answer:** Affected commands identify which projects are impacted by code changes and only run tasks (test, build, lint) on those projects. Nx analyzes the dependency graph and Git changes to determine affected projects. This is crucial for CI/CD optimization, reducing build times from hours to minutes in large monorepos by skipping unnecessary work. It's calculated using `--base` (comparison point) and `--head` (current state) commits.
+
+### 3. Explain Nx's module boundary enforcement.
+
+**Answer:** Module boundaries enforce architectural constraints using ESLint rules and project tags. Tags define project characteristics (scope, type, platform), and `depConstraints` specify allowed dependencies. For example, UI libraries can't import from feature libraries, or web apps can't import from API-only code. This prevents circular dependencies, maintains clean architecture, and enforces separation of concerns. Violations cause lint errors at development time.
+
+### 4. How do generators and executors differ?
+
+**Answer:** Generators create and modify code through scaffolding (code generation), running once to set up projects, components, or files. They use templates and AST manipulation. Executors run tasks like build, test, or deploy, executing repeatedly during development and CI/CD. Generators are for project setup; executors are for task automation. Both are extensible through custom implementations in the workspace or published plugins.
+
+### 5. What's the difference between Nx and Turborepo?
+
+**Answer:** Nx is a comprehensive build system with code generation, dependency graph management, module boundaries, and extensive plugin ecosystem. It's opinionated about workspace structure and provides rich features. Turborepo is simpler and more flexible, focusing on task orchestration and caching with minimal configuration. Nx is better for complex monorepos needing architectural enforcement; Turborepo suits teams wanting lightweight tooling. Both provide caching and affected detection.
+
+### 6. How does Nx integrate with existing build tools?
+
+**Answer:** Nx wraps existing tools (Webpack, Vite, Jest, ESLint) through executors, providing a unified interface while leveraging proven tools. For example, `@nx/webpack:webpack` executor runs Webpack with Nx's caching and affected detection. This approach provides best-of-both-worlds: Nx's intelligence with battle-tested build tools. Nx also supports custom executors to integrate any tool into the workspace.
+
+### 7. What are task dependencies in Nx and how are they configured?
+
+**Answer:** Task dependencies define the order tasks must execute. `dependsOn: ["^build"]` means "build all dependencies first," while `dependsOn: ["build"]` means "build this project first." Task dependencies ensure correct execution order (e.g., build before test) and enable parallel execution of independent tasks. They're configured in `project.json` per-project or `nx.json` globally via `targetDefaults`.
+
+## Key Takeaways
+
+1. **Intelligent monorepo** management with dependency graph analysis and visualization
+2. **Computation caching** (local and remote) dramatically reduces build times
+3. **Affected commands** optimize CI/CD by testing/building only changed projects
+4. **Code generation** through generators accelerates development with consistent scaffolding
+5. **Task orchestration** with dependency awareness ensures correct execution order
+6. **Module boundaries** enforce architectural constraints and prevent violations
+7. **Framework-agnostic** with support for React, Angular, Node, Next.js, and more
+8. **Extensible** through custom generators, executors, and plugins
+9. **Team collaboration** enhanced by Nx Cloud with distributed caching
+10. **Scalable** from single projects to massive monorepos with hundreds of projects
+
+## Resources
+
+- **Official Documentation**: https://nx.dev/
+- **GitHub Repository**: https://github.com/nrwl/nx
+- **Nx Cloud**: https://nx.app/
+- **Interactive Tutorial**: https://nx.dev/getting-started/tutorials
+- **Plugin Registry**: https://nx.dev/plugin-registry
+- **Nx Console** (VS Code extension): Visual interface for Nx
+- **Nx YouTube Channel**: Video tutorials and talks
+- **Community Slack**: Active community support
+- **Blog**: https://blog.nrwl.io/
+- **Nx Conf**: Annual conference with talks and workshops
