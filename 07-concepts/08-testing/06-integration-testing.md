@@ -1,5 +1,17 @@
 # Integration Testing
 
+## The Idea
+
+**In plain English:** Integration testing checks that different parts of your app work correctly when connected together — not just in isolation, but as a team. Think of it as testing whether the pieces actually fit and cooperate once you snap them together.
+
+**Real-world analogy:** Imagine assembling a home entertainment system — you separately test the TV, the sound bar, and the streaming box, and each works fine on its own. But integration testing is when you connect them all with HDMI cables and a remote, and check that pressing "play" on the remote actually makes the right movie appear on screen with sound from the speaker.
+
+- The TV, sound bar, and streaming box = individual code components (each tested alone in unit tests)
+- The HDMI cables and remote signals = the interfaces and data flow connecting components
+- Pressing "play" and verifying picture + sound = an integration test confirming the components work together end-to-end as a group
+
+---
+
 ## Overview
 
 Integration testing verifies that multiple units of code work correctly together. While unit tests focus on isolated components, integration tests validate the interactions between components, services, APIs, and external systems. These tests catch bugs that emerge from component integration, data flow issues, and interface mismatches that unit tests miss.

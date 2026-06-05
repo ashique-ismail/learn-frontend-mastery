@@ -1,5 +1,17 @@
 # Clipboard, Notifications, Geolocation, and File System Access
 
+## The Idea
+
+**In plain English:** Browsers give websites special powers to interact with your device — like reading what you copied, sending pop-up alerts, finding out where you are, or opening files on your computer. Each power requires your explicit permission before the website can use it.
+
+**Real-world analogy:** Think of a new employee at a company who needs to use different resources. Before accessing anything sensitive, they must ask a security guard for permission each time.
+
+- The security guard = the browser's permission system
+- The employee asking for access = the website calling an API (like Clipboard or Geolocation)
+- The sensitive resource (files, location, alerts) = the device feature being requested
+
+---
+
 ## Overview
 
 Modern browsers expose a rich set of platform APIs that go well beyond DOM manipulation. This file covers four commonly-interviewed groups: the **Clipboard API** for reading/writing system clipboard data, the **Notifications API** for system-level push notifications, the **Geolocation API** for device location, and the **File System Access API** for reading and writing files on the local filesystem. Each requires explicit user permission and has important security and UX considerations.
@@ -433,7 +445,7 @@ dropZone.addEventListener('drop', async (e) => {
 ## Comparison Table
 
 | API | Permission Required | Scope | Browser Support |
-|-----|--------------------|----|------|
+| --- | ------------------- | ---- | --------------- |
 | Clipboard write | Auto (user gesture) | Same-origin page | Wide |
 | Clipboard read | Prompt required | Same-origin page | Wide |
 | Notifications (page) | Prompt required | Page lifetime | Wide |

@@ -1,5 +1,17 @@
 # Remix / React Router 7
 
+## The Idea
+
+**In plain English:** Remix is a tool for building websites where the server and the browser work closely together — when you click a button or submit a form, Remix automatically handles fetching the right data from the server and updating the page, without you having to wire it all up yourself. A "framework" here means a set of rules and helpers that take care of the boring, repetitive parts of building a website.
+
+**Real-world analogy:** Think of a restaurant where every table has its own dedicated waiter. When you sit down, your waiter immediately goes to the kitchen to fetch the menu and today's specials (loading your data). When you order food, you hand your order slip directly to that same waiter (submitting a form), and they go handle it in the kitchen and come back with exactly what you need.
+
+- The waiter = the route's loader/action (handles fetching and processing for that specific page)
+- The order slip = the HTML form (the standardized way data travels from you to the kitchen)
+- The kitchen = the server (where the real work and data storage happens)
+
+---
+
 ## What It Is
 
 Remix (merged into React Router 7 as of 2024) is a full-stack React framework that embraces web fundamentals: HTTP, forms, progressive enhancement. Data loading and mutations are colocated with routes.

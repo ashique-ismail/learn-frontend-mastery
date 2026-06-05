@@ -1,5 +1,18 @@
 # Signals and Zoneless Change Detection
 
+## The Idea
+
+**In plain English:** Angular normally watches your entire app for any change and redraws parts of the screen when something updates. Signals are a smarter system where the app only redraws the exact bits that actually changed — and "zoneless" means throwing away the old watchdog (Zone.js) that was monitoring everything, relying solely on those smart signals instead.
+
+**Real-world analogy:** Imagine a large hotel where the front desk calls every single room to ask "do you need anything?" after every guest checks in or out. That's the old system. With signals, each room has a button that lights up only when that specific room needs attention — the front desk responds only to the rooms with lit buttons.
+
+- The front desk = Angular's change detection engine
+- Calling every room = checking every component in the tree
+- Each room's button = a signal tied to a specific component
+- A button lighting up = a signal value being updated
+
+---
+
 ## The Problem with Zone.js-Based Change Detection
 
 Traditional Angular change detection:

@@ -1,5 +1,16 @@
 # Content Projection Implementation
 
+## The Idea
+
+**In plain English:** Content projection is a way to let a reusable component act like a picture frame — it defines the structure and style, but the parent gets to choose what picture (content) goes inside. Instead of hardcoding what a component displays, you leave designated "holes" that the user of the component can fill with their own HTML.
+
+**Real-world analogy:** Think of a restaurant menu that has fixed section labels — "Starter," "Main Course," "Dessert" — but the chef fills each section with different dishes depending on the day. The menu layout is the reusable component, the section labels are the named slots (ng-content with selectors), and the dishes the chef adds each day are the content the parent provides.
+- The menu layout = the Angular component with `ng-content` slots
+- The section labels ("Starter", "Main Course") = the `select` attributes on `ng-content`
+- The daily dishes the chef inserts = the HTML elements the parent passes in between the component's tags
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Content Projection Basics](#content-projection-basics)

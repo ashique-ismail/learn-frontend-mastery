@@ -1,5 +1,17 @@
 # Rendering Strategy Decision Matrix
 
+## The Idea
+
+**In plain English:** A rendering strategy decides *when and where* a web page gets built — during the site build, on a server when you visit, or inside your browser. Choosing the right one affects how fast the page appears, whether search engines can read it, and how much it costs to run.
+
+**Real-world analogy:** Think of a restaurant with three ways to serve food: pre-made meals in a display case, a chef who cooks your order fresh when you sit down, and a chef stationed at a food truck parked near your neighborhood. A smart manager uses a decision matrix to pick which method fits each dish.
+
+- The pre-made display case = SSG (static site generation — pages built once ahead of time)
+- The chef cooking fresh per order = SSR (server-side rendering — page built on demand for each visitor)
+- The food truck near you = Edge rendering (server logic runs close to the user, cutting travel time)
+
+---
+
 ## Overview
 
 Choosing the wrong rendering strategy is one of the most expensive architectural mistakes in frontend development — it affects performance, SEO, infrastructure cost, and developer experience. This guide provides a systematic decision framework covering CSR, SSR, SSG, ISR, PPR, Edge rendering, Islands architecture, and Resumability — with concrete tradeoffs and real-world examples for each.

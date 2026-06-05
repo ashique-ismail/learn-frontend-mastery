@@ -1,10 +1,22 @@
 # Implement Undo/Redo
 
+## The Idea
+
+**In plain English:** Undo/Redo is a feature that lets you reverse your last action (undo) or bring it back (redo). The program keeps two ordered lists — a "past" list of everything you've done and a "future" list of things you've undone — so it can travel backward and forward through your history of changes.
+
+**Real-world analogy:** Imagine a stack of paper trays on a desk. As you write pages and finish them, you place each page face-down in the LEFT tray (your past). When you realise you made a mistake, you lift the top page off the LEFT tray and put it face-down in the RIGHT tray (your future) — that is undo. When you want it back, you take the top page from the RIGHT tray and put it back in the LEFT tray — that is redo. A new page you write immediately clears out everything in the RIGHT tray, because you have moved on to a new timeline.
+
+- The left tray = the "past" stack (every previous state you saved)
+- The right tray = the "future" stack (states you have undone but could restore)
+- The page you are currently writing = the "present" state (what is on screen right now)
+
+---
+
 ## Core Data Structure
 
 Keep a stack of past states and a stack of future states:
 
-```
+```text
 past:    [state0, state1, state2]
 present: state3
 future:  []

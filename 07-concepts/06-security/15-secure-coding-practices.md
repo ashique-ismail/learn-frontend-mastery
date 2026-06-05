@@ -1,5 +1,16 @@
 # Secure Coding Practices
 
+## The Idea
+
+**In plain English:** Secure coding practices are a set of habits and rules developers follow while writing code to prevent attackers from breaking, stealing data from, or hijacking an application. Think of it as building a house with locks, alarms, and strong walls from day one, rather than adding them after someone breaks in.
+
+**Real-world analogy:** Imagine a hospital where access to different areas is carefully controlled. A receptionist can greet visitors and schedule appointments, but cannot enter the operating room or access medical records. A nurse can access patient rooms and records, but cannot perform surgery. A surgeon can operate, but cannot prescribe medication without a second sign-off from a pharmacist.
+- The hospital's different areas = different parts of an application (database, admin panel, user data)
+- Each staff member's access badge = a user's permissions in code
+- Requiring two sign-offs for prescriptions = separation of duties (no single person can do everything critical alone)
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Principle of Least Privilege](#principle-of-least-privilege)

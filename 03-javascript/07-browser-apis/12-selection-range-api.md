@@ -1,5 +1,17 @@
 # Selection API and Range API
 
+## The Idea
+
+**In plain English:** The Selection API and Range API let your code know exactly what text a user has highlighted on a webpage, and also let the code highlight or manipulate any chunk of text on its own. A "range" is just a precise description of a start point and an end point inside the page's content.
+
+**Real-world analogy:** Imagine you are reading a physical book and you use a highlighter pen to mark a passage. You place the cap of the pen at one word (the start) and drag to another word (the end), and everything in between gets colored.
+
+- The highlighter's starting position = the range's `startContainer` and `startOffset`
+- The highlighted span of text = the `Range` object
+- The act of looking at what is already highlighted = `window.getSelection()`
+
+---
+
 ## Overview
 
 The Selection API (`window.getSelection()`) represents what the user has selected on the page. The Range API (`document.createRange()`) represents an arbitrary contiguous portion of the document tree — a start and end position. Together they power rich-text editors, search highlighting, caret positioning, and clipboard operations.
@@ -331,6 +343,7 @@ while (walker.nextNode()) {
 ```
 
 NodeFilter values:
+
 - `FILTER_ACCEPT` — include this node
 - `FILTER_REJECT` — exclude this node AND all descendants
 - `FILTER_SKIP` — exclude this node but traverse descendants

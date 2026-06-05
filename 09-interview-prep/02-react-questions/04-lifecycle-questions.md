@@ -1,5 +1,16 @@
 # React Lifecycle Interview Questions
 
+## The Idea
+
+**In plain English:** Every React component goes through stages from the moment it appears on your screen to the moment it disappears — like being born, growing up, and eventually being removed. React gives you special tools to run your own code at each of those stages.
+
+**Real-world analogy:** Think of a fish tank. You set it up, maintain it while it is running, then drain it when you are done.
+- The initial tank setup (filling water, adding fish) = the mount phase (component appears on screen)
+- The daily feeding and water checks = the update phase (component re-renders when data changes)
+- The draining and cleaning when you are finished = the unmount phase (component is removed and cleanup runs)
+
+---
+
 ## Overview
 
 Component lifecycle questions test your understanding of how React components are created, updated, and destroyed. Modern React relies heavily on hooks like useEffect, but understanding the traditional lifecycle methods and how they map to hooks is crucial for interviews.

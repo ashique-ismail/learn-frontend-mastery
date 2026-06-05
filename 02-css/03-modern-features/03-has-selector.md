@@ -1,5 +1,17 @@
 # CSS `:has()` Selector (Parent Selector)
 
+## The Idea
+
+**In plain English:** The `:has()` selector is a way to style a container in CSS based on what is inside it — for example, making a box look different if it happens to contain a photo. CSS normally can only style things based on their parents or what comes after them, but `:has()` flips that around so a parent can "notice" its children and change its own appearance.
+
+**Real-world analogy:** Imagine a backpack that automatically changes color depending on what you put inside it — if you pack a lunchbox, the backpack turns blue; if there is no lunchbox, it stays grey.
+
+- The backpack = the parent element (e.g., `.card`)
+- What is inside the backpack (the lunchbox) = the child element being checked (e.g., `img`)
+- The color change = the CSS styles applied when the condition is true
+
+---
+
 ## Overview
 
 The `:has()` pseudo-class (called the "parent selector" or "relational selector") allows you to style an element based on its **descendants** or **siblings**. This was previously impossible in CSS without JavaScript.

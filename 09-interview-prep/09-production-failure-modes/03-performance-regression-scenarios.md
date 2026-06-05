@@ -1,5 +1,17 @@
 # Production Failure: Performance Regression Scenarios
 
+## The Idea
+
+**In plain English:** A performance regression is when your app used to be fast but gradually (or suddenly) becomes slow — without breaking or crashing. It is a slowdown that sneaks in over time as developers add new code, and nobody notices until real users start complaining.
+
+**Real-world analogy:** Imagine a highway that was built with 4 lanes and moves traffic smoothly. Over the years, city workers add toll booths, speed bumps, and detours for construction projects — each change seems minor, but together the drive now takes three times as long. Drivers don't see an error sign; the road still works, it's just painfully slow.
+
+- The highway = your web app's JavaScript bundle and rendering pipeline
+- Each new toll booth or speed bump = a new dependency, unoptimized re-render, or blocking data fetch added by a developer
+- The traffic jam commuters experience = the slow page load or janky animation that real users suffer through
+
+---
+
 ## Overview
 
 Performance regressions are the sneakiest class of production issues. They don't throw errors, don't break tests, and often aren't noticed until users start complaining or a monitoring alert fires. These are the scenarios that separate engineers who "optimized once" from engineers who build systems that stay fast.

@@ -1,6 +1,20 @@
 # Next.js App Router: File Conventions and Advanced Routing
 
+## The Idea
+
+**In plain English:** Next.js App Router is a system that automatically turns the folders and files you create inside an `app` directory into pages on a website — so instead of writing code to say "when someone visits /blog, show this page," you just create a file at `app/blog/page.tsx` and Next.js figures out the rest. A "meta-framework" means it is a tool built on top of another tool (React) that adds extra powers like routing, server rendering, and file conventions.
+
+**Real-world analogy:** Think of a large hotel where every room number directly maps to a physical location in the building — Room 304 is always on the 3rd floor, 4th door. You never need a separate directory to look it up; the numbering system is the directory.
+
+- The hotel building = your `app/` folder
+- Each floor/corridor = a subfolder that becomes part of the URL (e.g., `app/blog/`)
+- Each room door = a `page.tsx` file that serves the actual content at that URL
+- The front desk that handles check-in for every room = Next.js itself, which reads the folder structure and sets up all the routes automatically
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [File-based Routing](#file-based-routing)
 - [Special Files](#special-files)

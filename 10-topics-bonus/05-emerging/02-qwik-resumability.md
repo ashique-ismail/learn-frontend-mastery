@@ -1,5 +1,17 @@
 # Qwik and Resumability
 
+## The Idea
+
+**In plain English:** Qwik is a web framework that makes websites load and respond almost instantly by waiting to download code until the exact moment a user actually does something, like clicking a button — instead of downloading everything upfront just in case.
+
+**Real-world analogy:** Imagine a restaurant that, instead of printing the full menu for every customer, gives you a blank card. When you point at a dish on the display board, the waiter instantly brings you just the description of that one dish to read before you order.
+
+- The blank card = the lightweight HTML page sent to the browser (no JavaScript loaded yet)
+- Pointing at a dish = the user clicking a button or interacting with the page
+- The waiter fetching only that dish's description = the browser downloading only the tiny code chunk for that specific action
+
+---
+
 ## Overview
 
 Qwik is a JavaScript framework that rethinks how applications start in the browser. Traditional frameworks (React, Angular, Vue) require **hydration** — downloading and executing all component JavaScript before the app becomes interactive. On slow connections or low-end devices, this means seconds of frozen UI. Qwik introduces **resumability**: the server serializes application state and component logic references (QRLs) into the HTML, and the browser "resumes" where the server left off with zero JavaScript execution on load.

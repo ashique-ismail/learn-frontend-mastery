@@ -1,5 +1,18 @@
 # Code Splitting Strategies
 
+## The Idea
+
+**In plain English:** Code splitting is a technique where you break your website's JavaScript into smaller pieces and only load the piece you actually need right now, instead of forcing the browser to download everything at once. Think of it like only downloading the chapters of a book you are about to read, rather than the entire book upfront.
+
+**Real-world analogy:** Imagine a restaurant that only brings dishes to your table as you order them, rather than placing every item on the menu in front of you the moment you sit down.
+
+- The full menu = all the JavaScript code in your app
+- Each dish = a separate chunk of code for a specific page or feature
+- Ordering a dish = navigating to a page or clicking a button that triggers loading that chunk
+- The kitchen preparing it on demand = the browser fetching and running that chunk only when needed
+
+---
+
 ## Overview
 
 Code splitting is the practice of dividing your application's JavaScript bundle into smaller chunks that can be loaded on demand. Instead of sending users a massive bundle with code they may never use, code splitting enables you to load only what's necessary for the current page or feature, dramatically improving initial load time and performance.

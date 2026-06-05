@@ -1,5 +1,17 @@
 # Whiteboard: Live Coding Patterns
 
+## The Idea
+
+**In plain English:** Live coding patterns are the small, reusable problem-solving recipes that come up again and again when you write code on the spot in an interview — like "delay this action" or "copy this object completely." Knowing these patterns means you have a ready toolkit instead of starting from scratch every time.
+
+**Real-world analogy:** Think of a chef competing on a cooking show who has to improvise a dish in 30 minutes. Before the clock starts, they mentally run through their personal recipe cards — sauces, cuts, techniques — so they can assemble something great under pressure.
+
+- The recipe cards = live coding patterns (debounce, deep clone, Promise.all, etc.)
+- The cooking competition clock = the timed interview session
+- The judge watching the chef explain each step = the interviewer listening to your reasoning out loud
+
+---
+
 ## Overview
 
 Live coding sessions test algorithmic thinking, code quality, and communication under pressure. This guide covers the patterns interviewers reach for most often in frontend roles — data structures, DOM manipulation, async patterns, and functional utilities — with worked examples and a protocol for structuring your approach out loud.
@@ -375,6 +387,7 @@ export class ItemStore<T extends { id: string | number }> {
 **Talk through complexity** — after your solution, state the Big-O time and space. "This is O(n) time and O(n) space because of the Map."
 
 **Edge cases to always mention:**
+
 - Empty input (`[]`, `''`, `null`, `undefined`)
 - Single-element input
 - Duplicate values
@@ -382,6 +395,7 @@ export class ItemStore<T extends { id: string | number }> {
 - Circular references (for clone/traverse)
 
 **When stuck:**
+
 - Solve a smaller version first ("let's ignore circular refs for now")
 - Describe what you'd do even if you can't code it
 - Ask if a built-in helper is in scope ("can I use `Array.flat`?")
@@ -393,7 +407,7 @@ export class ItemStore<T extends { id: string | number }> {
 ## Common Gotchas
 
 | Gotcha | What goes wrong | Fix |
-|---|---|---|
+| --- | --- | --- |
 | `clearTimeout` without storing the id | Timer never clears | Always store the return value |
 | Mutating array inside `reduce` | Subtle aliasing bugs | Spread or concat to create new array |
 | `typeof null === 'object'` | Null treated as cloneable object | Guard with `value === null` first |

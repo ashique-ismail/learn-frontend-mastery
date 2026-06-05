@@ -1,5 +1,18 @@
 # Top-Level Await
 
+## The Idea
+
+**In plain English:** Top-level await lets a JavaScript module pause and wait for something slow (like fetching data from the internet) to finish before the rest of your app can use that module. Think of a "module" as a file of code that other files can borrow from — top-level await makes sure the borrowing file gets everything fully ready, not half-done.
+
+**Real-world analogy:** Imagine you are opening a new coffee shop. Before you unlock the doors for customers, you wait for the milk delivery truck to arrive so you can stock the fridge. Other shops on the street (that don't need your milk) open normally without waiting.
+
+- The coffee shop preparing before opening = the module running its top-level await before finishing its setup
+- The milk delivery truck arriving = the async operation (like a network fetch) completing
+- The customers who can only enter after the shop opens = other modules that import from this one and must wait for it to be ready
+- The other shops opening independently = sibling modules that have no dependency on this one and run in parallel
+
+---
+
 ## Overview
 
 Top-level await (TLA) allows the `await` operator to be used outside of an `async` function — directly at the top level of an ES module. Introduced in ES2022 and standardized as part of the ECMAScript specification, TLA changes how modules initialize, enabling dynamic import decisions, conditional polyfill loading, and resource acquisition as part of module evaluation.

@@ -1,5 +1,18 @@
 # Focus Trapping
 
+## The Idea
+
+**In plain English:** Focus trapping means keeping keyboard navigation (the Tab key) contained inside a specific area — like a modal dialog — so that users who navigate by keyboard can't accidentally tab behind it to invisible content they can't see or interact with.
+
+**Real-world analogy:** Think of a bouncer at a VIP room inside a club. While the VIP room door is open, guests can only circulate within that room — the bouncer stops anyone from wandering back into the main club area. Once the VIP room closes, everyone is free to move around the whole venue again.
+
+- The VIP room = the open modal or dialog
+- The bouncer = the focus trap logic intercepting Tab key presses
+- Guests circulating only within the room = keyboard focus cycling through only the modal's interactive elements
+- The VIP room closing = the modal being dismissed, focus trap released
+
+---
+
 ## Table of Contents
 - [Why Focus Trapping Is Required](#why-focus-trapping-is-required)
 - [The Focus Trap Algorithm](#the-focus-trap-algorithm)

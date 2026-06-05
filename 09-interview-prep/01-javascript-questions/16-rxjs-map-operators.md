@@ -1,5 +1,17 @@
 # map, mergeMap, switchMap, concatMap — Differences
 
+## The Idea
+
+**In plain English:** RxJS map operators are tools for transforming a stream of events or data, where each incoming value triggers some work — and the key difference is what happens when new work arrives before the previous work has finished. A "stream" is just a sequence of values that arrive over time, like messages in a chat.
+
+**Real-world analogy:** Imagine a busy diner where a cashier shouts out food orders to a single cook. When a new order comes in while the cook is still preparing the previous one, different diners have different policies:
+
+- The cashier (source stream) = the Observable emitting new values
+- Each food order (a new emission) = a new inner task triggered by the source
+- The cook's policy for handling overlapping orders = the map operator you choose (switch, merge, concat, or exhaust)
+
+---
+
 ## The Core Question: What Happens When the Source Emits While an Inner Observable Is Still Running?
 
 All four operators transform each source emission using a function. The difference is **how they handle concurrency** — what happens when a new source value arrives before the previous inner observable has completed.

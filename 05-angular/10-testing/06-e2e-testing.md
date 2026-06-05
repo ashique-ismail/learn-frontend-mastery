@@ -1,5 +1,16 @@
 # End-to-End Testing in Angular with Cypress and Playwright
 
+## The Idea
+
+**In plain English:** End-to-end (E2E) testing means running your entire app as a real user would — clicking buttons, filling forms, and checking what appears on screen — to make sure every piece works together from start to finish. Unlike tests that check one small function in isolation, E2E tests follow a whole journey through the app, just like a person using it would.
+
+**Real-world analogy:** Imagine a restaurant inspector who visits your diner and orders a full meal from start to finish — they walk in, read the menu, place an order, watch it get cooked, receive the plate, taste the food, pay the bill, and leave. They are not just checking the stove in isolation; they are verifying the whole experience works end-to-end.
+- The inspector = the E2E test runner (Cypress or Playwright)
+- The diner customer journey (sit, order, eat, pay) = the user flow being tested
+- The meal arriving correctly and tasting right = the assertions that check what appears on screen
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Cypress Fundamentals](#cypress-fundamentals)

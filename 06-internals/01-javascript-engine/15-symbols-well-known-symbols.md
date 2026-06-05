@@ -1,5 +1,17 @@
 # Symbols and Well-Known Symbols
 
+## The Idea
+
+**In plain English:** A symbol is a guaranteed-unique label that JavaScript can create for you — no two symbols are ever equal, even if they look the same. Well-known symbols are special built-in labels that JavaScript itself looks for to decide how your objects behave in things like loops or type conversions.
+
+**Real-world analogy:** Imagine a coat-check room at a concert venue. Every coat is given a numbered token. Even if two people both receive a token labeled "7", they are physically different tokens — only the exact token you were handed will retrieve your coat.
+
+- The token = a Symbol (a unique identifier, not just a label)
+- The coat-check label printed on the token = the Symbol's description (just for humans to read, does not determine uniqueness)
+- The well-known coat-check slot labeled "VIP" that all venues reserve = a well-known Symbol (a pre-agreed slot JavaScript uses internally, like `Symbol.iterator`)
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [Symbol Basics](#symbol-basics)

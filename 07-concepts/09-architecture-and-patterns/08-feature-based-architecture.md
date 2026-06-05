@@ -1,5 +1,17 @@
 # Feature-Based Architecture
 
+## The Idea
+
+**In plain English:** Feature-based architecture is a way of organizing a codebase by grouping all the code for one specific thing the app can do (a "feature") into its own folder, instead of spreading it across separate folders for each type of file. A "feature" is just a distinct capability of your app, like a shopping cart or a user profile.
+
+**Real-world analogy:** Think of a school where each subject has its own dedicated classroom that contains everything needed for that class — the textbooks, the worksheets, the teacher's materials, and the supplies — all in one room. Compare that to a school where all textbooks are stored in one giant room, all worksheets in another, and all supplies in a third, so every teacher has to run to multiple rooms to get what they need.
+
+- The subject classroom = a feature folder (e.g., `shopping-cart/`)
+- The textbooks, worksheets, and supplies inside that room = the components, logic, and data files for that feature
+- The giant shared supply closet = the `shared/` folder for things every class genuinely needs
+
+---
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Feature vs Layer Organization](#feature-vs-layer-organization)

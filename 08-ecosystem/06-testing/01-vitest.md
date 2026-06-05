@@ -1,5 +1,17 @@
 # Vitest - Modern Testing Framework
 
+## The Idea
+
+**In plain English:** Vitest is a tool that automatically checks your code for you — you write small scripts that say "if I do X, I expect Y to happen," and Vitest runs all those checks instantly to tell you if anything is broken. A "test" is just a mini-program that verifies your real code behaves correctly.
+
+**Real-world analogy:** Imagine a car factory that uses a checklist to inspect every car before it leaves the building. A worker tests the headlights, checks the brakes, and honks the horn — each check confirms one specific thing works. If a new change accidentally breaks the brakes, the checklist catches it before the car ships.
+
+- The checklist = your test suite (the collection of all tests)
+- Each individual inspection step = a single test (e.g., "expect button to show text")
+- The worker running the checklist = Vitest (the tool that executes all your tests automatically)
+
+---
+
 ## Overview
 
 Vitest is a blazing-fast unit testing framework powered by Vite. It provides a Jest-compatible API with native ESM support, TypeScript support out of the box, and exceptional performance through smart caching and parallel execution. Vitest is the natural choice for Vite projects but works with any modern JavaScript/TypeScript application.
@@ -727,6 +739,7 @@ export default defineWorkspace([
 ## When to Use Vitest
 
 **Use Vitest when:**
+
 - Building Vite-based applications
 - Want faster test execution
 - Need native ESM support
@@ -736,6 +749,7 @@ export default defineWorkspace([
 - Want excellent developer experience
 
 **Consider alternatives when:**
+
 - Using Create React App (use Jest)
 - Need maximum ecosystem maturity (use Jest)
 - Working with legacy codebases (use Jest)

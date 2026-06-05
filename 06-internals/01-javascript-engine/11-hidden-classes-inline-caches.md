@@ -1,5 +1,17 @@
 # Hidden Classes and Inline Caches
 
+## The Idea
+
+**In plain English:** JavaScript engines like V8 secretly track the "shape" of your objects (which properties they have and in what order) using hidden classes, then use that knowledge to remember shortcuts — called inline caches — so that looking up a property is nearly instant instead of searching through a dictionary every time.
+
+**Real-world analogy:** Imagine a hotel front desk that handles thousands of guests. At first, the clerk looks up every guest's room in a big binder (slow). After a while, they notice that guests in suits always stay in Room 101, guests with backpacks always stay in Room 202, and so on. They write these patterns on sticky notes (the cache). Now when a suited guest walks up, the clerk instantly says "Room 101" without opening the binder.
+
+- The guest's outfit (suit, backpack, etc.) = the hidden class (the shape of the object)
+- The sticky note shortcut = the inline cache (the remembered offset for that shape)
+- A guest who dresses differently every day = an object whose shape keeps changing, forcing the clerk to abandon the sticky note and go back to the binder (megamorphic / slow path)
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [Hidden Classes (Maps/Shapes)](#hidden-classes-mapsshapes)

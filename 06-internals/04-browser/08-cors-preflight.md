@@ -1,5 +1,18 @@
 # CORS and Preflight Requests
 
+## The Idea
+
+**In plain English:** CORS (Cross-Origin Resource Sharing) is the browser's security rule that prevents a webpage on one website from secretly reading data from a completely different website — unless that other site explicitly says it's okay.
+
+**Real-world analogy:** Think of a nightclub with a guest list. If you show up and you're not on the list, the bouncer turns you away — even if the party host inside would actually be happy to see you. The host has to add your name to the list first (set the right headers on the server), otherwise the bouncer (the browser) blocks you regardless.
+
+- The nightclub = the server being requested
+- The guest list = the `Access-Control-Allow-Origin` response header
+- The bouncer = the browser enforcing CORS
+- The preflight "are you on the list?" check = the `OPTIONS` request sent before the real request
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Same-Origin Policy](#same-origin-policy)

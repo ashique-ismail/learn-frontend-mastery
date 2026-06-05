@@ -1,5 +1,18 @@
 # Implement Drag-and-Drop List Reorder
 
+## The Idea
+
+**In plain English:** Drag-and-drop reordering lets users pick up an item in a list by clicking and holding it, move it to a new position, and release it there so the list updates instantly. The browser (or your code) tracks where the item was picked up from and where it was dropped, then rearranges the data to match.
+
+**Real-world analogy:** Imagine you have a stack of index cards laid out on a table, each with a task written on it. You pick up the "Buy groceries" card, slide it above the "Call the dentist" card, and set it down. The stack is now in a new order.
+
+- The index cards = the list items (the data being reordered)
+- Your hand picking up a card = the `dragstart` event (recording which item you grabbed)
+- Sliding the card over another = the `dragover` event (tracking where you might drop it)
+- Setting the card down = the `drop` event (calculating the new order and updating the list)
+
+---
+
 ## HTML5 Drag-and-Drop API
 
 ```tsx

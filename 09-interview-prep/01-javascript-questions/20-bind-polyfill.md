@@ -1,5 +1,17 @@
 # Implement Function.prototype.bind Polyfill
 
+## The Idea
+
+**In plain English:** `bind` is a way to lock a function to a specific object so that no matter how or when you call the function later, it always behaves as if it belongs to that object. A "polyfill" means writing that feature yourself from scratch, in case the browser does not have it built in.
+
+**Real-world analogy:** Imagine a restaurant chef who normally cooks for whichever kitchen hires them that day. Now the chef signs a permanent contract with one specific restaurant — no matter where they physically show up, they always cook that restaurant's menu with that restaurant's ingredients.
+
+- The chef = the function
+- The restaurant they sign a contract with = the `this` object passed to `bind`
+- The signed contract = the new bound function returned by `bind`
+
+---
+
 ## What `bind` Does
 
 `bind` returns a **new function** that, when called, has its `this` permanently fixed to a given value, with optional pre-filled (partially applied) arguments.

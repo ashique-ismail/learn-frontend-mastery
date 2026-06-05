@@ -1,5 +1,18 @@
 # CPU Profiling and Flame Graphs
 
+## The Idea
+
+**In plain English:** CPU profiling is the process of recording which parts of your code are running and for how long, so you can find the slow spots. A flame graph is the chart that visualizes this recording — each bar shows a function that ran, and wider bars mean that function took more time.
+
+**Real-world analogy:** Imagine a chef preparing a multi-course meal and someone films the entire kitchen from above, timing every action. After the meal, you review the footage and notice the chef spent 40 of 60 minutes just chopping vegetables for one dish.
+
+- The kitchen camera recording = the CPU profiler sampling the running code
+- Each task the chef performs (chop, stir, plate) = each function call on the call stack
+- The width of time spent on each task in the footage = the width of a bar in the flame graph
+- Spotting the longest task (chopping) = finding the performance bottleneck to optimize
+
+---
+
 ## Overview
 
 CPU profiling measures where your JavaScript spends time. A flame graph is the visual representation: a stack of call frames, width proportional to time spent. Learning to read one is the skill that separates engineers who "added `useMemo`" from engineers who found the actual bottleneck.

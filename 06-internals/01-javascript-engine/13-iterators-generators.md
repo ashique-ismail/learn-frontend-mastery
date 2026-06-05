@@ -1,5 +1,18 @@
 # Iterators and Generators
 
+## The Idea
+
+**In plain English:** Iterators and generators are tools that let you go through a list of items one at a time, pausing between each one instead of loading everything at once. A generator is a special kind of function that can hand you one value, wait, and then pick up right where it left off when you ask for the next one.
+
+**Real-world analogy:** Think of a vending machine that dispenses snacks one at a time. You press the button, it drops one snack and stops. You press it again, it drops another. It does not pour every snack out at once.
+
+- The vending machine = the generator function (holds all possible values but releases them on demand)
+- Pressing the button = calling `.next()` (asking for the next value)
+- The snack that drops out = the `yield`ed value returned to you
+- The machine running out of stock = `done: true` (no more values to give)
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [Iterator Protocol](#iterator-protocol)

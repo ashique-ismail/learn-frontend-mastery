@@ -1,5 +1,17 @@
 # Mobile-First vs Desktop-First: Progressive Enhancement Strategies
 
+## The Idea
+
+**In plain English:** When you build a website, you have to decide whether to design it for small phone screens first and then scale it up for bigger screens, or start with a big desktop layout and shrink it down for phones. "Mobile-first" means starting small and adding more features as the screen gets bigger; "desktop-first" means starting big and stripping things away as the screen shrinks.
+
+**Real-world analogy:** Think about packing a suitcase for a trip. If you're flying with only a carry-on (mobile-first), you start by packing only the essentials — then, if you get a bigger bag, you add extras like dress shoes or a hairdryer. But if you start with a giant checked bag (desktop-first), you throw everything in, and then have to remove items if you end up needing to switch to a carry-on.
+- The carry-on bag = the small mobile screen (your baseline)
+- The giant checked bag = the large desktop screen (the starting point in desktop-first)
+- Each item you add when upgrading to the bigger bag = a CSS rule inside a `min-width` media query (mobile-first enhancements)
+- Each item you remove when switching to the carry-on = a CSS rule inside a `max-width` media query (desktop-first overrides)
+
+---
+
 ## Learning Objectives
 - Understand the difference between mobile-first and desktop-first approaches
 - Master min-width vs max-width media query strategies

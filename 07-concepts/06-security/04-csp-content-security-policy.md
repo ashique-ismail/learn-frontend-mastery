@@ -1,5 +1,17 @@
 # CSP (Content Security Policy)
 
+## The Idea
+
+**In plain English:** CSP is a set of rules you send to a web browser telling it exactly which places on the internet it is allowed to load scripts, images, and other content from for your website. If something tries to sneak in from a location that is not on the approved list, the browser ignores it completely.
+
+**Real-world analogy:** Imagine a school that only lets students eat food brought from an approved list of caterers. A lunch monitor checks every tray at the cafeteria door and turns away anything that did not come from an approved supplier — even if it looks perfectly fine.
+- The approved caterer list = the CSP header (the list of trusted sources)
+- The lunch monitor = the browser enforcing the policy
+- An unknown supplier trying to sneak food in = an attacker injecting a malicious script
+- A student's tray being turned away = the browser blocking the unauthorized resource
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [How CSP Works](#how-csp-works)

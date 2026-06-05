@@ -1,5 +1,18 @@
 # Compositor Threads and GPU Layer Promotion
 
+## The Idea
+
+**In plain English:** When your browser draws a webpage, it splits the visual content into separate layers (like stacked transparent sheets) and hands them to your computer's graphics chip (GPU) to combine into the final image. This lets certain animations run silently on the GPU without interrupting the main program doing all the other work.
+
+**Real-world analogy:** Imagine a stage production where the director (main thread) pre-paints scenery onto separate transparent slides, then hands them to a dedicated projectionist (compositor thread) who layers them on the screen. The projectionist can slide, fade, or stack the panels on the fly — without ever stopping the director from writing the next scene.
+
+- The director pre-painting scenes = the main thread computing layout and paint
+- Each transparent slide = a compositor layer (a GPU texture)
+- The projectionist layering slides = the compositor thread combining layers on the GPU
+- Physically sliding a panel = animating with `transform` or `opacity` (no repainting needed)
+
+---
+
 ## Overview
 
 The browser rendering pipeline has multiple threads. Understanding which work runs on which thread — and how to move expensive work off the main thread onto the compositor — is the foundation of achieving consistent 60fps animations and avoiding jank.

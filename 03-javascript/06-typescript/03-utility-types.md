@@ -1,5 +1,18 @@
 # Utility Types in TypeScript
 
+## The Idea
+
+**In plain English:** Utility types are ready-made tools built into TypeScript that let you take an existing description of data and reshape it — for example, making every field optional, removing a field, or grabbing only a few fields — without rewriting the whole description from scratch.
+
+**Real-world analogy:** Imagine a standard employment form with fields for name, address, phone, salary, and start date. When you need a quick contact card, you do not reprint the whole form — you just photocopy only the name and phone section. When someone is still interviewing, you hand them the same form but mark every field as "fill in later." TypeScript utility types do exactly this for your data shapes.
+
+- The full employment form = the original TypeScript type (e.g., `User`)
+- Photocopying only certain fields = `Pick<User, "name" | "phone">`
+- Marking every field as "fill in later" = `Partial<User>`
+- The finished, fully filled-out form = `Required<User>`
+
+---
+
 ## Overview
 
 TypeScript ships with a set of built-in generic type utilities that transform types — making properties optional or required, picking subsets of properties, constructing record types, and extracting type information from functions and classes. These utility types eliminate the need to hand-write common type transformations and are themselves implemented using mapped types and conditional types, so studying them is also a lesson in TypeScript's underlying type machinery.

@@ -1,5 +1,17 @@
 # WebGL Basics
 
+## The Idea
+
+**In plain English:** WebGL is a tool built into your web browser that lets a webpage draw fast, detailed 2D and 3D graphics directly using your computer's graphics chip (GPU), the same chip used to run video games — no extra software needed.
+
+**Real-world analogy:** Think of a movie studio shooting a scene on a green screen. The director writes a script describing where every actor and prop should stand (the geometry). A lighting crew then runs through every pixel of the final image and decides what color it should be based on the lights, shadows, and costumes (the coloring step). The finished frame is sent to the projector screen for the audience to see.
+
+- The director's script listing positions = the vertex shader (tells the GPU where each point in your shape sits on screen)
+- The lighting crew coloring each pixel = the fragment shader (tells the GPU what color to paint each tiny dot)
+- The projector screen = the HTML canvas element (the surface in the browser where the final image appears)
+
+---
+
 ## Introduction
 
 WebGL (Web Graphics Library) is a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without plugins. Based on OpenGL ES, WebGL provides hardware-accelerated graphics rendering capabilities through the HTML5 canvas element.

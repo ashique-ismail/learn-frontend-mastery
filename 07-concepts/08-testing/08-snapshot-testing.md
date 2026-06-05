@@ -1,5 +1,17 @@
 # Snapshot Testing
 
+## The Idea
+
+**In plain English:** Snapshot testing is a way to automatically remember exactly what your app looks like at a point in time, then alert you if anything changes unexpectedly. Think of it like saving a "photo" of your code's output so you can spot differences later — a "snapshot" is just that saved copy.
+
+**Real-world analogy:** Imagine you take a photo of your bedroom before leaving for a trip. When you return, you compare the room to the photo to see if anything was moved or changed.
+
+- The photo you took = the saved snapshot file
+- Your bedroom as it looks now = the current output of your component
+- Spotting a moved lamp in the comparison = a failing snapshot test flagging an unexpected change
+
+---
+
 ## Overview
 
 Snapshot testing captures the output of a component or function and saves it as a reference "snapshot". Future test runs compare current output against the stored snapshot, failing if they don't match. While snapshot tests catch unexpected changes quickly, they must be used judiciously to avoid brittle tests that create maintenance burden without providing real value.

@@ -1,5 +1,18 @@
 # System Design: Twitter Feed
 
+## The Idea
+
+**In plain English:** Designing a Twitter feed means planning how to build a system that can collect posts (tweets) from thousands of people and instantly show the right ones to each user in a smooth, scrollable list — even when millions of people are using it at the same time.
+
+**Real-world analogy:** Imagine a busy coffee shop bulletin board where regulars pin new notes every few seconds, and each customer only wants to see notes from their friends. A staff member watches for new notes, grabs the latest ones for you, and quietly removes old ones you've scrolled past so the board never gets overloaded:
+
+- The bulletin board = the feed UI displayed in your browser
+- The staff member watching for new notes = the WebSocket connection that listens for real-time updates
+- Grabbing notes in batches as you scroll down = cursor-based pagination (loading tweets in chunks instead of all at once)
+- Removing notes you've already passed = virtual scrolling (only keeping visible tweet cards in memory)
+
+---
+
 ## Overview
 
 Design a scalable Twitter-like feed with infinite scroll, real-time updates, pagination, caching, virtualization, and efficient state management. This document covers architecture decisions, implementation strategies, and trade-offs for building a production-ready social media feed.

@@ -1,5 +1,18 @@
 # History API and Navigation
 
+## The Idea
+
+**In plain English:** The History API lets a website change the address bar URL and keep a record of where you have been — all without making the browser reload the page. It is the behind-the-scenes mechanism that makes clicking Back and Forward still work on modern single-page apps (websites that load once and swap content in place).
+
+**Real-world analogy:** Think of a librarian keeping a logbook of every shelf you visit in a library. When you walk back to the front desk and say "take me back," the librarian flips to the previous entry and walks you there — no need to leave and re-enter the building.
+
+- The logbook = the browser's session history stack
+- Writing a new entry in the logbook = calling `history.pushState()`
+- Saying "take me back" = pressing the browser Back button, which fires the `popstate` event
+- The current page you are standing on = `location.pathname`
+
+---
+
 ## Overview
 
 The History API enables JavaScript to manipulate the browser's session history—the stack of pages visited in a tab—without triggering full page reloads. This is the foundation of client-side routing in every major SPA framework (React Router, Vue Router, Angular Router). Understanding the History API's state model, the popstate event, and how it relates to the newer Navigation API is critical for senior interviews in frontend engineering.
@@ -302,7 +315,7 @@ function navigate(url, state = {}) {
 ## Comparison Table
 
 | Feature | Hash Routing | History API | Navigation API |
-|---------|-------------|-------------|----------------|
+| ------- | ----------- | ----------- | -------------- |
 | URL format | `/app#/route` | `/route` | `/route` |
 | Server-side routing needed | No | Yes | Yes |
 | SEO friendly | Partial | Yes | Yes |

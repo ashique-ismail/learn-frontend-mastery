@@ -1,5 +1,17 @@
 # BEM vs Utility-First (Tailwind) Tradeoffs
 
+## The Idea
+
+**In plain English:** BEM and utility-first are two different strategies for writing CSS class names that style a webpage. BEM means you name each part of a component after what it is, while utility-first means you pile on tiny pre-made classes that each do one small thing (like "make this text bold" or "add space around this box").
+
+**Real-world analogy:** Think about getting dressed in the morning. With BEM, you own a wardrobe of complete outfits — each outfit (like "interview-suit" or "gym-outfit") is labelled by its purpose, and you just grab the right one. With utility-first, you own a drawer of individual pieces — a white shirt, black trousers, a belt — and you combine them fresh each time.
+
+- The labelled outfit = a BEM component class (e.g. `.card--featured`)
+- The individual clothing piece = a utility class (e.g. `text-white`, `p-4`)
+- Picking an outfit by name = writing one semantic class that bundles all styles
+
+---
+
 ## BEM (Block__Element--Modifier)
 
 ### Naming Convention

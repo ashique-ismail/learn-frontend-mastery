@@ -1,5 +1,17 @@
 # Prototypes and Inheritance
 
+## The Idea
+
+**In plain English:** Prototypes and inheritance let one object automatically borrow properties and abilities from another object, so you do not have to copy the same things over and over. An "object" here just means a container that holds data and actions, like a record card with fields you can read and change.
+
+**Real-world analogy:** Imagine a company where every employee gets a standard employee handbook that lists rules everyone follows (like how to book a meeting room). Each individual employee also has their own personal desk with their own name badge and specific job title. When you need to know a rule, you check the employee's own desk first; if the rule is not there, you reach for the shared handbook.
+
+- The individual employee's desk = the object itself (its own properties)
+- The shared employee handbook = the prototype (shared properties and methods)
+- Reaching for the handbook when the desk lacks the answer = the prototype chain lookup
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [Prototype Chain](#prototype-chain)

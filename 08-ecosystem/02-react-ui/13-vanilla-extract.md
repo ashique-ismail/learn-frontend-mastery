@@ -1,5 +1,17 @@
 # vanilla-extract
 
+## The Idea
+
+**In plain English:** vanilla-extract is a tool that lets you write your website's visual styles (colors, sizes, spacing) using TypeScript — a programming language — and then automatically converts them into regular CSS (the standard language browsers use to style web pages) before your site ever loads, so there is no extra work happening while visitors use your site.
+
+**Real-world analogy:** Imagine a costume designer who sketches every outfit on paper before the show starts. Each sketch is labeled and filed away. When a performer needs a costume, they just grab the labeled item from the rack — no sewing happens during the live performance.
+
+- The sketch = the style written in a `.css.ts` TypeScript file
+- The labeled costume on the rack = the plain CSS class name produced at build time
+- Grabbing the costume during the show = the component using the class name string at runtime (no extra work needed)
+
+---
+
 ## What It Is
 
 vanilla-extract is a **zero-runtime** CSS-in-TypeScript library. Styles are written in `.css.ts` files, compiled to plain CSS at build time — no runtime style injection, no stylesheet in JS bundles.

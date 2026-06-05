@@ -1,5 +1,17 @@
 # HTTP Context API
 
+## The Idea
+
+**In plain English:** HTTP Context is a way to attach hidden sticky notes to a web request so that different parts of your app (called interceptors) can read those notes and decide how to behave — without changing the actual request being sent. An interceptor is a piece of code that runs automatically every time your app sends or receives data over the internet.
+
+**Real-world analogy:** Imagine you drop off a package at a shipping counter and hand the clerk a separate instruction card that says "fragile - handle with care, require signature, no weekend delivery." The card never goes inside the box or on the label, but every handler along the way reads it and adjusts how they treat the package.
+
+- The instruction card = the `HttpContext` object
+- Each specific instruction on the card (e.g. "fragile") = an `HttpContextToken`
+- Each shipping handler reading the card = an HTTP interceptor checking `req.context.get(TOKEN)`
+
+---
+
 ## Overview
 
 The HTTP Context API, introduced in Angular 12, provides a type-safe mechanism for passing metadata through the HTTP request/response pipeline without modifying the request itself. It allows interceptors to coordinate behavior, share data, and make decisions based on context tokens rather than inspecting URLs or headers.

@@ -1,5 +1,17 @@
 # Local-First Architecture
 
+## The Idea
+
+**In plain English:** Local-first architecture means an app stores your data directly on your own device (like your phone or laptop) and only uses the internet to keep your devices in sync with each other — so the app works perfectly even when you have no internet connection, and your data belongs to you, not a company's server.
+
+**Real-world analogy:** Imagine keeping a personal journal on paper that you carry with you everywhere. Whenever you visit a friend who also has a copy of the same journal, you compare notes and add anything the other person wrote that you missed.
+
+- The paper journal = the local database stored on your device
+- The act of comparing and copying entries with your friend = the sync process between devices and the cloud
+- Being able to write in your journal even when your friend is away = working offline without needing a server
+
+---
+
 ## Overview
 
 Local-first software is a paradigm where the user's device holds the primary copy of data, and the cloud is used for sync and backup rather than as the authoritative source of truth. First articulated by Kleppmann et al. in the 2019 paper "Local-First Software: You Own Your Data, in Spite of the Cloud," it prioritizes: **offline capability**, **performance** (no network round-trips for reads/writes), **data ownership**, **privacy**, and **long-term archivability**.

@@ -1,5 +1,18 @@
 # Map, Set, WeakMap, WeakSet, and WeakRef
 
+## The Idea
+
+**In plain English:** JavaScript gives you special containers for storing data in smarter ways than a plain list or object — some keep only unique items, some let you use any type as a label, and some are "weak," meaning they quietly let go of items the rest of your program no longer needs, so memory is not wasted.
+
+**Real-world analogy:** Imagine a school lost-and-found office. The desk has labelled cubbyholes (Map), a bin that never stores two identical items (Set), sticky notes on student backpacks that fall off automatically once a student leaves the school (WeakMap/WeakSet), and a slip of paper with a locker number that may be empty if the locker was reassigned (WeakRef).
+
+- The labelled cubbyholes = `Map` (any kind of label, stores associated item)
+- The no-duplicates bin = `Set` (each unique item appears only once)
+- The self-removing sticky note = `WeakMap`/`WeakSet` (data tied to an object; disappears when the object is gone)
+- The locker-number slip = `WeakRef` (a reference that may point to nothing if the object was cleaned up)
+
+---
+
 ## Overview
 
 ES6 introduced four keyed collection types — `Map`, `Set`, `WeakMap`, and `WeakSet` — as purpose-built alternatives to using plain objects as dictionaries and arrays as unique-value stores. ES2021 added `WeakRef` and `FinalizationRegistry` for fine-grained garbage-collection awareness. Each collection type occupies a distinct niche: strong vs weak references, ordered vs unordered, iterable vs non-iterable. Understanding when to use each — and why the "weak" variants deliberately lack iteration — is a recurring senior interview topic.
@@ -434,7 +447,7 @@ WeakRef should be used sparingly. Its behavior is non-deterministic (GC timing v
 ## Comparison Table
 
 | Feature | Map | Set | WeakMap | WeakSet | WeakRef |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Key/value or value | Both | Value only | Both (weak key) | Value only (weak) | Wrapped object |
 | Key types | Any | N/A | Objects (+ unregistered symbols ES2023) | Objects | Objects |
 | Strong references | Yes | Yes | Keys: No / Values: Yes | No | No |
@@ -542,6 +555,7 @@ window.addEventListener("beforeunload", () => cache.clear());
 ## Resources
 
 ### Official Documentation
+
 - [MDN: Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 - [MDN: Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
 - [MDN: WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
@@ -551,6 +565,7 @@ window.addEventListener("beforeunload", () => cache.clear());
 - [TC39: WeakRefs and FinalizationRegistry](https://github.com/tc39/proposal-weakrefs)
 
 ### Articles and Guides
+
 - [JavaScript Collections In-Depth (2ality)](https://2ality.com/2015/01/es6-maps-sets.html)
 - [WeakMap and WeakSet (javascript.info)](https://javascript.info/weakmap-weakset)
 - [WeakRef and FinalizationRegistry (V8 Blog)](https://v8.dev/features/weak-references)

@@ -1,6 +1,19 @@
 # Memory Leaks - JavaScript Interview Questions
 
+## The Idea
+
+**In plain English:** A memory leak happens when a program uses up computer memory but then forgets to give it back when it is done, kind of like borrowing books from a library and never returning them. Over time, all the memory gets used up and the app slows down or crashes.
+
+**Real-world analogy:** Imagine a restaurant where customers sit at tables, finish eating, and leave — but the waiter never clears or frees up those tables for new customers. Eventually every table is "claimed" by a ghost customer and no one new can be seated.
+
+- The tables = memory (space set aside to hold data)
+- The ghost customers (gone but tables still marked occupied) = objects that are no longer needed but still referenced by the program
+- The waiter failing to clear tables = the garbage collector being blocked from freeing memory because the code still holds a reference to the old data
+
+---
+
 ## Table of Contents
+
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)
 - [Common Memory Leak Patterns](#common-memory-leak-patterns)

@@ -1,5 +1,17 @@
 # Race Conditions and Cancellation
 
+## The Idea
+
+**In plain English:** A race condition happens when your app sends out multiple requests for information and the answers arrive in the wrong order, so the app ends up showing you outdated results. Cancellation is how you tell an old, unwanted request to stop so its answer never messes things up.
+
+**Real-world analogy:** Imagine you ask two friends to look up the same restaurant's hours — first you text Alex, then immediately text Jordan a different question. Alex is slow and replies last, but Jordan replied with the updated info first. If you always show the most recent text you read (not received), you'd see Alex's stale answer overwrite Jordan's correct one. To fix it, you could call Alex and say "never mind, ignore my question" before they reply — that's cancellation.
+
+- The text you send = a network request your app fires
+- Alex's slow reply arriving after Jordan's = an old request completing after a newer one
+- Calling Alex to say "never mind" = calling `controller.abort()` to cancel a fetch
+
+---
+
 ## Overview
 
 Race conditions occur when multiple asynchronous operations compete, and the order of completion can lead to inconsistent or incorrect application state. In React applications, race conditions commonly happen with data fetching, where a newer request completes before an older one, potentially displaying stale data.

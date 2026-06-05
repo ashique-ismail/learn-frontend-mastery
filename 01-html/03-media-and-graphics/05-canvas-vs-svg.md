@@ -1,5 +1,16 @@
 # Canvas vs SVG
 
+## The Idea
+
+**In plain English:** Canvas and SVG are two different ways to draw graphics on a webpage. Canvas works like a whiteboard where you paint pixels directly and the browser forgets what you drew, while SVG works like a set of sticky notes where every shape is remembered as its own object you can move or click on later.
+
+**Real-world analogy:** Think of painting a mural vs. arranging magnetic shapes on a fridge. With a mural (Canvas) you apply paint stroke by stroke — once it's on the wall, the wall only knows about colored paint, not individual brush strokes. With magnetic shapes (SVG) each piece stays as its own object you can slide around, remove, or tap individually.
+- The painted wall = the Canvas element (a grid of pixels, no memory of shapes)
+- Each brush stroke = a JavaScript draw call (executes once, leaves pixels behind)
+- Each magnetic shape on the fridge = an SVG element in the DOM (a remembered, clickable object)
+
+---
+
 ## Overview
 
 Canvas and SVG are two different approaches to graphics on the web. Canvas is raster-based (bitmap) and immediate-mode, while SVG is vector-based and retained-mode.

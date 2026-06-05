@@ -1,5 +1,17 @@
 # Focus management
 
+## The Idea
+
+**In plain English:** Focus management is how a webpage keeps track of which element a keyboard user is currently "on" — like a cursor that jumps from button to button as you press Tab — and makes sure that cursor always goes somewhere useful, stays visible, and never gets stuck.
+
+**Real-world analogy:** Think of a theme park with a guided tour where a spotlight follows the next stop on the route. When a new attraction opens (like a popup window), the spotlight jumps straight to it, and the guide won't let you wander outside that area until you're done. When you leave, the spotlight returns to where you were before.
+
+- The spotlight = the keyboard focus indicator (the visible outline around the active element)
+- The tour route = the tab order (the sequence in which elements receive focus)
+- The guide keeping you inside the attraction = focus trapping (locking focus inside a modal dialog)
+
+---
+
 ## Overview
 
 Focus management ensures keyboard users can navigate and interact with all functionality. Proper focus order, visible indicators, and focus trapping are essential for accessibility.

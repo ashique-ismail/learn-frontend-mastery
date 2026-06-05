@@ -1,5 +1,16 @@
 # Angular Signals - Interview Questions
 
+## The Idea
+
+**In plain English:** A signal is a special box that holds a value and automatically tells any part of your app that is watching whenever that value changes. Instead of your app constantly checking "did anything change?", the signal just shouts "hey, I changed!" so only the right parts update.
+
+**Real-world analogy:** Think of a digital scoreboard at a sports game. The scoreboard always shows the current score, and the moment a team scores, the board updates instantly — every fan in the stadium sees the new number without having to walk up and ask what the score is.
+- The scoreboard = the signal (always holds the current value)
+- The score changing = calling `signal.set()` or `signal.update()` to put a new value in
+- The fans watching the board = the template or computed signals that automatically re-render when the value changes
+
+---
+
 ## Overview
 
 This guide covers Angular Signals, a new reactive primitive introduced in Angular 16+. It includes comparisons with observables, computed signals, effects, and integration patterns with existing Angular features.

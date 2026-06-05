@@ -1,5 +1,18 @@
 # Vest Validation Framework
 
+## The Idea
+
+**In plain English:** Vest is a tool that checks whether the information a user types into a form (like a name or email address) follows the rules you set — and it does this using the same style as software tests, where you write small, named checks that either pass or fail.
+
+**Real-world analogy:** Imagine a hotel receptionist running through a checklist before confirming your reservation: "Is a name provided? Check. Is the check-in date before check-out? Check. Is a valid credit card on file? Check." If any item fails, they tell you exactly which one needs fixing before they can proceed.
+
+- The checklist = the Vest validation suite (`create`)
+- Each item on the checklist = an individual `test()` call
+- The receptionist checking one item = `enforce()` asserting a rule
+- "This item failed" = a validation error message returned to the user
+
+---
+
 ## Overview
 
 Vest is a declarative validation framework inspired by unit testing libraries like Mocha and Jest. It provides a unique approach to validation by treating validation rules as tests, making it intuitive for developers familiar with testing frameworks. Vest supports both synchronous and asynchronous validation, field-level validation, and integrates well with any form library or framework.
@@ -783,6 +796,7 @@ if (result.isValid()) {
 ## When to Use Vest
 
 **Use Vest when:**
+
 - Want testing-like syntax for validation
 - Need flexible field-level validation
 - Building custom form solutions
@@ -792,6 +806,7 @@ if (result.isValid()) {
 - Need both sync and async validation
 
 **Consider alternatives when:**
+
 - Need schema-based validation (use Zod or Yup)
 - Building simple forms with React Hook Form (use Yup)
 - Need JSON Schema compliance (use AJV)

@@ -1,5 +1,17 @@
 # Design Micro-Frontend Architecture
 
+## The Idea
+
+**In plain English:** Micro-frontends is a way of splitting a big website into separate, independent pieces — each piece built, updated, and launched by a different team — so they can all work without getting in each other's way. Think of it like each team owning their own mini website that plugs into one bigger website.
+
+**Real-world analogy:** Imagine a shopping mall where each store is independently owned and operated, but they all share the same building, entrance, and hallways. A new owner can renovate their store without shutting down the whole mall.
+
+- The mall building and entrance = the shell app (handles navigation and shared features)
+- Each individual store = a separate micro-frontend (owned and deployed by one team)
+- The shared hallways and signs = shared utilities like the design system and authentication
+
+---
+
 ## What Problem It Solves
 
 A large frontend monolith with multiple teams becomes hard to deploy independently, slows down CI/CD, and creates cross-team coupling. Micro-frontends let teams own their slice end-to-end.

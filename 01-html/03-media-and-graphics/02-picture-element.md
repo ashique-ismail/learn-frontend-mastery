@@ -1,5 +1,17 @@
 # Picture element
 
+## The Idea
+
+**In plain English:** The `<picture>` element lets a webpage choose the best version of an image to show depending on the device, screen size, or browser — kind of like having multiple versions of the same photo and automatically picking the right one. A "browser" is the app you use to visit websites (like Chrome or Safari), and "format" just means the file type of the image (like .jpg or .webp).
+
+**Real-world analogy:** Imagine a restaurant that prints its menu in three formats: a full-color large poster for dine-in, a compact black-and-white card for takeaway, and a basic text printout as a backup if the printer runs out of ink. The waiter checks what you need and hands you the right one.
+
+- The large color poster = the high-resolution desktop image source
+- The compact takeaway card = the smaller mobile image source
+- The plain text backup = the `<img>` fallback that always works no matter what
+
+---
+
 ## Overview
 
 The `<picture>` element provides art direction and format flexibility for responsive images. It allows different images (not just different sizes) based on media conditions or format support.

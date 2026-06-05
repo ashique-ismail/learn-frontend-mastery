@@ -1,5 +1,17 @@
 # Design an Offline-First PWA
 
+## The Idea
+
+**In plain English:** A Progressive Web App (PWA) that works offline is a website that saves a copy of itself on your device so you can keep using it even when there's no internet connection — and automatically updates everything once you're back online.
+
+**Real-world analogy:** Think of a printed pocket city map you grab before a trip. You do all your planning while you have Wi-Fi at the hotel, the map gets saved to your bag, then you navigate all day without signal — and when you get back to the hotel, any notes you made sync up with the master map.
+
+- The printed pocket map = the cached files stored on your device by the Service Worker (a background script that intercepts all network requests)
+- Writing notes on the map while offline = mutations saved to IndexedDB (a mini-database built into your browser)
+- Handing your notes back to the hotel concierge when you return = Background Sync (the browser queues your offline actions and sends them to the server the moment internet is restored)
+
+---
+
 ## Core Technologies
 
 1. **Service Worker** — intercepts network requests, implements caching
@@ -158,7 +170,7 @@ async function queueTodoSync() {
 
 ## Service Worker Lifecycle & Update Flow
 
-```
+```text
 Install → Activate → Fetch (intercept requests)
          ↑
      New SW waits here if old SW is active
@@ -169,6 +181,7 @@ self.addEventListener('activate', e => e.waitUntil(clients.claim()));
 ```
 
 **Update notification pattern:**
+
 ```ts
 const registration = await navigator.serviceWorker.register('/sw.js');
 registration.addEventListener('updatefound', () => {

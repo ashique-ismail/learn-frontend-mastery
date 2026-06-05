@@ -1,5 +1,17 @@
 # Type Coercion: Understanding JavaScript's Type Conversions
 
+## The Idea
+
+**In plain English:** Type coercion is when JavaScript automatically converts a value from one kind of data into another kind without you asking it to. For example, a number might silently get turned into text (called a "string") or a piece of text might get turned into a number, just because of which operation you used.
+
+**Real-world analogy:** Imagine you work at a cash register and a customer hands you a handwritten note saying "20" instead of an actual $20 bill. Your register automatically treats that note as if it were $20 so the transaction can go through — even though it is really just paper with writing on it.
+
+- The handwritten note saying "20" = the string value `"20"` in JavaScript
+- The register automatically accepting it as cash = JavaScript silently converting the string to the number `20`
+- The transaction completing without you choosing to swap the note = implicit (automatic) type coercion happening behind the scenes
+
+---
+
 ## Overview
 
 Type coercion is the automatic or implicit conversion of values from one data type to another. JavaScript is a dynamically typed language with weak typing, meaning it performs type coercion automatically in many situations. While this flexibility can be convenient, it's also a major source of bugs and confusion. Understanding how and when coercion happens is essential for writing predictable JavaScript code.
@@ -412,6 +424,7 @@ if (Boolean(value) === true) {
 ### ToPrimitive Algorithm
 
 Objects are converted to primitives via:
+
 1. Call `[Symbol.toPrimitive]` if exists
 2. Otherwise, for "string" hint: try `toString()` then `valueOf()`
 3. For "number" or "default" hint: try `valueOf()` then `toString()`
@@ -638,6 +651,7 @@ console.log({} + {});
 ```
 
 **Answer:**
+
 - `[] + []` = `""` (both arrays convert to empty strings)
 - `[] + {}` = `"[object Object]"` (array to "", object to "[object Object]")
 - `{} + []` = `0` (if {} interpreted as block) or `"[object Object]"` (if object)
@@ -663,14 +677,17 @@ const b = value ?? "default";
 ## Resources
 
 ### Documentation
+
 - [MDN: Type Coercion](https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion)
 - [MDN: Equality Comparisons](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
 - [ECMAScript: Type Conversion](https://tc39.es/ecma262/#sec-type-conversion)
 
 ### Articles
+
 - [Understanding JavaScript Coercion](https://javascript.info/type-conversions)
 - [Equality Table](https://dorey.github.io/JavaScript-Equality-Table/)
 - [WTFJS - JavaScript Gotchas](https://github.com/denysdovhan/wtfjs)
 
 ### Books
+
 - "You Don't Know JS: Types & Grammar" by Kyle Simpson

@@ -1,5 +1,18 @@
 # Lazy Loading: NgModules vs Standalone Routes
 
+## The Idea
+
+**In plain English:** Lazy loading means your app only downloads the code for a page when someone actually visits that page, instead of loading everything at once when the app first opens. Think of it like only fetching the ingredients for a recipe right before you cook it, rather than buying every ingredient for every meal at the start of the week.
+
+**Real-world analogy:** Imagine a big department store that keeps most of its stock in a warehouse out back. When you walk in, only the front entrance and a few popular displays are set up. If you head to the electronics section, a staff member quickly brings out the electronics inventory from the warehouse right then.
+
+- The front entrance displays = the initial app bundle (what loads immediately)
+- The warehouse sections = lazy-loaded route chunks (code kept separate until needed)
+- A customer walking to electronics = the user navigating to a route
+- Staff bringing out the inventory = the browser downloading that route's chunk on demand
+
+---
+
 ## Why Lazy Load?
 
 Split the JavaScript bundle so users only download code for the routes they visit. The checkout module shouldn't be in the initial bundle if the user is just browsing the homepage.

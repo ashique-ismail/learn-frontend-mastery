@@ -1,5 +1,18 @@
 # Whiteboard: The Scaling Decision Ladder
 
+## The Idea
+
+**In plain English:** Scaling is the process of making an app keep working smoothly as more and more people use it. When you build something for 10 people, it might collapse when 10 million people show up — the "scaling decision ladder" is a step-by-step method for spotting exactly what breaks first and choosing the right fix at each stage.
+
+**Real-world analogy:** Imagine a small food stall that becomes wildly popular. At first one person takes orders, cooks, and serves. As the queue grows, you add a dedicated cashier, then a second fryer, then a second stall across town, then a whole chain of locations with a central warehouse.
+
+- The single food-stall worker = a single web server handling everything
+- Hiring a dedicated cashier = splitting responsibilities (load balancer + multiple servers)
+- Opening a second stall across town = deploying to a second data-center region
+- The central warehouse supplying all locations = a shared database / caching layer
+
+---
+
 ## Overview
 
 The most common follow-up in any system design interview: *"That works for 10K users. What breaks at 1M? What about 100M?"* Staff engineers answer this systematically — not by guessing, but by identifying the bottleneck at each order of magnitude and explaining what architectural change addresses it and why.

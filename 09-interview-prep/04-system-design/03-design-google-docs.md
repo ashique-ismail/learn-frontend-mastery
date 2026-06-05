@@ -1,5 +1,17 @@
 # Design Google Docs (Collaborative Editor)
 
+## The Idea
+
+**In plain English:** Google Docs is a text editor that lives on the internet and lets many people type in the same document at the same time, seeing each other's changes instantly — like a shared notebook where everyone's pen writes simultaneously without erasing each other's words.
+
+**Real-world analogy:** Imagine a group of friends editing a shared whiteboard in a classroom — each person has a marker and can write wherever they want at the same time. When two people write in the same spot, a teacher (the server) steps in to decide whose word goes first and adjusts the spacing so both contributions fit without conflict.
+
+- The whiteboard = the shared document stored on a server
+- Each person's marker = a user's editor sending typed characters as operations
+- The teacher adjusting positions = the conflict-resolution algorithm (OT or CRDT) that merges simultaneous edits
+
+---
+
 ## Requirements
 
 **Functional:**

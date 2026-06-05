@@ -1,5 +1,18 @@
 # Production Failure: State Sync Conflicts and Partial Writes
 
+## The Idea
+
+**In plain English:** State sync conflicts happen when the same piece of data lives in more than one place at the same time — like a browser tab, a server, and another user's screen — and those copies get out of step with each other. A "conflict" is when two places try to change the same data at once, and you have to decide whose change wins.
+
+**Real-world analogy:** Imagine two people editing the same shared Google Doc while offline. Person A changes the title to "Project Alpha" and Person B changes it to "Project Beta" — both while disconnected. When they both sync back to the cloud, the system has to pick one title (or show both and ask). This is a state sync conflict.
+
+- The Google Doc = the shared data on the server
+- Each person's offline copy = the client-side state in a browser tab
+- Both people hitting "sync" at the same time = two concurrent writes
+- The cloud picking a winner (or showing a conflict warning) = optimistic concurrency control
+
+---
+
 ## Overview
 
 Distributed state — any scenario where the same data lives in multiple places (client + server, multiple tabs, multiple users) — is where some of the hardest production bugs live. These aren't theoretical: they're the bugs that make users say "I saved my work and it disappeared."

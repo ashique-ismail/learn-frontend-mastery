@@ -1,5 +1,17 @@
 # Debouncing and Throttling
 
+## The Idea
+
+**In plain English:** Debouncing and throttling are two tricks that stop a function from running too many times too fast. Debouncing waits until someone pauses before doing anything; throttling lets something happen, but only once every set amount of time no matter how many times it is triggered.
+
+**Real-world analogy:** Imagine an elevator with a "close doors" button. If people keep pressing it rapidly, a smart elevator waits until no one has pressed it for a couple of seconds before actually closing — that is debouncing. A throttled version would simply close the doors at most once every 30 seconds no matter how many times the button is mashed.
+
+- The button being pressed repeatedly = the event firing many times (typing, scrolling, clicking)
+- The "wait a couple of seconds after the last press" rule = the debounce delay
+- The "at most once every 30 seconds" rule = the throttle interval
+
+---
+
 ## Overview
 
 Debouncing and throttling are rate-limiting techniques that control how often a function executes. They're essential for performance in the browser — without them, scroll handlers, resize listeners, and search inputs fire hundreds of times per second and overwhelm both the browser and your servers. This guide covers the difference between the two, implementations from scratch, and the real-world use cases where each belongs.

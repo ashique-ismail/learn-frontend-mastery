@@ -1,5 +1,18 @@
 # How Do You Decide Between Two Libraries?
 
+## The Idea
+
+**In plain English:** When building a website or app, developers often use pre-built toolkits (called "libraries") written by others to avoid reinventing the wheel. Deciding between two libraries means figuring out which toolkit is the better fit for your specific project based on things like size, quality, and how well your team knows it.
+
+**Real-world analogy:** Imagine you need to renovate your kitchen and you're choosing between two contractors. You compare their past work, how much they charge, how quickly they respond to problems, and whether your family has worked with them before — not just who has the flashier advertisement.
+
+- The contractor = the library
+- The renovation job = the feature you need to build
+- Checking past work, pricing, and responsiveness = evaluating bundle size, maintenance activity, and documentation
+- Your family's familiarity with a contractor = your team's existing experience with the library
+
+---
+
 ## What Interviewers Want to See
 
 Decision-making maturity: that you evaluate on technical merit, team fit, and long-term sustainability — not just GitHub stars or what's trending.

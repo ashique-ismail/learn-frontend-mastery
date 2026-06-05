@@ -1,5 +1,17 @@
 # Fetch Priority API (`fetchpriority`)
 
+## The Idea
+
+**In plain English:** When a browser loads a webpage, it downloads many files at once — images, fonts, scripts. Fetch Priority is a way for you to tell the browser which files matter most, so it loads the important ones first instead of treating everything equally.
+
+**Real-world analogy:** Imagine a waiter at a busy restaurant holding a tray of orders to deliver. Some plates are for a VIP guest who ordered the main course, others are side dishes for other tables. You tell the waiter "deliver that main course first." The waiter reorders the tray accordingly.
+
+- The waiter = the browser's network fetch queue
+- Each plate = a file the browser is downloading (image, font, script)
+- Telling the waiter which plate is most important = the `fetchpriority` attribute
+
+---
+
 ## Overview
 
 The Fetch Priority API lets developers hint to the browser how important a resource is relative to other resources at the same network priority level. The browser uses this to reorder its internal fetch queue, loading critical resources earlier and deferring non-critical ones. The primary use case is improving LCP (Largest Contentful Paint) by boosting the priority of the LCP image.

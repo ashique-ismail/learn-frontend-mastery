@@ -1,5 +1,18 @@
 # MSW (Mock Service Worker)
 
+## The Idea
+
+**In plain English:** MSW is a tool that pretends to be a real server so your app can make network requests during development or testing and get back fake responses you control — without needing an actual backend running.
+
+**Real-world analogy:** Imagine a film crew shooting a scene where an actor orders food at a restaurant. Instead of using a real working kitchen, a prop person hands the actor a plate of fake food the moment the order is placed, so the scene runs perfectly every time without waiting on a real cook.
+
+- The prop person intercepting the order = MSW intercepting the network request
+- The fake plate of food = the mock response your handler returns
+- The actor's order = the fetch/API call your app makes
+- The film director controlling what props are used = your handler definitions
+
+---
+
 ## Overview
 
 Mock Service Worker (MSW) is an API mocking library that uses Service Worker API to intercept requests on the network level. It enables consistent API mocking across development, testing, and debugging environments. MSW works in both browser and Node.js, providing a seamless mocking experience without changing application code.

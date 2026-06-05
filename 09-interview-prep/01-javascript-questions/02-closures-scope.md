@@ -1,5 +1,17 @@
 # Closures and Scope - JavaScript Interview Questions
 
+## The Idea
+
+**In plain English:** A closure is when a function remembers the variables from the place where it was created, even after that place has finished running. Think of "scope" as the set of variables a function is allowed to see and use.
+
+**Real-world analogy:** Imagine a chef who trained in a specific restaurant kitchen. When that chef leaves to work at a food truck, they still remember all the secret recipes and techniques from that original kitchen — even though the restaurant is no longer "running" for them.
+- The original kitchen = the outer function's scope (where the variables live)
+- The secret recipes = the variables and values the chef (inner function) remembers
+- The chef working at the food truck = the inner function executing later, in a different place
+- The memories the chef carries = the closure (the preserved reference to the outer scope)
+
+---
+
 ## Table of Contents
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)

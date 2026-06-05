@@ -1,5 +1,19 @@
 # Implement Debounce & Throttle
 
+## The Idea
+
+**In plain English:** Debounce and throttle are two techniques that control how often a function (a set of instructions the computer runs) is allowed to execute when something triggers it repeatedly — like typing or scrolling. Debounce waits for the action to stop before running, while throttle runs at most once every set amount of time no matter how many triggers happen.
+
+**Real-world analogy:** Imagine a bathroom hand-dryer with a motion sensor. When you wave your hands in front of it, it decides whether to turn on based on a rule.
+
+- Debounce version: the dryer only turns on after you stop waving for 2 seconds — this is like debounce, which waits for a pause before acting.
+- Throttle version: the dryer can only turn on once every 5 seconds, no matter how many times you wave — this is like throttle, which limits how often the action can run.
+- The waving = the repeated events (typing, scrolling) that keep triggering the function
+- The dryer turning on = the function (the code) that actually runs
+- The 2-second pause / 5-second limit = the delay or interval that controls when execution is allowed
+
+---
+
 ## Why This Comes Up in Interviews
 
 Both patterns limit the rate of function execution. Interviewers ask you to implement them from scratch to test your closure knowledge, timer management, and understanding of when each applies.

@@ -1,6 +1,19 @@
 # Observable, Observer, and Subscription
 
+## The Idea
+
+**In plain English:** An Observable is like a live data source that can send you information multiple times over time — you sign up to listen to it (that is called subscribing), and the Subscription is your active connection that you can cancel whenever you want.
+
+**Real-world analogy:** Imagine subscribing to a monthly magazine. You fill out a form saying you want the magazine (that form is the Observer), the publisher keeps printing and mailing issues to you over time (that is the Observable), and the active membership that lets you cancel at any time is the Subscription.
+
+- The publisher sending magazines = the Observable (the source of data)
+- Your subscription form with your preferences = the Observer (the callbacks that handle each delivery)
+- Your active membership you can cancel = the Subscription (the live connection you manage)
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Observable Contract](#observable-contract)
 - [Observer Interface](#observer-interface)

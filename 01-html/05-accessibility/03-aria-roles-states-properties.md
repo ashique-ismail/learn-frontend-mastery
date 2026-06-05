@@ -1,5 +1,17 @@
 # ARIA roles, states, and properties
 
+## The Idea
+
+**In plain English:** ARIA (Accessible Rich Internet Applications) is a set of special labels you add to HTML elements so that assistive tools like screen readers (software that reads the screen aloud for blind users) can understand what each part of a page is and what it is currently doing.
+
+**Real-world analogy:** Imagine a busy restaurant where the server wears a name badge that says "Waiter," holds up a sign saying "Currently taking your order," and has a card on the table reading "Table 4 - reserved for 2 guests." Each piece of information tells a different thing about the same person.
+
+- The name badge ("Waiter") = an ARIA role (what the element *is*)
+- The sign ("Currently taking your order") = an ARIA state (what the element is *doing right now*, which can change)
+- The table card ("reserved for 2 guests") = an ARIA property (a fixed characteristic that *describes* the element)
+
+---
+
 ## Overview
 
 ARIA (Accessible Rich Internet Applications) provides semantic meaning to elements for assistive technologies when native HTML semantics are insufficient.

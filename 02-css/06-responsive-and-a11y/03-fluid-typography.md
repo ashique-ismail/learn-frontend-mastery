@@ -1,5 +1,16 @@
 # Fluid Typography: clamp(), Viewport Units, Accessibility
 
+## The Idea
+
+**In plain English:** Fluid typography is a way to make text on a website automatically grow or shrink in size depending on how wide the screen is, so it always looks just right whether you're on a tiny phone or a huge monitor. Instead of snapping between a few fixed sizes, the text glides smoothly between a smallest and a largest size you choose.
+
+**Real-world analogy:** Imagine a restaurant that adjusts the font size on its printed menus depending on the size of the table it's placed on — a small two-person table gets a compact menu, a big banquet table gets a large-print version, and the sizing scales naturally in between.
+- The smallest menu = the minimum font size (the floor `clamp()` never goes below)
+- The largest menu = the maximum font size (the ceiling `clamp()` never exceeds)
+- The table width = the viewport width (`vw`), which drives how big the text gets between those two limits
+
+---
+
 ## Learning Objectives
 - Master fluid typography with `clamp()` function
 - Use viewport units (vw, vh, vmin, vmax) effectively

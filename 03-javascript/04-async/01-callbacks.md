@@ -1,5 +1,17 @@
 # Callbacks and Callback Hell
 
+## The Idea
+
+**In plain English:** A callback is a function you hand to another function and say "run this when you're done." It lets your program keep going while waiting for slow tasks (like loading data from the internet), then pick up where it left off once the result is ready.
+
+**Real-world analogy:** Imagine you drop off your clothes at a laundromat and leave your phone number so they can text you when the laundry is ready. You don't stand there waiting — you go run other errands and come back only when called.
+
+- The phone number you leave = the callback function
+- The laundromat texting you = the code calling your callback with the result
+- Going off to run errands while waiting = the rest of your program continuing to run
+
+---
+
 ## Overview
 
 Callbacks are the foundational mechanism for asynchronous programming in JavaScript. A callback is a function passed as an argument to another function, to be executed once an asynchronous operation completes. Before Promises and async/await, callbacks were the only native way to handle async work — and understanding their mechanics is essential for debugging legacy code and grasping why the modern abstractions exist.

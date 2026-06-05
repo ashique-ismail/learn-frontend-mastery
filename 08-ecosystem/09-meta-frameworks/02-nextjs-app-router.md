@@ -1,5 +1,17 @@
 # Next.js App Router
 
+## The Idea
+
+**In plain English:** Next.js App Router is a system that decides which page to show when you visit a website address, and lets you build each page as a smart building block that can fetch its own data directly from a database — all before it ever reaches your screen. "Routing" just means matching a web address (like `/users/42`) to the right page to display.
+
+**Real-world analogy:** Think of a large hotel where every floor and room is managed by its own staff. When a guest arrives, the front desk (the router) looks at their room number and sends them to the right floor. Each floor has a concierge (a layout) who handles shared things like hallways and elevators. Each individual room (a page) handles its own specific guest and has everything it needs already prepared before the guest walks in.
+
+- The front desk reading the room number = the router matching a URL to the right folder in `app/`
+- The floor concierge and shared hallways = `layout.tsx` wrapping all pages on that route
+- The individual room prepared for the guest = `page.tsx` fetching its own data on the server before rendering
+
+---
+
 ## Overview
 
 The App Router (introduced in Next.js 13, stable in 14) is a React Server Components-based routing system that colocates data fetching with components. It replaces the Pages Router's `getServerSideProps`/`getStaticProps` model.

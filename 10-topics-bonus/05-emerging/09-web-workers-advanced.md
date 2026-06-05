@@ -1,5 +1,17 @@
 # Advanced Web Workers
 
+## The Idea
+
+**In plain English:** Web Workers let your browser do heavy, time-consuming tasks in the background while the page stays fast and responsive — like having a helper in a back room doing the hard work so the front desk never gets stuck.
+
+**Real-world analogy:** Imagine a busy restaurant where the cashier takes orders at the front counter. Instead of running to the kitchen, cooking the food, and then coming back to serve the next customer (which would make everyone wait), the cashier passes the order to kitchen staff in the back who cook in parallel. The cashier never stops taking new orders.
+
+- The cashier = the main JavaScript thread (handles UI and user input)
+- The kitchen staff = Web Workers (handle heavy tasks in the background)
+- Passing the order slip = `postMessage` (sending data between threads)
+
+---
+
 ## Introduction
 
 Web Workers enable true multithreading in JavaScript, running scripts in background threads without blocking the main thread. Advanced patterns include worker pools, shared workers, and complex communication strategies for building high-performance web applications.

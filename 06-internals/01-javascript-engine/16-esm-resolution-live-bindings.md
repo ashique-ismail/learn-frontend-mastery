@@ -1,5 +1,18 @@
 # ESM Module Resolution, Live Bindings, and Circular Dependencies
 
+## The Idea
+
+**In plain English:** JavaScript files can share code with each other by "exporting" things from one file and "importing" them in another — ESM (ECMAScript Modules) is the official system for doing this, where the imported values stay permanently connected to the original source so any update is instantly visible everywhere.
+
+**Real-world analogy:** Imagine a scoreboard at a sports stadium that is wired live to the official scorekeeping booth. Every fan in the stadium sees the current score at all times — not a printed handout that was correct when it left the printer.
+
+- The scoreboard display = the imported variable in a consuming module
+- The official score in the booth = the exported variable in the source module
+- The live wire connecting them = the live binding
+- A printed handout given out before the game = a CommonJS `require()` value copy (frozen at the moment it was taken)
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [ESM vs CommonJS Fundamentals](#esm-vs-commonjs-fundamentals)

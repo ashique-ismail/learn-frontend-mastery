@@ -1,5 +1,17 @@
 # Angular Change Detection Interview Questions
 
+## The Idea
+
+**In plain English:** Change detection is how Angular automatically notices when your app's data has changed and updates what the user sees on screen. It is like a watchful assistant that continuously checks if anything is different and, if so, redraws the relevant parts of the page.
+
+**Real-world analogy:** Imagine a restaurant manager who walks through the dining room periodically to check every table and see if any customers need attention. If someone's water glass is empty, the manager signals a waiter to refill it.
+- The manager doing rounds = Angular's change detection cycle running through components
+- Each table = a component in your app
+- A customer's empty glass = data in a component that has changed
+- The waiter refilling the glass = Angular updating the DOM to reflect the new data
+
+---
+
 ## Table of Contents
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)

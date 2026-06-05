@@ -1,5 +1,17 @@
 # System Design: Chat Application
 
+## The Idea
+
+**In plain English:** A chat application is software that lets people send and receive text messages (and files) with others in real time — meaning the moment you hit send, the other person sees it instantly, just like texting but inside an app or website.
+
+**Real-world analogy:** Imagine a busy post office where people can both send and receive letters instantly through a pneumatic tube system. As soon as you drop a letter in the tube, it shoots straight to the recipient's mailbox and a light on their desk blinks to let them know it arrived.
+
+- The pneumatic tube = a WebSocket (a live, two-way connection between your browser and the server)
+- The post office sorting room = the server that routes each message to the right recipient
+- The blinking desk light = a real-time event notification that updates your screen without you having to refresh
+
+---
+
 ## Overview
 
 Design a real-time chat application with WebSocket communication, message persistence, presence indicators, typing indicators, read receipts, and offline support.

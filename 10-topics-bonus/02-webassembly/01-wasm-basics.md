@@ -1,5 +1,17 @@
 # WebAssembly Basics
 
+## The Idea
+
+**In plain English:** WebAssembly (WASM) is a way to run programs written in languages like C or Rust directly inside a web browser, letting them run much faster than they normally could through JavaScript. Think of it as a universal translator that turns code from many different programming languages into a super-efficient format the browser can execute at nearly full speed.
+
+**Real-world analogy:** Imagine a movie theater that only plays films in one specific format — say, standard DVD. Now a studio wants to release a film originally shot on a completely different film type (like 70mm IMAX). Instead of reshooting the whole movie, they convert it into a special high-quality digital format the theater can play perfectly, without losing the original quality. WebAssembly is exactly that conversion process for code.
+- The original film (70mm IMAX) = code written in C, C++, or Rust
+- The conversion process = the compiler that turns that code into a .wasm binary
+- The high-quality digital format = the .wasm file the browser can run
+- The theater's projection system = the browser's WebAssembly engine that executes the .wasm file at near-native speed
+
+---
+
 ## Introduction
 
 WebAssembly (WASM) is a binary instruction format designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications. It provides a way to run code written in languages like C, C++, Rust, and others at near-native speed in web browsers.

@@ -1,5 +1,17 @@
 # Component Composition
 
+## The Idea
+
+**In plain English:** Component composition is the practice of building a big, complex webpage feature by snapping together smaller, self-contained pieces called components — the same way you assemble a piece of furniture from individual parts rather than carving it from one solid block of wood.
+
+**Real-world analogy:** Think of building a burger at a fast-food restaurant. You pick a bun, a patty, lettuce, cheese, and sauce separately, then stack them together into the final burger you want.
+
+- The individual ingredients (bun, patty, cheese) = small, reusable components (Button, Header, Card)
+- The act of stacking them together = composing components inside each other in JSX
+- The finished burger = the complex UI feature assembled from those components
+
+---
+
 ## Overview
 
 Component Composition is a fundamental React pattern for building complex UIs from smaller, reusable pieces. Instead of using inheritance or monolithic components, React favors composition - combining simple components to create more complex functionality. This approach leads to more maintainable, testable, and flexible code.

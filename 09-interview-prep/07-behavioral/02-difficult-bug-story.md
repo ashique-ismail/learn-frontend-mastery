@@ -1,5 +1,17 @@
 # Describe a Difficult Bug You Fixed
 
+## The Idea
+
+**In plain English:** A difficult bug is a hidden mistake in code that causes something to go wrong in a way that is hard to find and fix. Unlike simple typos, these bugs often appear only under specific conditions, making them tricky to track down.
+
+**Real-world analogy:** Imagine two delivery drivers both heading to the same house at the same time — Driver A has a package for Room 1 and Driver B has one for Room 2. They both arrive in a rush, and whoever drops off last accidentally leaves their package in the wrong room, overwriting what the other left. The homeowner ends up with the wrong package, but the delivery system reported both deliveries as successful.
+
+- The homeowner's room = the app's memory that stores a user's profile data
+- Two drivers racing to deliver = two separate network requests fetching different users' data at the same time
+- The last driver overwriting the wrong room = the slower request finishing after the faster one and replacing the correct data with outdated data
+
+---
+
 ## What Interviewers Want to See
 
 Systematic debugging methodology, not luck. They want evidence that you can isolate root causes under pressure rather than guessing at fixes until something works.

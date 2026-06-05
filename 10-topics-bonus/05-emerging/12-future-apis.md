@@ -1,5 +1,17 @@
 # Future Web APIs and Standards
 
+## The Idea
+
+**In plain English:** Future Web APIs are new built-in powers that browsers are gaining, letting websites do things they previously could not — like reading files directly from your computer, talking to physical gadgets plugged into a USB port, or streaming live data at very high speed. An API (Application Programming Interface) is simply a set of instructions the browser provides so your code can ask it to do something specific.
+
+**Real-world analogy:** Imagine a hotel adding brand-new services over the years — first there was just a phone in your room, then room service, then a gym, then a spa. Each new service is announced at the front desk (the browser), and you request it by calling down (your code calling the API).
+
+- The hotel front desk = the browser
+- Each new hotel service (gym, spa, room service) = a new Web API (File System Access, Web Serial, WebTransport, etc.)
+- You calling the front desk to request a service = your JavaScript code calling the API to ask the browser to do something
+
+---
+
 ## Introduction
 
 The web platform continuously evolves with new APIs that bring native-like capabilities to web applications. This guide covers emerging and experimental APIs including File System Access, Web Serial, WebTransport, and other cutting-edge features shaping the future of web development.

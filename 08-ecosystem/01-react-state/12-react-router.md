@@ -1,5 +1,18 @@
 # React Router v6/v7
 
+## The Idea
+
+**In plain English:** React Router is a tool that lets a website show different pages (like a home page, a profile page, or a settings page) without actually loading a brand-new page from the server each time you click a link — it just swaps out the content on the screen while the URL in the browser bar changes to match.
+
+**Real-world analogy:** Think of a large museum with one entrance hall. A map at the front desk tells security guards which exhibit to show you based on the room number you ask for. You never leave the building — the guards just walk you to a different room.
+
+- The museum building = the browser tab (one page, always open)
+- The map at the front desk = the router configuration (rules that match URLs to pages)
+- The room number you ask for = the URL path (e.g. `/users/42`)
+- The exhibit in the room = the React component rendered for that route
+
+---
+
 ## Overview
 
 React Router is the standard routing solution for React applications. v6 introduced a complete rewrite with nested routes and data loading built in. v7 (React Router 7 / Remix v3) merges Remix's full-stack features into React Router.

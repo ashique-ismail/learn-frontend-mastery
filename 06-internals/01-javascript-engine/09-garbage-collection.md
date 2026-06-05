@@ -1,5 +1,17 @@
 # Garbage Collection
 
+## The Idea
+
+**In plain English:** Garbage collection is how a program automatically finds and throws away data it no longer needs, freeing up memory so the computer does not run out of space. Think of "memory" as limited storage space, and "data" as stuff the program put there while running.
+
+**Real-world analogy:** Imagine a restaurant kitchen where cooks write orders on sticky notes and stick them on a board. A cleaner walks through every few minutes, checks which sticky notes are still being used by cooks actively working, and throws away the ones nobody is looking at anymore.
+
+- The sticky notes = objects stored in memory
+- The cooks actively using a note = references (variables) pointing to an object
+- The cleaner checking and removing unused notes = the garbage collector reclaiming unreachable objects
+
+---
+
 ## Learning Objectives
 - Understand how JavaScript engines automatically reclaim memory
 - Master the mark-and-sweep algorithm and its phases

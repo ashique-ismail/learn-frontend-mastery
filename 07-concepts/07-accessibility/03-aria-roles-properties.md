@@ -1,5 +1,17 @@
 # ARIA Roles, States, and Properties
 
+## The Idea
+
+**In plain English:** ARIA (Accessible Rich Internet Applications) is a set of extra labels you can add to HTML elements to describe what they are and what they're doing — so that assistive tools like screen readers (software that reads the screen aloud for people who are blind) can understand and explain your web page correctly.
+
+**Real-world analogy:** Imagine a busy airport where every area has a sign overhead — "Check-in", "Security", "Gate B7", "Restrooms". Now picture a blind traveler with a cane who also has a small earpiece that reads those signs aloud. Without the signs, every area looks like the same blank floor. With them, the traveler knows exactly where they are and what they can do in each zone.
+- The blank floor areas = plain `<div>` elements with no meaning
+- The overhead signs = ARIA roles (e.g., `role="navigation"`, `role="dialog"`)
+- The earpiece reading the signs = a screen reader announcing ARIA to the user
+- A sign that flips between "Gate Open" and "Boarding Now" = an ARIA state (e.g., `aria-expanded="true"`)
+
+---
+
 ## Learning Objectives
 - Understand what ARIA is and when to use it
 - Master ARIA roles for defining element types and purposes

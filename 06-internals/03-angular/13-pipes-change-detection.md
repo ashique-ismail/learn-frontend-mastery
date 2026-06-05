@@ -1,5 +1,18 @@
 # Pipes and Change Detection: Pure vs Impure Execution
 
+## The Idea
+
+**In plain English:** A pipe in Angular is a helper that transforms data before showing it on screen — like turning a raw number into a formatted price. "Change detection" is Angular's way of checking whether anything on screen needs to update; a "pure" pipe only re-runs when its input genuinely changes, while an "impure" pipe re-runs every single time Angular does any check.
+
+**Real-world analogy:** Imagine a vending machine that prints a receipt. A "pure" vending machine only prints a new receipt when you buy something different. An "impure" vending machine reprints the same receipt every time anyone even walks past it.
+
+- The vending machine = the pipe (transforms your selection into a receipt/output)
+- Buying something different = a new input reference (triggers the pure pipe to re-run)
+- The receipt = the transformed value shown in the template
+- Walking past = a change-detection cycle (triggers the impure pipe every time)
+
+---
+
 ## Overview
 
 Angular pipes are transformation functions used in templates to format, filter, and transform data before display. The distinction between pure and impure pipes significantly affects when they execute and how they interact with Angular's change detection system.

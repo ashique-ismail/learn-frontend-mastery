@@ -1,5 +1,17 @@
 # Data Fetching with useEffect (and Its Problems)
 
+## The Idea
+
+**In plain English:** Data fetching means your app goes out to the internet to grab information (like a user's name or a list of products) and then shows it on screen. `useEffect` is a React tool that lets you trigger that request at the right moment — after the page has loaded.
+
+**Real-world analogy:** Imagine you walk into a library and ask the librarian to find a book for you. You sit down and wait. When the librarian comes back, you read the book. But if you change your mind and ask for a different book before they return, you have to tell the first librarian "never mind" — otherwise they might come back with the wrong book and confuse you.
+
+- The librarian going to fetch the book = the `fetch()` call requesting data from a server
+- Telling the first librarian "never mind" = the cleanup function in `useEffect` (using `AbortController` or a `cancelled` flag)
+- Sitting down and waiting = the loading state your component shows while data is on its way
+
+---
+
 ## Overview
 
 Using `useEffect` for data fetching is a common pattern in React, but it comes with several challenges and pitfalls. While it works for simple cases, modern alternatives (React Query, SWR, Server Components) often provide better solutions.

@@ -1,5 +1,18 @@
 # Angular Server-Side Rendering (SSR) - Interview Questions
 
+## The Idea
+
+**In plain English:** Server-Side Rendering (SSR) means that when someone visits your website, a computer on the internet (the server) builds the full page and sends ready-made HTML to the visitor's browser, instead of sending a blank page and making the browser do all the building work itself.
+
+**Real-world analogy:** Imagine ordering a meal at a restaurant versus buying groceries and cooking at home. At the restaurant, the kitchen prepares the full dish and the waiter brings it to your table — you can eat right away. Buying groceries means you carry raw ingredients home and cook everything yourself before you can eat.
+
+- The restaurant kitchen = the server (does the work before you receive anything)
+- The fully plated dish delivered to your table = the pre-built HTML sent to the browser
+- Eating immediately without waiting to cook = the fast "First Contentful Paint" the user sees
+- The waiter = the network, delivering what the kitchen prepared
+
+---
+
 ## Overview
 
 This guide covers Angular Universal for server-side rendering, including hydration, the TransferState API, platform detection, SEO considerations, and the differences between prerendering and SSR.

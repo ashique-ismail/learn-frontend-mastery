@@ -1,5 +1,18 @@
 # Memory Management
 
+## The Idea
+
+**In plain English:** Memory management is how a program keeps track of the storage space it uses while running, and makes sure that space gets freed up when it is no longer needed. Think of "memory" (RAM) as temporary workspace your computer rents out to programs — good programs tidy up after themselves; bad ones keep holding onto space they are done with, causing the program to slow down or crash over time.
+
+**Real-world analogy:** Imagine you are working at a library and you borrow a cart to hold books you are actively using. When you finish with a cart, you are supposed to return it so someone else can use it. A memory leak is like a librarian who borrows cart after cart but never returns them — eventually every cart in the library is taken and no one can get any work done.
+
+- The library cart = a chunk of allocated memory
+- Borrowing a cart = creating a variable or object in code
+- Returning the cart = releasing (freeing) memory when it is no longer needed
+- The library running out of carts = the app running out of memory and crashing
+
+---
+
 ## Overview
 
 Memory management is critical for building performant, stable web applications. Memory leaks cause applications to slow down over time, eventually crashing or becoming unresponsive. This guide covers common memory leak patterns (event listeners, closures, detached DOM nodes), garbage collection mechanics, heap profiling techniques, and prevention strategies.

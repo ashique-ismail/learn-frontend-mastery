@@ -1,5 +1,17 @@
 # Production Failure: Hydration Failures and SSR Cascades
 
+## The Idea
+
+**In plain English:** When a website loads, the server first sends a "painted picture" of the page (HTML), and then the browser's JavaScript takes over to make it interactive. Hydration is that handover moment — and a hydration failure is when the JavaScript arrives and finds the picture looks different from what it expected, causing glitches or blank screens.
+
+**Real-world analogy:** Imagine a stage crew sets up a theatre set before the audience arrives (the server renders HTML). Then the live actors walk out to perform (JavaScript "hydrates" the page). If the actors find the props have been moved — the chair is on the left instead of the right — they freeze up or improvise badly. That mismatch is the failure.
+
+- The stage crew setting up the set = the server generating the initial HTML
+- The actors walking out = the JavaScript/React code running in the browser
+- The misplaced props = values that differ between server and browser (like a clock showing a different time)
+
+---
+
 ## Overview
 
 Hydration is the process of React attaching event listeners to server-rendered HTML. When the client-rendered React tree doesn't match what the server sent, React must reconcile the mismatch — and the failure modes range from silent wrong UI to complete white screens. These bugs are notoriously hard to reproduce because they only manifest in production SSR environments.

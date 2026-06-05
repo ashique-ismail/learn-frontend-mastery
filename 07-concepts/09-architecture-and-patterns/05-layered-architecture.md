@@ -1,5 +1,17 @@
 # Layered Architecture
 
+## The Idea
+
+**In plain English:** Layered architecture is a way of organizing code into separate "floors" (called layers), where each floor has one specific job and can only talk to the floor directly below it — just like the floors of a building, where you take the stairs one level at a time instead of jumping straight to the basement.
+
+**Real-world analogy:** Think of a restaurant. When you order food, your request travels through three distinct roles before the meal reaches you — and no role jumps out of order.
+
+- The waiter (presentation layer) = the part of the code that interacts with the user, takes requests, and shows results
+- The chef (business logic layer) = the part of the code that applies the rules (e.g., "is this dish available?", "calculate the total price")
+- The pantry/stockroom (data access layer) = the part of the code that reads from and writes to the database or storage
+
+---
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Core Layers](#core-layers)

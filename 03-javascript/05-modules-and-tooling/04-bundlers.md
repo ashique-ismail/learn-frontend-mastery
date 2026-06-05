@@ -1,5 +1,16 @@
 # Bundlers: Vite, Webpack, esbuild, Rollup, and Turbopack
 
+## The Idea
+
+**In plain English:** A bundler is a tool that takes all the separate files your website is made of — your JavaScript, CSS, images, and more — and packages them together into a small number of optimized files that load quickly in the browser. Think of it as a packing machine that prepares your code for shipping to users.
+
+**Real-world analogy:** Imagine you run a meal-prep service and must pack individual ingredients (flour, eggs, spices, vegetables) from dozens of small jars into neat, labeled meal kits for customers. You combine, sort, and discard unused items to keep each kit as light as possible.
+- The individual ingredient jars = your separate source files (JavaScript modules, CSS files, images)
+- The meal-prep packing machine = the bundler
+- The finished, labeled meal kit = the single (or few) output files sent to the browser
+
+---
+
 ## Overview
 
 A JavaScript bundler takes a graph of modules — JavaScript, CSS, images, fonts, and other assets — and produces one or more optimized output files for deployment. Bundlers handle module resolution, code transformation, tree shaking, code splitting, asset hashing, and a dozen other concerns that make modern web applications work at scale.

@@ -1,5 +1,18 @@
 # E2E Testing Strategies
 
+## The Idea
+
+**In plain English:** E2E (End-to-End) testing means running your entire app exactly like a real user would — clicking buttons, filling forms, and checking that the right things appear on screen. "End-to-End" means the test covers everything from the moment a user does something all the way through the database and back.
+
+**Real-world analogy:** Imagine a restaurant health inspector who visits and orders a full meal to check the whole experience — they sit down, look at the menu, place an order, wait for the food, taste it, and verify the bill is correct. They are not just checking the kitchen in isolation.
+
+- The health inspector = the automated test
+- Ordering and eating the meal = the user journey (clicking through the app)
+- The kitchen, waitstaff, and billing system = the frontend, backend, and database all working together
+- Passing the inspection = the test assertions confirming everything worked correctly
+
+---
+
 ## Overview
 
 End-to-End (E2E) testing validates complete user workflows from start to finish, testing the entire application stack including the UI, backend, database, and external services. E2E tests simulate real user interactions in a browser environment, catching integration issues and ensuring critical user journeys work correctly in production-like conditions.

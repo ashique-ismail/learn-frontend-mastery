@@ -1,5 +1,17 @@
 # React Lanes Model and Priorities
 
+## The Idea
+
+**In plain English:** React uses a system called "lanes" to decide which updates to your screen are most urgent and which ones can wait — like a to-do list where some tasks are marked "do right now" and others are marked "do whenever you have time." Each update (like typing in a box or loading new data) gets assigned to a lane based on how quickly it needs to appear on screen.
+
+**Real-world analogy:** Think of an emergency room that handles patients with different urgency levels. A patient who walked in with a sprained ankle has to wait while a patient with chest pains is seen immediately — even if the ankle patient arrived first.
+
+- The triage nurse assigning urgency levels = React's `requestUpdateLane` function deciding which lane an update belongs to
+- The "critical" wristband on a patient = `SyncLane` (must be handled right now, like a button click)
+- The "non-urgent" wristband = `TransitionLane` (can wait, like loading search results in the background)
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [What Are Lanes](#what-are-lanes)

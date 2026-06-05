@@ -1,5 +1,17 @@
 # Marble Testing for RxJS Observables in Angular
 
+## The Idea
+
+**In plain English:** Marble testing is a way to test code that deals with events happening over time (like button clicks or data arriving from a server) by drawing the sequence of those events as a simple picture made of dashes and letters. Instead of waiting for real time to pass, the test fakes the clock so everything runs instantly.
+
+**Real-world analogy:** Imagine a train schedule written on paper. You draw a timeline as a long horizontal line, mark where each train arrives with a letter, and check that the result matches what you expected — all without any trains actually moving.
+
+- The dashes on the timeline = time passing in your code
+- Each letter on the timeline = a piece of data your observable emits
+- The expected timeline you draw = the result your test asserts
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Understanding Marble Diagrams](#understanding-marble-diagrams)

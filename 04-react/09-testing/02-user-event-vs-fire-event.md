@@ -1,5 +1,17 @@
 # userEvent vs fireEvent
 
+## The Idea
+
+**In plain English:** When testing a web app, you need to fake user actions like clicking or typing. There are two ways to do this: one that fires only the exact event you name (like just a "click"), and one that fires the full chain of events a real human would trigger (like moving the mouse over, pressing down, releasing, and then the click).
+
+**Real-world analogy:** Imagine a vending machine test. A lazy tester just flips the "dispense" switch directly to check the machine gives a snack. A thorough tester actually walks up, inserts coins, selects a button, and waits — so they also catch problems like "the coin sensor is broken" or "the button light doesn't turn on."
+
+- The lazy tester flipping the switch = `fireEvent` (triggers only the one event you specify)
+- The thorough tester going through all the steps = `userEvent` (simulates the full sequence of events a real user produces)
+- Catching the coin sensor or button light problem = side effects (focus, hover, keydown, keyup) that only `userEvent` will trigger
+
+---
+
 ## Overview
 
 React Testing Library provides two ways to simulate user interactions: `userEvent` and `fireEvent`. While `fireEvent` directly dispatches DOM events, `userEvent` simulates complete user interactions with all their side effects, making tests more realistic and reliable.

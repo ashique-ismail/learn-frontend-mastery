@@ -1,5 +1,18 @@
 # Intl API
 
+## The Idea
+
+**In plain English:** The Intl API is JavaScript's built-in toolkit for displaying text, numbers, and dates in the way people from different countries actually expect to see them. For example, the number one million looks like "1,000,000" in the US but "1.000.000" in Germany — Intl handles all of that for you automatically.
+
+**Real-world analogy:** Imagine a post office that automatically reformats addresses before delivery — it knows that in Japan the postal code comes first, in the US the state comes last, and in the UK you write the county differently. You hand it a raw address and it figures out the correct local format based on the destination country.
+
+- The post office = the `Intl` object (the central formatting system)
+- The destination country = the locale string you pass in (e.g. `'en-US'`, `'de-DE'`)
+- The raw address = the raw number, date, or text your code provides
+- The correctly reformatted address = the final string `Intl` produces for the user
+
+---
+
 ## Overview
 
 The `Intl` object is JavaScript's built-in internationalization namespace. It provides locale-sensitive formatting for numbers, dates, times, relative time, lists, and string comparison — without requiring any third-party library. Every major browser and Node.js fully supports it.

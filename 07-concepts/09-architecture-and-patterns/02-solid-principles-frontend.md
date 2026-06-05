@@ -1,5 +1,17 @@
 # SOLID Principles Applied to Frontend
 
+## The Idea
+
+**In plain English:** SOLID is a set of five rules that help you write code that stays easy to change and fix over time — like building with well-designed Lego pieces instead of hot glue. Each rule stops a different way that code can become a tangled mess.
+
+**Real-world analogy:** Think of a restaurant kitchen. Each station (grill, salad, pastry) has one job, uses shared equipment through standard hooks, and can swap out a chef without disrupting the others.
+
+- The separate kitchen stations = the Single Responsibility Principle (each piece of code does one job)
+- The standard hooks and rails that let you hang any pan = the Open/Closed Principle (you can add new tools without rebuilding the kitchen)
+- Any trained chef being able to fill any station = the Liskov Substitution Principle (replacements must work the same way as the original)
+
+---
+
 ## Overview
 
 SOLID is a set of five design principles coined by Robert Martin that guide object-oriented design toward maintainable, extensible code. While originally framed for class-based OOP, all five principles apply directly to frontend development — React components, Angular services, TypeScript modules, and pure functions all benefit from SOLID thinking. This guide translates each principle into concrete frontend patterns.

@@ -1,5 +1,18 @@
 # Sentry
 
+## The Idea
+
+**In plain English:** Sentry is a tool that automatically catches and records errors that happen in your app when real users are using it, then sends you a detailed report so you can find and fix the problem — even though you weren't watching at the time.
+
+**Real-world analogy:** Imagine a hotel that installs a silent alarm system. When something breaks in a guest's room — a leaky pipe, a broken lamp — the alarm logs exactly what room it was in, what time it happened, and what the guest was doing just before it broke, then pages the maintenance team automatically.
+
+- The hotel room = your app running in a user's browser
+- The broken lamp or leaky pipe = a code error or crash
+- The alarm log showing what happened before the break = Sentry's breadcrumbs (the trail of user actions leading up to the error)
+- The maintenance team getting paged = your developer receiving a Sentry alert
+
+---
+
 ## What It Does
 
 Sentry captures errors, performance issues, and user session data from production applications. It provides stack traces, breadcrumbs (what the user did before the error), and context to help you reproduce and fix bugs.

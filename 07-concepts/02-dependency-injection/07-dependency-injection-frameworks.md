@@ -1,5 +1,16 @@
 # Dependency Injection Frameworks
 
+## The Idea
+
+**In plain English:** A dependency injection framework is a tool that automatically handles the job of creating and connecting all the pieces your app needs to work — instead of you having to build and plug everything together by hand. Think of a "dependency" as any helper your code relies on, and "injection" as handing that helper to the code that needs it.
+
+**Real-world analogy:** Imagine a restaurant where every chef normally has to go buy their own ingredients before cooking. A DI framework is like a restaurant supply manager who stocks the kitchen ahead of time — chefs just say what they need and it appears. Then map each part explicitly:
+- The supply manager = the DI framework (resolves and delivers dependencies automatically)
+- The ingredients = the services/dependencies (e.g., a database connection, an API client)
+- The chef = your component or class (declares what it needs, but does not fetch it itself)
+
+---
+
 ## Overview
 
 Dependency Injection (DI) frameworks automate the creation and management of dependencies, removing the need for manual wiring. They provide features like automatic resolution, lifetime management, and configuration. Major frameworks include Angular's built-in DI system, InversifyJS for TypeScript, TSyringe for lightweight DI, and Awilix for Node.js applications.

@@ -1,5 +1,17 @@
 # Custom Hook Design
 
+## The Idea
+
+**In plain English:** A custom hook is a reusable function you write in React that bundles together related stateful logic — like tracking a value and automatically saving it — so you can drop that same behavior into any component without rewriting it each time. "Stateful logic" just means code that remembers and updates information over time.
+
+**Real-world analogy:** Think of a portable camping stove kit: it comes pre-assembled with the burner, fuel connector, and igniter all in one package. You just pull it out, attach it, and cook — you don't rebuild it every time you set up camp.
+
+- The kit's burner and igniter (pre-assembled, ready to use) = the hook's internal `useState` and `useEffect` logic
+- Attaching the kit to your camp setup = calling the hook inside a component
+- What the kit gives you (a lit flame to cook with) = the values and functions the hook returns
+
+---
+
 ## Rules of Hooks (Why They Exist)
 
 1. **Only call hooks at the top level** — no conditionals, loops, or early returns before hooks

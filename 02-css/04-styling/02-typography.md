@@ -1,5 +1,17 @@
 # CSS Typography
 
+## The Idea
+
+**In plain English:** CSS typography is about controlling how text looks on a webpage — things like which font (typeface) is used, how bold or thin the letters are, and how the browser handles loading those fonts. A font is simply a specific visual style for letters, numbers, and symbols.
+
+**Real-world analogy:** Think of a restaurant printing its menus. The manager tells the printer "use Garamond font, but if you don't have it, use Times New Roman, and if not that, any fancy serif style will do." While the menus are being printed, customers get a plain temporary menu so they're not left waiting with nothing.
+
+- The list of preferred fonts in order = the font stack (primary font with fallbacks)
+- The temporary plain menu given while waiting = the fallback font shown during font loading
+- Swapping the plain menu for the fancy one when it arrives = `font-display: swap`
+
+---
+
 ## Font Stacks
 
 Font stacks provide fallback fonts when primary fonts are unavailable.

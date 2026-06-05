@@ -1,5 +1,18 @@
 # Authorization Patterns
 
+## The Idea
+
+**In plain English:** Authorization is the set of rules that decides what a logged-in person is allowed to do or see. Think of it as the difference between getting into a building (authentication, proving who you are) and which rooms inside you are allowed to enter (authorization, what you can access).
+
+**Real-world analogy:** Imagine a hospital where every staff member wears a badge. When you swipe your badge at a door, the system checks your job title before letting you in — a nurse can enter patient wards, a janitor can enter supply rooms, and only doctors can enter the pharmacy.
+
+- The badge swipe = authentication (proving who you are)
+- The job title printed on the badge = your role
+- The list of rooms each job title can enter = permissions
+- The door lock that checks the badge = the authorization check in code
+
+---
+
 ## Overview
 
 Authorization determines what an authenticated user is allowed to do. While authentication verifies identity ("who are you?"), authorization controls access ("what can you do?"). Modern web applications use various authorization patterns including Role-Based Access Control (RBAC), Attribute-Based Access Control (ABAC), permissions systems, and resource-based access control.

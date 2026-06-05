@@ -1,5 +1,18 @@
 # HTMX and Hypermedia-Driven UIs
 
+## The Idea
+
+**In plain English:** HTMX is a tiny script you add to a webpage that lets HTML elements (like buttons and forms) talk directly to the server and swap in fresh pieces of the page — without writing any JavaScript. Instead of the browser doing all the work to figure out what to show, the server sends back ready-to-display HTML snippets.
+
+**Real-world analogy:** Imagine a restaurant where you stay seated and a waiter brings you exactly the dish you pointed to on the menu — replacing only your plate, not the whole table. The kitchen (server) does all the cooking and sends the finished plate; you don't have to assemble ingredients yourself at the table.
+
+- The waiter = HTMX (carries your request to the kitchen and brings back the result)
+- The kitchen = the server (prepares and returns ready-to-use HTML)
+- Replacing only your plate = swapping just the part of the page that changed, not reloading everything
+- You pointing at the menu = an HTML attribute like `hx-get` or `hx-post` on a button
+
+---
+
 ## Overview
 
 HTMX is a library that extends HTML with attributes for making HTTP requests directly from any element, receiving HTML fragments in response, and swapping those fragments into the DOM — all without writing JavaScript. It is a return to the original hypermedia architecture of the web: the server remains the source of truth for application state and returns HTML (hypermedia), not JSON (data).

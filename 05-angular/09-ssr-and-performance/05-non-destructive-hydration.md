@@ -1,6 +1,19 @@
 # Non-Destructive Hydration in Angular
 
+## The Idea
+
+**In plain English:** Non-destructive hydration is how a web app "wakes up" on your screen without flickering or rebuilding everything from scratch. When a server sends you a ready-made webpage (the visual HTML), hydration is the step where the app quietly attaches its interactive brains to those existing elements instead of tearing them down and rebuilding them.
+
+**Real-world analogy:** Imagine a restaurant that pre-sets every table before guests arrive — napkins folded, glasses placed, menus out. When guests sit down, a waiter simply walks over and becomes their point of contact; nobody clears the table and resets it from zero just because a human is now present.
+
+- The pre-set table = the server-rendered HTML the browser already shows
+- The waiter arriving = Angular's JavaScript loading and attaching to the existing page
+- Leaving the table untouched = non-destructive (no tearing down and rebuilding the DOM)
+
+---
+
 ## Table of Contents
+
 1. [Introduction](#introduction)
 2. [Understanding Hydration](#understanding-hydration)
 3. [Enabling Hydration](#enabling-hydration)
@@ -1149,21 +1162,25 @@ afterNextRender(() => {
 ## Resources
 
 ### Official Documentation
+
 - [Angular Hydration Guide](https://angular.dev/guide/hydration)
 - [TransferState API](https://angular.dev/api/platform-browser/TransferState)
 - [provideClientHydration](https://angular.dev/api/platform-browser/provideClientHydration)
 
 ### Articles
+
 - "Understanding Angular Hydration" - Angular Blog
 - "Non-Destructive Hydration Deep Dive" - Web.dev
 - "Optimizing Hydration Performance" - Angular University
 
 ### Video Tutorials
+
 - "Angular Hydration Explained" - ng-conf
 - "Mastering Hydration" - Angular Connect
 - "SSR Performance with Hydration" - Google Chrome Developers
 
 ### Tools
+
 - Angular DevTools - Hydration debugging
 - Chrome DevTools - Performance profiling
 - Lighthouse - Measure hydration impact on Core Web Vitals

@@ -1,13 +1,26 @@
 # Implement an Accessible Accordion
 
+## The Idea
+
+**In plain English:** An accordion is a list of sections on a webpage where each section has a clickable header — click it and the content below expands or collapses. "Accessible" means it also works for people using keyboards or screen readers (software that reads the screen aloud for visually impaired users), so everyone can use it, not just mouse users.
+
+**Real-world analogy:** Think of a physical accordion folder — the kind with labeled tabs you use to organize documents. You pull open one tab's pocket to see the papers inside, and you can close it again by pressing it shut. If you're following strict rules (the "accessible" part), the folder also has Braille labels so someone who can't see can still find and open the right pocket.
+
+- The labeled tab = the clickable button header (tells you what's inside)
+- The pocket that opens/closes = the panel (the content that shows or hides)
+- The Braille label = the ARIA attributes (extra info that screen readers announce aloud)
+
+---
+
 ## ARIA Accordion Pattern
 
-```
+```text
 role="region" (panel) + aria-labelledby pointing to its button
 button with aria-expanded="true/false" + aria-controls pointing to panel id
 ```
 
 Keyboard interaction:
+
 - **Enter/Space**: toggle the focused panel
 - **Tab**: move focus through interactive elements (buttons)
 - Arrow keys (optional): navigate between headers

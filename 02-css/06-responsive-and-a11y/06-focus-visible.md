@@ -1,5 +1,16 @@
 # :focus-visible: Accessible Focus Styles and Keyboard Navigation
 
+## The Idea
+
+**In plain English:** `:focus-visible` is a CSS rule that controls when a glowing highlight ring (called a focus indicator) appears around a button or link on a webpage — it only shows the ring when you are navigating with a keyboard, not when you click with a mouse.
+
+**Real-world analogy:** Imagine a tour guide leading two groups through a museum. For the walking tour group (keyboard users), the guide shines a flashlight on each exhibit as they stop there, so everyone knows exactly where they are. For the self-guided group (mouse users), the flashlight stays off because those visitors can already see what they clicked on.
+- The flashlight beam = the focus ring (the visible outline around an element)
+- The walking tour group = keyboard users who need a visible indicator to know where they are
+- The self-guided group = mouse users who do not need the extra highlight
+
+---
+
 ## Learning Objectives
 - Understand the difference between `:focus` and `:focus-visible`
 - Implement accessible keyboard navigation patterns

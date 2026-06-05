@@ -1,6 +1,20 @@
 # Router Internals
 
+## The Idea
+
+**In plain English:** The Angular Router is the system that decides which page (screen) to show when you type a URL or click a link in an Angular app. It reads the web address, figures out which piece of your app matches it, runs any security checks, fetches needed data, and then displays the right content.
+
+**Real-world analogy:** Think of a large museum with a front desk, security checkpoints, and tour guides. When you arrive and say "I want to see the Egyptian exhibit," a specific process kicks in before you ever set foot in that room.
+
+- The museum directory (route configuration) = the list of URL patterns and which component to show for each
+- The front desk clerk checking your ticket = a canActivate guard deciding if you are allowed to visit that route
+- The tour guide fetching brochures before the tour starts = a resolver loading data before the component appears
+- The floor number and room sign you follow = the URL path that Angular matches to find the right component
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Navigation Cycle](#navigation-cycle)
 - [Route Matching Algorithm](#route-matching-algorithm)

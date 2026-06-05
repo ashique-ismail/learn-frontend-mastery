@@ -1,5 +1,16 @@
 # Open Graph and Twitter Cards
 
+## The Idea
+
+**In plain English:** Open Graph and Twitter Cards are special instructions you hide inside a webpage that tell social media platforms (like Facebook or X/Twitter) exactly what image, title, and description to show when someone shares your link — because without them, those platforms just guess, and usually get it wrong.
+
+**Real-world analogy:** Think of sharing a link like handing someone a book to display in a shop window. Without instructions, the shopkeeper might tape a random page to the glass. Open Graph tags are like the official display card the publisher includes that says "show this cover image, this title, and this blurb":
+- The book's official display card = the Open Graph / Twitter Card meta tags
+- The cover image on the display card = `og:image` (the preview photo shown in the post)
+- The title and blurb on the display card = `og:title` and `og:description` (the text shown below the preview)
+
+---
+
 ## Overview
 
 Open Graph and Twitter Cards are meta tags that control how your content appears when shared on social media platforms. They enhance link previews with images, titles, and descriptions.

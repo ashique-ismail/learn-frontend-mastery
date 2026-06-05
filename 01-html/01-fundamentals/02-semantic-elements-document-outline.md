@@ -1,6 +1,20 @@
 # Semantic Elements & Document Outline
 
+## The Idea
+
+**In plain English:** Semantic elements are special HTML tags that tell the browser (and anyone reading your code) what role each piece of content plays on the page — for example, "this is a navigation menu" or "this is the main content." Instead of using a generic unlabelled box for everything, you use a named box that describes its purpose.
+
+**Real-world analogy:** Think of a newspaper laid out on a table. A newspaper has clearly labelled sections: a banner at the top with the name, a main story area in the centre, a sidebar with related snippets, and a footer with the publisher's address. Each section has a distinct label and purpose.
+
+- The newspaper banner = `<header>` (introductory content and branding at the top)
+- The main story area = `<main>` (the primary, unique content of the page)
+- The sidebar with related snippets = `<aside>` (tangentially related content)
+- The publisher's address at the bottom = `<footer>` (closing metadata and contact info)
+
+---
+
 ## Learning Objectives
+
 - Understand the purpose and benefits of semantic HTML
 - Master the correct usage of structural semantic elements
 - Build accessible and SEO-friendly document outlines

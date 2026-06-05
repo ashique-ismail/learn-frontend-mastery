@@ -1,5 +1,17 @@
 # WCAG conformance
 
+## The Idea
+
+**In plain English:** WCAG (Web Content Accessibility Guidelines) is a set of rules that tells web developers how to build websites that everyone can use — including people who are blind, deaf, or have difficulty using a mouse. Think of it as a checklist that grades how accessible your website is.
+
+**Real-world analogy:** Imagine a public library building. The local government publishes a building code that says the library must have ramps, wide doorways, braille signs, and audio announcements so that everyone — not just people who can walk or see — can use it. Inspectors check the building against three tiers: basic (you must have a ramp), standard (you must also have accessible bathrooms), and gold (you also have audio guides for every section).
+- The building code = WCAG (the official set of rules)
+- The library building = your website
+- The three inspection tiers (basic / standard / gold) = WCAG conformance levels A, AA, and AAA
+- The library features (ramps, braille signs, audio) = specific accessibility techniques like alt text, captions, and keyboard navigation
+
+---
+
 ## Overview
 
 Web Content Accessibility Guidelines (WCAG) are international standards for web accessibility. WCAG 2.1 is the current standard, with WCAG 2.2 adding new criteria and WCAG 3.0 in development.

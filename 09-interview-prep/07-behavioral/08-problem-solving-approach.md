@@ -1,5 +1,17 @@
 # Behavioral: Problem-Solving Approach
 
+## The Idea
+
+**In plain English:** Problem-solving approach is the step-by-step method you use to figure out why something is broken and how to fix it — instead of randomly guessing, you slow down, gather clues, form a theory, test it, and then make sure the problem never comes back.
+
+**Real-world analogy:** Imagine a car mechanic investigating why a customer's car won't start. They don't just swap random parts hoping something works — they listen to the symptoms, check the battery, then the starter, then the fuel line, testing one thing at a time until they pinpoint the exact cause, fix it, and tell the owner what to watch for next time.
+
+- The mechanic listening to symptoms = gathering information about a bug or error
+- The mechanic testing one part at a time = isolating variables to form and test hypotheses
+- The mechanic telling the owner what to watch for = adding monitoring and documentation to prevent the problem from happening again
+
+---
+
 ## Overview
 
 Master articulating your debugging methodologies, technical problem-solving processes, overcoming obstacles, making trade-off decisions, and learning from failures.

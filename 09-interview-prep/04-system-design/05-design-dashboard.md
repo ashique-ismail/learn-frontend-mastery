@@ -1,5 +1,17 @@
 # System Design: Analytics Dashboard
 
+## The Idea
+
+**In plain English:** An analytics dashboard is a single screen that gathers numbers and statistics from different sources and displays them as charts, graphs, and tables so you can understand what is happening at a glance. Think of it like the instrument panel in a car — instead of guessing how fast you are going or how much fuel is left, all the information is in one place, updating in real time.
+
+**Real-world analogy:** Imagine a school cafeteria notice board that staff update throughout the day — each poster shows today's meal count, money collected, and leftover food. A digital analytics dashboard works the same way, but the posters update themselves automatically every few seconds.
+
+- The notice board = the dashboard layout that holds everything together
+- Each poster on the board = a widget (a self-contained panel showing one chart, metric, or table)
+- The staff member who replaces a poster with fresh numbers = the real-time data service that pushes live updates to each widget
+
+---
+
 ## Overview
 
 Design an analytics dashboard with real-time updates, data visualization, filtering/sorting, export capabilities, and performance optimization for large datasets.
@@ -7,6 +19,7 @@ Design an analytics dashboard with real-time updates, data visualization, filter
 ## Requirements
 
 ### Functional Requirements
+
 - Multiple chart types (line, bar, pie, area)
 - Real-time data updates
 - Date range filtering
@@ -17,6 +30,7 @@ Design an analytics dashboard with real-time updates, data visualization, filter
 - Responsive design
 
 ### Non-Functional Requirements
+
 - Load < 3 seconds
 - Handle 100K+ data points
 - Real-time updates < 1 second

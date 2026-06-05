@@ -1,12 +1,25 @@
 # Signal Inputs and Outputs in Angular
 
+## The Idea
+
+**In plain English:** Signal inputs and outputs are the ways an Angular component receives information from its parent (input) and sends information back up to its parent (output). Think of a component as a mini-program inside a bigger app — inputs are how data flows in, and outputs are how events flow out.
+
+**Real-world analogy:** Imagine a vending machine at a school. You put in a coin and press a button (inputs), and the machine drops a snack and lights up a "thank you" display (outputs). If the machine has a screen that shows your balance live and updates as you add coins, that is two-way binding.
+
+- The coin slot and button = `input()` — data the machine receives from the user
+- The "dispensed snack" alert = `output()` — an event the machine sends back to let you know something happened
+- The live-updating balance screen = `model()` — a value that flows both in and out, staying in sync between you and the machine
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [input() Function](#input-function)
 - [output() Function](#output-function)
 - [model() Two-Way Binding](#model-two-way-binding)
 - [Input Transforms](#input-transforms)
-- [Required vs Optional](#required-vs-optional)
+- [Required vs Optional](#required-vs-optional-inputs)
 - [Migration from Decorators](#migration-from-decorators)
 - [Advanced Patterns](#advanced-patterns)
 - [Common Mistakes](#common-mistakes)
@@ -20,6 +33,7 @@
 Angular 17+ introduces signal-based alternatives to traditional `@Input()` and `@Output()` decorators. The new `input()`, `output()`, and `model()` functions provide a more type-safe, reactive way to handle component communication while integrating seamlessly with Angular's signal system.
 
 Key benefits:
+
 - **Type safety**: Better TypeScript inference
 - **Reactivity**: Automatic change detection with signals
 - **Simpler syntax**: Less boilerplate than decorators

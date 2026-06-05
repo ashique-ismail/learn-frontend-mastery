@@ -1,5 +1,19 @@
 # Hoisting
 
+## The Idea
+
+**In plain English:** Hoisting is what happens when JavaScript secretly reads through your entire code before running it, and reserves space in memory for all your variable and function names — so some things are available even before the line where you wrote them.
+
+**Real-world analogy:** Imagine a school play where the director reads the full script the night before rehearsal and writes every character's name on a dressing-room door — even before any actor has arrived. On the day of rehearsal, those doors already exist. Some rooms are fully set up (function declarations), while others are empty placeholders waiting to be filled (var variables). A few doors have a "do not enter yet" sign taped on them (let and const variables).
+
+- The director reading the script the night before = JavaScript's compilation phase scanning your code before running it
+- A dressing-room door with an actor's name = a variable or function name being reserved in memory
+- A fully set-up room ready on day one = a function declaration, completely available before any code runs
+- An empty room with a door = a var variable, reserved but holding undefined until the assignment line is reached
+- A door with a "do not enter yet" sign = a let or const variable in the Temporal Dead Zone, reserved but off-limits until its line executes
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [Variable Hoisting](#variable-hoisting)

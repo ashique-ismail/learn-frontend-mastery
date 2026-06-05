@@ -1,5 +1,17 @@
 # Strategy Pattern
 
+## The Idea
+
+**In plain English:** The Strategy Pattern is a way of writing code so that you can swap out the "method" or "approach" used to do a task without changing the rest of your program. Think of it like telling your program: "I don't care exactly how you do this — just do it — and I can change my mind about the how at any time."
+
+**Real-world analogy:** Imagine you need to travel from home to school. You can choose to walk, take the bus, or ride a bike. Each route gets you to the same destination, but you pick the method based on the weather or how late you are — and you can switch tomorrow without rebuilding the road.
+
+- The destination (school) = the task your code needs to accomplish (e.g. process a payment)
+- Each travel method (walk, bus, bike) = a concrete strategy (e.g. CreditCard, PayPal, Crypto)
+- You, the traveller deciding which method to use = the context object that holds and uses the strategy
+
+---
+
 ## Overview
 
 The Strategy pattern is a behavioral design pattern that defines a family of algorithms, encapsulates each one, and makes them interchangeable. It lets the algorithm vary independently from clients that use it. This pattern promotes the Open/Closed Principle by allowing new strategies to be added without modifying existing code.

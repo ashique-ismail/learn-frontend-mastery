@@ -1,5 +1,17 @@
 # Pure Functions and Side Effects
 
+## The Idea
+
+**In plain English:** A pure function is like a recipe that always produces the exact same dish if you use the exact same ingredients, and it never messes up your kitchen while doing it. "Pure" means predictable and self-contained - the function only uses what you hand it and gives you back a result without secretly changing anything else.
+
+**Real-world analogy:** Imagine a vending machine. You press button B3 and insert $1.50, and you always get the same bag of chips - every single time, no matter who used the machine before you or what time it is. The machine does not rearrange items in other slots or change prices while serving you.
+
+- The button you press + the money you insert = the inputs (arguments) to the function
+- The bag of chips that comes out = the return value of the function
+- The machine never rearranging other items = no side effects (nothing outside the function changes)
+
+---
+
 ## Overview
 
 Pure functions are the foundation of functional programming in JavaScript. A function is pure if, given the same inputs, it always returns the same output (referential transparency), and it has no observable side effects on state outside its own scope. Side effects — mutations of external state, I/O operations, network calls, DOM manipulation — are not inherently wrong, but isolating them from pure logic makes programs dramatically easier to reason about, test, and optimize. Senior engineers are expected not just to define pure functions, but to architect systems where side effects are contained, explicit, and manageable.

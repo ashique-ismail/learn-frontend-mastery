@@ -1,5 +1,17 @@
 # CSS Math Functions: `calc()`, `min()`, `max()`, `clamp()`
 
+## The Idea
+
+**In plain English:** CSS math functions let you write simple math directly in your styles so the browser can figure out sizes on the fly. Instead of picking one fixed number, you give the browser a formula — like "take the full width and subtract 50 pixels" — and it calculates the right value for every screen automatically.
+
+**Real-world analogy:** Think of adjusting a shelf to fit inside a wardrobe. You measure the wardrobe's total inside width, then subtract a few centimetres on each side so the shelf slides in cleanly. You don't know the exact number until you measure, but the rule — "total width minus the gap on each side" — always works no matter which wardrobe you try it in.
+
+- The wardrobe's inside width = `100%` (the parent container's available space)
+- The gap you subtract on each side = `50px` (a fixed offset)
+- The rule you apply = `calc(100% - 50px)` (the CSS math formula)
+
+---
+
 ## Overview
 
 CSS math functions allow you to perform calculations directly in CSS, enabling responsive and dynamic layouts without JavaScript.

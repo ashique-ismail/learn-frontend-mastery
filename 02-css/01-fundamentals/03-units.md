@@ -1,5 +1,16 @@
 # CSS Units: px, em, rem, %, vw/vh, dvh/svh/lvh, ch, ex, fr
 
+## The Idea
+
+**In plain English:** CSS units are the measurement system you use to tell a browser how big or small things should be — just like how you might measure a room in feet, a recipe in cups, or a person's height in centimetres, each unit serves a different purpose.
+
+**Real-world analogy:** Imagine you are decorating a room and you tell the furniture store "I want a sofa that takes up half the wall." Whether the wall is 3 metres or 6 metres wide, the sofa always fills half of it. But if you said "I want a sofa exactly 2 metres wide," it is fixed no matter what. CSS units work the same way — some are fixed measurements and some are relative to something else.
+- The fixed "2 metres wide" sofa = `px` (always the same size, no matter the screen)
+- The "half the wall" sofa = `%` or `fr` (scales relative to the surrounding space)
+- The "same height as the door frame" shelf = `em` or `rem` (scales relative to a font size, like a reference point in the room)
+
+---
+
 ## Learning Objectives
 - Master absolute and relative unit types and when to use each
 - Understand viewport units and their mobile viewport variants

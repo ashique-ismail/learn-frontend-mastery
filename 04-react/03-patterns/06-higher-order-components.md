@@ -1,5 +1,17 @@
 # Higher-Order Components (HOCs)
 
+## The Idea
+
+**In plain English:** A Higher-Order Component is a function that takes a component (a building block of your app's screen) and gives it back to you upgraded with new abilities, without changing the original. Think of it as a wrapper that adds extra features around something that already exists.
+
+**Real-world analogy:** Imagine a plain coffee mug. A mug sleeve is a cardboard wrap you slide over the mug — it adds heat protection, but the mug inside is unchanged. You can put that same sleeve on any mug, and you can even stack sleeves (one for heat, one for grip).
+
+- The mug = the original component (your existing piece of UI)
+- The sleeve = the HOC (the function that wraps and enhances)
+- The sleeved mug = the new enhanced component returned by the HOC
+
+---
+
 ## Overview
 
 A **Higher-Order Component (HOC)** is a pattern that involves a function that takes a component and returns a new component with additional props or behavior.

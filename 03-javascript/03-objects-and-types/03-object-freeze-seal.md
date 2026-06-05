@@ -1,5 +1,17 @@
 # Object.freeze, Object.seal, and Object.preventExtensions
 
+## The Idea
+
+**In plain English:** JavaScript lets you lock down objects so that their contents cannot be changed, partially or fully. `freeze` makes an object completely read-only, `seal` locks its shape (no adding or removing properties) but still lets you update values, and `preventExtensions` only stops new properties from being added.
+
+**Real-world analogy:** Think of a museum display case with exhibits inside. A fully locked glass case (freeze) means you cannot add new items, remove existing ones, or move anything around. A sealed display tray (seal) means you cannot add or remove items, but you can swap one exhibit for another of the same kind. An open shelf with a "no new items" sign (preventExtensions) means no new things can be placed there, but you can rearrange, remove, or replace what is already on it.
+
+- The display case = the JavaScript object
+- The items on display = the properties and their values
+- The level of locking = `freeze`, `seal`, or `preventExtensions`
+
+---
+
 ## Overview
 
 JavaScript provides three built-in methods for restricting object mutability at the descriptor level. They form a spectrum from mildest to most restrictive: `preventExtensions` blocks new properties from being added, `seal` additionally makes all existing properties non-configurable, and `freeze` further makes all data properties non-writable. These operations are permanent and irreversible — once applied, they cannot be undone. Understanding their precise semantics is critical for building immutable configuration objects, protecting API contracts, and reasoning about data integrity in large applications.

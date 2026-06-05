@@ -1,5 +1,17 @@
 # Implement Deep Clone
 
+## The Idea
+
+**In plain English:** Deep cloning means making a completely independent copy of something — every layer of it — so that changing the copy never affects the original. Unlike a shallow copy (which only copies the top layer), a deep clone digs all the way down through every nested piece of data.
+
+**Real-world analogy:** Imagine photocopying a scrapbook. A shallow copy is like tearing out only the cover page and taping on the same photos that are still glued inside the original — if someone writes on those photos, both copies change. A deep clone is like photocopying every single page, cutting out every photo, and reprinting each one individually, so the two scrapbooks are completely separate forever.
+
+- The scrapbook cover = the top-level object
+- The pages and photos inside = nested objects and arrays
+- Reprinting every photo independently = recursively cloning each nested value
+
+---
+
 ## Overview
 
 Implement deep cloning for JavaScript objects, handling circular references, special objects (Date, RegExp, Map, Set), and performance optimization.

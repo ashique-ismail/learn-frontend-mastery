@@ -1,5 +1,17 @@
 # Functional Interceptors
 
+## The Idea
+
+**In plain English:** A functional interceptor is a function that automatically runs on every web request your app makes or receives — letting you do things like add a password (token) to every request, or check every response for errors, without repeating that code everywhere.
+
+**Real-world analogy:** Think of a hotel concierge desk that every guest must pass through when leaving or returning. The concierge checks your keycard, stamps your pass, and notes the time — every single time, automatically.
+
+- The concierge desk = the interceptor function
+- The guest's pass being stamped = the HTTP request being modified (e.g., a token added)
+- Every guest passing through = every HTTP request/response going through the interceptor chain
+
+---
+
 ## Overview
 
 Functional interceptors, introduced in Angular 15, provide a modern, lightweight approach to intercepting HTTP requests and responses. Unlike class-based interceptors that require dependency injection through constructors, functional interceptors are simple functions that compose elegantly and integrate seamlessly with Angular's standalone APIs.
@@ -1093,6 +1105,7 @@ A: `HttpContext` passes metadata between interceptors without modifying the requ
 **Q: Can you skip an interceptor for specific requests?**
 
 A: Yes, use `HttpContext` with a token to signal skipping:
+
 ```typescript
 http.get('/api/data', {
   context: new HttpContext().set(SKIP_AUTH, true)
@@ -1102,6 +1115,7 @@ http.get('/api/data', {
 **Q: How do you inject services into functional interceptors?**
 
 A: Use the `inject()` function:
+
 ```typescript
 export const myInterceptor: HttpInterceptorFn = (req, next) => {
   const service = inject(MyService);

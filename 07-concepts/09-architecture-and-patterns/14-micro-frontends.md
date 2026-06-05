@@ -1,5 +1,17 @@
 # Micro Frontends
 
+## The Idea
+
+**In plain English:** Micro frontends are a way of building a website by splitting it into separate mini-apps, each built and updated by a different team, that all appear as one seamless site to the visitor. Think of each mini-app as its own independent piece that can be changed without touching the others.
+
+**Real-world analogy:** Imagine a large shopping mall where different store owners each run their own shop — the food court, the clothing store, and the electronics store are all separate businesses. The mall building (shell) just provides the entrance, hallways, and signs so visitors can move between them:
+
+- The mall building = the shell/container application that loads and displays each section
+- Each individual store = a micro frontend owned and deployed by a separate team
+- The shared corridors and signage = shared navigation, design system, and routing between micro frontends
+
+---
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Core Concepts](#core-concepts)

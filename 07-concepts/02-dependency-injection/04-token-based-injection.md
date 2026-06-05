@@ -1,5 +1,17 @@
 # Token-Based Injection
 
+## The Idea
+
+**In plain English:** Token-based injection is a way to give your code named "claim tickets" that it can hand in to receive a specific value or service — like a coat check where the ticket (token) is what you use to claim your coat, not the coat itself. The token is just a unique label that the system uses to look up and deliver exactly the right thing, whether that thing is a URL string, a config object, or a service.
+
+**Real-world analogy:** Imagine a hotel luggage storage desk. You drop off your bag, and the clerk hands you a numbered ticket. Later, any guest who holds ticket #42 can walk up and claim that exact bag — they don't need to describe the bag, they just present the ticket.
+
+- The numbered ticket = the injection token (a unique identifier, not the value itself)
+- The bag stored behind the desk = the value or service being injected (e.g., an API URL, a config object)
+- The hotel guest presenting the ticket = the component or service asking for the dependency
+
+---
+
 ## Overview
 
 Token-based injection solves a fundamental problem with class-based DI: you can't inject multiple implementations of the same interface, non-class values (strings, numbers, configs), or third-party services that you don't own. An injection token is a unique identifier used as the key in the dependency container — decoupled from both the provider and the consumer. This guide covers Angular's `InjectionToken`, React Context as a primitive token system, and patterns for making token-based injection type-safe and testable.

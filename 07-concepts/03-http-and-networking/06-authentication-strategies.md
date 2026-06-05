@@ -1,5 +1,18 @@
 # Authentication Strategies
 
+## The Idea
+
+**In plain English:** Authentication strategies are the different methods a website uses to check who you are — like verifying your identity before letting you through the door. A "strategy" is just the specific technique chosen to do that check, such as using a temporary digital pass (a token) or a stored session record.
+
+**Real-world analogy:** Imagine going to a concert. You buy a ticket online, show it at the gate, and the staff stamp your hand. For the rest of the night, bouncers just check your stamp instead of your ticket — and at midnight the stamp wears off and you'd need a fresh one.
+
+- The ticket purchase = logging in with your username and password
+- The hand stamp = the token or session ID the server gives your browser after login
+- The bouncer checking your stamp = the server verifying your token on every request
+- The stamp wearing off at midnight = token expiration forcing you to log in again
+
+---
+
 ## Overview
 
 Authentication is the process of verifying the identity of a user or system. Modern web applications use various authentication strategies, each with different security characteristics, use cases, and trade-offs. The most common strategies include JWT (JSON Web Tokens), session-based authentication, OAuth 2.0, and refresh token mechanisms.

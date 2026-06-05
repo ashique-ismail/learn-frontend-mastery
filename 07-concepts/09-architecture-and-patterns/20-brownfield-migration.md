@@ -1,5 +1,17 @@
 # Brownfield Migration Strategies
 
+## The Idea
+
+**In plain English:** Brownfield migration means updating or replacing old, messy software that is already running and being used by real people — without shutting it down or starting from scratch. Think of it as renovating a house while people are still living in it, rather than tearing it down and building a new one.
+
+**Real-world analogy:** Imagine a busy restaurant that wants to remodel its kitchen. They can't close for six months while workers gut the whole thing — they'd lose all their customers. So instead, they upgrade one station at a time: first the grill, then the prep area, then the storage. Customers keep eating, waitstaff keeps serving, and the kitchen slowly becomes brand new without anyone noticing.
+
+- The restaurant staying open = the app staying live for real users during migration
+- Upgrading one kitchen station at a time = migrating one route or component at a time
+- The old kitchen equipment still running while new gear is installed = legacy and new code running side by side in production
+
+---
+
 ## Overview
 
 Brownfield development is working within an existing codebase — as opposed to greenfield (starting fresh). Migrating a legacy frontend (jQuery, AngularJS, Backbone, outdated React class components) to a modern stack is a common senior engineering challenge. The goal is continuous delivery throughout: users must never experience downtime, and the team must ship features while migrating.

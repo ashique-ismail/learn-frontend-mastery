@@ -1,5 +1,18 @@
 # XSS (Cross-Site Scripting)
 
+## The Idea
+
+**In plain English:** XSS (Cross-Site Scripting) is an attack where a hacker tricks a website into running the hacker's own secret instructions (called a "script") inside your browser, without you knowing. A script is a small piece of code a website runs to make things work — and XSS lets attackers sneak in their own malicious version.
+
+**Real-world analogy:** Imagine a community bulletin board at a library where anyone can pin a note. A troublemaker pins a note that says "Anyone who reads this, call this number and read out your home address." Every person who walks past and reads it ends up unknowingly giving away private information.
+
+- The bulletin board = a website that displays content submitted by users
+- The troublemaker's fake note = the attacker's malicious script injected into the page
+- Every library visitor who reads the note = every real user whose browser runs the injected script
+- Calling out your home address = the browser sending the user's private data (like login cookies) to the attacker
+
+---
+
 ## Overview
 
 Cross-Site Scripting (XSS) is one of the most common web vulnerabilities, allowing attackers to inject malicious scripts into web pages viewed by other users. XSS can steal cookies, session tokens, credentials, and perform actions on behalf of victims. This guide covers all three types of XSS (Reflected, Stored, DOM-based), prevention strategies including sanitization and Content Security Policy (CSP), and framework-specific protections in React and Angular.

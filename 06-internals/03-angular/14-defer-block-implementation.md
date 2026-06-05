@@ -1,5 +1,17 @@
 # Defer Block Implementation
 
+## The Idea
+
+**In plain English:** A defer block is a way to tell Angular "don't load this part of the page yet — wait until it's actually needed." This saves time on the first load because the browser only downloads the code for parts of the page the user is about to see or interact with.
+
+**Real-world analogy:** Imagine a restaurant that only plates and brings out your dessert when you finish your main course — not when you first sit down. The kitchen knows it will be needed eventually, but there's no point carrying it to the table before you're ready.
+
+- The kitchen preparing dessert = Angular downloading and compiling a component's code
+- "Only bring it when the main course is finished" = the trigger condition (e.g., `on viewport` or `on interaction`)
+- The placeholder napkin folded on the dessert plate = the `@placeholder` block shown before the real content arrives
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Defer Block Basics](#defer-block-basics)

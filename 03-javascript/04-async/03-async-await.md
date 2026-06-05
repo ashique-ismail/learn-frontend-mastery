@@ -1,5 +1,18 @@
 # async/await: Error Handling, Parallel vs Sequential
 
+## The Idea
+
+**In plain English:** async/await is a way to write code that waits for slow tasks (like fetching data from the internet) without freezing everything else. "async" marks a function as one that might take time, and "await" tells the code to pause and wait for the slow task to finish before moving on.
+
+**Real-world analogy:** Imagine you are at a restaurant. You place your food order with the waiter and then sit back and chat with your friend instead of standing at the kitchen window staring. When your food is ready, the waiter brings it to you and you start eating.
+
+- The waiter taking your order = calling an `async` function (starting the task)
+- Waiting at your table and chatting = the event loop handling other code while the Promise is pending
+- The moment your food arrives = the Promise resolving
+- You starting to eat = the code after `await` running
+
+---
+
 ## Overview
 
 `async/await` is syntactic sugar over Promises, introduced in ES2017. It allows you to write asynchronous code that looks synchronous, making control flow and error handling dramatically easier to reason about. Under the hood, the JavaScript engine transforms `async` functions into state machines backed by Promises — using `async/await` is never "different" from using Promises; it is always Promises.
@@ -441,7 +454,7 @@ const db = await Database.create(config);
 ## Comparison Table
 
 | Feature | Promise chains | async/await |
-|---------|--------------|------------|
+| ------- | ------------ | ---------- |
 | Readability | Moderate | High |
 | Error handling | .catch() | try/catch |
 | Debugging | Poor stack traces (pre-V8) | Good stack traces |
@@ -608,15 +621,18 @@ async function handleRequest(req) {
 ## Resources
 
 ### Official Documentation
+
 - [MDN: async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 - [MDN: await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 - [ECMAScript: Async Functions proposal](https://tc39.es/ecma262/#sec-async-function-definitions)
 
 ### Articles and Guides
+
 - [Async functions — making promises friendly](https://web.dev/async-functions/) — Google Web Dev
 - [Faster async functions and promises](https://v8.dev/blog/fast-async) — V8 blog on implementation
 - [You Don't Know JS: Async & Performance — Chapter 4](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch4.md)
 
 ### Tools
+
 - [eslint-plugin-promise: no-return-await](https://github.com/eslint-community/eslint-plugin-promise) — Detects unnecessary await on return
 - [TypeScript: AsyncFunction types](https://www.typescriptlang.org/docs/handbook/2/functions.html) — Typing async functions

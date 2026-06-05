@@ -1,12 +1,24 @@
 # Internationalization (i18n) and RTL Support
 
+## The Idea
+
+**In plain English:** Internationalization (i18n) is the process of building an app so it can be translated and adapted for people in any country — handling different languages, number formats, dates, and even text that reads right-to-left (RTL) instead of left-to-right (like Arabic or Hebrew). RTL support means your layout and icons mirror themselves automatically when a user switches to one of those languages.
+
+**Real-world analogy:** Think of a clothing store that ships worldwide. When they design their labels, they leave blank spaces for each country's team to fill in the local language, price format, and size chart — the label template is built once, but adapted per region.
+
+- The blank label template = the i18n setup in code (message IDs, format hooks)
+- The country-specific content filled in = the translation files (l10n)
+- Mirroring the store layout for countries that read right-to-left = RTL CSS support
+
+---
+
 ## Overview
 
 Internationalization (i18n) is the process of designing software so it can be adapted to different locales without engineering changes. Localization (l10n) is the actual adaptation for a specific market — translations, date formats, currency symbols, and layout direction. RTL (right-to-left) languages — Arabic, Hebrew, Persian, Urdu — have a combined speaker count of over 700 million people and require specific layout considerations that go far beyond text direction. This guide covers the i18n architecture, RTL layout techniques, CSS logical properties, and React i18n library choices.
 
 ## i18n vs l10n vs a11y
 
-```
+```text
 i18n (Internationalization):
   Engineering work — making the app capable of being localized.
   Once. Supports any locale.
@@ -223,7 +235,7 @@ function useFormatters() {
 
 ## RTL Layout Fundamentals
 
-```
+```text
 LTR (English, French, German):
   ←──── reading direction ────→
   [Logo]  [Nav]  [Search]  [Avatar]   ← header flows left to right
@@ -304,7 +316,7 @@ CSS Logical Properties are the modern solution for RTL support — they use flow
 
 ### Logical Property Reference
 
-```
+```text
 Physical → Logical equivalents:
 
 SPACING:

@@ -1,5 +1,17 @@
 # Flexbox vs Grid — When to Use Which
 
+## The Idea
+
+**In plain English:** Flexbox and Grid are two different tools in CSS (the language that styles web pages) for arranging items on a screen. Flexbox lines things up in one direction — either a row or a column — while Grid lets you place items in both rows and columns at the same time, like a spreadsheet.
+
+**Real-world analogy:** Imagine organising a school canteen. A single serving counter (a line of food trays from left to right) is like Flexbox — everything flows along one line and items adjust their spacing automatically. A full seating floor plan with labelled rows and columns of tables is like Grid — you decide exactly where every table goes in a two-dimensional map.
+
+- The serving counter = Flexbox (one-dimensional, items flow along a single axis)
+- Each food tray on the counter = a flex item that sizes itself based on its contents
+- The seating floor plan = Grid (two-dimensional, rows and columns defined upfront)
+
+---
+
 ## The Core Distinction
 
 **Flexbox** — one-dimensional layout. Control alignment along a single axis (row OR column).

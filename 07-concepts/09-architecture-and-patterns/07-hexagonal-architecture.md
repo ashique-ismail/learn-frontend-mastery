@@ -1,5 +1,17 @@
 # Hexagonal Architecture (Ports & Adapters)
 
+## The Idea
+
+**In plain English:** Hexagonal Architecture is a way to organize code so that the core logic of your app (the "brain") is completely separated from everything it talks to, like databases, user interfaces, or external services. You define clear "sockets" (called ports) that the brain uses, and then plug in different "cables" (called adapters) depending on whether you're running tests, a web app, or a mobile app.
+
+**Real-world analogy:** Think of a universal power strip with standardized socket shapes. Any appliance built to match the socket shape can be plugged in, and swapping one appliance for another never requires rewiring the strip itself.
+
+- The power strip = the application core (domain logic)
+- The socket shape = a port (a TypeScript interface defining the expected contract)
+- An appliance plugged into the socket = an adapter (e.g., a real HTTP client, a test stub, or a localStorage wrapper)
+
+---
+
 ## Table of Contents
 1. [Introduction & Origin](#introduction--origin)
 2. [The Hexagon Metaphor](#the-hexagon-metaphor)

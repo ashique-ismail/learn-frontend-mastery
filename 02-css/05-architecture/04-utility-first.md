@@ -1,5 +1,17 @@
 # Utility-First CSS
 
+## The Idea
+
+**In plain English:** Utility-first CSS is a way of styling web pages where instead of writing custom style rules for each element, you style everything by stacking small, pre-made classes directly onto your HTML. Each class does exactly one thing, like "make this blue" or "add padding," and you combine them like building blocks.
+
+**Real-world analogy:** Think of getting dressed using a wardrobe full of individual clothing pieces — one drawer for shirts, one for trousers, one for belts, one for shoes. Instead of ordering a full pre-made outfit (a costume), you pick and combine pieces yourself each morning.
+
+- The individual clothing pieces (shirt, belt, shoes) = single-purpose utility classes (e.g., `bg-blue-600`, `px-4`, `rounded`)
+- The act of combining pieces into a full outfit = stacking multiple classes on one HTML element
+- The wardrobe with fixed available items = the utility framework (e.g., Tailwind CSS) that provides a set list of classes to choose from
+
+---
+
 ## Overview
 
 Utility-first CSS is a methodology where styling is primarily done using single-purpose utility classes rather than semantic or component classes. Popularized by Tailwind CSS, this approach prioritizes composition of small, reusable utilities over traditional CSS architecture.

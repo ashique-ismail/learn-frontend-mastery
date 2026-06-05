@@ -1,6 +1,19 @@
 # Flattening Operators (Higher-Order Observables)
 
+## The Idea
+
+**In plain English:** Flattening operators let you take a stream of events where each event triggers its own mini-stream of work, and they control whether to cancel old work, run everything at once, line things up one by one, or ignore new requests while busy. An Observable is just a list of values that arrive over time, like a feed of notifications.
+
+**Real-world analogy:** Imagine a busy fast-food drive-through with one worker taking orders. Each car that pulls up (an event) triggers a food preparation process (a mini-stream of work). The manager can run the drive-through in four ways: cancel the current order whenever a new car arrives and start fresh (switchMap), cook all orders at the same time regardless of how many cars are waiting (mergeMap), finish one car's complete order before starting the next car's (concatMap), or tell new cars to drive away while an order is already being prepared (exhaustMap).
+
+- The cars arriving at the window = the outer Observable emitting values
+- Each car's food order being prepared = the inner Observable doing work
+- The manager's rule for handling overlap = the flattening operator you choose
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Higher-Order Observables](#higher-order-observables)
 - [switchMap](#switchmap)

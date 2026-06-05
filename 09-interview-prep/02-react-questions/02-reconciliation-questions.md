@@ -1,5 +1,19 @@
 # React Reconciliation Interview Questions
 
+## The Idea
+
+**In plain English:** Reconciliation is how React figures out the smallest number of changes needed to update what you see on screen when something in your app changes. Instead of rebuilding the whole page from scratch, React compares the old version with the new version and only fixes what is different.
+
+**Real-world analogy:** Imagine you are a chef who wrote a recipe on a whiteboard. A customer asks for a small change — swap mushrooms for olives. Instead of erasing the entire whiteboard and rewriting everything, you scan the board, find only the word "mushrooms," erase it, and write "olives."
+
+- The whiteboard = the real web page (the DOM)
+- The previous recipe = the old Virtual DOM snapshot
+- The new recipe = the new Virtual DOM snapshot after a change
+- The chef scanning for differences = React's diffing algorithm
+- Erasing only "mushrooms" and writing "olives" = applying the minimal DOM update
+
+---
+
 ## Overview
 
 Reconciliation questions test your understanding of React's rendering engine - how the Virtual DOM works, the diffing algorithm, and how React efficiently updates the real DOM. This is fundamental knowledge that separates junior from senior developers.

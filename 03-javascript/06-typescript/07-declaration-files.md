@@ -1,5 +1,17 @@
 # Declaration Files and Module Augmentation in TypeScript
 
+## The Idea
+
+**In plain English:** A declaration file is a special cheat sheet that tells TypeScript what a piece of JavaScript code looks like — what functions it has, what they accept, and what they return — without containing any actual running code. TypeScript reads these cheat sheets so it can warn you if you use a library the wrong way.
+
+**Real-world analogy:** Imagine a restaurant menu at the front door. The menu describes every dish, its ingredients, and its price — but the menu itself is not food and you cannot eat it. The kitchen (the actual JavaScript library) does all the real cooking.
+
+- The menu = the declaration file (`.d.ts`) describing what is available
+- Each dish listing = a function or type signature telling you what inputs it takes and what you get back
+- The kitchen = the JavaScript library that runs at runtime
+
+---
+
 ## Overview
 
 Declaration files (`.d.ts`) provide TypeScript type information for JavaScript code that has no types of its own — third-party libraries, auto-generated code, legacy JavaScript modules, and environment globals. Module augmentation extends existing declaration files to add or modify types without touching the original source. Together, these mechanisms form the bridge between TypeScript's type system and the JavaScript ecosystem.

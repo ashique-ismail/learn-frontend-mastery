@@ -1,5 +1,17 @@
 # Resumability
 
+## The Idea
+
+**In plain English:** Resumability is a technique where a website's server does all the setup work and saves a complete "snapshot" of everything — including which buttons do what — directly inside the webpage itself. When the page loads in your browser, it can instantly pick up right where the server left off, without needing to redo any of that setup work.
+
+**Real-world analogy:** Imagine you are assembling a jigsaw puzzle, and when you need to take a break, instead of disassembling it, you take a detailed photo that labels every piece's position and which edge connects to which. When a friend arrives to finish it, they look at the photo and continue immediately — they do not have to sort or re-examine any pieces.
+
+- The photo with all labels = the HTML page with serialized state embedded in it
+- The friend who continues from the photo = the browser that resumes without re-running framework startup code
+- Picking up a single puzzle piece to place it = downloading only the specific JavaScript handler triggered by a user's click
+
+---
+
 ## Overview
 
 Resumability is a rendering paradigm where the server serializes the entire application state — including event listeners, component boundaries, and execution context — directly into HTML. The client never re-runs framework bootstrapping or component rendering code. Instead, it "resumes" from exactly where the server left off, executing only the code paths triggered by user interaction.

@@ -1,5 +1,17 @@
 # CDN Strategies
 
+## The Idea
+
+**In plain English:** A CDN (Content Delivery Network) is a system of servers spread around the world that store copies of your website's files so that when someone visits your site, they get those files from a server near them instead of one far away — making the site load much faster.
+
+**Real-world analogy:** Think of a popular book being stocked in local bookstores across the country instead of only being available from one warehouse on the East Coast. When you want the book, you pick it up from the store down the street rather than waiting days for a shipment from far away.
+
+- The book = a website file (like a JavaScript or image file)
+- The local bookstore = a CDN edge server located near the user
+- The distant warehouse = the origin server where the website is actually hosted
+
+---
+
 ## Overview
 
 A Content Delivery Network (CDN) is a geographically distributed network of servers that caches and serves content from locations physically close to users. CDNs are the single most impactful infrastructure change for reducing page load times for geographically distributed users — serving a file from a CDN edge node 20ms away is fundamentally different from serving it from an origin server 200ms away. This guide covers CDN architecture, cache-busting with content hashes, invalidation strategies, and the distinction between static asset CDNs and API/edge CDNs.

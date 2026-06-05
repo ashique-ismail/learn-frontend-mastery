@@ -1,5 +1,18 @@
 # Clickjacking and X-Frame-Options
 
+## The Idea
+
+**In plain English:** Clickjacking is a trick where a bad actor secretly places your website invisibly on top of their own page, so when you think you're clicking a button on their site, you're actually clicking a button on yours — without ever knowing it. "Framing" means embedding one website inside another like a picture in a picture frame.
+
+**Real-world analogy:** Imagine a scammer places a sheet of glass over a voting button at a kiosk. The glass is invisible, and printed on the kiosk's front panel is a big sign saying "Click here for a free coffee." You tap the sign — but the glass is what you actually press, and behind the glass is the real voting button you never meant to touch.
+
+- The voting kiosk = your real website (bank, social media, etc.)
+- The sheet of invisible glass = the transparent iframe the attacker lays over their page
+- The "free coffee" sign = the fake decoy content the attacker shows you
+- Your tap = your real mouse click, unknowingly landing on the hidden button
+
+---
+
 ## Overview
 
 Clickjacking (UI redressing) is an attack where a malicious page embeds your application in a transparent iframe and tricks users into clicking on UI elements they can't see. The user thinks they're interacting with the attacker's page but is actually clicking buttons in your app — confirming transactions, enabling permissions, or deleting accounts. This guide covers the attack mechanics, X-Frame-Options, CSP `frame-ancestors`, and detection techniques.

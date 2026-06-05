@@ -1,5 +1,18 @@
 # Production Failure: Cache Invalidation Disasters
 
+## The Idea
+
+**In plain English:** A cache is a saved copy of information stored somewhere fast so you don't have to go fetch it again. Cache invalidation is the problem of knowing when that saved copy is out of date and needs to be thrown away — it's notoriously hard because the moment you update the original data, any copies elsewhere may silently show the wrong thing.
+
+**Real-world analogy:** Imagine a school cafeteria posts the day's menu on a whiteboard each morning. A student photographs it and texts the photo to their friends. At lunch, the kitchen runs out of pizza and swaps it for a hot dog — but everyone who got the photo still shows up expecting pizza.
+
+- The whiteboard = the server (the source of truth)
+- The photo on each phone = the cache (a saved copy of the data)
+- The kitchen swapping pizza for a hot dog = a data update on the server
+- Friends showing up expecting pizza = stale cached data causing incorrect behavior
+
+---
+
 ## Overview
 
 "There are only two hard things in computer science: cache invalidation and naming things." Every frontend engineer laughs at this — until they ship a bug at 2am where half their users see stale data after a critical update. These are real failure patterns, how they manifest, and how to design your way out of them.

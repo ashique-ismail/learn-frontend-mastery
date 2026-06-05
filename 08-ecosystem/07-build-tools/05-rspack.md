@@ -1,5 +1,17 @@
 # Rspack
 
+## The Idea
+
+**In plain English:** Rspack is a tool that takes all the separate files in your website project (JavaScript, CSS, images, etc.) and smashes them together into a small, fast bundle that browsers can load quickly. It does this much faster than older tools by using Rust, a programming language built for raw speed.
+
+**Real-world analogy:** Imagine a factory assembly line that packages thousands of small boxes into one big shipment box before sending it to a customer. A brand-new high-speed factory (Rspack) does the same job as an older factory (Webpack) but uses faster machines (Rust) to finish packing in a fraction of the time.
+
+- The small boxes = your individual source files (JavaScript, CSS, images)
+- The packing machines = the code transformers and loaders that process each file
+- The finished shipment box = the single optimised bundle delivered to the browser
+
+---
+
 ## What It Is
 
 Rspack is a Rust-based JavaScript bundler built by ByteDance that aims to be API-compatible with Webpack 5 while being dramatically faster. It can be used as a drop-in replacement for Webpack in many projects.

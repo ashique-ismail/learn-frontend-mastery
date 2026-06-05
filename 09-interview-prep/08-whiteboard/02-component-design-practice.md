@@ -1,5 +1,16 @@
 # Whiteboard: Component Design Practice
 
+## The Idea
+
+**In plain English:** Component design is the process of planning how a reusable building block of a website (called a "component" — think of it as a LEGO brick) should work: what information it needs, what it does, and how other parts of the app can use it. A "whiteboard" interview means you explain and sketch your thinking out loud before writing any code.
+
+**Real-world analogy:** Imagine designing a vending machine before building it. You decide upfront what buttons it has, what items it can hold, and what happens when someone makes a selection.
+- The buttons on the vending machine = props (the inputs you pass into a component)
+- The internal inventory tracker = state (data the component keeps track of itself)
+- The slot that dispenses the item = the event callback (what the component does when something happens)
+
+---
+
 ## Overview
 
 Practice designing component APIs, props interfaces, state management approaches, composition patterns, and discussing reusability and type safety during whiteboard interviews.

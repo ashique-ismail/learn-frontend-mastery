@@ -1,5 +1,18 @@
 # Promise Practical Patterns
 
+## The Idea
+
+**In plain English:** Promise patterns are a set of proven recipes for handling tricky situations when your code has to wait for things — like fetching data from the internet or reading a file. A "Promise" is just JavaScript's way of saying "I'll give you the result later, I promise."
+
+**Real-world analogy:** Imagine you're a restaurant manager juggling orders during a busy Friday dinner rush. You have rules for common problems: if the kitchen fails, retry the order; if two waiters ask for the same dish at once, make it only once and share it; if you need 10 dishes done but only have 3 stoves, run 3 at a time.
+
+- The restaurant orders = async tasks (fetching data, uploading files)
+- The kitchen failing and retrying = the retry-with-backoff pattern
+- Two waiters asking for the same dish = in-flight request deduplication
+- Running 3 stoves at a time = controlled concurrency (N tasks at once)
+
+---
+
 ## Overview
 
 This file is a cookbook of real-world Promise patterns. It assumes you already understand the basics (states, chaining, `.catch`) and focuses on recurring problems developers face: handling HTTP errors properly, retrying failures, deduplicating requests, processing items sequentially, and more.
@@ -422,7 +435,7 @@ async function rateLimitedFetch(urls, delayMs = 100) {
 ## Pattern Decision Guide
 
 | Situation | Pattern |
-|-----------|---------|
+| --------- | ------- |
 | Multiple independent requests needed | `Promise.all` |
 | Some requests can fail, want all results | `Promise.allSettled` |
 | Same data requested from multiple places at once | In-flight deduplication |

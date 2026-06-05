@@ -1,5 +1,24 @@
 # `unknown` vs `any` vs `never` in TypeScript
 
+## The Idea
+
+**In plain English:** TypeScript has three special labels for values that are tricky to categorize: `any` means "I don't care, skip all checks," `unknown` means "I'm not sure yet, so force me to check before using it," and `never` means "this value literally cannot exist." Each label tells the compiler how strictly to guard your code.
+
+**Real-world analogy:** Imagine a school lost-and-found box. Someone drops off a mystery bag and the front-desk staff has three ways to handle it:
+
+- The "any" clerk hands the bag straight to anyone who asks, no questions asked — they just trust it is fine (no safety check).
+- The "unknown" clerk keeps the bag behind the counter until you open it and confirm what is inside before they let you use it (forces a check first).
+- The "never" clerk has a slot labelled "items that cannot exist here" — nothing can actually land in it, and if somehow something does, the whole system flags an error.
+
+Explicit mappings:
+
+- The mystery bag = a value whose type TypeScript does not know
+- The "any" clerk = the `any` type (skips all type checking)
+- The "unknown" clerk = the `unknown` type (allows any value in, but requires narrowing before use)
+- The "never" slot = the `never` type (represents an impossible value or unreachable code path)
+
+---
+
 ## Overview
 
 Three special types in TypeScript occupy extreme positions in the type hierarchy: `any` is the escape hatch that disables type checking, `unknown` is the type-safe alternative for values whose type is truly unknown at compile time, and `never` is the bottom type representing values that can never exist. Understanding the distinctions between these types is fundamental to writing safe TypeScript and reasoning about the type system's structure.

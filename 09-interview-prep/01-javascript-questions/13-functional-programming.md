@@ -1,5 +1,16 @@
 # Functional Programming - JavaScript Interview Questions
 
+## The Idea
+
+**In plain English:** Functional programming is a style of writing code where you solve problems by combining small, reliable "recipe steps" (called functions) that always do the same thing given the same ingredients, never messing with anything outside themselves.
+
+**Real-world analogy:** Think of a smoothie bar where each station does exactly one job — the blender blends, the strainer strains, the cup fills — and none of them ever change the ingredients before passing them to the next station. You pass fruit in, you get juice out, and the original fruit bowl is still untouched.
+- The original fruit bowl = your data (immutable — never changed)
+- Each station (blender, strainer) = a pure function (same input always gives the same output)
+- Connecting the stations in order = function composition (chaining small steps into a bigger pipeline)
+
+---
+
 ## Table of Contents
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)

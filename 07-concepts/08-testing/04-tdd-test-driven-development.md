@@ -1,12 +1,24 @@
 # TDD (Test-Driven Development)
 
+## The Idea
+
+**In plain English:** Test-Driven Development (TDD) is a coding approach where you write a "check" (called a test) that confirms your code works correctly before you actually write the code itself — so you always know exactly what you're building and can prove it works.
+
+**Real-world analogy:** Imagine a chef hired to create a new dish for a restaurant. Before cooking anything, the head chef writes a tasting checklist: "The soup must be hot, slightly salty, and have visible vegetables." The new chef then cooks the soup, checks it against the list, and keeps tweaking until every item is ticked off.
+
+- The tasting checklist written before cooking = the test written before the code
+- The act of cooking the soup = writing the implementation code
+- Checking each item on the list = running the tests to see if the code passes
+
+---
+
 ## Overview
 
 Test-Driven Development (TDD) is a software development methodology where tests are written before the production code. The TDD cycle follows a red-green-refactor pattern: write a failing test (red), write minimal code to pass it (green), then improve the code (refactor). This approach results in better design, higher test coverage, and more maintainable code.
 
 ## The Red-Green-Refactor Cycle
 
-```
+```text
 ┌─────────────┐
 │    RED      │  Write a failing test
 │  (Write a   │

@@ -1,5 +1,16 @@
 # Headings Hierarchy and Accessibility Tree
 
+## The Idea
+
+**In plain English:** Headings are like titles and subtitles that organize a webpage into sections, just like a book has chapters and sub-chapters. An accessibility tree is a behind-the-scenes map of your page that screen readers (software that reads pages aloud for people who can't see) use to understand and navigate your content.
+
+**Real-world analogy:** Think of a school textbook. The book has a main title on the cover, chapter titles inside, section headings within each chapter, and sub-section headings within each section. Each level of heading tells you how important and how deep in the structure that piece of content is.
+- The book's cover title = the `<h1>` (one main title for the whole page)
+- The chapter titles = `<h2>` elements (major sections of the page)
+- The section headings inside a chapter = `<h3>` elements (sub-sections within a major section)
+
+---
+
 ## Learning Objectives
 - Understand the purpose and importance of heading hierarchy
 - Learn how headings create document outlines for assistive technologies

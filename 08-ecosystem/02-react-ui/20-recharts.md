@@ -1,5 +1,17 @@
 # Recharts — Composable React Charts
 
+## The Idea
+
+**In plain English:** Recharts is a library that lets you add charts and graphs (like line graphs, bar charts, and pie charts) to a website built with React, by snapping together pre-built pieces called components instead of drawing everything from scratch.
+
+**Real-world analogy:** Think of building a LEGO chart display board — you snap together named pieces to create the finished picture.
+
+- The board base = the `<LineChart>` or `<BarChart>` container that holds everything
+- The ruler strips along the edges = `<XAxis>` and `<YAxis>` components that label the measurements
+- The individual LEGO bricks you place = `<Line>`, `<Bar>`, or `<Area>` components that represent your data visually
+
+---
+
 ## Philosophy
 
 Recharts is a charting library built on top of D3 and React's SVG rendering. Its core idea: **every chart is a composition of declarative React components**. You don't call D3 imperatively — instead you nest `<XAxis>`, `<Tooltip>`, `<Line>` inside a `<LineChart>` and the library wires up scales, domains, and event handling for you.

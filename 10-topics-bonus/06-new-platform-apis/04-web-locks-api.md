@@ -1,5 +1,18 @@
 # Web Locks API
 
+## The Idea
+
+**In plain English:** The Web Locks API lets different browser tabs or background scripts take turns using a shared resource, so they don't all try to change the same data at the exact same moment and mess it up. A "lock" is like a permission slip — only the tab holding it can touch that resource right now.
+
+**Real-world analogy:** Imagine a shared office whiteboard with a single dry-erase marker. Only one person can write at a time — if you want to update the board, you grab the marker, make your changes, then put it back so someone else can use it.
+
+- The whiteboard = the shared data (e.g., a cart stored in IndexedDB)
+- The marker = the lock (only one holder at a time)
+- Grabbing the marker = calling `navigator.locks.request()`
+- Putting the marker back = the lock being released when your async function finishes
+
+---
+
 ## Overview
 
 The Web Locks API provides a mechanism for coordinating access to shared resources across browser tabs, Web Workers, and Service Workers within the same origin. It is the web platform's equivalent of a mutex or semaphore — ensuring that only one execution context holds a named "lock" at a time, preventing race conditions in multi-tab or multi-worker applications.

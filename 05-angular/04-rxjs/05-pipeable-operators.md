@@ -1,5 +1,16 @@
 # Pipeable Operators in RxJS
 
+## The Idea
+
+**In plain English:** Pipeable operators are steps you connect together to process a stream of data — each step takes the data in, does one thing to it (like filtering out items you do not want, or changing their shape), and passes the result to the next step. Think of them as a series of stations on an assembly line, where each station transforms the product before sending it along.
+
+**Real-world analogy:** Imagine a juice factory where fruit arrives on a conveyor belt. Workers at each station do one job: the first station removes rotten fruit, the second squeezes the fruit into juice, and the third fills only bottles that meet the right size.
+- The conveyor belt = the Observable (the stream of data flowing through)
+- Each worker station = a pipeable operator (one focused transformation step)
+- The finished bottled juice at the end = the final value your code receives after all operators have run
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [The pipe() Method](#the-pipe-method)

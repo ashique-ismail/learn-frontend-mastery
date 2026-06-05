@@ -1,5 +1,18 @@
 # ESM vs CommonJS: Module System Semantics and Live Bindings
 
+## The Idea
+
+**In plain English:** JavaScript files can share code with each other using two different systems — CommonJS (the older way, used in Node.js) and ESM (the modern standard). A "module system" is just a set of rules for how one file borrows things like functions or data from another file.
+
+**Real-world analogy:** Imagine a school library that lends out textbooks. Two libraries operate differently: one gives you a photocopy of the page you need (you keep that copy forever, even if the original page changes later), and the other gives you a direct window into the live book (so if the page is updated, you always see the new version).
+
+- The photocopy library = CommonJS (exports a copied value at the moment you require it)
+- The live-window library = ESM (exports a live binding that always reflects the current value)
+- Checking out a book = importing a module
+- The pages inside the book = the variables and functions a module exports
+
+---
+
 ## Overview
 
 JavaScript has two dominant module systems: CommonJS (CJS), which became the standard for Node.js in 2009, and ECMAScript Modules (ESM), standardized in ES2015 and now fully supported in both browsers and Node.js. Understanding the differences in their semantics — particularly how they resolve dependencies, when they execute, and how they expose bindings — is critical for senior engineers dealing with bundlers, dual-format packages, tree shaking, and interoperability edge cases.
@@ -273,7 +286,7 @@ This is an important architectural constraint: CJS cannot synchronously consume 
 ## Comparison Table
 
 | Feature | CommonJS (CJS) | ESM |
-|---|---|---|
+| --- | --- | --- |
 | Syntax | `require()` / `module.exports` | `import` / `export` |
 | Loading | Synchronous, runtime | Asynchronous, static |
 | Analysis | Dynamic (runtime) | Static (parse time) |
@@ -417,6 +430,7 @@ Different parts of the app can resolve the same specifier differently:
 ```
 
 ### Limitations
+
 - Only one `<script type="importmap">` allowed per page (must appear before module scripts)
 - No dynamic import maps at runtime
 - Not supported in older browsers (use `es-module-shims` polyfill)
@@ -553,17 +567,20 @@ export const helper = () => {};
 ## Resources
 
 ### Official Documentation
+
 - [MDN: JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [Node.js: ECMAScript modules](https://nodejs.org/api/esm.html)
 - [Node.js: CommonJS modules](https://nodejs.org/api/modules.html)
 - [TC39 Modules Specification](https://tc39.es/ecma262/#sec-modules)
 
 ### Articles and Guides
+
 - [CommonJS vs ESM — What's the difference?](https://blog.logrocket.com/commonjs-vs-es-modules-node-js/)
 - [The state of ES modules in Node.js](https://blog.risingstack.com/using-es-modules-esm-in-node-js/)
 - [How ESM live bindings work under the hood](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
 
 ### Tools
+
 - [tsup](https://tsup.egoist.dev/): Zero-config dual-format bundler
 - [Rollup](https://rollupjs.org/): Module bundler with excellent ESM support
 - [esm-check](https://github.com/nicolo-ribaudo/esm-check): Detects CJS/ESM interop issues

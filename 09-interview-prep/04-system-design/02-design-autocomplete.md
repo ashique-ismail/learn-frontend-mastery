@@ -1,5 +1,17 @@
 # System Design: Autocomplete/Typeahead
 
+## The Idea
+
+**In plain English:** Autocomplete is the feature that shows you a dropdown list of suggestions while you type — like when you start typing "pizza" into Google and it instantly shows you "pizza near me" and "pizza recipes" before you finish. The system predicts what you want and offers options so you don't have to type the whole thing.
+
+**Real-world analogy:** Imagine you walk into a library and tell the librarian the first few words of a book title. The librarian has a huge index-card box sorted alphabetically, so they instantly flip to that section and read out the closest matches — without searching the entire collection every time.
+
+- The librarian's index-card box = the cached list of suggestions stored in memory
+- The moment you pause speaking = the debounce delay (waiting for you to stop typing before searching)
+- The librarian reading out matching cards = the dropdown list of results shown on screen
+
+---
+
 ## Overview
 
 Design a scalable autocomplete system with debouncing, caching, keyboard navigation, accessibility, and fuzzy matching. This document covers architecture, implementation strategies, and optimization techniques for building a production-ready search autocomplete.
@@ -611,14 +623,17 @@ class LRUCache<K, V> {
 ## Trade-offs
 
 **Client-side vs Server-side Filtering:**
+
 - Client: Faster, less server load, limited dataset
 - Server: Handles large datasets, more flexible, higher latency
 
 **Prefix vs Fuzzy Matching:**
+
 - Prefix: Faster, simpler, less flexible
 - Fuzzy: Better UX, more complex, slower
 
 **Dropdown vs Inline Suggestions:**
+
 - Dropdown: More space, better for many results
 - Inline: Faster to select, limited space
 

@@ -1,5 +1,16 @@
 # CSS Subgrid
 
+## The Idea
+
+**In plain English:** Subgrid lets a nested (child) element borrow the invisible column and row lines already set up by its parent container, so everything inside lines up perfectly with the bigger layout around it. Think of "grid tracks" as the ruler markings that decide where things go on the page.
+
+**Real-world analogy:** Imagine a large spreadsheet printout pinned to a wall. A teacher places several smaller sticky-note grids on top of that printout and wants the columns on each sticky note to line up exactly with the columns on the big printout beneath it — not create their own random columns.
+- The big spreadsheet printout = the parent CSS grid container
+- The sticky notes placed on top = the child grid items using `subgrid`
+- The shared column lines the sticky notes borrow = the inherited grid tracks (`grid-template-columns: subgrid`)
+
+---
+
 ## Overview
 
 Subgrid allows a grid item to inherit the grid tracks (rows and/or columns) from its parent grid container. This solves the problem of aligning nested grid items with the parent grid structure.

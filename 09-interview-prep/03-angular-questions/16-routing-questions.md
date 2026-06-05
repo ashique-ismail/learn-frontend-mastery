@@ -1,5 +1,16 @@
 # Angular Routing Interview Questions
 
+## The Idea
+
+**In plain English:** Angular Routing is the system that decides which "page" (called a view or component) to show on screen when you type a different address in the browser, or click a link — all without actually loading a brand new webpage from the server. Think of a "component" as a self-contained chunk of content (like a homepage or a profile page), and a "route" as the rule that says "when the address bar shows /profile, show the ProfileComponent."
+
+**Real-world analogy:** Imagine a large hospital building where every department (Emergency, Radiology, Cafeteria) is already inside the building. When you arrive, a receptionist at the front desk looks at your destination slip and physically walks you to the right department — no leaving the building, no new trip required.
+- The receptionist = the Angular Router (reads the URL and decides where to send you)
+- The destination slip (e.g., "Radiology") = the URL path (e.g., /radiology)
+- Each hospital department = a component (the actual page/view the user sees)
+
+---
+
 ## Table of Contents
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)

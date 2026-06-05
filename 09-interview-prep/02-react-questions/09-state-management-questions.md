@@ -1,5 +1,17 @@
 # React State Management Interview Questions
 
+## The Idea
+
+**In plain English:** State management is about deciding where your app "remembers" information — like which user is logged in, what's in a shopping cart, or whether a menu is open — and how different parts of the app can read or change that information.
+
+**Real-world analogy:** Think of a busy restaurant. The head chef (the app) needs to track every table's order. A waiter at one table writes the order on a small notepad just for that table — but if two waiters both need to know the total bill, the manager at the front desk keeps a shared copy everyone can check.
+
+- The waiter's notepad = local state (only one component needs it)
+- The manager's front desk record = lifted state (a parent holds it so siblings can share it)
+- The restaurant's central computer system = global state (any part of the app can read or update it)
+
+---
+
 ## Overview
 
 State management questions test your understanding of local vs global state, when to use different solutions (Context, Redux, Zustand, etc.), and how to architect scalable state in React applications.

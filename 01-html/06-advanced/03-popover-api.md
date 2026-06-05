@@ -1,5 +1,17 @@
 # Popover API
 
+## The Idea
+
+**In plain English:** The Popover API is a built-in browser feature that lets you show and hide small floating boxes of content — like a tooltip, a menu, or a notification — without writing a lot of complex code. A "popover" is just a box that pops up on top of the rest of the page when triggered.
+
+**Real-world analogy:** Think of a fast-food restaurant where you press a button on a self-order kiosk and a small card slides out showing the item's nutritional info. When you tap anywhere else, the card disappears on its own.
+
+- The button on the kiosk = the HTML `<button>` with the `popovertarget` attribute
+- The nutritional info card = the `<div popover>` element
+- The card disappearing when you tap away = the browser's built-in "light dismiss" behavior for `popover="auto"`
+
+---
+
 ## Overview
 
 The Popover API provides a standardized way to create popovers, tooltips, menus, and other overlay elements without JavaScript for basic cases. It handles positioning, focus management, and dismissal automatically.

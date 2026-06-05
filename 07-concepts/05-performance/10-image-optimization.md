@@ -1,12 +1,25 @@
 # Image Optimization
 
+## The Idea
+
+**In plain English:** Image optimization is the process of making image files as small as possible without making them look noticeably worse, so websites load faster. An "image file" is just data stored on a computer that tells your screen what colors to show — optimization squeezes out the parts your eyes won't miss.
+
+**Real-world analogy:** Imagine you're sending a physical photo album through the mail. Instead of mailing the original enormous hardcover book, you photocopy only the pages the recipient needs, shrink each photo to fit the page size they're actually using, and use a compact envelope instead of a giant box. The recipient gets the same photos, but shipping is much faster and cheaper.
+
+- The original photo album = the full-resolution, uncompressed image file on your server
+- Choosing which pages to include = selecting the right image format (JPEG, WebP, AVIF) for the content
+- Shrinking photos to fit the page = generating multiple sizes so each device downloads only what fits its screen
+- The compact envelope = compression that removes invisible detail to reduce file size
+
+---
+
 ## Overview
 
 Images typically account for 50-70% of a web page's total size, making image optimization one of the most impactful performance improvements you can make. Proper image optimization involves choosing the right format, size, compression level, and delivery method. Modern techniques include responsive images, next-generation formats (WebP, AVIF), lazy loading, and CDN delivery with automatic optimization.
 
 ## Image Format Comparison
 
-```
+```text
 Image Format Selection Guide
 =============================
 

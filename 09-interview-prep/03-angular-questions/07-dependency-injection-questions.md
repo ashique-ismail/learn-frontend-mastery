@@ -1,5 +1,18 @@
 # Angular Dependency Injection Interview Questions
 
+## The Idea
+
+**In plain English:** Dependency Injection is a way of giving a piece of code the tools it needs to do its job, instead of making it go fetch those tools itself. Think of a "dependency" as anything a class relies on to work, and "injection" as the act of handing that thing over from the outside.
+
+**Real-world analogy:** Imagine a chef at a restaurant. Instead of growing their own vegetables, raising animals, and milling their own flour, the chef simply opens the kitchen door and the ingredients are delivered by a supplier each morning.
+
+- The chef = the Angular component or service that needs something to function
+- The ingredients = the dependencies (other services, config values, etc.)
+- The supplier delivering ingredients = Angular's injector, which creates and hands over the right dependency
+- The restaurant's ordering system = the provider configuration, which tells the injector what to deliver and how to prepare it
+
+---
+
 ## Table of Contents
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)

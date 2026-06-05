@@ -1,6 +1,19 @@
 # Accessible Single-Page Applications (SPAs)
 
+## The Idea
+
+**In plain English:** A Single-Page Application (SPA) is a website that swaps out content on the screen without ever fully reloading the page — like flipping channels on a TV without turning it off. Making it "accessible" means people who use screen readers (software that reads the screen aloud) or keyboards instead of a mouse can still understand what changed and where they are.
+
+**Real-world analogy:** Imagine a TV news anchor reading breaking news live. When the story changes, the anchor announces "We're now moving to our next story: the weather report" so listeners know something new is happening — they don't have to see the screen to understand the transition.
+
+- The TV anchor's announcement = the route-change announcer that tells screen readers a new page has loaded
+- The camera switching to a new segment = the JavaScript swapping new content into the page without a reload
+- The viewer at home who relies only on audio = a screen reader user who needs spoken cues to know what changed
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Why SPA Accessibility is Challenging](#why-spa-accessibility-is-challenging)
 - [Client-Side Routing](#client-side-routing)

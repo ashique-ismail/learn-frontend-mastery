@@ -1,5 +1,17 @@
 # Clean Architecture
 
+## The Idea
+
+**In plain English:** Clean Architecture is a way of organizing code into separate rings (layers), where the most important business rules live in the center and never depend on the outer rings — so you can swap out your database, website framework, or UI without touching the core logic.
+
+**Real-world analogy:** Think of a restaurant kitchen. The head chef (center) only cares about recipes and food quality — they don't care whether orders come in by phone, a waiter, or an app. The waiters adapt the customer's request into something the chef understands, and the dishwashers/delivery drivers are on the outer edge handling the messy external world.
+
+- The head chef's recipes = the core business rules (Entities and Use Cases)
+- The waiters translating orders = the Interface Adapters (Controllers and Presenters)
+- The phone/app/walk-in desk = the Frameworks and Drivers (outermost layer)
+
+---
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Core Principles](#core-principles)

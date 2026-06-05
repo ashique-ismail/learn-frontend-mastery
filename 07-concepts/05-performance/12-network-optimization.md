@@ -1,5 +1,18 @@
 # Network Optimization
 
+## The Idea
+
+**In plain English:** Network optimization is about making websites load as fast as possible by controlling how and when files travel between a server (the computer storing your site) and a browser (like Chrome, which displays it). The less waiting the browser has to do, the faster the page appears.
+
+**Real-world analogy:** Imagine ordering food from a restaurant through a delivery driver. You can call ahead to tell the driver which roads to take, pre-order dishes you know you'll want next, and even ask the kitchen to start cooking before you officially place your order — all so the food arrives the moment you're ready for it.
+
+- The delivery driver = the browser fetching files from a server
+- Calling ahead to pre-plan the route = using `preconnect` or `dns-prefetch` to prepare the connection early
+- Pre-ordering dishes for later = using `prefetch` to download resources you'll need on the next page
+- Asking the kitchen to start cooking your current order immediately = using `preload` to fetch critical files for the current page right away
+
+---
+
 ## Overview
 
 Network optimization is crucial for fast page loads, especially on slower connections. Modern protocols like HTTP/2 and HTTP/3 enable performance improvements through multiplexing and reduced latency. Resource hints (preload, prefetch, dns-prefetch, preconnect) and priority hints help browsers optimize resource loading. This guide covers HTTP/2 multiplexing, HTTP/3 QUIC protocol, comprehensive resource hint strategies, and modern priority management.

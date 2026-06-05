@@ -1,5 +1,16 @@
 # Angular Forms Interview Questions
 
+## The Idea
+
+**In plain English:** Angular Forms is the system that lets a web app collect and check information typed by a user — like a name, email, or password — and decide whether that information is acceptable before doing anything with it.
+
+**Real-world analogy:** Think of a paper job application form at a front desk. A receptionist hands you the form, you fill in your details, and before the manager sees it, the receptionist checks that every required box is filled in correctly.
+- The paper form = the HTML form in the browser
+- Each blank field on the paper = a FormControl (one piece of data the app tracks)
+- The receptionist's checklist of rules = the validators (required, minimum length, valid email, etc.)
+
+---
+
 ## Table of Contents
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)

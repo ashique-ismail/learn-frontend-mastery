@@ -1,5 +1,17 @@
 # Error Boundaries — Implement One
 
+## The Idea
+
+**In plain English:** An error boundary is a safety net in a React app — a special wrapper that catches crashes happening inside part of the page and shows a friendly message instead of letting the whole app go blank. Think of "rendering" as the process React uses to draw your page on screen.
+
+**Real-world analogy:** Imagine a theme park where each ride is inside its own enclosed zone with an emergency stop button. If a roller coaster breaks down mid-ride, the staff in that zone shut it down and put up a "Ride temporarily closed" sign — the rest of the park keeps running normally and guests can still enjoy other attractions.
+
+- The enclosed ride zone = the error boundary component wrapping a part of your UI
+- The broken roller coaster = a child component that crashes during rendering
+- The "Ride temporarily closed" sign = the fallback UI shown when an error is caught
+
+---
+
 ## What Error Boundaries Catch
 
 Error boundaries catch JavaScript errors during **rendering**, in **lifecycle methods**, and in **constructors** of child components.

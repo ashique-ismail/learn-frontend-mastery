@@ -1,5 +1,17 @@
 # Composition Events and IME Handling
 
+## The Idea
+
+**In plain English:** Some languages like Japanese, Chinese, and Korean have thousands of characters that can't fit on a keyboard, so people use special software called an IME (Input Method Editor) that lets you type phonetic letters which then get converted into the real characters. Composition events are signals the browser sends to your code so it knows when someone is in the middle of that conversion process versus when they have finished and committed their final text.
+
+**Real-world analogy:** Imagine ordering food at a restaurant where you first tell the waiter your rough preferences ("something spicy with noodles"), and they write notes while you're still deciding. Only when you say "yes, that's my final order" do they actually send it to the kitchen. If the kitchen started cooking every time the waiter jotted down a word, you'd get five half-made dishes.
+
+- The waiter jotting down notes = the `compositionupdate` event (intermediate keystrokes being recorded)
+- You saying "that's my final order" = the `compositionend` event (user commits the finished characters)
+- The kitchen starting to cook = your code calling `search()` or processing the input value
+
+---
+
 ## Overview
 
 Composition events fire when a user is composing text using an Input Method Editor (IME) — the software that converts sequences of keystrokes into characters for languages like Chinese, Japanese, Korean (CJK), Arabic, Hindi, and others that have more characters than keyboard keys. Missing these events is the most common hidden bug in search-as-you-type, autocomplete, and form validation built by developers who only type in Latin-script languages.

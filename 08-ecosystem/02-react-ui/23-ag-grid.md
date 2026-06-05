@@ -1,5 +1,17 @@
 # AG Grid
 
+## The Idea
+
+**In plain English:** AG Grid is a supercharged table for websites that can display and let you interact with massive amounts of data — think hundreds of thousands of rows — without the page slowing down or crashing. It handles sorting, filtering, editing, and grouping all built in, so you do not have to build those features yourself.
+
+**Real-world analogy:** Imagine a massive spreadsheet at a bank where a trader tracks thousands of stock deals every day. The spreadsheet only shows the rows currently visible on screen, automatically fetches more rows as you scroll, lets you sort by price, filter by status, and edit a cell inline.
+
+- The visible rows on screen = the virtualised DOM rows AG Grid renders
+- Scrolling to load more rows = the row model fetching the next block of data from the server
+- Sorting or filtering a column = AG Grid sending updated query parameters to the datasource
+
+---
+
 ## What AG Grid Solves
 
 AG Grid is a high-performance data grid built for enterprise use cases where standard HTML tables or lightweight libraries fall apart:

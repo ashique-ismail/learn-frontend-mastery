@@ -1,10 +1,23 @@
 # Edge Computing for Frontend Engineers
 
+## The Idea
+
+**In plain English:** Edge computing means running your website's code in many small computer stations spread all around the world, instead of in one faraway place. This way, when someone in Tokyo visits your site, their request is handled by a nearby station in Tokyo — not a server sitting in Virginia — so the page loads almost instantly.
+
+**Real-world analogy:** Think of a chain of convenience stores (like 7-Eleven) spread across every neighborhood in the world. Instead of everyone having to drive to one giant warehouse in another city to buy a snack, they just walk to the nearest store on their block.
+
+- The giant central warehouse = a traditional single-region server (e.g., one AWS data center)
+- Each neighborhood convenience store = an edge node (a small server near the user)
+- Your snack order = a web request from a user's browser
+- Getting your snack instantly at the local store = low-latency response from a nearby edge node
+
+---
+
 ## Overview
 
 Edge computing moves server-side logic from a single centralized data center to hundreds of nodes distributed globally, colocated near users. For frontend engineers, edge functions replace or augment traditional serverless functions, enabling middleware, personalization, A/B testing, authentication, and SSR with dramatically lower latency — often under 10ms cold start vs 200–500ms for Lambda.
 
-```
+```text
 Traditional serverless (Lambda/Cloud Functions):
   User in Tokyo ──────────────────────────────► us-east-1 (150ms)
   User in Paris ──────────────────────────────► us-east-1 (90ms)
@@ -21,7 +34,7 @@ Edge functions:
 
 Understanding this boundary is critical — edge environments are intentionally constrained.
 
-```
+```text
 Edge (V8 Isolates):               Origin (Node.js / full server):
 ─────────────────────             ──────────────────────────────
 ✓ Request/Response manipulation   ✓ Full Node.js APIs
@@ -349,7 +362,7 @@ function getVariantForUser(userId: string, testName: string): 'a' | 'b' {
 
 ## Edge SSR — When It Makes Sense
 
-```
+```text
 Use edge SSR when:
   ✓ Page is personalized per user
   ✓ Content changes frequently
@@ -465,7 +478,7 @@ export default {
 
 ## Performance Comparison
 
-```
+```text
 Metric            | Lambda (us-east-1) | Cloudflare Worker | Vercel Edge
 ──────────────────|────────────────────|───────────────────|────────────
 Cold start        | 200–500ms          | < 5ms             | < 10ms

@@ -1,5 +1,18 @@
 # Dynamic import() and Code Splitting
 
+## The Idea
+
+**In plain English:** Dynamic import is a way to tell your program "don't load this piece of code right now — load it later, only when it's actually needed." Instead of loading everything at the start, you can fetch extra code on demand, making your app faster to start up.
+
+**Real-world analogy:** Think of a vending machine in a break room. The machine doesn't stock every single snack in the building at once — it only loads the snacks people are likely to want, and when someone selects a specialty item that isn't stocked yet, an attendant goes and fetches it. Then map each part:
+
+- The vending machine = your running web app
+- A snack already stocked in the machine = code loaded at startup with a static import
+- A specialty item fetched on demand = a module loaded with dynamic import()
+- The attendant going to get it = the browser making a network request for that code chunk
+
+---
+
 ## Overview
 
 Dynamic `import()` is a JavaScript expression — not a statement — that loads a module asynchronously at runtime and returns a Promise. Introduced as part of the ECMAScript 2020 specification (though supported by major bundlers years earlier), it is the foundation of code splitting: the technique of partitioning application code into smaller chunks that load on demand rather than upfront. Understanding `import()` deeply — its semantics, its caveats, and how bundlers transform it — is essential for any senior engineer optimizing web application performance.
@@ -316,10 +329,10 @@ export const value = 42;
 ## Comparison Table
 
 | Aspect | Static import | Dynamic import() |
-|---|---|---|
+| --- | --- | --- |
 | Syntax position | Top-level only | Anywhere |
 | Resolution time | Parse/link phase | Runtime |
-| Return type | Binding (synchronous) | Promise<ModuleNamespace> |
+| Return type | Binding (synchronous) | `Promise<ModuleNamespace>` |
 | Code splitting | No | Yes (split point) |
 | Conditional loading | No | Yes |
 | Tree shakeable | Yes | Per-chunk |
@@ -465,17 +478,20 @@ Every chunk has overhead: an HTTP round trip (or HTTP/2 stream), module parsing,
 ## Resources
 
 ### Official Documentation
+
 - [MDN: import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import)
 - [TC39 Dynamic import proposal](https://github.com/tc39/proposal-dynamic-import)
 - [Webpack: Code Splitting](https://webpack.js.org/guides/code-splitting/)
 - [Vite: Code Splitting](https://vitejs.dev/guide/features#code-splitting)
 
 ### Articles and Guides
+
 - [web.dev: Code splitting](https://web.dev/articles/code-splitting-suspense)
 - [Patterns.dev: Dynamic Import](https://www.patterns.dev/vanilla/dynamic-import/)
 - [JavaScript.info: Dynamic imports](https://javascript.info/modules-dynamic-imports)
 
 ### Tools
+
 - [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
 - [Rollup Bundle Visualizer](https://github.com/btd/rollup-plugin-visualizer)
 - [vite-bundle-visualizer](https://github.com/KusStar/vite-bundle-visualizer)

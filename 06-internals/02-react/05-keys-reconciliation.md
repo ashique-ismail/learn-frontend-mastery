@@ -1,5 +1,17 @@
 # Keys & Reconciliation
 
+## The Idea
+
+**In plain English:** When React displays a list of items on screen, it needs a way to tell them apart so it knows exactly what changed, what was added, and what was removed — keys are the unique labels you give each item to make that possible. Reconciliation is just the process React uses to compare the old screen with the new one and figure out the smallest set of changes needed.
+
+**Real-world analogy:** Imagine a coat-check at a restaurant: you hand in your coat and get a numbered ticket. When coats get shuffled around, the attendant uses ticket numbers — not the hook position — to give each person back their exact coat.
+
+- The ticket number = the key (a stable, unique identifier)
+- Each coat = a component and its internal state
+- The coat-check attendant matching tickets to coats = React's reconciliation algorithm
+
+---
+
 ## Overview
 
 Keys are a special string attribute that help React identify which items in a list have changed, been added, or been removed. While they might seem like a simple concept, keys are fundamental to React's reconciliation algorithm and have profound implications for application performance, correctness, and user experience.

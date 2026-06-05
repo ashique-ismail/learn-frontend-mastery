@@ -1,5 +1,18 @@
 # React Fiber Architecture
 
+## The Idea
+
+**In plain English:** React Fiber is the engine inside React that figures out what changed on your screen and updates only those parts, without freezing the page. It does this by breaking the update work into tiny pieces it can pause and resume, instead of doing everything all at once.
+
+**Real-world analogy:** Imagine a chef who must repaint the menu board while also taking orders from customers. The old approach was to close the restaurant, repaint the whole board, then reopen — customers had to wait. The Fiber approach lets the chef repaint one section at a time, putting down the brush whenever a customer walks in, taking the order, then picking the brush back up exactly where they left off.
+
+- The menu board = the UI on screen
+- Repainting one section = one unit of Fiber work
+- A customer walking in = a higher-priority event (like a user typing)
+- Putting down the brush and resuming = pausing and resuming the render
+
+---
+
 ## Learning Objectives
 - Understand what problem Fiber solves
 - Learn the Fiber data structure and how it represents the component tree

@@ -1,5 +1,18 @@
 # REST API Design
 
+## The Idea
+
+**In plain English:** REST API design is a set of rules for building the "menus" that let apps talk to servers — it defines what you can ask for, how to ask, and what answers look like. An API (Application Programming Interface) is just the agreed-upon language two programs use to communicate.
+
+**Real-world analogy:** Think of ordering food at a sit-down restaurant. You (the customer) look at a menu, tell the waiter what you want, and the kitchen prepares it and sends it back. The menu lists every item by name, not by the cooking steps.
+
+- The menu = the list of available API endpoints (URLs like `/users` or `/orders`)
+- The waiter = the HTTP method (GET to fetch something, POST to create it, DELETE to remove it)
+- The kitchen = the server that processes the request and stores the data
+- The plate of food returned = the API response (the data sent back to your app)
+
+---
+
 ## Overview
 
 REST (Representational State Transfer) is an architectural style for designing networked applications. It uses HTTP methods to perform CRUD operations on resources, treats everything as a resource with a unique identifier (URL), and leverages HTTP status codes for communication. Proper REST API design creates intuitive, scalable, and maintainable APIs.

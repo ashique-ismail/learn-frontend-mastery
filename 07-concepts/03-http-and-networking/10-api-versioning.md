@@ -1,5 +1,17 @@
 # API Versioning
 
+## The Idea
+
+**In plain English:** API versioning is the way software developers keep old versions of an online service working even after they've made big updates, so that apps built on the old version don't suddenly break. An API (Application Programming Interface) is simply a set of rules that lets two programs talk to each other.
+
+**Real-world analogy:** Imagine a popular restaurant that decides to redesign its menu. Instead of replacing the old menu overnight and confusing regulars who always order "the number 3", they hand out both the old menu (v1) and the new menu (v2) for several months, letting customers gradually switch over.
+
+- The old menu = API version 1 (v1), still accepted so existing customers aren't lost
+- The new menu = API version 2 (v2), the updated set of rules for new customers
+- A customer ordering from the old menu = an app that was built using the original API and hasn't updated yet
+
+---
+
 ## Overview
 
 API versioning is the practice of managing changes to APIs over time while maintaining backward compatibility for existing clients. As applications evolve, APIs need to change without breaking existing integrations. Proper versioning strategies ensure smooth transitions and maintain trust with API consumers.

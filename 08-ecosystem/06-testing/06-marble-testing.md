@@ -1,5 +1,18 @@
 # Marble Testing for RxJS
 
+## The Idea
+
+**In plain English:** Marble testing is a way to test code that produces values over time by drawing the timeline as a simple text diagram, where each character represents a tiny slice of time and letters represent the values that arrive. Instead of waiting for real time to pass, you describe what should happen and when, and the computer checks if your code matches.
+
+**Real-world analogy:** Imagine a music teacher writing out a rhythm on paper using dots and dashes to show when notes should play — and then listening to a student play and checking if the timing matches the sheet exactly.
+
+- The sheet of dots and dashes = the marble string (e.g. `'-a-b-c-|'`)
+- Each dash on the sheet = one frame of virtual time passing with no note
+- Each letter on the sheet = a value being emitted by the Observable at that moment
+- The teacher's ear checking the student = the test assertion comparing actual vs expected output
+
+---
+
 ## What Marble Testing Is
 
 Marble testing is a way to visualize and test asynchronous Observable sequences using string diagrams. Each character represents a frame of virtual time.

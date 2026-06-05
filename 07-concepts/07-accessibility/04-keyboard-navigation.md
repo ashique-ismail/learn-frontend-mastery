@@ -1,5 +1,17 @@
 # Keyboard Navigation
 
+## The Idea
+
+**In plain English:** Keyboard navigation means building websites so every button, link, and form can be used by pressing keys on a keyboard — no mouse required. A "focusable element" is any clickable thing on the page that can receive keyboard attention, like a button or a text field.
+
+**Real-world analogy:** Think of filling out a paper form at a doctor's office. You move from box to box in a set order, and there are clear labels telling you where you are. If a receptionist stapled two pages together in the wrong order, you'd fill in the wrong fields — just like a broken tab order confuses keyboard users.
+
+- The numbered boxes on the form = focusable elements on the page
+- Moving your pen to the next box in sequence = pressing Tab to shift focus
+- The stapled page order = the DOM structure that controls tab order
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Why Keyboard Navigation Matters](#why-keyboard-navigation-matters)

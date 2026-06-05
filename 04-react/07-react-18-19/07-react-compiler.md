@@ -1,5 +1,17 @@
 # React Compiler
 
+## The Idea
+
+**In plain English:** React Compiler is a tool that reads your code before it runs and automatically adds performance tricks (called memoization) so your app doesn't redo work it already did. Think of it as a smart editor that rewrites your code to be faster, without you having to do it yourself.
+
+**Real-world analogy:** Imagine a chef who writes a meal-prep checklist before a busy dinner service. Instead of re-chopping the same vegetables every time a dish is ordered, the checklist reminds the kitchen: "if we already chopped onions and nothing changed, use those — don't chop again."
+
+- The checklist = the compiler analyzing your code before it runs
+- The chopped vegetables = the already-calculated result stored in memory (memoized value)
+- The rule "only re-chop if the recipe changed" = the compiler's logic for deciding when to reuse or recompute a value
+
+---
+
 ## Overview
 
 React Compiler (previously called "React Forget") is a build-time optimizing compiler that automatically memoizes React components and hooks. It eliminates the need to manually write `useMemo`, `useCallback`, and `React.memo` for most cases — the compiler infers where memoization is necessary and inserts it at compile time.

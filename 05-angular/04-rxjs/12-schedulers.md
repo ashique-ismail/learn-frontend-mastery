@@ -1,6 +1,19 @@
 # RxJS Schedulers
 
+## The Idea
+
+**In plain English:** A scheduler is a way to tell your code exactly when to run a task — right now, a tiny moment later, or synced with the screen refreshing. Think of it as a traffic controller that decides the order and timing of jobs waiting to be done.
+
+**Real-world analogy:** Imagine a busy restaurant kitchen where the head chef decides when each dish gets cooked. Some orders go straight to the grill right now, some are queued up in a specific order, some wait until the current rush is over, and some are timed to come out exactly when a table is ready.
+
+- The head chef = the scheduler
+- Each dish order = a task (a piece of code to run)
+- The timing rules (right now vs. after the rush) = the scheduler type (queueScheduler, asyncScheduler, etc.)
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [What are Schedulers](#what-are-schedulers)
 - [Scheduler Types](#scheduler-types)
@@ -94,7 +107,7 @@ import {
 ### Comparison Table
 
 | Scheduler | Timing | Use Case | Example |
-|-----------|--------|----------|---------|
+| --------- | ------ | -------- | ------- |
 | **queueScheduler** | Synchronous | Immediate iteration | Recursion control |
 | **asapScheduler** | Microtask | Before next macrotask | High-priority async |
 | **asyncScheduler** | Macrotask | After current execution | Timers, delays |
@@ -839,6 +852,7 @@ poll(intervalMs: number, scheduler?: SchedulerLike): Observable<Data> {
 ### Q4: What's the difference between asapScheduler and asyncScheduler?
 
 **Answer:**
+
 - `asapScheduler`: Uses microtasks (Promise.then), executes before next event loop cycle
 - `asyncScheduler`: Uses macrotasks (setTimeout), executes in next event loop cycle
 

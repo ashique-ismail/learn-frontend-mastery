@@ -1,6 +1,20 @@
 # OnPush Change Detection Strategy
 
+## The Idea
+
+**In plain English:** OnPush is a setting you apply to a part of your app that tells Angular "only re-check this section when something relevant to it actually changes" — instead of constantly re-checking everything every single time anything happens anywhere on the page. Angular's "change detection" is just its way of comparing what the screen shows to what the data says and updating the screen if they differ.
+
+**Real-world analogy:** Imagine a hotel with 100 rooms. The default manager checks every single room after every guest phone call to see if anything needs cleaning. The OnPush manager is smarter: they only check a room if a guest in that specific room pressed the call button, a new guest just checked in, or the automated system sent an alert for that room.
+
+- The hotel = the Angular application
+- Each room = a component on the page
+- The manager checking a room = Angular running change detection on a component
+- A guest pressing the call button = an event or input change originating from that component
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Default vs OnPush](#default-vs-onpush)
 - [How OnPush Works](#how-onpush-works)
@@ -1017,16 +1031,21 @@ export class ImmutableDemoComponent {
 ## Interview Questions
 
 ### Q1: What is OnPush change detection and how does it differ from Default?
+
 **Answer:** OnPush is a change detection strategy where Angular only checks a component when: 1) an input property reference changes, 2) an event originates from the component, 3) the async pipe emits, or 4) change detection is manually triggered. Default strategy checks every component on every change detection cycle throughout the entire application, which is much more expensive.
 
 ### Q2: Why does OnPush require immutable data patterns?
+
 **Answer:** OnPush uses reference equality to detect changes. If you mutate an object, its reference stays the same, so OnPush won't detect the change. You must create new object references (using spread operator, Object.assign, etc.) to trigger OnPush change detection.
 
 ### Q3: How do Signals work with OnPush?
+
 **Answer:** Signals automatically trigger OnPush change detection when they update. Signal updates call markForCheck internally, so you don't need manual change detection. This makes Signals the perfect primitive for OnPush components.
 
 ### Q4: When should you manually call markForCheck()?
+
 **Answer:** Call markForCheck when using OnPush with:
+
 - Manual observable subscriptions (not async pipe)
 - Async callbacks (setTimeout, setInterval)
 - External library callbacks
@@ -1034,6 +1053,7 @@ export class ImmutableDemoComponent {
 - Any async operation that updates component state outside Angular's event system
 
 ### Q5: Does the async pipe work with OnPush?
+
 **Answer:** Yes, the async pipe is specifically designed to work with OnPush. It internally calls markForCheck() whenever the observable emits, ensuring the view updates correctly even with OnPush strategy.
 
 ## Key Takeaways
@@ -1052,20 +1072,24 @@ export class ImmutableDemoComponent {
 ## Resources
 
 ### Official Documentation
+
 - [Change Detection Guide](https://angular.dev/best-practices/runtime-performance)
 - [OnPush API Reference](https://angular.dev/api/core/ChangeDetectionStrategy)
 - [Signals Documentation](https://angular.dev/guide/signals)
 
 ### Articles
+
 - [Understanding OnPush](https://blog.angular.io/understanding-angular-change-detection)
 - [OnPush Best Practices](https://angular.dev/guide/change-detection)
 - [Immutable Patterns in Angular](https://blog.angular.io/immutable-patterns)
 
 ### Tools
+
 - Angular DevTools for change detection profiling
 - Chrome Performance tab
 - angular-profiler for detailed CD analysis
 
 ### Videos
+
 - "OnPush Deep Dive" - Angular official
 - "Performance Optimization" conference talks

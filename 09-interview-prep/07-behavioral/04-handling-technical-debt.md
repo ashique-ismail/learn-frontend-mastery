@@ -1,5 +1,17 @@
 # How Do You Handle Technical Debt?
 
+## The Idea
+
+**In plain English:** Technical debt is the hidden mess that builds up in a codebase when developers take shortcuts to ship things faster — like rushing to tidy your room by stuffing everything under the bed. Over time, that hidden mess slows everyone down and makes new work harder.
+
+**Real-world analogy:** Imagine a restaurant kitchen where, during a rush, cooks leave dirty pots piled up, mise en place out of order, and labels missing from containers — just to keep serving tables. It works tonight, but the next shift walks into chaos.
+
+- The dirty pots and unlabelled containers = messy, undocumented code
+- The next shift struggling to find anything = new developers slowed down by confusing code
+- Scheduling a deep clean on a quiet Monday = dedicating sprint time to paying off technical debt
+
+---
+
 ## What Interviewers Want to Hear
 
 That you treat tech debt as a business concern (not just a developer annoyance), that you can articulate the tradeoffs clearly to non-technical stakeholders, and that you have a practical strategy for addressing it without stopping feature delivery.

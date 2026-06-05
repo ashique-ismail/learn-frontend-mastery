@@ -1,5 +1,18 @@
 # Semantic HTML and Accessibility
 
+## The Idea
+
+**In plain English:** Semantic HTML means using the right HTML tag for the right job — a button for a button, a heading for a heading — so that screen readers (software that reads pages aloud for blind users) and other assistive tools can understand your page's structure automatically.
+
+**Real-world analogy:** Think of a well-labelled filing cabinet vs. a pile of loose papers. With labelled folders (semantic tags like `<nav>`, `<main>`, `<button>`), a new person can instantly find "Contracts" or "Invoices." With a pile of unmarked papers (all `<div>`s and `<span>`s), they have no idea what's what without reading every single page.
+
+- The labelled folders = semantic HTML elements (`<header>`, `<nav>`, `<article>`, `<button>`)
+- The pile of unmarked papers = a page built entirely out of `<div>` and `<span>`
+- The new person navigating the cabinet = a screen reader announcing the page structure
+- Finding "Contracts" instantly = a screen reader user jumping straight to the `<main>` content
+
+---
+
 ## Learning Objectives
 - Understand the relationship between semantic HTML and accessibility
 - Master the accessibility tree and how browsers expose semantics to assistive technologies

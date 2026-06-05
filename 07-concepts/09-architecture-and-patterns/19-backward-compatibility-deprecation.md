@@ -1,5 +1,17 @@
 # Backward Compatibility and Deprecation Strategy
 
+## The Idea
+
+**In plain English:** Backward compatibility means keeping old features working even after you upgrade or change software, so people who relied on the old version do not suddenly have broken code. Deprecation is a polite warning that says "this old feature still works today, but we plan to remove it soon — please switch to the new way."
+
+**Real-world analogy:** Imagine a school cafeteria that decides to rename "Lunch Combo A" to "Meal Deal 1" on the menu. Instead of ripping out Combo A overnight and leaving students confused, the cafeteria runs both names for a whole semester, posting a sign that says "Combo A is going away — please start saying Meal Deal 1." Students who haven't updated their order habit still get their food, but they are nudged to change. At the end of the semester, Combo A disappears entirely.
+
+- The old menu name (Combo A) = the deprecated API or prop name that still works temporarily
+- The notice sign warning students = the deprecation warning printed in the developer console
+- The end-of-semester removal = the breaking change shipped in the next major version
+
+---
+
 ## Overview
 
 Every API you ship — whether a REST endpoint, a component prop, or a function signature — is a promise to everyone who depends on it. Breaking that promise without warning destroys trust and costs teams hours of emergency fixes. A principled deprecation strategy lets you evolve APIs while honoring existing consumers.

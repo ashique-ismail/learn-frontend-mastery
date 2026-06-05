@@ -1,5 +1,17 @@
 # Generators and Async Iterators
 
+## The Idea
+
+**In plain English:** Generators are special functions that can pause in the middle and hand you one value at a time, resuming only when you ask for the next one. Async iterators do the same thing, but each value might take a moment to arrive — like waiting for a reply before asking the next question.
+
+**Real-world analogy:** Imagine a vending machine that dispenses one snack at a time only after you press the button. You are in control of when the next item comes out, and the machine remembers exactly where it left off each time.
+
+- The vending machine = the generator function (it holds all the possible values and remembers its place)
+- Pressing the button = calling `.next()` (you pull the next value on demand)
+- Each snack that comes out = a `yield`ed value (one item delivered per button press)
+
+---
+
 ## Overview
 
 Generators and async iterators are two related but distinct JavaScript features that provide lazy, pull-based data production. Where Promises push values to consumers, generators let consumers pull values from producers — enabling lazy evaluation, infinite sequences, custom iteration protocols, and cooperative multitasking.

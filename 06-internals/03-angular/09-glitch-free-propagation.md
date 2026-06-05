@@ -1,5 +1,17 @@
 # Glitch-Free Propagation in Angular Signals
 
+## The Idea
+
+**In plain English:** Glitch-free propagation is a guarantee that when multiple connected pieces of data update together, nothing ever reads a half-updated, contradictory mix of old and new values. A "signal" is just a box holding a value that other parts of your app can watch and react to automatically.
+
+**Real-world analogy:** Imagine a school scoreboard that shows the total score, the home team score, and the away team score. A scorekeeper updates the home team score, and an announcer reads the total. If the announcer reads too early, they might shout "Total: old-home + new-away" — a wrong number nobody intended. Glitch-free propagation means the announcer always waits until every number on the board has finished updating before reading the total.
+
+- The scoreboard numbers = signals (boxes of data)
+- The total score display = a computed signal (a derived value that depends on others)
+- The announcer = an effect (code that runs in response to signal changes)
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [What Is a Glitch](#what-is-a-glitch)

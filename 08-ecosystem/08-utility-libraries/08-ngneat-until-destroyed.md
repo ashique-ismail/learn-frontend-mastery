@@ -1,5 +1,18 @@
 # @ngneat/until-destroyed
 
+## The Idea
+
+**In plain English:** `@ngneat/until-destroyed` is a tool for Angular apps that automatically stops listening to data streams when a page or component is no longer visible. A "subscription" is like signing up to receive updates — if you never cancel it, it keeps running and wastes memory even after you've navigated away.
+
+**Real-world analogy:** Imagine you hire a newspaper delivery person to drop a paper at your door every morning. If you move out of the house but never cancel the subscription, newspapers keep piling up outside an empty home forever. `@ngneat/until-destroyed` is like an automatic cancellation contract — the moment you hand over your keys (the component is destroyed), the newspaper delivery stops on its own.
+
+- The newspaper delivery = the RxJS Observable emitting data continuously
+- You living in the house = the Angular component being active on screen
+- Handing over the keys (moving out) = the component being destroyed
+- The automatic cancellation contract = the `untilDestroyed()` operator
+
+---
+
 ## What It Is
 
 `@ngneat/until-destroyed` is a utility that simplifies RxJS subscription cleanup in Angular components. It provides the `untilDestroyed()` operator that automatically unsubscribes when the component/service is destroyed.

@@ -1,5 +1,18 @@
 # Suspense — How It Works Internally
 
+## The Idea
+
+**In plain English:** Suspense is a built-in React feature that lets a component say "I'm not ready yet — show a loading screen instead." React automatically watches for that signal and swaps in a placeholder until the component has everything it needs.
+
+**Real-world analogy:** Imagine ordering food at a restaurant. The waiter takes your order but the kitchen isn't finished cooking yet, so they bring you a glass of water to keep you occupied. Once the food is ready, they swap the water glass for your actual meal.
+
+- The waiter = React, managing what gets shown on screen
+- The kitchen not being ready = a component throwing a Promise (signaling it needs more time)
+- The glass of water = the `fallback` prop shown while waiting
+- The finished meal = the component re-rendering once the data has loaded
+
+---
+
 ## What Suspense Does
 
 Suspense lets you declaratively specify a loading state while a component tree is "not ready" — whether waiting for a lazy-loaded component or async data.

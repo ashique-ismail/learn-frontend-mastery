@@ -1,5 +1,17 @@
 # Decorator Pattern
 
+## The Idea
+
+**In plain English:** The Decorator pattern is a way to add new abilities to an existing object by wrapping it in another object, without changing the original. Think of it like adding features on top of something without rewriting it from scratch.
+
+**Real-world analogy:** Ordering a coffee at a cafe. You start with a plain black coffee, then the barista can add extras one at a time — milk, sugar, whipped cream — each addition wraps the previous drink and changes its price and description:
+
+- The plain black coffee = the original object (the base component)
+- Each add-on (milk, sugar, whip) = a decorator that wraps the coffee and adds new behaviour
+- The final drink with all extras = the decorated object with stacked features
+
+---
+
 ## Overview
 
 The Decorator pattern is a structural design pattern that allows behavior to be added to individual objects dynamically without affecting other objects from the same class. It provides a flexible alternative to subclassing for extending functionality by wrapping objects with decorator objects that contain the additional behavior.

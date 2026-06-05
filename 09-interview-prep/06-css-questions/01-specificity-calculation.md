@@ -1,5 +1,18 @@
 # CSS Specificity Calculation
 
+## The Idea
+
+**In plain English:** Specificity is the browser's tiebreaker system — when two CSS rules try to style the same element differently, specificity decides which rule wins by giving each selector a score and picking the highest one.
+
+**Real-world analogy:** Think of a school's dress-code policy. A note from the principal overrides the class teacher's instruction, which overrides the general school handbook, which overrides whatever a student prefers. The closer and more direct the authority, the higher the rank — even if ten handbook rules exist, one principal's note beats them all.
+
+- The principal's note = an inline style (`style="..."`) — the most direct, highest authority
+- The class teacher's instruction = an ID selector (`#id`) — specific to one individual
+- The general school handbook = a class or attribute selector (`.class`, `[attr]`) — applies to a group
+- The student's personal preference = an element selector (`p`, `div`) — the broadest, lowest authority
+
+---
+
 ## The Scoring System
 
 Specificity is a three-column value: **(A, B, C)**

@@ -1,5 +1,17 @@
 # Rate Limiting, Retries, and Exponential Backoff
 
+## The Idea
+
+**In plain English:** When your app asks a server for data and the server is too busy or says "slow down," rate limiting, retries, and backoff are the strategies your app uses to wait politely and try again without making the problem worse.
+
+**Real-world analogy:** Imagine calling a popular pizza place on a Friday night. The line is busy, so you hang up and call back — but you wait a little longer each time instead of redialing instantly, so you're not clogging the line. And if dozens of people all call back at the exact same second, the phones jam again, so everyone waits a slightly different random amount of time before redialing.
+
+- The busy phone line = a server that has hit its rate limit (429 Too Many Requests)
+- Waiting longer before each redial = exponential backoff (doubling the wait time each attempt)
+- Each person waiting a slightly different random amount = jitter (randomness added to spread out retries)
+
+---
+
 ## Overview
 
 Frontend applications make assumptions about API availability that fail in production: rate limits get hit, servers return 503 during deployments, flaky networks cause timeouts. This guide covers how rate limiting works from the client's perspective, how to implement resilient retry logic with exponential backoff and jitter, and how the circuit breaker pattern prevents cascading failures.

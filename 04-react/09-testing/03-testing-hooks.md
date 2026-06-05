@@ -1,5 +1,18 @@
 # Testing React Hooks
 
+## The Idea
+
+**In plain English:** Testing React hooks means checking that the reusable logic pieces in your app (called hooks — functions that remember things or do tasks behind the scenes) behave correctly. You run them in a pretend environment, poke them with inputs, and confirm they give back the right outputs.
+
+**Real-world analogy:** Imagine a vending machine that you test before putting it on the floor. You press buttons (call actions), check what comes out (read the result), and verify the machine cleans up after itself (confirm nothing is left jammed inside).
+
+- The vending machine = the custom hook
+- Pressing a button = calling a function the hook returns (like `increment()`)
+- The item that drops out = the value the hook gives back (like `count`)
+- Checking the machine is empty after your test = verifying cleanup (like `unmount()`)
+
+---
+
 ## Overview
 
 Testing custom hooks requires special utilities from React Testing Library. The `renderHook` function allows you to test hooks in isolation without needing to create wrapper components. This guide covers patterns for testing hooks with state, effects, context, and async operations.

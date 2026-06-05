@@ -1,5 +1,17 @@
 # Production Failure: Memory Leak Patterns
 
+## The Idea
+
+**In plain English:** A memory leak happens when a program keeps holding onto memory it no longer needs, the way a backpack gets heavier if you never take anything out — even stuff you finished using. Over time the program uses more and more memory until it slows down or crashes.
+
+**Real-world analogy:** Imagine a restaurant where every table gets a dedicated waiter assigned to it. When a customer leaves, the manager forgets to tell the waiter they can stop waiting at that table. The waiter just keeps standing there indefinitely, watching an empty table. The more tables turn over without releasing their waiters, the fewer staff are available for new customers — and eventually the whole restaurant grinds to a halt.
+
+- The waiter = an event listener or subscription in your code
+- The empty table = a component or element that has been removed from the page
+- The manager forgetting to release the waiter = missing cleanup code (no `removeEventListener` or `unsubscribe`)
+
+---
+
 ## Overview
 
 Memory leaks in frontend apps cause progressive slowdown, tab crashes, and degraded performance that only manifests after extended use — which means they often slip through QA and only surface from user complaints. These are the real-world patterns, not the textbook examples.

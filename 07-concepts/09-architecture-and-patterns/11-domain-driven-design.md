@@ -1,5 +1,17 @@
 # Domain-Driven Design (DDD)
 
+## The Idea
+
+**In plain English:** Domain-Driven Design is a way of building software by first deeply understanding the real-world problem you are solving (the "domain") and then making your code mirror the language and structure of that world. A "domain" just means the subject area your app is about — like banking, shipping, or healthcare.
+
+**Real-world analogy:** Think of a hospital. The doctors, nurses, and receptionists all have different jobs, but they share a common language — words like "patient," "prescription," and "ward" mean the same thing to everyone. Each department (Emergency, Radiology, Billing) handles its own version of a "patient" record with only the details it needs, and a head doctor (the attending physician) is the only one who can approve changes to a patient's treatment plan.
+
+- The shared hospital vocabulary = the Ubiquitous Language (the common words developers and business people agree to use)
+- Each department's separate patient record = a Bounded Context (an area of the codebase with its own model and rules)
+- The attending physician who controls treatment decisions = the Aggregate Root (the one object that controls all changes to a group of related data)
+
+---
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Core Concepts](#core-concepts)

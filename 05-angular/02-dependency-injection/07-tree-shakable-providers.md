@@ -1,6 +1,20 @@
 # Tree-Shakable Providers in Angular
 
+## The Idea
+
+**In plain English:** Tree-shakable providers are a way to write Angular services (reusable pieces of code that do specific jobs in your app) so that if a service is never actually used, the build tool automatically leaves it out of the final app file — keeping the app smaller and faster to load.
+
+**Real-world analogy:** Think of a restaurant that prints a menu with every dish they could possibly make, but only actually preps and cooks a dish when a customer orders it. A traditional kitchen stocks every ingredient upfront (bigger cost, more waste), while a smart kitchen only buys what gets ordered.
+
+- The menu = the list of all services you have written
+- A customer ordering a dish = a component or other service actually using (injecting) a service
+- The kitchen only prepping ordered dishes = the build tool only including used services in the final bundle
+- Dishes never ordered being left out = unused services being "tree-shaken" (removed) from the app
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Understanding Tree-Shaking](#understanding-tree-shaking)
 - [providedIn Syntax](#providedin-syntax)

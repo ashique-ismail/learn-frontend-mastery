@@ -1,5 +1,18 @@
 # Immer: Immutable State Made Easy
 
+## The Idea
+
+**In plain English:** Immer is a JavaScript library that lets you update your app's data safely, so that changing one part of your data never accidentally breaks another part that was sharing it. "Immutable" just means "cannot be changed in place" — instead of editing the original, you always get a fresh copy with only your changes applied.
+
+**Real-world analogy:** Imagine you are editing a printed contract. Instead of crossing out words on the original (which would be messy and might break other people's copies), you photocopy only the pages you need to change, write your edits on those copies, and clip the new pages into a fresh contract — the unchanged pages stay exactly as they were.
+
+- The original contract = your current application state
+- The photocopied pages you edit = the "draft" Immer gives you to write on freely
+- The unchanged pages kept as-is = structural sharing (unmodified data is reused, not re-copied)
+- The final assembled contract = the new immutable state Immer hands back to you
+
+---
+
 ## Overview
 
 Immer is a tiny library that simplifies working with immutable state by letting you write code that appears to mutate data while actually creating immutable copies. Created by Michel Weststrate (creator of MobX), Immer uses JavaScript Proxies to track changes and produce immutable updates automatically.

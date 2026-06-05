@@ -1,5 +1,17 @@
 # ArrayBuffer, TypedArrays, and DataView
 
+## The Idea
+
+**In plain English:** Your computer stores everything — images, audio, video — as raw bytes (tiny numbers from 0 to 255). `ArrayBuffer`, `TypedArray`, and `DataView` are JavaScript's tools for creating, reading, and editing those raw bytes directly, which is much faster than working with regular JavaScript arrays when handling things like images or audio.
+
+**Real-world analogy:** Imagine a long strip of blank film (like old movie film). You can't see what's on it with your bare eyes — you need a special projector or magnifying lens to read it. You might use one lens to read it as individual frames, another to read it as a series of color strips, and a third to jump to a specific spot and read just one tiny section.
+
+- The blank film strip = the `ArrayBuffer` (raw storage you cannot read directly)
+- A lens that reads the whole strip as same-sized color slots = a `TypedArray` (e.g. `Uint8Array`, each slot the same type and size)
+- A precision magnifier that lets you jump to any spot and read any size = the `DataView` (read mixed types at any position)
+
+---
+
 ## Overview
 
 JavaScript's binary data primitives form a three-layer system:
@@ -38,7 +50,7 @@ ArrayBuffer.isView(new Uint8Array()); // true — TypedArray is a view
 Each TypedArray type specifies the element size, signedness, and float/int semantics:
 
 | Type | Bytes | Range | Use case |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `Int8Array` | 1 | −128 to 127 | Signed bytes |
 | `Uint8Array` | 1 | 0–255 | Raw bytes, image data |
 | `Uint8ClampedArray` | 1 | 0–255, clamped | Canvas pixel data |

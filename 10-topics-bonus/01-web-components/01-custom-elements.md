@@ -1,5 +1,16 @@
 # Custom Elements
 
+## The Idea
+
+**In plain English:** Custom Elements let you invent your own HTML tags (like `<profile-card>` or `<star-rating>`) that the browser treats exactly like built-in tags such as `<button>` or `<input>`. You write the tag once, define what it looks like and does, and then drop it anywhere on a page as many times as you want.
+
+**Real-world analogy:** Think of a custom LEGO brick mold. A toy company designs a brand-new brick shape — say, a tiny window frame — that doesn't exist in the standard LEGO catalogue. They build the mold (the definition), stamp out as many identical bricks as they need (the instances), and those bricks snap in and connect just like every other LEGO brick (native browser integration).
+- The mold design = the JavaScript class that defines the element's structure and behavior
+- Each stamped brick = every `<my-window>` tag placed on the page
+- Snapping into standard LEGO sets = the element working alongside built-in HTML tags without any special treatment
+
+---
+
 ## Introduction
 
 Custom Elements are a fundamental part of the Web Components standard that allows developers to create their own HTML elements with custom behavior and functionality. They provide a way to extend HTML's vocabulary and create reusable, encapsulated components that work seamlessly with the browser's native APIs.

@@ -1,5 +1,17 @@
 # React Aria
 
+## The Idea
+
+**In plain English:** React Aria is a toolkit of ready-made "behaviors" for building website buttons, menus, and forms that anyone can use — including people who navigate with a keyboard or a screen reader (a program that reads the screen aloud). Instead of giving you pre-styled components, it gives you the invisible rules (like "press Enter to activate a button") and you design how things look yourself.
+
+**Real-world analogy:** Imagine a car manufacturer that sells you a fully engineered engine, steering system, and safety features — but lets you design the car body however you want. You get all the mechanical rules that make a car work correctly, without being locked into one style.
+
+- The engine and steering system = React Aria's hooks (the behavior and accessibility logic)
+- The car body and paint = your custom HTML and CSS (the visual design you create)
+- The safety standards (seatbelts, airbags) = WAI-ARIA guidelines (the rules that make the UI usable for everyone, including disabled users)
+
+---
+
 ## Introduction
 
 React Aria is a library of React Hooks that provides accessible UI primitives for your design system. Created by Adobe, it offers over 40 hooks that handle behavior, accessibility, internationalization, and interactions while leaving DOM structure and styling completely up to you. React Aria focuses on providing the best accessibility support possible, following WAI-ARIA guidelines precisely.

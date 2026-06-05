@@ -1,5 +1,17 @@
 # Cross-Field Validation in Angular
 
+## The Idea
+
+**In plain English:** Cross-field validation is when a form checks that two or more answers work together correctly — not just that each answer looks right on its own. For example, making sure the password you typed twice is the same both times, or that a trip end date is not before the start date.
+
+**Real-world analogy:** Imagine filling out a paper form to book a hotel room. The desk clerk checks not just each line by itself, but also whether your check-out date is after your check-in date. If you wrote "check in January 10, check out January 5," the clerk would reject the whole form even though both dates look like valid dates individually.
+
+- The hotel booking form = the Angular FormGroup
+- The check-in and check-out date fields = the individual form controls being compared
+- The desk clerk's combined check = the cross-field validator function that reads both fields and decides if the combination is valid
+
+---
+
 ## Overview
 
 Cross-field validation validates relationships between multiple form fields, such as ensuring passwords match, end dates come after start dates, or conditional requirements based on other field values. These validators operate at the FormGroup level and can access multiple controls simultaneously.

@@ -1,5 +1,18 @@
 # Build System Architecture at Scale
 
+## The Idea
+
+**In plain English:** A build system is the automated process that takes your raw source code and converts it into something browsers can actually run — and at large companies with thousands of files, making that process fast enough so developers are not sitting idle waiting for it is a serious engineering challenge.
+
+**Real-world analogy:** Think of a huge restaurant kitchen preparing hundreds of dishes for a banquet. When one ingredient changes (say, the sauce recipe), a poorly run kitchen re-cooks every single dish from scratch. A smart kitchen keeps pre-cooked components cached, only re-heats the dishes that actually used that sauce, and has multiple chefs working in parallel.
+
+- The restaurant kitchen = the build system
+- Each dish = a compiled output file or package
+- Re-cooking only affected dishes = incremental/cached rebuilding
+- Multiple chefs working in parallel = concurrent package builds
+
+---
+
 ## Overview
 
 "Our builds take 8 minutes. Developers are blocked waiting for CI. Hot module replacement takes 15 seconds. What do you do?" This is a real staff-level problem at companies with large codebases. Solving it requires understanding what builds actually do, what makes them slow, and how modern tools (Vite, Turbopack, Nx, Turborepo) address each bottleneck.

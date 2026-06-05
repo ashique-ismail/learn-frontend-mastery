@@ -1,5 +1,18 @@
 # Runtime Performance
 
+## The Idea
+
+**In plain English:** Runtime performance is about how smoothly a webpage responds while you are using it -- things like clicking buttons, scrolling, and typing. When JavaScript (the code that makes pages interactive) takes too long to finish a task, the browser gets stuck and cannot react to what you do, making the page feel frozen or laggy.
+
+**Real-world analogy:** Imagine a single cashier at a grocery store who also has to stock shelves, answer the phone, and handle complaints -- all by themselves. If a customer asks them to count every item in the stockroom (a huge task), they disappear for ten minutes and the checkout line piles up with frustrated customers.
+
+- The cashier = the browser's main thread (the one worker handling everything)
+- Counting every item in the stockroom = a long-running JavaScript task
+- Customers waiting in line = user clicks and interactions that cannot be handled
+- Breaking the stockroom count into small batches between customers = chunking tasks so the browser stays responsive
+
+---
+
 ## Overview
 
 Runtime performance refers to how efficiently JavaScript executes in the browser after the page has loaded. Poor runtime performance causes sluggish interactions, janky scrolling, unresponsive UIs, and frozen pages. This guide covers JavaScript execution optimization, long task management, main thread blocking prevention, requestIdleCallback, and Web Workers for parallel computation.

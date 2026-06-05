@@ -1,12 +1,25 @@
 # Feature Flags and Progressive Rollout
 
+## The Idea
+
+**In plain English:** A feature flag is like a light switch in your code — it lets you ship a new feature to users in small, controlled steps instead of flipping it on for everyone at once. A progressive rollout means you gradually turn it on for more and more people, watching for problems before it reaches everyone.
+
+**Real-world analogy:** Imagine a new roller coaster at a theme park that is built and ready, but the park opens it in stages to make sure everything is safe. On day one only park employees ride it, then a small group of invited guests, then 10% of daily visitors, and finally all guests.
+
+- The finished-but-closed roller coaster = the new feature code that has been deployed but is turned off
+- The park's decision to let the next group ride = toggling the flag to a higher percentage
+- Watching for screams of panic (vs. joy) before opening fully = monitoring error rates and metrics before expanding the rollout
+- The emergency stop button operators keep nearby = the kill switch that instantly disables the feature for everyone without needing a new deployment
+
+---
+
 ## Overview
 
 Feature flags (also called feature toggles) are a deployment technique that separates code deployment from feature activation. You ship code with a new feature hidden behind a flag, then activate it for specific users or percentages without deploying again. This enables continuous deployment, canary releases, A/B testing, instant rollbacks, and kill switches. This guide covers flag patterns, major tools (LaunchDarkly, GrowthBook), targeting rules, and the architectural considerations for a flag system.
 
 ## Why Feature Flags
 
-```
+```text
 Without feature flags:
   Code complete → branch merge → deploy → all users see feature
   Problem: you can't test at scale before full rollout
@@ -29,7 +42,7 @@ Benefits:
 
 ## Flag Types
 
-```
+```text
 Release flags (temporary):
   Enable a new feature for gradual rollout
   Should be removed after 100% rollout
@@ -209,7 +222,7 @@ function ProductPage({ productId }: { productId: string }) {
 
 ### LaunchDarkly Targeting Rules
 
-```
+```text
 LaunchDarkly UI targeting:
 
 Flag: new-checkout-flow
@@ -282,7 +295,7 @@ function CheckoutButton() {
 
 ## Canary Releases
 
-```
+```text
 Canary release flow:
 
 Deploy v2 to 5% of users:

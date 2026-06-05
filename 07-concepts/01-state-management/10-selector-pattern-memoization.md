@@ -1,12 +1,25 @@
 # Selector Pattern and Memoization
 
+## The Idea
+
+**In plain English:** A selector is a function that reads data from your app's memory (called "state") and prepares it in a useful form for display. Memoization means the selector remembers the last answer it calculated, so if nothing relevant changed, it skips the hard work and returns the cached answer instantly.
+
+**Real-world analogy:** Imagine a librarian who compiles a personalised "Top 10 Books" list for you. The first time you ask, she goes through every shelf, filters by your preferences, and sorts them — it takes time. But she writes the list on a sticky note. The next time you ask, if no new books have arrived and your preferences haven't changed, she just hands you the same sticky note instead of searching all over again.
+
+- The librarian = the selector function
+- Searching the shelves = the expensive computation (filter, sort, map)
+- Your preferences and the book inventory = the input selectors (the things that can change)
+- The sticky note = the memoized (cached) result
+
+---
+
 ## Overview
 
 Selectors are functions that derive data from the Redux (or any other) store. They act as the query layer between raw state and the UI. Without memoization, every `useSelector` call re-computes derived values on every render, even when inputs haven't changed — defeating the purpose of state management. `reselect`'s `createSelector` solves this by caching the last result and only recomputing when input selectors return new references. This guide covers the full selector lifecycle, composition patterns, parameterized selectors, and common pitfalls.
 
 ## What Is a Selector?
 
-```
+```text
 Store state (raw, normalized)
         │
         ▼
@@ -230,7 +243,7 @@ const selectActiveUserIds = createSelector(
 
 ## When Selectors Re-Run
 
-```
+```text
 Trigger                          | Selector re-runs?
 ---------------------------------|------------------
 Unrelated slice updates          | No (input unchanged)

@@ -1,5 +1,17 @@
 # Monorepos
 
+## The Idea
+
+**In plain English:** A monorepo is when all of a company's different software projects — like their website, their mobile app, and shared tools — live together in one single folder (called a repository) instead of being kept in separate, isolated folders. A repository (repo for short) is just a folder tracked by version-control software so teams can collaborate and see the history of every change.
+
+**Real-world analogy:** Imagine a large school building where every subject — math, science, art, and gym — is taught under one roof, sharing the same hallways, cafeteria, and staff room. Compare that to each subject having its own completely separate school across town.
+
+- The school building = the single monorepo (one shared place for everything)
+- Each classroom (math, science, art) = each individual project or app (web app, mobile app, shared UI library)
+- The shared cafeteria and hallways = shared code and tooling that every project can use without duplicating it
+
+---
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Monorepo vs Polyrepo](#monorepo-vs-polyrepo)

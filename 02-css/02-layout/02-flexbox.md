@@ -1,5 +1,17 @@
 # Flexbox: Main/Cross Axis, flex-grow/shrink/basis, Alignment
 
+## The Idea
+
+**In plain English:** Flexbox is a CSS tool that lets you arrange items inside a box — lining them up in a row or a column, and controlling how they spread out, shrink, or stretch to fill the available space. "CSS" means the styling language that controls how web pages look.
+
+**Real-world analogy:** Imagine a coat rack with a fixed rail (the container) where you hang several coat hooks (the items). The rail runs left to right, and you decide how the hooks are spaced — all bunched at the left, spread evenly, or centered. If you run out of rail space, the hooks either squish closer together or spill onto a second rail below.
+- The coat rack rail = the flex container (the parent element with `display: flex`)
+- The coat hooks = the flex items (the child elements inside the container)
+- The left-to-right direction of the rail = the main axis (the primary direction items flow)
+- The top-to-bottom direction (across rails) = the cross axis (perpendicular to the main axis)
+
+---
+
 ## Learning Objectives
 - Master the flexbox layout model and its two-axis system
 - Understand how flex-grow, flex-shrink, and flex-basis work together

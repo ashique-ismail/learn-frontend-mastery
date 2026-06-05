@@ -1,5 +1,18 @@
 # Secrets Management
 
+## The Idea
+
+**In plain English:** Secrets management is how software keeps sensitive information — like passwords or private access codes — hidden from the wrong people while still making them available to the right parts of the system. A "secret" in code means any piece of information that, if exposed, would let someone access something they shouldn't.
+
+**Real-world analogy:** Imagine a restaurant where the head chef has a recipe book locked in the kitchen safe. Customers in the dining area can see the menu (public information), but they never get to read the actual recipe or know the supplier's private discount code.
+
+- The menu = public configuration (keys designed to be shared with users)
+- The locked recipe book = server-side secrets (passwords, private API keys kept only on the server)
+- The dining area = the browser (anything here is visible to anyone)
+- The kitchen safe = environment variables loaded only at runtime on the server
+
+---
+
 ## Overview
 
 Secrets — API keys, database passwords, OAuth client secrets, signing keys — are among the most sensitive assets in any application. The frontend's relationship with secrets is unique: anything shipped to the browser is inherently public. This guide covers the hard line between what can live client-side versus what must stay server-side, how build-time vs runtime environment variables work, CI/CD secrets management, and how to prevent secrets from leaking through `.env` files, version control, or bundle output.

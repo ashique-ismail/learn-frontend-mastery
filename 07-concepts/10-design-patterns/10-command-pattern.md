@@ -1,5 +1,17 @@
 # Command Pattern
 
+## The Idea
+
+**In plain English:** The Command pattern is a way of packaging an action — like "delete this row" or "type this word" — into a reusable object that can be run, stored, and reversed later. Instead of just calling a function and forgetting it happened, you wrap the action in a little box that remembers everything it needs to undo itself.
+
+**Real-world analogy:** Think of a restaurant order slip. A customer tells a waiter "I'd like the pasta," the waiter writes it on a slip and hands it to the kitchen. The kitchen executes the order without needing to talk to the customer.
+
+- The order slip = the Command object (holds all the details of the action)
+- The waiter = the Invoker (passes the command along, can queue or cancel slips)
+- The kitchen = the Receiver (the thing that actually does the work)
+
+---
+
 ## Overview
 
 The Command pattern encapsulates a request as an object, separating the what (the command) from the who (the invoker) and the how (the receiver). Commands are first-class objects — they can be stored, queued, logged, undone, retried, and composed. In frontend applications, the Command pattern is the foundation for undo/redo systems, operation history, macro recording, and offline-capable action queues.

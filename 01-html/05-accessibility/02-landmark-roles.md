@@ -1,5 +1,16 @@
 # Landmark roles
 
+## The Idea
+
+**In plain English:** Landmark roles are special labels you attach to big sections of a webpage so that people using screen readers (software that reads the page aloud) can jump straight to the part they want, instead of having to listen to every word from the top.
+
+**Real-world analogy:** Think of a shopping mall directory board at the entrance. The board shows zones like "Food Court," "Main Entrance," "Restrooms," and "Parking." Instead of wandering every corridor, a visitor scans the board and walks directly to what they need.
+- The directory board = the set of landmark roles on the page
+- Each zone label (Food Court, Restrooms) = a landmark like `<main>`, `<nav>`, or `<footer>`
+- The visitor using the board = a screen reader user pressing a shortcut to jump between landmarks
+
+---
+
 ## Overview
 
 Landmark roles provide a way to identify and navigate major page sections. They help screen reader users quickly jump to different parts of a page.

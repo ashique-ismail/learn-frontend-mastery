@@ -1,5 +1,17 @@
 # useCallback Hook - Optimizing Function References
 
+## The Idea
+
+**In plain English:** `useCallback` is a tool in React (a popular library for building websites) that remembers a function so it does not get recreated from scratch every time your page updates. A "function" is just a set of instructions your app follows when something happens, like clicking a button.
+
+**Real-world analogy:** Imagine a teacher who writes a set of homework instructions on the board each day. On most days the instructions are identical, yet she erases and rewrites them every single morning anyway — wasting chalk and time. A smarter approach: laminate the instruction sheet and reuse it until the assignment actually changes.
+
+- The laminated instruction sheet = the memoized (saved) function `useCallback` returns
+- Rewriting identical instructions every morning = creating a brand-new function on every render
+- The teacher only reprinting the sheet when the assignment changes = `useCallback` only recreating the function when its listed dependencies change
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Basic Concepts](#basic-concepts)

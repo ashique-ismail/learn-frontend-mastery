@@ -1,5 +1,17 @@
 # Angular RxJS Interview Questions
 
+## The Idea
+
+**In plain English:** RxJS is a toolkit for handling things that happen over time in your app — like a user typing, a button being clicked, or data arriving from a server. Instead of waiting around or checking repeatedly, you set up a "watcher" that reacts automatically whenever something new happens.
+
+**Real-world analogy:** Think of a newspaper subscription. A printing press keeps producing new editions, and subscribers receive each new issue as it arrives.
+
+- The printing press = the Observable (the source that produces values over time)
+- The newspaper edition = the emitted value (each piece of data sent down the stream)
+- Your subscription = the Subscriber (the code that runs each time a new value arrives)
+
+---
+
 ## Table of Contents
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)

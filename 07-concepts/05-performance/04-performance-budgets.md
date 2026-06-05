@@ -1,5 +1,17 @@
 # Performance Budgets
 
+## The Idea
+
+**In plain English:** A performance budget is a set of rules that says "our website is not allowed to be slower than this or use more data than this." Just like a spending budget stops you from overspending money, a performance budget stops developers from accidentally making a website too slow or too heavy.
+
+**Real-world analogy:** Imagine a school backpack with a strict weight limit — your teacher says it cannot weigh more than 5 kg or you will not be allowed on the field trip. Every time you pack it, you check the scale before leaving.
+
+- The backpack weight limit = the performance budget (the maximum allowed size or load time)
+- Each book or item you add = each file or script added to the website
+- The scale check before leaving = the automated test in CI/CD that blocks a bad build from going live
+
+---
+
 ## Overview
 
 Performance budgets are constraints that define acceptable performance thresholds for your application. They prevent performance regressions by enforcing limits on metrics (timing, file sizes, request counts) in development and CI/CD. This guide covers budget setting strategies, CI enforcement with Lighthouse CI, bundle size tracking, webpack-bundle-analyzer usage, and automated performance governance.

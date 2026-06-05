@@ -1,5 +1,18 @@
 # AbortController and Cancellation
 
+## The Idea
+
+**In plain English:** An AbortController is a way to send a "stop" signal to a task your code started, like a web request, so you can cancel it before it finishes. Think of it like a remote control that lets you turn off a running process whenever you decide you no longer need the result.
+
+**Real-world analogy:** Imagine you call a pizza delivery place and place an order. While waiting, you change your mind and call back to cancel. The restaurant (if they haven't started yet) stops making it — but if the pizza is already in the oven, cancelling just means you won't answer the door; the oven keeps running on their end.
+
+- The phone call to order pizza = the `fetch` request your code sends
+- Your callback to cancel = calling `controller.abort()`
+- The cancellation number the restaurant gives you = the `AbortSignal` passed to `fetch`
+- The restaurant deciding how to react = the browser dropping the response on its end
+
+---
+
 ## Overview
 
 JavaScript's async model — Promises, `fetch`, async/await — has historically lacked a standard cancellation mechanism. `AbortController` (introduced in the DOM Living Standard and available in browsers since 2017, Node.js since v15) provides the official solution: a controller object paired with a signal that can be passed to cancellable APIs to request early termination.

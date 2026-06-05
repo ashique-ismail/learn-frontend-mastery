@@ -1,5 +1,17 @@
 # Event Delegation
 
+## The Idea
+
+**In plain English:** Event delegation is a technique where instead of giving every individual button or item its own listener (a piece of code that watches for clicks), you put one listener on their shared container and let it catch clicks for all of them. "Bubbling" means that when you click something on a webpage, the click signal travels upward through all its surrounding boxes until it reaches the top.
+
+**Real-world analogy:** Imagine a school building with 30 classrooms, and instead of hiring a separate security guard for each classroom door, the school stations one guard at the main entrance hall. When any student (event) leaves any classroom and walks down the corridor, they pass through the entrance hall where the guard checks them.
+
+- The entrance hall guard = the single event listener on the parent element
+- Each classroom door = each individual child element (button, list item, etc.)
+- A student walking from their classroom to the hall = the event bubbling up the DOM
+
+---
+
 ## What It Is
 
 Event delegation is attaching a **single event listener to a parent element** to handle events for multiple children, relying on event bubbling.

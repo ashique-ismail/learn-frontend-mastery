@@ -1,5 +1,16 @@
 # Hoisting and TDZ - JavaScript Interview Questions
 
+## The Idea
+
+**In plain English:** JavaScript secretly reads through your code before running it, and "lifts" variable and function names to the top of their container — but only the names, not their values. The Temporal Dead Zone (TDZ) is a safety rule that blocks you from using a variable in the gap between when its name is registered and when its actual value is assigned.
+
+**Real-world analogy:** Imagine a theater show where the stage manager reads the full script before curtain-up and writes every actor's name on a whiteboard — but leaves their role blank until that actor walks on stage. If a director asks "who is playing Hamlet?" before that actor appears, they get a "not yet assigned" answer (or an error if it's a strict director).
+- The whiteboard with actor names = the variable declarations JavaScript hoists
+- The blank role next to a name = the `undefined` (or TDZ error) before a value is assigned
+- The actor walking on stage = the line in your code where the variable is actually given a value
+
+---
+
 ## Table of Contents
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)

@@ -1,5 +1,19 @@
 # gRPC and tRPC
 
+## The Idea
+
+**In plain English:** gRPC and tRPC are two ways for different parts of a software system to call functions on each other over a network, as if they were in the same program. gRPC is a high-speed communication method used between separate services (even written in different languages), while tRPC lets the front-end and back-end of a TypeScript website share types so mistakes are caught before the code even runs.
+
+**Real-world analogy:** Imagine a busy restaurant where the waiter (front-end) needs to get food from the kitchen (back-end). With gRPC, the waiter and kitchen use a strict, laminated order form (the `.proto` schema) — every field is numbered and predefined, orders travel as compact shorthand codes (protobuf), and the system works even if the waiter speaks English and the kitchen speaks Spanish. With tRPC, the waiter and kitchen work in the same small diner where everyone speaks the same language, so the waiter can just shout the order and automatically knows exactly what will come back, no form needed.
+
+- The laminated order form = the `.proto` schema (the shared contract)
+- The compact shorthand codes = protobuf binary encoding
+- The waiter shouting in the same language = TypeScript type sharing between client and server
+- The kitchen = the server (back-end)
+- The waiter = the client (front-end)
+
+---
+
 ## Overview
 
 REST is not the only way to build APIs. gRPC uses Protocol Buffers and HTTP/2 to deliver high-performance, strongly-typed, bi-directional streaming RPC. tRPC takes a different approach — it skips the network protocol entirely for full-stack TypeScript monorepos, sharing types between server and client with zero code generation. This guide covers when each fits, how they differ from REST and GraphQL, and practical implementation patterns.

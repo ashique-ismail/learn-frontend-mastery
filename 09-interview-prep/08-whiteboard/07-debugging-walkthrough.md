@@ -1,5 +1,17 @@
 # Whiteboard: Debugging Walkthrough
 
+## The Idea
+
+**In plain English:** Debugging is the process of finding and fixing mistakes in code — when a program does something unexpected, you investigate clues to figure out exactly where and why things went wrong, then correct it.
+
+**Real-world analogy:** Imagine a car that won't start. A mechanic doesn't just randomly swap parts — they follow a system: check if the battery has power, then the ignition, then the fuel line, narrowing it down step by step until they find the broken part and fix only that.
+
+- The car not starting = the bug symptom (something is wrong, but you don't know what yet)
+- Checking each system in order = forming and testing hypotheses in your code
+- The broken fuel pump = the root cause (the actual line of code that is wrong)
+
+---
+
 ## Overview
 
 Some interviews present broken code and ask you to diagnose and fix it live. Others describe a symptom and expect you to reason through the cause. This guide covers the systematic approach, the canonical bug categories interviewers reach for, and worked walkthroughs of real scenarios.

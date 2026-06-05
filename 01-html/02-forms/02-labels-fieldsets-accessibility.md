@@ -1,5 +1,17 @@
 # Label Association, Fieldset/Legend, and Accessibility
 
+## The Idea
+
+**In plain English:** When you build a web form, every text box or button needs a clear, connected name so that all users — including people who navigate with a keyboard or use a screen reader that reads the page aloud — know exactly what each field is asking for. Labels and fieldsets are the HTML tools that create those connections.
+
+**Real-world analogy:** Imagine a paper tax form with sections. Each blank line has a printed title next to it ("First Name:", "Date of Birth:"), and related lines are grouped under a bold heading ("Section 2 — Income"). You never have to guess what to write because every blank is labelled and every group is titled.
+- The printed title next to a blank line = the `<label>` element that names an input
+- The blank line you write on = the `<input>` element that collects the data
+- The bold section heading grouping related lines = the `<legend>` inside a `<fieldset>`
+- The bordered box drawn around a section = the `<fieldset>` element itself
+
+---
+
 ## Learning Objectives
 - Master proper label association techniques for form accessibility
 - Understand fieldset and legend for grouping form controls

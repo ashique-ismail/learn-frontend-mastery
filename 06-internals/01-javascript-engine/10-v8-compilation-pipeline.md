@@ -1,5 +1,18 @@
 # V8 Compilation Pipeline
 
+## The Idea
+
+**In plain English:** V8 is the program inside Chrome and Node.js that reads your JavaScript code and turns it into fast instructions your computer's processor can actually run. It does this in stages, getting smarter about your code the more it runs it.
+
+**Real-world analogy:** Imagine a new chef learning a restaurant's menu. At first they read each recipe card step-by-step as they cook (slow but works for any dish). After making the same dish hundreds of times, they memorize the fastest version of that recipe and can cook it almost on autopilot — but if a customer suddenly orders it differently, they have to pause and go back to the recipe card.
+
+- The recipe card = your JavaScript source code
+- Reading step-by-step = Ignition interpreter executing bytecode
+- Memorizing the fastest version = TurboFan compiling optimized machine code
+- Customer ordering it differently = a type change that triggers deoptimization
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [V8 Architecture](#v8-architecture)

@@ -1,5 +1,17 @@
 # OpenTelemetry for Frontend
 
+## The Idea
+
+**In plain English:** OpenTelemetry is a universal recording system for software — it tracks exactly what your app does, step by step, across every service involved, so you can replay and measure any action later. A "trace" is one complete recording of a single action (like a button click), and a "span" is one timestamped step within that trace.
+
+**Real-world analogy:** Imagine a postal package with a barcode that gets scanned at every stop — the warehouse, the truck, the regional hub, and finally your door. Each scan creates a log entry tied to the same tracking number, so you can see the full journey in one place.
+
+- The tracking number = the traceId (one ID that follows the request everywhere)
+- Each scan at a checkpoint = a span (a timed record of one step in the journey)
+- The tracking number printed on the label = the traceparent header (what gets passed between services so they all know they belong to the same trip)
+
+---
+
 ## Overview
 
 OpenTelemetry (OTel) is a vendor-neutral observability framework for collecting traces, metrics, and logs. In the frontend, it extends the same distributed tracing standard used by backend services — meaning a user interaction in the browser can produce a trace that spans the React component, the fetch request, and the Node.js API handler, all as a single correlated unit. This guide covers OTel concepts applied to the browser, instrumenting fetch and XHR, exporting to backends, and correlating frontend spans with server-side traces.

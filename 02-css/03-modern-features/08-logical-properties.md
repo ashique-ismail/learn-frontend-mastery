@@ -1,5 +1,16 @@
 # Logical Properties and Values
 
+## The Idea
+
+**In plain English:** CSS logical properties let you describe layout using the direction text flows (like "the start of a line" or "the top of a stack") instead of fixed compass directions like left, right, top, and bottom. This way, the same styles automatically work correctly whether someone reads left-to-right (like English), right-to-left (like Arabic), or even top-to-bottom (like traditional Japanese).
+
+**Real-world analogy:** Imagine a book that can be read in any language. A publisher says "put the page number at the outer edge of each page" instead of "put it on the right." In an English book the number appears on the right, but in a Hebrew book it flips to the left automatically — the instruction never changed, only the reading direction did.
+- The "outer edge" instruction = a logical property like `margin-inline-end`
+- The English book (left-to-right) = the default LTR reading direction
+- The Hebrew book (right-to-left) = an RTL reading direction set with `dir="rtl"`
+
+---
+
 ## Overview
 
 CSS Logical Properties provide flow-relative (logical) equivalents to physical properties. Instead of `left`/`right`/`top`/`bottom`, you use `inline-start`/`inline-end`/`block-start`/`block-end`, which adapt to writing mode and direction.

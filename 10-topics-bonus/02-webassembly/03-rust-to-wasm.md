@@ -1,5 +1,17 @@
 # Rust to WebAssembly
 
+## The Idea
+
+**In plain English:** Rust to WebAssembly means writing code in the Rust programming language (a language known for speed and safety) and then converting it into WebAssembly (a compact, fast format that browsers can run directly) so your web page can do heavy tasks at near full computer speed.
+
+**Real-world analogy:** Imagine a chef (Rust) who writes recipes in a very precise culinary language. To serve customers in a cafe (the browser), the recipes are printed onto a universal menu card (WebAssembly) that any waiter in any cafe around the world can read and execute without needing to know the original culinary language.
+
+- The chef (Rust) = the programmer writing fast, safe code in the Rust language
+- The universal menu card (WebAssembly) = the compiled .wasm file that the browser understands
+- The waiter serving customers (the browser running the menu) = the browser executing the WebAssembly at near-native speed
+
+---
+
 ## Introduction
 
 Rust has emerged as the premier language for WebAssembly development, offering memory safety without garbage collection, zero-cost abstractions, and excellent tooling. The combination of Rust's performance characteristics and WebAssembly's portability makes it ideal for building high-performance web applications.

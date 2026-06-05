@@ -1,5 +1,18 @@
 # Promise Combinators: all, allSettled, race, any
 
+## The Idea
+
+**In plain English:** Promise combinators are built-in JavaScript tools that let you kick off several tasks at the same time and then decide how to handle the results — for example, wait for all of them to finish, or just grab whichever one finishes first. A "Promise" is JavaScript's way of representing a task that hasn't completed yet, like loading a file or fetching data from the internet.
+
+**Real-world analogy:** Imagine you and three friends each order food from a different counter at a food court. You can decide to eat together only when everyone has their tray (like `Promise.all`), eat as soon as the first person gets theirs (like `Promise.race`), or note down who got their food and who didn't without anyone holding up the group (like `Promise.allSettled`).
+
+- The food court = your JavaScript program running multiple async operations
+- Each person ordering food = one Promise (an ongoing task)
+- Getting your tray = a Promise fulfilling (finishing successfully)
+- A counter being closed = a Promise rejecting (failing)
+
+---
+
 ## Overview
 
 Promise combinators are static methods on the `Promise` constructor that accept an iterable of Promises and return a single new Promise whose resolution depends on the outcomes of the input Promises. They are the primary tools for managing concurrency in JavaScript — running multiple async operations in parallel and composing their results.

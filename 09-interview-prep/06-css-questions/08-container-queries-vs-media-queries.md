@@ -1,5 +1,17 @@
 # Container Queries vs Media Queries
 
+## The Idea
+
+**In plain English:** Imagine you have a reusable card component (like a product tile or news card) that you want to look different depending on how much space it has around it — not how big the browser window is, but how big the box it sits inside is. Media queries let a style change based on the whole browser window size, while container queries let a style change based on the size of the parent box that holds the element.
+
+**Real-world analogy:** Think of a folding table you set up at different events. At a large banquet hall you unfold it fully and lay out all the dishes spread wide. At a small apartment gathering the same table fits in a tight corner so you arrange dishes in a single column. The table adapts to the space it is placed in, not to the size of the building.
+
+- The table = the card component
+- The room/space the table is placed in = the parent container
+- The decision to spread wide or stack vertically = the container query rule
+
+---
+
 ## The Core Difference
 
 **Media queries** — respond to the **viewport** (browser window) size.

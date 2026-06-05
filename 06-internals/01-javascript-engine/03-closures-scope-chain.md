@@ -1,5 +1,17 @@
 # Closures and Scope Chain
 
+## The Idea
+
+**In plain English:** A closure is what happens when a function remembers the variables from the place where it was created, even after that place has finished running. Think of "scope" as the set of variables a function is allowed to see and use.
+
+**Real-world analogy:** Imagine a chef who trained at a specific restaurant kitchen. When that chef leaves to work elsewhere, they still remember the secret recipes they learned there — those recipes travel with them even though the original kitchen is no longer open.
+
+- The original kitchen = the outer function (the place that "ran" and finished)
+- The secret recipes = the variables defined in the outer function
+- The chef working elsewhere = the inner function running after the outer function has returned
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [Lexical Scope](#lexical-scope)

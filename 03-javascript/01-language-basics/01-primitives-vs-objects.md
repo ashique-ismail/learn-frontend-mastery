@@ -1,5 +1,17 @@
 # Primitives vs Objects: Value Types and Reference Types
 
+## The Idea
+
+**In plain English:** JavaScript stores data in two ways: as a simple, standalone value (called a primitive) or as a container that can hold many values and be changed over time (called an object). The key difference is that when you copy a primitive you get your own independent copy, but when you copy an object you just get another pointer to the exact same container.
+
+**Real-world analogy:** Imagine a school locker system. Each student either carries a sticky note with a number written on it, or they are handed a locker key that opens a shared locker in the hallway. If two friends both write the number 42 on their own sticky notes, changing one note does not affect the other. But if two friends are given keys to the same locker and one friend puts a new item inside, the other friend opens the locker and finds that item too.
+
+- The sticky note with the number = a primitive value (each variable holds its own copy)
+- The locker key = a reference (the variable points to a shared object in memory)
+- The locker itself = the object stored in heap memory
+
+---
+
 ## Overview
 
 JavaScript has two fundamental categories of data types: **primitives** (value types) and **objects** (reference types). Understanding the distinction between these types is critical for predicting how data behaves when assigned, passed to functions, or compared. This distinction affects memory allocation, mutability, equality comparisons, and is a common source of bugs for developers transitioning from other languages.
@@ -108,6 +120,7 @@ console.log(num.customProperty); // undefined
 ```
 
 The wrapper objects are:
+
 - `String` for string primitives
 - `Number` for number primitives
 - `Boolean` for boolean primitives
@@ -706,15 +719,18 @@ function Component() {
 ## Resources
 
 ### Documentation
+
 - [MDN: JavaScript data types and data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
 - [MDN: Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
 - [ECMAScript: Types](https://tc39.es/ecma262/#sec-ecmascript-data-types-and-values)
 
 ### Articles
+
 - [Primitive vs. Reference Values](https://javascript.info/types)
 - [Deep vs Shallow Copy](https://javascript.info/object-copy)
 - [Understanding Value vs Reference](https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0)
 
 ### Books
+
 - "You Don't Know JS: Types & Grammar" by Kyle Simpson
 - "JavaScript: The Good Parts" by Douglas Crockford

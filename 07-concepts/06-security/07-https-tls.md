@@ -1,5 +1,16 @@
 # HTTPS and TLS
 
+## The Idea
+
+**In plain English:** HTTPS is a secure way for your browser to talk to a website so that no one in the middle can read or tamper with what is being sent. TLS (Transport Layer Security) is the technology underneath that scrambles (encrypts) the data and verifies you are really talking to the right website.
+
+**Real-world analogy:** Imagine sending a top-secret letter through the post. Before you hand it over, you and the recipient agree on a special lockbox and exchange locks in public — without ever sharing the key. You put your letter in the box, lock it with their lock, and send it. Only the recipient has the key to open it, so even if someone intercepts the box they cannot read the letter.
+- The lockbox = the encrypted connection (TLS session)
+- Exchanging locks in public without sharing keys = the TLS handshake (Diffie-Hellman key exchange)
+- The post office stamp of authenticity on the box = the SSL/TLS certificate (proving the recipient is who they claim to be)
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [TLS Handshake Explained](#tls-handshake-explained)
@@ -1130,7 +1141,7 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
 **Benefits:**
 1. **Prevents SSL stripping:** Attacker can't downgrade to HTTP
-2. **No HTTP requests:** Browser automatically uses HTTPS
+2. **Automatic HTTPS upgrade:** Browser automatically uses HTTPS
 3. **Protection persists:** Works even on first visit (with preload)
 
 **Directives:**

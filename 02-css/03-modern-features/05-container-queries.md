@@ -1,5 +1,17 @@
 # Container Queries
 
+## The Idea
+
+**In plain English:** Container queries are a CSS feature that lets you change how a part of a webpage looks based on the size of the box it lives inside, not the size of the whole screen. Think of a "container" as any box or section on the page that holds other content.
+
+**Real-world analogy:** Imagine a shop display shelf that automatically rearranges its items depending on how wide the shelf space is. A narrow shelf stacks products vertically; a wide shelf spreads them out side by side — and each shelf does this on its own, no matter what size the whole store is.
+
+- The shelf = the container (the HTML element wrapping your component)
+- The shelf's width = the container size being queried
+- The rearranged products = the component's layout changing in response
+
+---
+
 ## Overview
 
 Container queries allow you to apply styles to an element based on the size of its **container** rather than the viewport. This enables true component-based responsive design, where components adapt based on their context, not the global page size.

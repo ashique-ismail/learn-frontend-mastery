@@ -1,5 +1,17 @@
 # Next.js Interview Questions
 
+## The Idea
+
+**In plain English:** Next.js is a toolkit built on top of React that handles the boring-but-important stuff for you — like deciding whether a webpage should be built ahead of time or freshly assembled when someone visits, and giving your app its own mini server without needing a separate backend project. Think of React as the engine and Next.js as the fully built car around it.
+
+**Real-world analogy:** Imagine a popular food stall that prepares meals in three different ways depending on the dish. Some items like samosas are batch-cooked in the morning and handed out instantly all day. Biryani is cooked fresh to order for each customer. And the daily special is cooked in the morning but remade quietly every hour so it stays fresh without making anyone wait.
+
+- The pre-cooked samosas = SSG (Static Site Generation — pages built once at deploy time, served instantly)
+- The fresh-to-order biryani = SSR (Server-Side Rendering — page built fresh on every single request)
+- The hourly-refreshed daily special = ISR (Incremental Static Regeneration — static page that quietly rebuilds itself on a schedule)
+
+---
+
 ## Overview
 
 Next.js questions test your understanding of server-side rendering, static generation, routing, API routes, and deployment. Essential for full-stack React positions.

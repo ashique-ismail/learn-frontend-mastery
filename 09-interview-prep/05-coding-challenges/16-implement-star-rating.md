@@ -1,5 +1,18 @@
 # Implement Accessible Star Rating Component
 
+## The Idea
+
+**In plain English:** A star rating component lets users pick a score (like 1 to 5 stars) by clicking or tapping on stars, and the page updates to show which stars are filled in. "Accessible" means it is also usable by people who navigate with a keyboard or who rely on a screen reader (software that reads the screen aloud).
+
+**Real-world analogy:** Think of a printed multiple-choice bubble sheet on a test, where each bubble represents an answer and you fill in exactly one. Now imagine it looks like five gold stars instead of bubbles:
+
+- The bubble sheet = the `<fieldset>` (groups all the choices together)
+- Each individual bubble = a hidden `<input type="radio">` (the real selectable control)
+- The star symbol printed next to each bubble = the `<span>` with ★ or ☆ (purely decorative, hides from screen readers)
+- Filling in a bubble = setting `checked` on the radio input and updating state
+
+---
+
 ## Accessible Approach: Radio Inputs
 
 The most accessible star rating uses `<input type="radio">` — keyboard support is built-in, screen readers understand the rating concept, and it works without JavaScript.

@@ -1,5 +1,17 @@
 # Changesets
 
+## The Idea
+
+**In plain English:** Changesets is a tool that helps developers track and announce what changed in their code libraries before officially releasing a new version. Think of it as writing sticky notes about your changes so that when it is time to ship, everyone knows exactly what version number to use and what to put in the release notes.
+
+**Real-world analogy:** Imagine a restaurant where multiple cooks update the menu throughout the week. Before printing the new menu, each cook leaves a note on the board saying "I added a new dessert" or "I fixed the soup recipe." When Friday comes, the manager reads all the notes, decides how big the menu update is, prints the official new menu with a new edition number, and throws away the sticky notes.
+
+- The sticky notes = changeset files (`.changeset/*.md`) that developers commit alongside their code
+- The manager reading notes and deciding the edition number = `npx changeset version` bumping `package.json` versions
+- Printing and distributing the new menu = `npx changeset publish` releasing packages to npm
+
+---
+
 ## What It Does
 
 Changesets is a version management and changelog tool designed for JavaScript monorepos. It solves the problem of coordinating version bumps and changelogs across multiple packages that may be changed together.

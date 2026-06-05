@@ -1,5 +1,18 @@
 # WCAG Principles and Conformance Levels
 
+## The Idea
+
+**In plain English:** WCAG (Web Content Accessibility Guidelines) is an international checklist of rules that ensures websites can be used by people with disabilities — including people who are blind, deaf, or have limited motor control. Conformance levels (A, AA, AAA) tell you how strictly you've followed the rules.
+
+**Real-world analogy:** Think of building codes for physical buildings. Level A is like requiring a ramp at the entrance (bare minimum — without it, wheelchair users literally can't get in). Level AA is like also requiring accessible restrooms and elevators. Level AAA is like providing Braille signage on every door and tactile floor guides throughout.
+
+- The building codes = WCAG guidelines
+- The ramp at the entrance (Level A) = minimum requirements like keyboard navigation and alt text
+- Accessible restrooms and elevators (Level AA) = the standard most organizations target
+- Full tactile signage throughout (Level AAA) = the highest, most comprehensive accessibility standard
+
+---
+
 ## Learning Objectives
 - Understand the four foundational POUR principles of web accessibility
 - Master WCAG 2.2 guidelines and success criteria

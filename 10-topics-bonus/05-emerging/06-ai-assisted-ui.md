@@ -1,5 +1,17 @@
 # AI-Assisted UI: Streaming LLM Responses in the Browser
 
+## The Idea
+
+**In plain English:** AI-assisted UI means building web pages that show you an AI's answer word-by-word as it's being written, instead of making you wait until the whole reply is finished. An LLM (Large Language Model) is just a type of AI that generates text; "streaming" means delivering that text piece by piece in real time rather than all at once.
+
+**Real-world analogy:** Imagine watching a friend write you a letter on a whiteboard. Instead of waiting for them to finish and then showing you the completed letter, you watch each word appear as their marker touches the board.
+
+- The friend writing = the LLM generating text on the server
+- Each new word appearing on the whiteboard = a "token" (small chunk of text) being sent to the browser
+- You reading along in real time = the browser rendering each token as it arrives instead of waiting for the full message
+
+---
+
 ## Overview
 
 Building AI-powered interfaces requires a fundamentally different mental model than traditional request/response UIs. LLMs produce tokens over time — sometimes 30–100 tokens per second — and blocking the UI until the entire response arrives destroys perceived performance. Streaming responses arrive as Server-Sent Events or chunked HTTP, and the browser must render partial state gracefully. This guide covers the full stack: from `ReadableStream` mechanics to React Server Components with AI, abort controls, optimistic rendering, and production patterns used with Claude and OpenAI APIs.

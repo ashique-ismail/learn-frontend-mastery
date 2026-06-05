@@ -1,5 +1,17 @@
 # Parcel: Zero-Configuration Web Application Bundler
 
+## The Idea
+
+**In plain English:** Parcel is a tool that takes all the separate files that make up your website — your JavaScript logic, your CSS styles, your images — and packages them together into a neat bundle that browsers can efficiently load, all without you having to write any special instructions to tell it how.
+
+**Real-world analogy:** Imagine you are moving to a new house and you hand a professional moving company a pile of loose items — books, clothes, kitchenware — with no instructions. The movers automatically figure out what goes in which box, wrap the fragile things, and pack everything efficiently without you needing to write a packing guide.
+
+- The moving company = Parcel (the bundler)
+- Your loose items = your source files (JavaScript, CSS, images)
+- The packed boxes ready for the moving truck = the final optimized bundle delivered to the browser
+
+---
+
 ## Overview
 
 Parcel is a web application bundler that prioritizes developer experience through zero configuration, blazing-fast performance, and automatic handling of various file types. Created by Devon Govett, Parcel 2 represents a complete rewrite focusing on performance, extensibility, and production-grade features.

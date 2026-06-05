@@ -1,6 +1,19 @@
 # RxJS Combination Operators
 
+## The Idea
+
+**In plain English:** Combination operators are tools that let your program listen to multiple streams of events or data at the same time and decide how to blend their results together. A "stream" is just a sequence of values that arrive over time, like messages in a chat or readings from a sensor.
+
+**Real-world analogy:** Imagine a TV news studio with three reporters — one covering sports, one covering weather, and one covering politics. A producer in the booth can choose different strategies: wait for all three to finish their segment before broadcasting a summary (forkJoin), broadcast a new update every time any reporter speaks (combineLatest), or only go live when the sports reporter talks and quietly note what the others are currently saying (withLatestFrom).
+
+- The reporters = individual observable streams (sources of data)
+- The producer's strategy = the combination operator chosen
+- The broadcast output = the single combined observable your code subscribes to
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [combineLatest](#combinelatest)
 - [forkJoin](#forkjoin)

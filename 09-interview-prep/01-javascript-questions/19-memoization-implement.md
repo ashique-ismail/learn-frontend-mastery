@@ -1,5 +1,17 @@
 # Memoization: Implement from Scratch
 
+## The Idea
+
+**In plain English:** Memoization is a way to make a function faster by remembering the answers it already figured out — so if you ask it the same question twice, it just looks up the saved answer instead of doing all the work again. Think of it like a scratch pad where you write down results so you never have to recalculate them.
+
+**Real-world analogy:** Imagine a student doing homework who keeps a cheat sheet of math problems they have already solved. The first time they see "12 x 13", they work it out and write "12 x 13 = 156" on the sheet. The next time that same problem appears, they just read the answer off the sheet instead of multiplying again.
+
+- The student = the function
+- The math problem = the input arguments
+- The cheat sheet = the cache (stored results)
+
+---
+
 ## Why This Comes Up in Interviews
 
 Memoization tests your grasp of closures, cache invalidation strategy, memory management (WeakMap vs Map), async patterns, and algorithmic complexity. Senior-level questions push past the basic "cache results in an object" answer into TTL, LRU eviction, in-flight deduplication, and framework integration.

@@ -1,5 +1,18 @@
 # Parameters: Default, Rest, and Destructured
 
+## The Idea
+
+**In plain English:** Parameters are the named slots in a function that receive values when you call it. JavaScript gives you three powerful upgrades: you can set a fallback value if nothing is passed (default), collect any number of extra values into a list (rest), and unpack specific pieces from an object or array right inside the function's signature (destructured).
+
+**Real-world analogy:** Imagine ordering a custom sandwich at a deli counter. You hand the server a printed order card that says: "Name: Turkey, Bread: Sourdough (default: white), Extras: pickles, olives, jalapenos."
+
+- The named fields on the card (Name, Bread) = named parameters
+- The pre-filled "(default: white)" = a default parameter (used only when you leave Bread blank)
+- The open-ended "Extras" line where you can list as many toppings as you want = a rest parameter (collects everything remaining)
+- The server reading specific fields off the card by name instead of guessing by position = destructured parameters
+
+---
+
 ## Overview
 
 JavaScript functions have evolved significantly in how they handle parameters. ES6 introduced default parameters, rest parameters, and destructuring assignment, replacing verbose ES5 patterns with clean, expressive syntax. Mastering these features is essential for writing idiomatic modern JavaScript and is a frequent topic in senior-level interviews, where examiners assess not only syntax knowledge but understanding of edge cases and performance implications.

@@ -1,5 +1,17 @@
 # How Does React Batch Updates?
 
+## The Idea
+
+**In plain English:** Batching is when React collects several change requests and handles them all at once instead of one by one, so the screen only redraws a single time. Think of a "re-render" as the screen refreshing to show the latest changes — batching reduces how many times that happens.
+
+**Real-world analogy:** Imagine you are at a restaurant and you want to order three dishes. Instead of the waiter running to the kitchen after each item you mention, they wait until you finish your whole order and then make one trip. Everyone gets their food faster and the kitchen isn't flooded with individual tickets.
+
+- The waiter waiting for your full order = React collecting all state updates before re-rendering
+- Each dish you order = each `setState` call in your code
+- The single kitchen trip = the one re-render that applies all the changes together
+
+---
+
 ## What Batching Means
 
 Batching groups multiple state updates into a **single re-render**, avoiding unnecessary intermediate renders.

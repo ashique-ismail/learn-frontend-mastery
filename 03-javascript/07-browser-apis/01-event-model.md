@@ -1,5 +1,17 @@
 # Event Model: Bubbling, Capturing, Delegation, and Passive Listeners
 
+## The Idea
+
+**In plain English:** When you interact with a webpage — like clicking a button — the browser fires an "event," which is just a signal that something happened. JavaScript lets you listen for these signals and run code in response; the "event model" is the set of rules that controls how those signals travel through the page and which listeners get notified.
+
+**Real-world analogy:** Imagine dropping a pebble into a pond. The ripple starts at the exact spot the pebble landed, spreads outward to the edges, and you can place your hand anywhere along the way to feel it pass.
+
+- The pebble landing = the user clicking a specific element (the event target)
+- The outward ripple = the event bubbling up through parent elements toward the top of the page
+- Your hand feeling the ripple = an event listener attached to any element along the path
+
+---
+
 ## Overview
 
 The browser event model defines how events are dispatched through the DOM and how handlers are invoked. Understanding the three-phase propagation model—capturing, target, and bubbling—along with techniques like event delegation and passive listeners, is essential for writing performant, maintainable event-driven code. These concepts are consistently tested in senior JavaScript interviews.
@@ -266,7 +278,7 @@ class Component {
 ## Comparison Table
 
 | Technique | Phase | Use Case |
-|-----------|-------|----------|
+| --------- | ----- | -------- |
 | Bubble listener (default) | Bubble | Most event handling |
 | Capture listener | Capture | Intercept before target, global guards |
 | Event delegation | Bubble | Many children, dynamic lists |

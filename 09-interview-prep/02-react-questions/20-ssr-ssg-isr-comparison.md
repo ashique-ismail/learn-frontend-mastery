@@ -1,5 +1,17 @@
 # SSR vs SSG vs ISR — Rendering Strategy Comparison
 
+## The Idea
+
+**In plain English:** When you visit a website, the page you see has to be built somewhere — either ahead of time, right when you ask for it, or somewhere in between. SSR, SSG, and ISR are three different strategies for deciding *when* and *where* that page gets assembled before reaching your browser.
+
+**Real-world analogy:** Think of a restaurant with three service styles. A made-to-order kitchen (SSR) cooks your meal fresh the moment you place your order — always hot, always personalised, but you wait. A meal-prep service (SSG) cooks every dish in advance on Sunday and hands you a pre-packaged box the instant you ask — blazing fast, but the food was made days ago. A smart canteen (ISR) pre-makes meals in batches and quietly re-cooks them in the background every hour so they stay reasonably fresh without making you wait.
+
+- The made-to-order kitchen = SSR (page built fresh on every request)
+- The pre-packaged meal-prep box = SSG (page built once at deploy time, served instantly from a CDN)
+- The smart canteen that re-cooks on a schedule = ISR (static page that automatically regenerates after a set time window)
+
+---
+
 ## CSR (Client-Side Rendering) — The Baseline Problem
 
 The browser receives an empty HTML shell and downloads JS to render:

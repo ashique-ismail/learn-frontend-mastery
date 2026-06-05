@@ -1,5 +1,17 @@
 # Dialog element
 
+## The Idea
+
+**In plain English:** A dialog element is a special pop-up box that appears on top of the rest of a webpage, asking for your attention or a decision before you can go back to what you were doing. Think of it as a webpage's way of tapping you on the shoulder and saying "hold on, look at this first."
+
+**Real-world analogy:** Imagine you are in a library and you try to walk out with a book. A librarian steps out from behind a counter, stands in front of you, and asks "Did you check this out?" You cannot get past them until you answer — either you say "Yes" and walk out, or "No" and hand it back. Everything else in the library is still there but you cannot interact with it while the librarian is blocking your path.
+
+- The librarian stepping out = the `<dialog>` element appearing on screen
+- The librarian blocking the exit = the modal backdrop that prevents clicking anything else
+- Saying "Yes" or "No" to the librarian = clicking a button that calls `dialog.close()` with a return value
+
+---
+
 ## Overview
 
 The `<dialog>` element represents a modal or non-modal dialog box. It provides built-in functionality for showing, hiding, and managing focus with minimal JavaScript.
@@ -41,6 +53,7 @@ dialog.showModal();
 ```
 
 **Characteristics:**
+
 - Backdrop overlay (::backdrop)
 - Focus trapped inside dialog
 - Closes with Escape key
@@ -56,6 +69,7 @@ dialog.show();
 ```
 
 **Characteristics:**
+
 - No backdrop
 - No focus trap
 - Doesn't close with Escape
@@ -627,6 +641,7 @@ dialog.closing {
 ## Browser support
 
 Modern browsers support `<dialog>`:
+
 - Chrome 37+
 - Firefox 98+
 - Safari 15.4+

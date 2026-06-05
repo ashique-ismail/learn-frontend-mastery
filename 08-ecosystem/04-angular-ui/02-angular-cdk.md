@@ -1,5 +1,17 @@
 # Angular CDK (Component Dev Kit)
 
+## The Idea
+
+**In plain English:** The Angular CDK is a toolkit that gives developers the working logic behind common UI behaviors — like dragging, scrolling, and pop-ups — without deciding what those things look like. Think of it as the invisible machinery that makes interactive parts of a website work, separate from the colors and styles.
+
+**Real-world analogy:** Imagine a theater stage with a trapdoor, a spotlight, and a rotating platform. The stage crew operates all of it from backstage — they handle the mechanics so the actors (your visual components) can perform. You can dress the stage however you like; the crew's job stays the same.
+
+- The trapdoor = the Overlay system (things pop in and out of the page at the right position)
+- The spotlight = the A11y focus trap (keeps keyboard focus exactly where it should be, like a spotlight following the active actor)
+- The rotating platform = the DragDrop module (moves items around on cue without caring what they look like)
+
+---
+
 ## What It Is
 
 The Angular CDK provides behavioral primitives for building UI components — the "headless" layer. It handles the hard parts (accessibility, positioning, drag-drop) without imposing visual styles.

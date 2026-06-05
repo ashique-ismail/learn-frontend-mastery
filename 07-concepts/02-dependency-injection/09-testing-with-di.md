@@ -1,5 +1,18 @@
 # Testing with Dependency Injection
 
+## The Idea
+
+**In plain English:** When you write code, some parts depend on other parts (like a light switch depending on wiring). Testing with dependency injection means you can swap out those real parts for fake, controllable stand-ins during tests, so you can check that your code works without needing everything else to be set up and running.
+
+**Real-world analogy:** Imagine a flight simulator used to train pilots. Instead of putting a trainee in a real plane with real passengers and real weather, you plug in a simulator cockpit that mimics everything — controls, instruments, even fake engine sounds. The trainee (the code being tested) behaves exactly as it would in a real flight, but the environment is completely under your control.
+
+- The trainee pilot = the component or service being tested
+- The real aircraft = the actual dependency (live API, database, external service)
+- The flight simulator cockpit = the test double (mock, stub, or fake) injected in place of the real dependency
+- The flight instructor controlling the simulator = the test, which sets up scenarios and checks the pilot's responses
+
+---
+
 ## Overview
 
 Dependency Injection makes testing easier by allowing you to replace real dependencies with test doubles (mocks, stubs, spies, fakes). This enables isolated unit testing, controlled test environments, and verification of interactions between components. Proper DI testing practices lead to reliable, fast, and maintainable test suites.

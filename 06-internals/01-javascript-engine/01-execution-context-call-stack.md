@@ -1,5 +1,18 @@
 # Execution Context and Call Stack
 
+## The Idea
+
+**In plain English:** When JavaScript runs your code, it creates a special workspace called an "execution context" that keeps track of all the variables and functions available at that moment. A "call stack" is the ordered list of these workspaces — every time you call a function, a new workspace is stacked on top, and when the function finishes, that workspace is removed.
+
+**Real-world analogy:** Think of a restaurant kitchen during a busy dinner service. The head chef (the JavaScript engine) manages a stack of ticket orders clipped to a rail above the pass. A new ticket is clipped on top when a waiter places an order; the ticket is removed from the top when the dish is plated and sent out. Each ticket has its own set of ingredients and instructions that belong only to that dish.
+
+- The ticket rail = the call stack (holds all active orders in order)
+- Each individual ticket = an execution context (the isolated workspace for one function call)
+- The ingredients listed on a ticket = the variables and function declarations available inside that function
+- Reading an ingredient from the ticket above when yours runs out = looking up the scope chain to find a variable in an outer function
+
+---
+
 ## Learning Objectives
 - Understand the anatomy of execution contexts in JavaScript
 - Master how the call stack manages function execution

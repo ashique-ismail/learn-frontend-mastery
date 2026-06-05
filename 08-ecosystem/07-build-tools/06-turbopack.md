@@ -1,5 +1,17 @@
 # Turbopack: Next-Generation Bundler for Next.js
 
+## The Idea
+
+**In plain English:** Turbopack is a tool that takes all the separate files of your website (code, styles, images) and bundles them together into a fast, browser-ready package — and it does this so quickly that when you change one file, your browser updates in milliseconds. A "bundler" is just a program that combines many files into fewer, optimized ones so websites load fast.
+
+**Real-world analogy:** Imagine a school cafeteria kitchen that prepares hundreds of individual meal components (proteins, veggies, sauces) for thousands of students. A slow kitchen re-cooks everything from scratch every time one ingredient changes. A smart kitchen like Turbopack only re-cooks the dish that actually changed, keeps everything else warm and ready, and has multiple chefs working in parallel.
+- The kitchen = Turbopack (the bundler)
+- Each dish component = a source file in your project
+- Re-cooking only the changed dish = incremental bundling (only rebuilding what changed)
+- Multiple chefs working at once = parallel processing powered by Rust
+
+---
+
 ## Overview
 
 Turbopack is a next-generation JavaScript bundler written in Rust, designed as the successor to Webpack in the Next.js ecosystem. Created by Vercel (the team behind Next.js), Turbopack leverages incremental computation and low-level optimizations to deliver blazing-fast build performance, especially for large-scale applications.

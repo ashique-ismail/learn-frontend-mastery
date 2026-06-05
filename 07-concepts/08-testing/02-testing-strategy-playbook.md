@@ -1,5 +1,17 @@
 # Testing Strategy: Practical Playbook
 
+## The Idea
+
+**In plain English:** A testing strategy is a plan for deciding which parts of your code to check automatically, how thoroughly to check them, and which tools to use — so that when something breaks, you find out before your users do. "Automated tests" are just small programs you write that run your own code and verify it behaves as expected.
+
+**Real-world analogy:** Think of a car manufacturer running safety checks before a vehicle ships. A factory worker tests each individual bolt for strength (unit test). A team assembles the engine and tests whether all the parts work together (integration test). Finally, a test driver takes the finished car on a full road course to make sure the whole vehicle performs end to end (E2E test). Not every bolt gets a road test — that would take forever — so checks are layered by cost and risk.
+
+- The bolt strength test = a unit test (fast, cheap, isolated)
+- The engine assembly test = an integration test (tests how parts cooperate)
+- The road course test = an end-to-end test (slow, expensive, tests the full experience)
+
+---
+
 ## Overview
 
 "What's your testing strategy?" is a staff-level interview question because there is no single right answer — it requires judgment about ROI, team size, product risk, and the cost of false confidence. This document is the framework for making and defending those decisions.
@@ -11,7 +23,7 @@
 Before choosing a testing approach, name the failure modes you're trying to prevent:
 
 | Failure mode | Cost | Best test type |
-|---|---|---|
+| --- | --- | --- |
 | Broken business logic (calculation wrong, edge case missed) | High | Unit test |
 | Component renders wrong when data changes | Medium | Component/integration test |
 | Two components don't work together | Medium-High | Integration test |
@@ -27,7 +39,7 @@ Write tests where the cost of the failure mode exceeds the cost of writing and m
 
 ## The Testing Trophy (Kent C. Dodds Model)
 
-```
+```text
          ╱‾‾‾‾‾‾‾‾‾‾‾‾╲
         ╱    E2E (few)  ╲      ← Happy path + critical journeys only
        ╱‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾╲
@@ -48,7 +60,7 @@ Write tests where the cost of the failure mode exceeds the cost of writing and m
 
 ### Write a Unit Test When
 
-```
+```text
 ✓ The logic is pure (no side effects, no DOM, no network)
 ✓ There are many edge cases that would be tedious to cover via component tests
 ✓ The function is complex enough to warrant isolated testing
@@ -63,7 +75,7 @@ Examples:
 
 ### Write a Component/Integration Test When
 
-```
+```text
 ✓ You're testing user-visible behavior (click, type, see result)
 ✓ The component has conditional rendering
 ✓ The component has state that changes via interaction
@@ -82,7 +94,7 @@ Do mock:
 
 ### Write an E2E Test When
 
-```
+```text
 ✓ The journey is critical to the business (checkout, signup, core workflow)
 ✓ Multiple real services must work together
 ✓ The test would require extensive mocking at component level
@@ -167,7 +179,7 @@ test('add', () => {
 
 ### When to Use Coverage
 
-```
+```text
 ✓ As a ratchet — enforce that coverage never decreases
 ✓ To find untested code paths (low coverage = blind spots)
 ✗ As a quality metric — high coverage ≠ good tests
@@ -306,7 +318,7 @@ test('search returns results', async ({ page }) => {
 
 ## The Testing Pyramid Anti-Patterns
 
-```
+```text
 Anti-pattern 1: Ice cream cone (too many E2E)
   Many slow, brittle E2E → few integration → almost no unit
   Result: CI takes 45 minutes, tests fail intermittently, developers ignore them

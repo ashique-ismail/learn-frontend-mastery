@@ -1,5 +1,18 @@
 # E2E Testing with Playwright and Cypress
 
+## The Idea
+
+**In plain English:** End-to-end (E2E) testing means writing automated scripts that control a real web browser -- clicking buttons, filling in forms, and checking results -- just like a real person would, so you can verify that your entire app works correctly from the user's point of view.
+
+**Real-world analogy:** Imagine a restaurant inspector who visits a diner and goes through the full experience: they walk in, read the menu, order a meal, eat it, and then check whether everything met the expected standard. They are not just inspecting the kitchen in isolation -- they are testing the whole journey.
+
+- The inspector = the E2E test script
+- Walking in, ordering, and eating = the sequence of browser actions (clicking, typing, navigating)
+- The expected standard (food quality, correct order) = the assertions that confirm the app behaved correctly
+- The diner itself (kitchen, waitstaff, checkout) = the full app stack (frontend, backend, database)
+
+---
+
 ## Overview
 
 End-to-end (E2E) testing validates complete user workflows in a real browser environment. Playwright and Cypress are modern E2E testing frameworks that provide reliable, fast, and developer-friendly testing experiences. This guide covers both tools, their differences, and best practices for E2E testing.

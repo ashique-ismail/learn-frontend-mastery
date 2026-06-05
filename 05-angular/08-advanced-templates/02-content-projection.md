@@ -1,5 +1,17 @@
 # Content Projection
 
+## The Idea
+
+**In plain English:** Content projection is a way to build a reusable "shell" component (like a card or dialog box) that leaves a blank space inside it — and then lets whoever uses that shell decide exactly what goes in that space. Think of it as a component with a built-in placeholder that gets filled in from the outside.
+
+**Real-world analogy:** A picture frame sold in a store has a fixed border and stand, but the space in the middle is left empty for you to insert your own photo.
+
+- The picture frame = the Angular component (its structure, styles, and behaviour)
+- The empty space in the middle = `<ng-content>` (the slot where outside content is projected)
+- The photo you slide in = the HTML content the parent component passes between the component's tags
+
+---
+
 ## Overview
 
 Content projection (also known as transclusion) is Angular's mechanism for inserting external content into a component's template. Using `ng-content`, you can create flexible, reusable components that accept dynamic content from parent components. This pattern enables composition-based architectures and is fundamental to building component libraries.

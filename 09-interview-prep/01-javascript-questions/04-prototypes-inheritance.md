@@ -1,5 +1,17 @@
 # Prototypes and Inheritance - JavaScript Interview Questions
 
+## The Idea
+
+**In plain English:** Prototypes are JavaScript's built-in system for objects to borrow features from other objects. Inheritance means a new object automatically gets the abilities of a parent object without having to copy anything.
+
+**Real-world analogy:** Imagine a family recipe book kept at grandma's house. Any family member can walk in and use any recipe without taking it home — they just reference grandma's book. If grandma adds a new recipe, everyone can use it immediately.
+- The grandma's recipe book = the prototype object
+- A family member = an instance (a new object created from that prototype)
+- Walking to grandma's to look up a recipe = the prototype chain lookup
+- A recipe not found at grandma's, so checking great-grandma's older book = walking further up the prototype chain
+
+---
+
 ## Table of Contents
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)

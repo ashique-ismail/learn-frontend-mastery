@@ -1,5 +1,19 @@
 # Change Detection Algorithm
 
+## The Idea
+
+**In plain English:** Change detection is how a web framework (like Angular) automatically notices when your data changes and updates what the user sees on screen. Think of a "framework" as a helper that builds and manages your webpage, and "data" as the information your app stores, like a username or a list of items.
+
+**Real-world analogy:** Imagine a school office assistant whose job is to walk through every classroom at the end of each period and check whether the whiteboard still matches the lesson plan on file. If something is different, they update the record.
+
+- The assistant doing the walkthrough = Angular's change detection running through the component tree
+- Each classroom = a component (a self-contained piece of the webpage, like a header or a button)
+- The lesson plan on file = the previous stored value of a piece of data
+- The current whiteboard content = the new current value of that data
+- Noticing a mismatch and updating the record = Angular detecting a change and re-rendering the screen
+
+---
+
 ## Overview
 
 Angular's change detection mechanism is responsible for keeping the view synchronized with the component model. Understanding how Angular traverses the component tree, when change detection runs, what triggers it, and how to optimize it is crucial for building performant Angular applications.
@@ -78,7 +92,7 @@ export class UserComponent {
 }
 ```
 
-## Change Detection Algorithm
+## The Algorithm
 
 The core algorithm compares previous and current values:
 

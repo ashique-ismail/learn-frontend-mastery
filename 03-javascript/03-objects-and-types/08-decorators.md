@@ -1,5 +1,17 @@
 # JavaScript Decorators
 
+## The Idea
+
+**In plain English:** A decorator is a special label you attach to a class or function that automatically adds extra behaviour to it — like logging, validation, or caching — without changing the original code inside. Think of it as a sticky note that says "also do this" every time that piece of code runs.
+
+**Real-world analogy:** Imagine a barista at a coffee shop. You order a plain coffee, but you stick a sticky note on the cup that says "add oat milk and an extra shot." The barista follows the note every single time without rewriting the recipe.
+
+- The cup of coffee = the original class or method
+- The sticky note = the decorator (`@something`)
+- The barista reading the note = JavaScript running the decorator function before or around the original code
+
+---
+
 ## Overview
 
 Decorators are a TC39 Stage 3 proposal (as of 2024) that adds a declarative syntax for wrapping and augmenting classes, methods, fields, and accessors. TypeScript 5.0+ supports the standard proposal. Angular has always used an older (TypeScript-experimental) decorator system; the ecosystem is gradually migrating to the standard.

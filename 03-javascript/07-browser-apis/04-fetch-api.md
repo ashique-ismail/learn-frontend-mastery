@@ -1,5 +1,18 @@
 # Fetch API: Headers, Request, Response
 
+## The Idea
+
+**In plain English:** The Fetch API is a built-in browser tool that lets your web page ask a server for information (or send information to one) over the internet, and then do something with the answer when it arrives. "API" just means a set of ready-made tools you can use in your code.
+
+**Real-world analogy:** Imagine ordering food at a restaurant. You hand your written order to a waiter, wait at your table, and the waiter eventually returns with your meal. Then you unwrap it and eat.
+
+- The written order = the `Request` object (what you want and how you want it)
+- The waiter going to the kitchen and coming back = `fetch()` making a network call
+- The covered plate the waiter returns with = the `Response` object (the server's reply, not yet opened)
+- Unwrapping and eating the food = calling `.json()` or `.text()` to read the response body
+
+---
+
 ## Overview
 
 The Fetch API is the modern standard for making HTTP requests from the browser, replacing the verbose `XMLHttpRequest` (XHR) interface. It is Promise-based, composable, and exposes first-class `Request`, `Response`, and `Headers` objects that map closely to HTTP semantics. Senior interviews often explore error handling nuances, streaming, `AbortController` integration, request/response manipulation, and CORS behavior.

@@ -1,5 +1,18 @@
 # Error Tracking
 
+## The Idea
+
+**In plain English:** Error tracking is a system that automatically notices when something goes wrong in an app that real people are using, records exactly what happened, and alerts the developers so they can fix it. Think of it as a security camera for bugs — instead of finding out about problems from angry users, the system catches and reports them the moment they occur.
+
+**Real-world analogy:** Imagine a large hotel with hundreds of rooms. The hotel manager cannot personally walk into every room to check if something is broken, so the hotel installs a call button in each room. When a guest presses it, the front desk logs the room number, the time, what the guest reported, and which staff member was on duty — then sends a maintenance alert.
+
+- The guest pressing the call button = an error thrown in your code
+- The front desk log = the error tracking dashboard (e.g., Sentry)
+- The room number and details the guest provides = the stack trace and context captured with the error
+- The maintenance alert sent to staff = the notification or alert fired to the development team
+
+---
+
 ## Overview
 
 Error tracking is the practice of automatically detecting, capturing, and monitoring errors in production applications. Modern error tracking tools like Sentry provide real-time error monitoring, detailed stack traces, context about when and how errors occur, and insights into which errors impact the most users. Effective error tracking helps teams identify and fix issues quickly, improving application reliability and user experience.

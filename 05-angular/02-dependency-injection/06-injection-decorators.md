@@ -1,6 +1,20 @@
 # Injection Decorators in Angular
 
+## The Idea
+
+**In plain English:** Injection decorators are special labels you put on a component's requests for tools (services) to tell Angular exactly where to look for them — for example, "only check your own toolbox" or "skip your own and ask your parent instead." A decorator is just a tag that changes how something behaves.
+
+**Real-world analogy:** Imagine you're a new employee at a company. When you need a stapler, you can ask in different ways: "Do I have one at my own desk?" (@Self), "Ask my manager's floor but skip my own desk?" (@SkipSelf), "Stop asking once you reach the department head?" (@Host), or "It's okay if nobody has one, I'll manage without." (@Optional).
+
+- The employee's own desk = the component's own injector
+- The company floor hierarchy (desk → manager → department head → CEO) = Angular's injector tree
+- The stapler = the service being requested
+- The rule about where to stop searching = the resolution modifier decorator
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Resolution Modifiers Overview](#resolution-modifiers-overview)
 - [@Optional Decorator](#optional-decorator)

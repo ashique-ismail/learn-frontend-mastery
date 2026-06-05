@@ -1,5 +1,17 @@
 # Avoiding Unnecessary Re-renders
 
+## The Idea
+
+**In plain English:** When a webpage updates, React sometimes redraws parts of the screen that did not actually change — wasting time and making the app slower. Avoiding unnecessary re-renders means telling React exactly which parts need to redraw and which can stay as they are.
+
+**Real-world analogy:** Imagine a restaurant kitchen where every time one chef updates the specials board, every single cook stops what they are doing, re-reads the entire menu, and starts over — even if their dish was completely unaffected. A smart kitchen would only notify the cooks whose recipes actually changed.
+
+- The kitchen = the React component tree
+- A cook being interrupted = a component re-rendering
+- Only notifying affected cooks = memoization and context splitting
+
+---
+
 ## Overview
 
 Unnecessary re-renders are a common source of performance issues in React applications. Understanding when and why components re-render, and applying the right optimization techniques, is crucial for building performant applications. This guide covers context splitting, selector patterns, memoization strategies, and composition patterns to minimize re-renders.

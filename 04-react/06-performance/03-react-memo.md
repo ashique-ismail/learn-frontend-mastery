@@ -1,5 +1,17 @@
 # React.memo
 
+## The Idea
+
+**In plain English:** React.memo is a way to tell React "don't bother re-drawing this part of the screen unless the information it displays has actually changed." Re-drawing (called re-rendering) is how React updates what you see, and skipping unnecessary re-draws makes your app faster.
+
+**Real-world analogy:** Imagine a whiteboard in a classroom that shows a student's name and score. A helper's job is to erase and rewrite the board whenever the teacher calls out. With React.memo, the helper checks first — if the name and score are the same as before, they put the marker down and do nothing.
+
+- The whiteboard = the component (the piece of UI on screen)
+- The helper checking before rewriting = React.memo comparing the old and new props
+- The name and score written on the board = the props (the data passed into the component)
+
+---
+
 ## Overview
 
 `React.memo` is a higher-order component (HOC) that memoizes a component, preventing unnecessary re-renders when props haven't changed. It performs a shallow comparison of props and only re-renders when props actually change. This guide covers when and how to use `React.memo` effectively, including its performance tradeoffs and best practices.

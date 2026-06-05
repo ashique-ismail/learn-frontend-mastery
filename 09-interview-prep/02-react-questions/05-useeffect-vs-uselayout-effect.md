@@ -1,5 +1,17 @@
 # useEffect vs useLayoutEffect
 
+## The Idea
+
+**In plain English:** React has two timing hooks for running code after your component updates — `useEffect` waits until the browser has finished drawing the screen, while `useLayoutEffect` runs before the browser gets a chance to draw anything. A "hook" is just a special function React gives you to run your own code at the right moment.
+
+**Real-world analogy:** Imagine a stage crew setting up props for a play. The director can choose to rearrange a misplaced chair either before the curtain rises (so the audience never sees the mess) or after the curtain is already up (so the audience briefly notices the chair in the wrong spot before it moves).
+
+- The curtain rising = the browser painting pixels on screen
+- Rearranging the chair before the curtain = `useLayoutEffect` (runs before paint, no visible glitch)
+- Rearranging the chair after the curtain = `useEffect` (runs after paint, may cause a visible flash)
+
+---
+
 ## The Key Difference
 
 Both run after render, but at different points in the browser's rendering pipeline:

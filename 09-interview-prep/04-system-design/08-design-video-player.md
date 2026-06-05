@@ -1,5 +1,17 @@
 # System Design: Video Player
 
+## The Idea
+
+**In plain English:** A video player is a program that fetches a video file from the internet and lets you watch it, controlling things like play, pause, volume, and quality — all while quietly downloading the next few seconds of video ahead of time so it never stutters. "Buffering" means pre-loading upcoming video data so playback stays smooth even if your internet slows down.
+
+**Real-world analogy:** Think of watching a movie at a cinema where the projectionist is also managing a giant spool of film being shipped in segments from a warehouse. As one reel plays, the next one is already arriving and being loaded. You can ask the projectionist to swap to a lower-quality print if the delivery truck is slow, or a higher-quality one when it speeds up.
+
+- The film reel currently showing = the video chunk currently playing in the browser
+- The spare reels waiting backstage = the buffered video data downloaded ahead of time
+- The projectionist swapping reels to match delivery speed = the adaptive bitrate service automatically switching video quality based on your internet speed
+
+---
+
 ## Overview
 
 Design a custom video player with buffering strategies, adaptive bitrate streaming, quality selection, subtitles, playback controls, and accessibility features.
@@ -7,6 +19,7 @@ Design a custom video player with buffering strategies, adaptive bitrate streami
 ## Requirements
 
 ### Functional Requirements
+
 - Play/pause, seek, volume control
 - Quality selection (240p-4K)
 - Playback speed control
@@ -18,6 +31,7 @@ Design a custom video player with buffering strategies, adaptive bitrate streami
 - Playlist/chapter navigation
 
 ### Non-Functional Requirements
+
 - Buffer ahead 30-60 seconds
 - Adaptive bitrate switching
 - < 2 second startup time

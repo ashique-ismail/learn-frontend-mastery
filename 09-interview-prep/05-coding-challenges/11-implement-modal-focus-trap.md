@@ -1,5 +1,17 @@
 # Implement Modal with Focus Trap
 
+## The Idea
+
+**In plain English:** A modal is a pop-up window that appears on top of a page and demands your attention before you can do anything else. A focus trap is the rule that makes your keyboard (Tab key) stay inside that pop-up — so you can't accidentally wander back into the content hidden behind it.
+
+**Real-world analogy:** Imagine you walk into a bank and a security door locks behind you in the entrance booth. You must complete the check-in process (show ID, sign in) before the inner door opens and you can walk into the bank. You can move between the ID scanner, the pen, and the sign-in screen, but you cannot leave the booth or access anything behind you until you are done.
+
+- The locked entrance booth = the modal dialog
+- The ID scanner, pen, and sign-in screen = the focusable elements (buttons, inputs) inside the modal
+- The rule that stops you leaving the booth = the focus trap (Tab cycling only within the modal)
+
+---
+
 ## The Focus Trap Algorithm
 
 When a modal is open, Tab and Shift+Tab must cycle through focusable elements *within the modal* only.

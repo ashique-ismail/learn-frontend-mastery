@@ -1,5 +1,16 @@
 # CRDTs and Real-Time Collaboration
 
+## The Idea
+
+**In plain English:** A CRDT (Conflict-free Replicated Data Type) is a special way of storing data so that when multiple people change the same document at the same time — even without an internet connection — all their changes can be combined later without any conflicts or lost work. "Replicated" means every person has their own copy; "conflict-free" means the math guarantees those copies always end up identical after merging.
+
+**Real-world analogy:** Imagine two friends, Alice and Bob, each writing notes on their own whiteboard copy of the same grocery list while the Wi-Fi is down. Alice adds "milk" and Bob adds "eggs" at the exact same spot on the list. When Wi-Fi comes back, instead of one overwriting the other, a rule says both items always appear — in the same agreed-upon order — on every whiteboard, every time.
+- The whiteboard = a CRDT document (each user's local copy of the shared data)
+- Adding an item to the list = an insert operation (a change recorded with a unique ID so it's never mistaken for anyone else's change)
+- The rule that keeps both items = the merge algorithm (the mathematical guarantee that combining any two copies always produces the same result, no matter who syncs first)
+
+---
+
 ## Overview
 
 Real-time collaborative editing — like Google Docs, Figma, or Notion — requires multiple users to edit the same data simultaneously without conflicts. Two algorithmic approaches dominate: **Operational Transformation (OT)** and **Conflict-free Replicated Data Types (CRDTs)**. CRDTs are the modern preferred approach because they don't require a central server to serialize operations, making them suitable for peer-to-peer and local-first architectures.

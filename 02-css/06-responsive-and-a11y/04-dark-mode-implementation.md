@@ -1,5 +1,18 @@
 # Dark Mode Implementation
 
+## The Idea
+
+**In plain English:** Dark mode lets a website switch its color scheme from bright (light backgrounds, dark text) to dim (dark backgrounds, light text) based on what the user prefers. It works by storing a set of named color "slots" that get swapped out when the theme changes, rather than repainting every element by hand.
+
+**Real-world analogy:** Imagine a stage theater that uses colored gel filters on its spotlights. The lighting director has a switchboard with two preset scenes — "matinee" (bright, white lights) and "evening" (warm, dark-amber lights). Switching scenes instantly changes the mood of every spotlight at once, without the crew touching individual bulbs.
+
+- The lighting switchboard preset = the `data-theme` attribute on `<html>`
+- Each spotlight's gel filter = a CSS custom property (e.g., `--bg-primary`)
+- The lighting crew's rule sheet = the CSS block that maps each token to a specific color per theme
+- The audience member requesting a scene change = the user clicking the dark/light toggle
+
+---
+
 ## Overview
 
 Dark mode implementation involves more than a single CSS media query. A production-quality implementation must handle: CSS custom property token architecture, user preference persistence, OS-level preference detection, avoiding the "flash of wrong theme" on page load, syncing across tabs, and accessible contrast ratios in both themes.

@@ -1,5 +1,17 @@
 # Advanced Types: Conditional, Mapped, and Template Literal Types
 
+## The Idea
+
+**In plain English:** Advanced types in TypeScript let you write rules that automatically create new types by transforming or filtering existing ones — like a smart template that can inspect a type and produce a customized version of it based on conditions you define.
+
+**Real-world analogy:** Think of a school that auto-generates a personalised report card format for each student based on their grade level — younger students get simpler categories, older ones get detailed subject breakdowns, and all names are formatted with a "Student: " prefix automatically.
+
+- The grade-level check = a conditional type (branch on what kind of type you have)
+- The auto-prefixed "Student: " label = a template literal type (building new string types from parts)
+- The rule that rewrites every category name = a mapped type (transforming all keys of an object type)
+
+---
+
 ## Overview
 
 TypeScript's type system is Turing-complete at the type level. Conditional types, mapped types, and template literal types are the primary mechanisms that make this possible. These features let you compute types from other types — transforming shapes, filtering union members, generating string unions, and encoding complex logic entirely within the type system. They underpin every utility type in the standard library and are essential for writing sophisticated library APIs.

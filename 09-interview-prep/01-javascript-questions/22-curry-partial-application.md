@@ -1,5 +1,18 @@
 # Currying & Partial Application
 
+## The Idea
+
+**In plain English:** Currying and partial application are ways to "pre-fill" some inputs to a function so you get a simpler, reusable function back — instead of calling a function with all its inputs at once, you hand them in one step at a time. A function is a block of code that takes inputs (called arguments) and produces an output.
+
+**Real-world analogy:** Imagine a coffee machine at a cafe that has three settings: cup size, coffee type, and milk amount. A barista can lock in "large cup" first, hand that pre-configured machine to a colleague, who then locks in "espresso", and finally a customer picks the milk amount to get their drink.
+
+- The coffee machine = the original function that takes all arguments
+- Locking in "large cup" first = currying or partially applying the first argument
+- Each locked-in setting = a closure that remembers the previously supplied argument
+- The final milk-amount choice = the last argument that triggers the actual result
+
+---
+
 ## Overview
 
 Both patterns transform multi-argument functions into more reusable forms. Interviewers use these to test functional programming knowledge and closure mechanics.

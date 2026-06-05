@@ -1,5 +1,17 @@
 # React Double Buffering: Current and Work-in-Progress Fiber Trees
 
+## The Idea
+
+**In plain English:** Double buffering is how React prepares a brand-new version of the screen behind the scenes without touching what the user is already looking at. It keeps two copies of its internal blueprint (called a "fiber tree") — one that matches what is currently shown on screen, and one that is quietly being updated — then swaps them in a single instant when the new version is ready.
+
+**Real-world analogy:** Think of a live theatre stage with a hidden second stage behind a curtain. The crew builds and arranges the next scene's set behind the curtain while the audience watches the current scene play out on the live stage. When the scene change happens, the curtain drops for just a moment and the new set is revealed — the audience never sees a half-built stage.
+
+- The live stage = the current fiber tree (what is on screen right now)
+- The hidden stage behind the curtain = the work-in-progress fiber tree (being built during a render)
+- Dropping the curtain and revealing the new set = the commit phase swap (`fiberRoot.current = finishedWork`)
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [The Two-Tree Architecture](#the-two-tree-architecture)

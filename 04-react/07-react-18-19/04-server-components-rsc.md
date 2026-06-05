@@ -1,5 +1,17 @@
 # React Server Components (RSC)
 
+## The Idea
+
+**In plain English:** React Server Components are a way to build parts of a website entirely on the server (the computer that runs your app), so those parts never need to send any code to the visitor's browser. A "component" here just means a reusable chunk of your web page's UI, like a product card or a navigation bar.
+
+**Real-world analogy:** Think of a restaurant kitchen. The chef (server) prepares a fully cooked meal and sends only the finished plate to your table — you never see the raw ingredients, the recipe, or the kitchen equipment. Compare that to a meal-kit delivery (client-side), where the box of raw ingredients is shipped to your house and you cook it yourself.
+
+- The chef in the kitchen = the server running the React Server Component
+- The finished plate sent to the table = the HTML/UI output sent to the browser
+- The meal-kit box of raw ingredients shipped to you = the JavaScript bundle downloaded by the browser for a Client Component
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [What are Server Components?](#what-are-server-components)

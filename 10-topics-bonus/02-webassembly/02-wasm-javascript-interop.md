@@ -1,5 +1,19 @@
 # WebAssembly JavaScript Interop
 
+## The Idea
+
+**In plain English:** WebAssembly (WASM) and JavaScript are two different languages running inside your browser, and "interop" means making them talk to each other — passing data back and forth and calling each other's functions so you get the best of both worlds: JavaScript's ease and WebAssembly's raw speed.
+
+**Real-world analogy:** Imagine a restaurant kitchen where the head chef (JavaScript) manages the whole operation, but for one specialized dish — a super-complex sauce — they hand off work to a master sous-chef (WebAssembly) who works in a separate prep station. The head chef writes the order on a slip and passes it through a small window, the sous-chef prepares the sauce using their own tools and workspace, then slides the finished dish back through the same window.
+
+- The head chef (JavaScript) = the main programming language coordinating the app
+- The sous-chef (WebAssembly) = the high-performance module doing heavy computation
+- The small window between stations = the JS-WASM boundary where data is passed
+- The shared prep counter = the shared memory both sides can read and write
+- The order slip = function arguments passed from JavaScript to WebAssembly
+
+---
+
 ## Introduction
 
 WebAssembly's power comes not just from its performance but from its ability to seamlessly work with JavaScript. Understanding how data flows between JavaScript and WebAssembly, how to call functions across the boundary, and how to optimize these interactions is crucial for building high-performance web applications.

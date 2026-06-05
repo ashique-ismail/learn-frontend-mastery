@@ -1,10 +1,22 @@
 # TC39 Temporal API
 
+## The Idea
+
+**In plain English:** The Temporal API is a new, built-in JavaScript tool for working with dates and times — things like "what day is three months from today?" or "what time is it right now in Tokyo?" It replaces the old, buggy `Date` system that JavaScript has used since 1995.
+
+**Real-world analogy:** Imagine you are a flight dispatcher managing arrivals across multiple airports worldwide. You have a giant wall of clocks — each one showing the local time for a different city. When a pilot asks "when do I land in Tokyo if I depart New York at 2pm?", you don't just count hours blindly; you look up each city's clock, account for daylight saving time changes mid-flight, and give an exact local arrival time.
+
+- The wall of clocks = `Temporal.ZonedDateTime` (a date and time that knows its timezone)
+- Each city's local clock = a named timezone like `America/New_York` or `Asia/Tokyo`
+- The raw number of hours the flight takes = `Temporal.Duration` (a length of time, with no timezone attached)
+
+---
+
 ## Overview
 
 The `Date` object has been broken since JavaScript's creation in 1995. It was modeled after Java's `java.util.Date` class (which Java itself later deprecated) and carries 30 years of accumulated design mistakes. The TC39 Temporal proposal is a complete replacement — a comprehensive, immutable, timezone-aware date and time API that eliminates the entire class of bugs that `Date` produces.
 
-```
+```text
 Date's fundamental problems:
   1. Mutability — Date objects can be modified after creation
      const d = new Date(); d.setMonth(d.getMonth() + 1); // mutates in place
@@ -31,7 +43,7 @@ Date's fundamental problems:
 
 Temporal introduces distinct types for different temporal concepts — each representing exactly what you need, nothing more:
 
-```
+```text
 Temporal type hierarchy:
 
 Plain types (no timezone, no UTC offset):
@@ -290,7 +302,7 @@ Temporal.PlainDate.from('2024-03-15');
 
 ## Comparison Table
 
-```
+```text
 Feature                       | Date     | Moment  | date-fns | Luxon   | Temporal
 ──────────────────────────────|──────────|─────────|──────────|─────────|─────────
 Immutable                     | No       | No      | Yes      | Yes     | Yes

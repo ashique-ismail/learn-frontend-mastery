@@ -1,5 +1,16 @@
 # Transpilers: Babel, SWC, and TSC
 
+## The Idea
+
+**In plain English:** A transpiler is a tool that reads code written in one version or flavor of a language and rewrites it into another version that older computers or browsers can understand. Think of it as a translator that converts "new-speak" code into "old-speak" code automatically, so you can write modern, clean JavaScript (or TypeScript) without worrying about whether every device supports it.
+
+**Real-world analogy:** Imagine you write a letter in modern English slang, but your grandparent only understands formal 1950s English. A human translator reads your letter and rewrites every sentence in the style your grandparent can understand — same message, different words.
+- The slang-filled letter = modern JavaScript or TypeScript source code
+- The translator = the transpiler (Babel, SWC, or TSC)
+- The formal 1950s rewrite = the output JavaScript that older browsers can run
+
+---
+
 ## Overview
 
 A transpiler (source-to-source compiler) takes JavaScript or a JavaScript superset and produces JavaScript that targets a different environment — typically converting modern syntax to older equivalents, stripping type annotations, or transforming non-standard syntax like JSX into standard calls. The three dominant transpilers in the JavaScript ecosystem are Babel (the original, plugin-driven JS transpiler), SWC (a Rust-based Babel replacement with near-identical plugin semantics but dramatically faster execution), and TSC (the TypeScript compiler, which both type-checks and emits JavaScript).

@@ -1,5 +1,18 @@
 # System Design: Notification System
 
+## The Idea
+
+**In plain English:** A notification system is software that automatically sends little alerts to users when something important happens — like when someone messages you or your order ships. It figures out who needs to know what, delivers the message instantly, and keeps track of whether you have seen it yet.
+
+**Real-world analogy:** Think of a hospital's paging system. A doctor needs to reach a specific nurse urgently, so they call the front desk, which looks up the nurse's pager number and sends a short alert — the pager buzzes, the nurse sees the message, and the front desk logs that the page was delivered.
+
+- The front desk = the notification server (receives events and routes them to the right recipient)
+- The pager number = the device/browser token (unique address that identifies where to deliver the alert)
+- The pager buzzing = the push notification arriving on your screen
+- The delivery log = the database that tracks which notifications were sent and whether they were read
+
+---
+
 ## Overview
 
 Design a notification center with real-time alerts using push notifications, Server-Sent Events, persistence, grouping, priority levels, and dismissal patterns.
@@ -7,6 +20,7 @@ Design a notification center with real-time alerts using push notifications, Ser
 ## Requirements
 
 ### Functional Requirements
+
 - Real-time notification delivery
 - Notification center/inbox
 - Grouping and categorization
@@ -19,6 +33,7 @@ Design a notification center with real-time alerts using push notifications, Ser
 - Rich media support
 
 ### Non-Functional Requirements
+
 - Delivery < 1 second
 - Support 1M+ daily notifications
 - 99.9% delivery rate

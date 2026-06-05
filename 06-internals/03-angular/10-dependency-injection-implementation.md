@@ -1,5 +1,18 @@
 # Dependency Injection Implementation: Injector Tree and Resolution
 
+## The Idea
+
+**In plain English:** Dependency injection is a way for parts of a program to ask for the tools they need instead of building those tools themselves. Angular acts like a supply room manager that keeps track of every tool available and hands the right one to whoever asks for it.
+
+**Real-world analogy:** Imagine a restaurant kitchen where a chef does not shop for ingredients personally. Instead, the chef submits a request list to a supply manager, who fetches everything from the storeroom and delivers it. If the main storeroom does not have something, the manager checks the walk-in cooler, then the dry-goods pantry, going up the chain until the item is found.
+
+- The chef = a component or service that needs things to work
+- The request list = the constructor parameters (dependencies declared in code)
+- The supply manager = Angular's injector (the system that finds and delivers dependencies)
+- The storeroom hierarchy (main room, cooler, pantry) = the injector tree (component injector, module injector, root injector)
+
+---
+
 ## Overview
 
 Angular's Dependency Injection (DI) system is one of the most sophisticated and powerful features of the framework. Unlike simple service locator patterns, Angular implements a hierarchical injector tree that mirrors the component tree, enabling precise control over dependency scope, lifetime, and resolution.

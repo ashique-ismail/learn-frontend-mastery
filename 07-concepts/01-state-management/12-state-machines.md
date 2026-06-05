@@ -1,5 +1,17 @@
 # State Machines in Frontend Development
 
+## The Idea
+
+**In plain English:** A state machine is a way of describing something that can only ever be in one specific "mode" at a time, and strict rules decide which modes it can switch between. A "state" is just the name for whatever mode or condition something is currently in.
+
+**Real-world analogy:** Think of a vending machine. It is always in exactly one mode at a time — waiting for money, processing your selection, or dispensing your item — and it only moves from one mode to the next in a specific order. You cannot get a snack before you put money in, no matter how hard you press the button.
+
+- The vending machine's current mode (waiting, processing, dispensing) = a state
+- Putting in a coin or pressing a button = an event that triggers a transition
+- The rule that you must insert money before selecting = a guard (a condition that controls when a transition is allowed)
+
+---
+
 ## Overview
 
 State machines are a formal model for describing system behavior as a finite set of states and explicit transitions between them. Unlike traditional state management where any state can theoretically transition to any other state, state machines enforce valid state transitions, making application behavior predictable, testable, and less prone to impossible states. Libraries like XState bring state machine theory to JavaScript, providing powerful tools for managing complex workflows, form validation, authentication flows, and more.

@@ -1,5 +1,18 @@
 # CSS Containment
 
+## The Idea
+
+**In plain English:** CSS Containment is a way to tell the browser that a section of your webpage is isolated and independent from the rest, so the browser does not need to recalculate the whole page every time something small changes inside that section. Think of it as drawing a fence around part of your page and telling the browser "changes inside this fence stay inside this fence."
+
+**Real-world analogy:** Imagine a school with many classrooms. When a teacher rearranges desks inside one classroom, the principal does not need to walk through every other classroom to check if anything changed there too — the classroom is self-contained. CSS Containment works the same way:
+
+- The school = the full webpage
+- Each classroom = a contained element (e.g., a widget or section with `contain`)
+- Rearranging desks = changing layout or content inside the element
+- The principal skipping other classrooms = the browser skipping recalculations for the rest of the page
+
+---
+
 ## What Is CSS Containment?
 
 The `contain` property tells the browser that an element and its descendants are **independent** from the rest of the document tree. This allows the browser to skip certain calculations for elements outside the container.

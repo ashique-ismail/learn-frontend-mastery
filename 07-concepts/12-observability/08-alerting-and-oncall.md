@@ -1,5 +1,18 @@
 # Alerting and On-Call
 
+## The Idea
+
+**In plain English:** Alerting means setting up automatic notifications that fire when something goes wrong in production, and on-call means having a named engineer available at all hours to respond when those notifications land.
+
+**Real-world analogy:** Think of a fire alarm system in a building — sensors detect smoke, the alarm sounds, and the on-duty security guard is paged to investigate and respond.
+
+- The smoke sensors = monitoring checks watching your app's metrics and logs
+- The alarm sounding = an alert notification firing (Slack message, PagerDuty page)
+- The on-duty security guard = the on-call engineer whose job is to respond
+- The evacuation procedure on the wall = the runbook describing what to do for each alert
+
+---
+
 ## Overview
 
 Alerting and on-call management are critical components of production operations that ensure rapid response to incidents. Effective alerting systems notify the right people at the right time with actionable information, while on-call processes ensure 24/7 coverage and clear incident response procedures. This includes alert design, PagerDuty integration, SLOs/SLIs, runbooks, incident management, escalation policies, and on-call rotation strategies.

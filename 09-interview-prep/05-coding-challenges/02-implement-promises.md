@@ -1,5 +1,18 @@
 # Implement Promises from Scratch
 
+## The Idea
+
+**In plain English:** A Promise is a special object in JavaScript that represents a task which hasn't finished yet — it's a guarantee that you'll eventually get a result (or an error), even if the work takes time. Think of it as a placeholder for a value that will arrive in the future.
+
+**Real-world analogy:** Imagine ordering a custom birthday cake from a bakery. They hand you a ticket (the receipt) and say "come back when it's ready." You go about your day, and when the cake is done they either call you to pick it up (success) or call to say they ran out of ingredients (failure).
+
+- The ticket/receipt = the Promise object (a placeholder you hold while waiting)
+- The bakery finishing the cake = the asynchronous task completing
+- Picking up the cake = the `.then()` callback (what happens when it succeeds)
+- The "ran out of ingredients" call = the `.catch()` callback (what happens when it fails)
+
+---
+
 ## Overview
 
 Implement a Promise from scratch to understand asynchronous JavaScript, the Promise/A+ specification, and chaining mechanisms.

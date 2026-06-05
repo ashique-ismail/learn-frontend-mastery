@@ -1,5 +1,18 @@
 # Property Descriptors: Object.defineProperty, Getters, and Setters
 
+## The Idea
+
+**In plain English:** Every piece of data stored in a JavaScript object comes with a hidden set of rules that controls whether you can change it, see it, or remove it — those rules are called a property descriptor. Think of it as a permission slip attached to each value that tells JavaScript exactly what you are and are not allowed to do with it.
+
+**Real-world analogy:** Imagine a museum display case. The curator places an artifact inside and decides: "Visitors can look at it, but they cannot touch it, and staff cannot move or replace it." Each rule is a separate setting on the case.
+
+- The artifact = the property's `value`
+- The "no touching" lock = `writable: false` (you cannot change the value)
+- The display label facing visitors = `enumerable: true` (the property shows up when you look around the object)
+- The sealed case lid = `configurable: false` (the rules themselves cannot be changed later)
+
+---
+
 ## Overview
 
 Every property on a JavaScript object is more than just a key-value pair. Under the hood, each property has a **descriptor** — a set of attributes that govern whether the property can be written, enumerated, or configured. Understanding property descriptors is fundamental to building robust APIs, implementing reactive data systems, creating sealed configuration objects, and debugging subtle property access bugs. `Object.defineProperty` and its sibling `Object.defineProperties` give you direct control over these attributes.

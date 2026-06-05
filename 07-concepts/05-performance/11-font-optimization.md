@@ -1,5 +1,18 @@
 # Font Optimization
 
+## The Idea
+
+**In plain English:** Font optimization is the practice of making custom text styles (called "web fonts") load as fast as possible on a website, so visitors can read the content quickly without the page looking broken or blank while waiting. A "web font" is just a special file the browser downloads to display text in a particular design — like a handwriting style or a clean modern typeface.
+
+**Real-world analogy:** Imagine ordering a custom-printed menu for your restaurant. The food is ready, but you're waiting for the menus to arrive before letting guests sit down. A smarter approach: seat guests immediately with a plain printed sheet (the fallback), then swap it for the fancy menu once it arrives — guests can read and order the whole time.
+
+- The plain printed sheet = the browser's built-in fallback font (shown instantly)
+- The fancy custom menu = the web font file being downloaded
+- Swapping the menus at the table = the browser replacing the fallback text with the web font once it loads
+- Printing only the dishes you actually serve (not every dish ever invented) = font subsetting (trimming the font file to only the characters your site uses)
+
+---
+
 ## Overview
 
 Font optimization is critical for web performance, as web fonts can significantly impact page load time and rendering. Unoptimized fonts can cause Flash of Invisible Text (FOIT), Flash of Unstyled Text (FOUT), or layout shifts, degrading user experience. This guide covers modern font loading strategies, font-display values, subsetting, variable fonts, and preloading techniques.

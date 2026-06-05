@@ -1,5 +1,17 @@
 # Zoneless Angular: Signal-Based Change Detection
 
+## The Idea
+
+**In plain English:** Zoneless Angular is a way to build Angular apps where the app only updates the parts of the screen that actually changed, instead of constantly checking everything. A "signal" is a special container that holds a value and automatically tells the app when that value changes.
+
+**Real-world analogy:** Imagine a large office building where every room has a light switch. In the old system, a security guard walks the entire building every few minutes checking every single room — even empty ones. In the new (zoneless) system, each room has a smart sensor that sends an alert directly to maintenance only when something in that specific room changes.
+
+- The security guard walking every room = Zone.js triggering change detection across the whole app
+- Each smart sensor in a room = a signal attached to a specific piece of data
+- Maintenance only going to the room that sent the alert = Angular updating only the components whose signals changed
+
+---
+
 ## Overview
 
 Zoneless Angular represents a fundamental shift in how Angular detects and propagates changes throughout an application. By eliminating the dependency on Zone.js and embracing signals as the primary reactivity primitive, Angular achieves better performance, simpler mental models, and more predictable behavior.

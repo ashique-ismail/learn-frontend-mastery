@@ -1,5 +1,17 @@
 # CSS Filters, Backdrop Filters, and Blend Modes
 
+## The Idea
+
+**In plain English:** CSS filters, backdrop filters, and blend modes are ways to change how elements look on your screen — like applying photo editing effects (blur, grayscale, brightness) directly in your code, and controlling how layers of content mix together visually.
+
+**Real-world analogy:** Imagine a photographer editing a portrait in a studio. They place a frosted glass panel in front of the background to blur it (backdrop filter), put a colored gel over the camera lens to tint the whole shot (filter), and then in post-processing they overlay two images and set them to "multiply" so shadows blend together (blend mode).
+
+- The frosted glass panel in front of the background = `backdrop-filter` (blurs what is behind an element)
+- The colored gel over the camera lens = `filter` (applies an effect to the element itself and everything in it)
+- The "multiply" overlay blending mode in post-processing = `mix-blend-mode` (controls how two layers of color combine where they overlap)
+
+---
+
 ## Filter Functions
 
 Apply graphical effects to elements.

@@ -1,5 +1,17 @@
 # Unit Testing Principles
 
+## The Idea
+
+**In plain English:** Unit testing means checking that one small, specific piece of your code works correctly on its own — before connecting it to everything else. A "unit" is just the smallest meaningful chunk of code, like a single function.
+
+**Real-world analogy:** Think of a car assembly line. Before workers bolt the engine into the car, a technician tests the engine by itself on a test bench — they hook it up to power and check that it runs, without it needing wheels or a steering wheel.
+
+- The engine on the test bench = a function or class being tested in isolation
+- The test bench instruments (gauges, sensors) = the assertions that check the output
+- The car assembly = the full application, tested later by integration/end-to-end tests
+
+---
+
 ## Overview
 
 Unit testing forms the foundation of a robust testing strategy. A unit test verifies a single unit of code (function, method, or class) in isolation from its dependencies. Understanding core principles like the AAA pattern, test isolation, determinism, and speed helps developers write maintainable, reliable tests that catch bugs early and serve as living documentation.

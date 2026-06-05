@@ -1,5 +1,17 @@
 # Link rel variants
 
+## The Idea
+
+**In plain English:** The `rel` attribute on a `<link>` tag tells the browser what kind of relationship the current page has with another file or resource — for example, whether it is a stylesheet that styles the page, an icon shown in the browser tab, or a translated version of the page in another language.
+
+**Real-world analogy:** Think of a school binder with labeled dividers. Each divider tab tells you what kind of content is behind it — "Homework", "Notes", "Extra Reading". The browser reads `rel` values the same way: each label says what role that linked resource plays.
+
+- The binder = the HTML page
+- Each divider tab label = the `rel` attribute value (e.g. `stylesheet`, `icon`, `canonical`)
+- The papers behind each divider = the linked file (e.g. the CSS file, the favicon image, the alternate-language URL)
+
+---
+
 ## Overview
 
 The `rel` attribute on `<link>` elements defines the relationship between the current document and the linked resource. Different `rel` values serve different purposes for SEO, performance, and functionality.

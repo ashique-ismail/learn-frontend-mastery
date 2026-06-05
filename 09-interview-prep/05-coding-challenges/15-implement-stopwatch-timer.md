@@ -1,5 +1,17 @@
 # Implement a Stopwatch / Countdown Timer
 
+## The Idea
+
+**In plain English:** A stopwatch is a tool that tracks how much time has passed since you pressed "start", and a countdown timer counts down from a set amount of time to zero. In code, you keep checking the clock over and over to update the numbers on screen.
+
+**Real-world analogy:** Think of a coach at a track meet using a physical stopwatch. She presses "start" when the runner leaves the blocks, watches the second hand sweep forward, presses "lap" to note each split, and presses "stop" when the runner crosses the finish line.
+
+- The coach pressing "start" = calling `requestAnimationFrame` to begin the update loop
+- The second hand sweeping forward = the `tick` function running on every browser repaint to recalculate elapsed time
+- The coach's memory of when she pressed "start" = `startTime.current` stored in a ref
+
+---
+
 ## Stopwatch
 
 ### Core Hook

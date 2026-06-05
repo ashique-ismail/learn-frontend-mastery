@@ -1,5 +1,17 @@
 # Composition: Children, Render Props, and Component Slots
 
+## The Idea
+
+**In plain English:** Composition is the practice of building big things by snapping smaller, reusable pieces together — instead of creating one giant piece that tries to do everything. Each piece (called a component) does one job, and you combine them like building blocks to make a full screen.
+
+**Real-world analogy:** Think of assembling a burger at a fast-food restaurant. The kitchen has buns, patties, lettuce, and sauce as separate items. You pick which ones you want and stack them together to get your custom burger.
+
+- The individual ingredients (bun, patty, lettuce) = small, reusable components
+- The act of stacking them into your custom burger = composition
+- The finished burger = the final UI built from combined components
+
+---
+
 ## Overview
 
 Composition is one of React's most powerful features. Instead of using inheritance to share code between components, React uses composition - building complex UIs by combining simpler components. This document covers three key composition patterns: children, render props, and component slots.

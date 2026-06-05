@@ -1,5 +1,17 @@
 # Sticky vs Fixed Positioning
 
+## The Idea
+
+**In plain English:** When you scroll a webpage, some elements stay locked in one spot on your screen forever (fixed), while others travel with the page at first but then lock in place once they reach a certain point — and only stay locked as long as their section of the page is visible (sticky).
+
+**Real-world analogy:** Imagine a bulletin board on a school hallway wall. A teacher tapes a "Rules" sign directly onto your glasses so it always floats in the corner of your vision no matter where you walk — that is fixed positioning. But a tour guide holds up a paddle sign as you walk through each room; the sign travels with you at first, then gets pinned to the doorframe of that room while you are inside, and disappears once you leave the room — that is sticky positioning.
+
+- The sign glued to your glasses = a `position: fixed` element (always in the same spot on the screen)
+- The tour guide's paddle pinned to a doorframe = a `position: sticky` element (sticks only while its parent section is in view)
+- Each room = the parent container that limits how long the sticky element stays stuck
+
+---
+
 ## Fixed Positioning
 
 An element with `position: fixed` is positioned relative to the **viewport** and removed from normal flow:

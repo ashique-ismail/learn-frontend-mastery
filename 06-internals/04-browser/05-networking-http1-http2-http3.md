@@ -1,5 +1,17 @@
 # HTTP Evolution: HTTP/1.1, HTTP/2, and HTTP/3
 
+## The Idea
+
+**In plain English:** HTTP is the language your browser uses to ask a server for web pages and files. Over the years it has been upgraded — each version sends data faster and more efficiently than the last.
+
+**Real-world analogy:** Think of shipping packages between two warehouses. HTTP/1.1 sends one truck and waits for it to return before sending the next. HTTP/2 loads multiple packages onto the same truck at once. HTTP/3 switches from road to a dedicated high-speed rail line that never gets blocked by accidents on the highway.
+
+- One truck at a time (HTTP/1.1) = one request per connection, head-of-line blocking
+- Multiple packages per truck (HTTP/2) = multiplexed streams over a single TCP connection
+- The dedicated rail line (HTTP/3) = QUIC protocol over UDP, eliminating TCP head-of-line blocking
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [HTTP/1.1: The Foundation](#http11-the-foundation)

@@ -1,5 +1,18 @@
 # Proxy Pattern
 
+## The Idea
+
+**In plain English:** A proxy is a stand-in object that sits between you and the real thing, intercepting every request you make before deciding whether to pass it along, block it, or do some extra work first. Think of it as a middleman that looks identical to the original but has secret powers to control what happens.
+
+**Real-world analogy:** Imagine a personal assistant who answers your calls at work. Anyone who wants to reach you dials the same number and hears the same voice — they have no idea they are talking to an assistant instead of you. The assistant can screen calls, take messages, or patch callers straight through.
+
+- The caller = the client code making requests
+- The assistant = the proxy object (same interface, but in the middle)
+- You (the real person) = the real subject doing the actual work
+- The phone number = the shared interface that makes the swap invisible
+
+---
+
 ## Overview
 
 The Proxy pattern is a structural design pattern that provides a **surrogate or placeholder** for another object to control access to it. The proxy sits between the client and the real subject, intercepting operations and either forwarding them, transforming them, or blocking them entirely.

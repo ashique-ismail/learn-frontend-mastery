@@ -1,5 +1,17 @@
 # Implement Memoization
 
+## The Idea
+
+**In plain English:** Memoization is a way to make a function faster by remembering the answers it already figured out, so the next time someone asks the same question, it just looks up the saved answer instead of doing the work all over again.
+
+**Real-world analogy:** Imagine a student who keeps a cheat-sheet while doing homework. The first time they convert 5 miles to kilometers they work it out on paper and write the answer on the sheet. The second time the same conversion comes up, they just glance at the sheet instead of recalculating.
+
+- The cheat-sheet = the cache (where saved results are stored)
+- The math conversion = the function (the expensive work being done)
+- The question "5 miles?" = the function argument (the input that determines which answer to look up)
+
+---
+
 ## Overview
 
 Implement memoization patterns and LRU cache from scratch to optimize function performance through caching.

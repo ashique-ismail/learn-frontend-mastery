@@ -1,5 +1,16 @@
 # Stacking Contexts and z-index Rules
 
+## The Idea
+
+**In plain English:** When web pages have overlapping elements, the browser needs rules to decide which one appears on top. A stacking context is a self-contained group of elements that gets layered as a single unit against everything else on the page — like a sealed stack of cards that moves together.
+
+**Real-world analogy:** Imagine two binders sitting on a desk. Each binder holds a stack of papers inside it. You can reorder the papers within each binder, but a paper from the first binder can never slip between papers inside the second binder — the whole binder moves as one.
+- The binder = a stacking context (a grouped layer with its own internal order)
+- The papers inside a binder = child elements competing with `z-index` inside that context
+- The desk with both binders on it = the root page, where the two binders (contexts) are compared against each other
+
+---
+
 ## Learning Objectives
 - Understand what creates a stacking context and why it matters
 - Master z-index behavior within and across stacking contexts

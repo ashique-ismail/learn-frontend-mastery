@@ -1,5 +1,17 @@
 # ngxtension
 
+## The Idea
+
+**In plain English:** ngxtension is a toolbox of ready-made helpers for Angular apps that saves you from writing the same repetitive setup code over and over. Think of it as a collection of shortcuts that handle common tasks — like watching for URL changes or tracking a value's history — in just one line instead of ten.
+
+**Real-world analogy:** Imagine a professional kitchen where every chef has to sharpen their own knife, prep their own cutting board, and mix their own basic sauces from scratch before they can cook anything. ngxtension is like a prep station that arrives each morning with all those basics already done — knives sharpened, boards set out, sauces ready — so chefs can jump straight to cooking.
+
+- The prep station = ngxtension (the library you install)
+- The ready-made sauces and sharpened knives = utility functions like `injectQueryParams` and `derivedAsync`
+- The chefs spending less time on setup = developers writing less boilerplate code
+
+---
+
 ## What It Is
 
 ngxtension is a collection of Angular utility functions, directives, and services that extend Angular's capabilities — especially for working with signals, RxJS interop, and common component patterns.

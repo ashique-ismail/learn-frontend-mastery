@@ -1,5 +1,17 @@
 # Implement Virtual Scrolling
 
+## The Idea
+
+**In plain English:** Virtual scrolling is a trick where a webpage only draws the list items you can currently see on screen, instead of drawing all 10,000 at once — it swaps items in and out as you scroll, keeping the page fast no matter how long the list is.
+
+**Real-world analogy:** Imagine reading a very long paper scroll through a small window cut in a cardboard box. The full scroll exists, but you only ever see the few lines framed by the window — as you pull the scroll downward, new lines appear at the bottom and old ones disappear at the top.
+
+- The cardboard box window = the visible viewport (the fixed-height container on screen)
+- The lines currently visible through the window = the DOM elements actually rendered
+- Pulling the scroll through the box = the user scrolling, which triggers swapping new items in and old items out
+
+---
+
 ## Overview
 
 Implement virtual scrolling from scratch to efficiently render large lists by only rendering visible items.

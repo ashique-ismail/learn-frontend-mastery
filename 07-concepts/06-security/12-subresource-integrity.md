@@ -1,12 +1,24 @@
 # Subresource Integrity (SRI)
 
+## The Idea
+
+**In plain English:** Subresource Integrity (SRI) is a way for your browser to verify that a file loaded from an external server (like a shared library host) hasn't been secretly swapped out for a malicious version. Before running the file, the browser checks its "fingerprint" (called a hash) against one you pre-approved — if they don't match, the file is blocked.
+
+**Real-world analogy:** Imagine you order a sealed jar of peanut butter from a warehouse. Before shipping, the factory stamps a unique seal number on the lid. When the jar arrives, you check that the seal number matches the one the factory told you to expect. If someone at the warehouse replaced the peanut butter with something harmful and re-sealed it, the seal number won't match and you throw it out.
+
+- The seal number stamped by the factory = the hash in the `integrity` attribute you write in your HTML
+- The warehouse = the CDN (Content Delivery Network) hosting the file
+- Checking the seal number before eating = the browser computing and comparing the hash before running the script
+
+---
+
 ## Overview
 
 Subresource Integrity (SRI) is a security feature that lets browsers verify that resources they fetch from third-party servers haven't been tampered with. When you load a JavaScript file from a CDN, SRI gives you a cryptographic guarantee that what the CDN serves matches exactly what you expected — a compromised CDN cannot inject malicious code without breaking the hash check.
 
 ## The CDN Supply Chain Risk
 
-```
+```text
 Without SRI — CDN compromise impacts your users:
 
   Your HTML:

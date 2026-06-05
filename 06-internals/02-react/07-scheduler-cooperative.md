@@ -1,5 +1,18 @@
 # React Scheduler: Cooperative Scheduling Internals
 
+## The Idea
+
+**In plain English:** React's cooperative scheduler is a built-in system that breaks up rendering work into tiny chunks and voluntarily pauses between them, so the browser stays free to respond to your clicks and keep animations smooth. "Cooperative" means the scheduler chooses to give up control on its own — nothing forces it to stop.
+
+**Real-world analogy:** Imagine a chef (the scheduler) working in a busy restaurant kitchen who also has to answer the front desk whenever a customer walks in. Instead of cooking one enormous dish without stopping, the chef sets a 5-minute timer, preps as much as possible, then steps away to check the front desk before coming back to continue cooking.
+
+- The chef = the React Scheduler
+- The 5-minute timer = the 5 ms time-slice budget checked by `shouldYieldToHost`
+- Prepping dishes = processing fiber (component) units of work in `workLoopConcurrent`
+- Checking the front desk = letting the browser handle paint and input events between macrotasks
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [Why a Custom Scheduler](#why-a-custom-scheduler)

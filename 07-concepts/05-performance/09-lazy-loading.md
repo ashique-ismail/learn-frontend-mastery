@@ -1,5 +1,17 @@
 # Lazy Loading
 
+## The Idea
+
+**In plain English:** Lazy loading means a website only downloads the things you actually need right now, instead of downloading everything all at once when the page first opens. Think of it like a "load on demand" system — images, videos, or sections of a page are fetched only when you are about to see them.
+
+**Real-world analogy:** Imagine a restaurant that only cooks your food after you order it, rather than cooking every item on the menu before anyone walks in the door.
+
+- The menu = the full list of images, components, and scripts on a webpage
+- Cooking a dish only when ordered = downloading a resource only when the user scrolls near it
+- The kitchen staying idle for unordered dishes = the browser not wasting bandwidth on content the user never reaches
+
+---
+
 ## Overview
 
 Lazy loading is a design pattern that defers the loading of non-critical resources until they are actually needed. This technique significantly improves initial page load performance by reducing the amount of code, images, and other assets that need to be downloaded upfront. Lazy loading is essential for modern web applications, especially those with heavy content or targeting mobile users.

@@ -1,5 +1,17 @@
 # CSS Animations
 
+## The Idea
+
+**In plain English:** CSS animations let you make elements on a webpage move, fade, grow, or change over time automatically — you describe what the element should look like at different moments, and the browser smoothly plays it out like a mini movie clip.
+
+**Real-world analogy:** Think of a flipbook — those small booklets where you draw a slightly different picture on each page, and when you flip through them fast, the drawings appear to move. Each page in the flipbook is a snapshot of the action at a specific moment.
+
+- The flipbook pages = keyframes (the snapshots you define at 0%, 50%, 100%, etc.)
+- The drawings on each page = CSS property values (position, opacity, size) at that moment
+- Flipping through the pages = the browser playing the animation over its duration
+
+---
+
 ## @keyframes Syntax
 
 Define animation sequences with keyframes.

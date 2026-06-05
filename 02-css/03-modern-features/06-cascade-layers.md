@@ -1,10 +1,23 @@
 # Cascade Layers
 
+## The Idea
+
+**In plain English:** Cascade layers are a way to organize your CSS styles into named groups, where you decide upfront which group wins when two groups try to style the same thing. Think of it as giving each group of styles a rank — the higher-ranked group always beats the lower one, no matter how the styles are written.
+
+**Real-world analogy:** Imagine a school dress code ruled by three groups: the school board, teachers, and individual students. The school board sets the overarching rules, teachers can add guidelines on top, and students can choose within what's left. If a teacher says "wear a name badge" but the school board already said "no badges on Fridays," the school board wins — because their rank is higher.
+
+- The school board = the `reset` or `base` layer (lowest priority, broadest rules)
+- The teachers = the `components` layer (middle priority, more specific rules)
+- The students = the `utilities` or `overrides` layer (highest priority, final say)
+
+---
+
 ## Overview
 
 CSS Cascade Layers (`@layer`) provide explicit control over the cascade by allowing you to organize CSS into layers with defined priority. Layers let you control specificity and source order at a higher level than traditional cascade rules.
 
 This solves common problems with:
+
 - Third-party CSS conflicting with custom styles
 - Reset/normalize styles interfering with components
 - Utility classes losing to component styles
@@ -658,6 +671,7 @@ p {
 **Q5: When would you use anonymous layers?**
 
 **A:** Anonymous layers (declared with `@layer { }` without a name) are useful for:
+
 - One-off isolation that doesn't need to be referenced again
 - Importing third-party CSS without naming it: `@import 'vendor.css' layer;`
 - Temporary overrides during development
@@ -666,6 +680,7 @@ p {
 **Q6: How do layers interact with media queries?**
 
 **A:** Media queries work inside layers normally. The layer priority is evaluated first, then the media query condition. Example:
+
 ```css
 @layer base, components;
 

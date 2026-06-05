@@ -1,5 +1,18 @@
 # Tree Shaking Prerequisites
 
+## The Idea
+
+**In plain English:** Tree shaking is how a build tool automatically removes unused code from your app before it ships to users. Think of it like a library that only packs the chapters you actually read into your bag — everything else stays on the shelf.
+
+**Real-world analogy:** Imagine ordering a meal-prep kit that ships only the exact ingredients for the recipes you chose, instead of the entire warehouse inventory.
+
+- The warehouse full of ingredients = the full JavaScript library with all its exported functions
+- The recipes you chose = the specific imports your code uses
+- The packing algorithm that reads your order = the bundler analyzing which exports are actually needed
+- The final box shipped to your door = the trimmed bundle sent to the browser
+
+---
+
 ## Overview
 
 Tree shaking is a form of dead code elimination that removes unused exports from a JavaScript bundle. The term, popularized by Rollup, describes the process of statically analyzing the import/export graph, identifying which exported bindings are never imported, and omitting them from the output. The result is a smaller bundle containing only the code your application actually uses.
@@ -375,7 +388,7 @@ npx publint my-package
 ## Comparison Table
 
 | Prerequisite | Why It's Required | How to Verify |
-|---|---|---|
+| --- | --- | --- |
 | ESM syntax | Static analysis requires static import/export | Check `"module"` or `"exports"."import"` in package.json |
 | Named exports | Default object exports bundle entire object | Audit export patterns in source |
 | sideEffects: false | Allows bundler to skip unused files | Check package.json, add if missing |
@@ -441,7 +454,7 @@ export function trim(s) { return s.trim(); }
 
 **Answer:** Several things can prevent tree shaking here. First, if the library ships only CJS (`"main"` but no `"module"` or `"exports"."import"`), the bundler includes all of `module.exports`. Second, if any component in the barrel has module-level side effects (global registrations, CSS-in-JS injection, etc.), the bundler must retain the entire file. Third, if `"sideEffects"` is not set in the library's `package.json`, the bundler conservatively keeps all re-exported modules. Fourth, if the barrel uses `export * from` patterns, some bundlers may not trace the transitive graph. Solutions: import directly from the sub-path (`./components/Button`), check if an ESM build exists, or file an issue with the library maintainer about `"sideEffects": false`.
 
-### Q4: What does the /*#__PURE__*/ annotation do?
+### Q4: What does the `/*#__PURE__*/` annotation do?
 
 **Answer:** It is a hint to bundlers (supported by Rollup, Webpack's terser, and esbuild) that the annotated function call or expression has no side effects and its result is safe to eliminate if unused. When a bundler or minifier sees `/*#__PURE__*/` before a function call, it treats that call as side-effect-free and will remove it — along with the entire expression — if the result is never referenced. This is particularly useful for compiled TypeScript class helpers and higher-order function wrappers that look like function calls but are structurally pure.
 
@@ -503,16 +516,19 @@ If your package imports CSS files and you declare `"sideEffects": false`, CSS im
 ## Resources
 
 ### Official Documentation
+
 - [Webpack: Tree Shaking](https://webpack.js.org/guides/tree-shaking/)
 - [Rollup: Tree-shaking](https://rollupjs.org/faqs/#why-is-tree-shaking-not-working)
 - [Vite: Build Optimizations](https://vitejs.dev/guide/features#build-optimizations)
 
 ### Articles and Guides
+
 - [How Rollup Tree Shaking Works](https://medium.com/@Rich_Harris/tree-shaking-versus-dead-code-elimination-d3765df85c80)
 - [Webpack sideEffects Docs](https://webpack.js.org/configuration/optimization/#optimizationsideeffects)
 - [Pure ESM package guide](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)
 
 ### Tools
+
 - [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
 - [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer)
 - [bundlephobia.com](https://bundlephobia.com) — checks if packages are tree-shakeable

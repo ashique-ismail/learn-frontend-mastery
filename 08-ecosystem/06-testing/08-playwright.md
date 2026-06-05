@@ -1,5 +1,18 @@
 # Playwright - End-to-End Testing
 
+## The Idea
+
+**In plain English:** Playwright is a tool that pretends to be a real person using your website — it opens a browser, clicks buttons, fills out forms, and checks that everything works correctly, automatically. "End-to-end testing" means testing the whole journey a user takes, from start to finish.
+
+**Real-world analogy:** Imagine hiring a mystery shopper to test a store. You give them a checklist: walk in, pick up a product, add it to the cart, pay at the checkout, and confirm you get a receipt. They do this over and over on different days to make sure the store works properly every time.
+
+- The mystery shopper = Playwright (the automated tester)
+- The checklist of steps = a test script (the code telling Playwright what to do)
+- The store = your website running in a real browser
+- Getting a receipt at the end = an assertion (checking the expected result actually happened)
+
+---
+
 ## Overview
 
 Playwright is a modern end-to-end testing framework developed by Microsoft that enables reliable testing across all major browsers (Chromium, Firefox, WebKit). It provides a powerful API for automating browser interactions, supports multiple languages, includes built-in test runner, and offers advanced features like auto-waiting, network interception, and parallel execution.

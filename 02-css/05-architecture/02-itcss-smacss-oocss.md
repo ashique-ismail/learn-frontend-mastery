@@ -1,5 +1,17 @@
 # ITCSS, SMACSS, and OOCSS
 
+## The Idea
+
+**In plain English:** ITCSS, SMACSS, and OOCSS are three different systems for organising the styling rules of a website so they don't clash or become a tangled mess as the project grows. Think of them as filing systems — each one has a different way of deciding where each rule goes and why.
+
+**Real-world analogy:** Imagine a large restaurant kitchen with many cooks. The head chef creates rules for how the kitchen is organised: ingredients are stored by type (spices on one shelf, proteins in the fridge), prep tasks are done in a set order (chop before you cook), and each dish has a standard recipe so any cook can make it consistently.
+
+- The shelves organised by ingredient type = ITCSS layers (styles grouped from broadest/least specific to most specific)
+- The step-by-step prep order = SMACSS categories (styles sorted by purpose: base, layout, module, state, theme)
+- The standard reusable recipes = OOCSS objects (reusable style patterns combined to build any dish/component)
+
+---
+
 ## Overview
 
 Three foundational CSS architectural methodologies that organize styles by purpose, specificity, and reusability. Each provides a different lens for structuring large-scale CSS codebases.

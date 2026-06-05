@@ -1,5 +1,17 @@
 # Image srcset, sizes, and loading
 
+## The Idea
+
+**In plain English:** When you put an image on a webpage, you can give the browser several versions of that image at different sizes, and the browser will automatically pick the best one based on the visitor's screen size and device — so a phone doesn't download a massive image meant for a giant desktop monitor. The attributes `srcset`, `sizes`, and `loading` are the instructions you write to make this happen.
+
+**Real-world analogy:** Imagine a coffee shop menu board that has three versions: a tiny card on the counter for people leaning in close, a medium poster on the wall, and a large banner hanging outside. A customer only reads the one that fits where they are standing — they don't carry all three.
+
+- The tiny card = the small image file (e.g. `image-400.jpg`)
+- The large banner = the high-resolution image file (e.g. `image-1600.jpg`)
+- The rule "if you're outside, use the banner" = the `sizes` attribute telling the browser which version to pick at which screen width
+
+---
+
 ## Overview
 
 Modern image elements support responsive images through `srcset` and `sizes` attributes, and performance optimization through `loading` and `decoding` attributes.

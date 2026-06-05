@@ -1,5 +1,17 @@
 # GSAP with Angular
 
+## The Idea
+
+**In plain English:** GSAP is a JavaScript library that lets you animate things on a webpage — like making a heading slide in, a button bounce, or elements fade as you scroll. Angular is a framework for building web apps, and this topic is about using GSAP's animation superpowers inside Angular's component system safely and efficiently.
+
+**Real-world analogy:** Imagine a theatre stage director (Angular) who controls when actors enter the scene. The director only gives the cue after the stage is fully set and all props are in place. GSAP is the choreographer who tells each actor exactly how to move once they're on stage.
+
+- The stage director (Angular) = the component lifecycle that controls when code runs
+- Waiting until the stage is set = `AfterViewInit`, the lifecycle hook that runs only after the DOM is ready
+- The choreographer's instructions = GSAP timeline that defines how and when each element animates
+
+---
+
 ## Overview
 
 GSAP (GreenSock Animation Platform) works in Angular the same way it works anywhere — imperative, DOM-manipulating animations. The Angular integration focuses on:

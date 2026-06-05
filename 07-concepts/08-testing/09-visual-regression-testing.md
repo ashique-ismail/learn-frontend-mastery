@@ -1,5 +1,17 @@
 # Visual Regression Testing
 
+## The Idea
+
+**In plain English:** Visual regression testing is a way to automatically check whether a website looks the same after code changes, by taking before-and-after screenshots and highlighting any differences — even tiny ones a human might miss.
+
+**Real-world analogy:** Imagine you hang a framed poster on your wall, take a photo of it, then do some renovation work in the room. When you're done, you take another photo and hold it next to the first one to see if anything shifted or changed without you intending it to.
+
+- The original photo = the baseline screenshot (the known-good reference image)
+- The new photo after renovation = the new screenshot taken after a code change
+- Comparing the two photos side-by-side = the pixel-by-pixel diff that flags any differences
+
+---
+
 ## Overview
 
 Visual regression testing catches unintended UI changes by comparing screenshots across commits. A CSS refactor that "only changes specificity" might cause a button to shift 2px — invisible in code review, obvious in a screenshot diff. This guide covers screenshot diffing approaches, the major tools (Percy, Chromatic, Playwright), component-level vs page-level testing, and how to integrate visual testing into CI without it becoming a maintenance burden.

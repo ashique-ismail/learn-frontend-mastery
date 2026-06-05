@@ -1,5 +1,17 @@
 # React Hydration: Selective Hydration Internals
 
+## The Idea
+
+**In plain English:** Hydration is when a web page that was already drawn (by the server) gets "woken up" by JavaScript so it can respond to clicks, remember things, and update itself. Selective hydration means instead of waking up the whole page at once, React wakes up each section one by one — starting with whatever section the user is about to touch.
+
+**Real-world analogy:** Imagine a theme park that prints paper maps before opening, so guests see the full layout right away. Then, as guests arrive, staff members are assigned to each area to actually operate the rides. If a crowd rushes toward the roller coaster, management radios staff there first before finishing the quieter areas.
+
+- The printed paper map = the server-rendered HTML (visible immediately, but not interactive)
+- Staff members being assigned to each area = React attaching its event system and state to each section of the page (hydration)
+- Management sending staff to the roller coaster first = React prioritizing the Suspense boundary the user clicked on (selective hydration)
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [What Is Hydration](#what-is-hydration)

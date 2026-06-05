@@ -1,5 +1,17 @@
 # Incremental Static Regeneration (ISR)
 
+## The Idea
+
+**In plain English:** ISR is a way to build web pages ahead of time (so they load fast), but automatically refresh them in the background after a set amount of time — so visitors always get a quick response while the site quietly updates itself with new content.
+
+**Real-world analogy:** Think of a newspaper stand that stocks the morning edition at 6am. When you walk up, you get a copy instantly — no waiting for it to be printed. If you walk up at noon, the stand still gives you the morning edition immediately, but also quietly orders a fresh afternoon edition for the next person. By the time the next customer arrives, the updated paper is ready.
+
+- The pre-printed morning edition = the pre-built static HTML page served from cache
+- The newspaper stand handing you a copy instantly = the CDN serving the page with no delay
+- The stand quietly ordering a fresh edition in the background = the server regenerating the page after the revalidation interval expires
+
+---
+
 ## Overview
 
 Incremental Static Regeneration (ISR) combines the benefits of static generation with the ability to update content without rebuilding the entire site. ISR allows you to create or update static pages after build time, on-demand or at specified intervals, providing a balance between performance and freshness.

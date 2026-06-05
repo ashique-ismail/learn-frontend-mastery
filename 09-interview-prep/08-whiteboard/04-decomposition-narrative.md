@@ -1,5 +1,17 @@
 # Whiteboard: Decomposition and Complexity Narrative
 
+## The Idea
+
+**In plain English:** Decomposition is the skill of breaking a big, messy problem into smaller named pieces so you can talk about each piece clearly. In a coding interview, it means looking at a vague challenge and immediately identifying the distinct parts it is made of and which parts are the hardest.
+
+**Real-world analogy:** Imagine a chef receiving a catering order for a 200-person wedding dinner. Before touching any food, they split the work into stations: appetizers, mains, desserts, and drinks. They then immediately call out the hard parts: "The soufflés will collapse if not timed perfectly — that is our biggest risk." They plan around the hard part first and handle the routine stations in parallel.
+
+- The catering order = the vague interview problem
+- Each kitchen station = a named subsystem (auth, sync, conflict resolution)
+- Calling out the soufflé risk early = naming the hardest technical problem upfront before drawing any diagrams
+
+---
+
 ## Overview
 
 The first 5 minutes of any system design interview decide how the rest goes. Interviewers at staff level are grading you on whether you can take an ambiguous problem, decompose it into clear subsystems, identify the hard parts, and set up a structured discussion — all before writing a single line of code or drawing a component. This document is the framework for doing that consistently.

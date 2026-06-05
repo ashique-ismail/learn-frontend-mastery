@@ -1,5 +1,16 @@
 # CSS Grid Layout
 
+## The Idea
+
+**In plain English:** CSS Grid is a way to divide a webpage into rows and columns — like a table — so you can place content exactly where you want it, both side to side and up and down at the same time.
+
+**Real-world analogy:** Think of a printed newspaper. The page is divided into a grid of columns and rows, and each article or photo is placed into one or more of those boxes — sometimes an article spans across three columns, sometimes a photo takes up two rows.
+- The newspaper page = the grid container (the element with `display: grid`)
+- The columns and rows drawn on the page = the grid tracks (defined by `grid-template-columns` and `grid-template-rows`)
+- Each article or photo = a grid item (a direct child element placed inside the container)
+
+---
+
 ## Overview
 
 CSS Grid is a two-dimensional layout system that allows you to create complex layouts by defining rows and columns simultaneously. Unlike Flexbox (which is one-dimensional), Grid excels at creating structured layouts with precise control over both axes.

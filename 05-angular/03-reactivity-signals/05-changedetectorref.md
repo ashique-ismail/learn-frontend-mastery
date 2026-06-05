@@ -1,6 +1,20 @@
 # ChangeDetectorRef API
 
+## The Idea
+
+**In plain English:** ChangeDetectorRef is Angular's remote control for deciding when the screen refreshes. Normally Angular watches your app and updates the screen automatically, but ChangeDetectorRef lets you take over and say "update now" or "stop watching for a while."
+
+**Real-world analogy:** Imagine a security guard (Angular) who walks around a building checking every room for changes every few minutes. You can hand the guard a walkie-talkie so you can call them directly. You can say "check this room right now" instead of waiting for their normal rounds, or tell them "skip this room for now, I'll call you when it needs checking."
+
+- The security guard = Angular's change detection system
+- The walkie-talkie = ChangeDetectorRef
+- Saying "check this room right now" = calling `detectChanges()`
+- Saying "skip this room for now" = calling `detach()`
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [What is ChangeDetectorRef](#what-is-changedetectorref)
 - [markForCheck](#markforcheck)

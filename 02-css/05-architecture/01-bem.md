@@ -1,5 +1,17 @@
 # BEM (Block Element Modifier)
 
+## The Idea
+
+**In plain English:** BEM is a system for naming the CSS classes you put on HTML elements, so that every class name tells you exactly which component it belongs to, which part of that component it is, and whether it looks different from the default. A "class" is just a label you attach to an HTML element so your stylesheet knows how to style it.
+
+**Real-world analogy:** Think of a school uniform system. Every student wears a uniform (the block), which has specific pieces like a shirt, trousers, and a blazer (the elements), and some students wear a prefect badge or a sports-house colour stripe to show a variation (the modifier).
+
+- The uniform = the Block (the self-contained component, e.g. `.uniform`)
+- The shirt, trousers, blazer = the Elements (parts that only make sense as part of the uniform, e.g. `.uniform__shirt`)
+- The prefect badge or colour stripe = the Modifier (a variation that changes how a part looks or behaves, e.g. `.uniform__blazer--prefect`)
+
+---
+
 ## Overview
 
 BEM is a naming methodology that provides a structured approach to naming CSS classes, making code more maintainable, predictable, and self-documenting. Created by Yandex, BEM stands for Block, Element, Modifier.

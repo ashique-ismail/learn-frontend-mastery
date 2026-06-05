@@ -1,5 +1,18 @@
 # Dependency Vulnerabilities
 
+## The Idea
+
+**In plain English:** Your app is built on top of dozens of open-source packages written by others. A dependency vulnerability is a known security flaw in one of those packages — and if you haven't updated or patched it, attackers can exploit it to compromise your app.
+
+**Real-world analogy:** Think of a building made from bricks sourced from a supplier. If the supplier later discovers a batch of bricks is structurally defective, every building using those bricks is at risk — regardless of how well the rest of the construction was done. You need to replace the bad bricks (update the package) before someone finds and exploits the weak wall.
+
+- The building = your application
+- The bricks from a supplier = third-party npm packages you depend on
+- The defective batch = a package version with a known CVE (security flaw)
+- Replacing the bad bricks = running `npm audit fix` or updating to a patched version
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Understanding Dependency Risks](#understanding-dependency-risks)

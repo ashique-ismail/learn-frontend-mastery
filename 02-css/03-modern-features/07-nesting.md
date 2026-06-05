@@ -1,5 +1,17 @@
 # CSS Nesting
 
+## The Idea
+
+**In plain English:** CSS nesting lets you write styles for elements inside other elements by placing them inside the same block of code, rather than writing separate rules for each one. Think of it as grouping related instructions together so you can read them all in one place.
+
+**Real-world analogy:** Imagine a filing cabinet for a school. The cabinet has a drawer labeled "Science Class", and inside that drawer are folders for "Notes", "Homework", and "Tests" — all belonging to Science Class. You do not scatter those folders randomly across the whole room.
+
+- The filing cabinet drawer labeled "Science Class" = the parent CSS selector (e.g., `.card`)
+- The folders inside the drawer = the nested child selectors (e.g., `.card-title`, `.card-footer`)
+- Putting folders inside the correct drawer = nesting child rules inside the parent rule in your CSS
+
+---
+
 ## Overview
 
 Native CSS nesting allows you to nest selectors inside other selectors, similar to preprocessors like Sass, but with native browser support. This improves code organization, reduces repetition, and maintains context in your stylesheets.
@@ -363,7 +375,7 @@ The `&` represents the parent selector:
 ## Differences from Sass Nesting
 
 | Feature | Sass | Native CSS |
-|---------|------|------------|
+| ------- | ---- | ---------- |
 | Type selector nesting | `p { }` works | Must use `& p { }` |
 | Parent reference | `&` is optional for classes | `&` required for pseudo-classes |
 | Interpolation | `#{$var}` supported | Not supported |
@@ -862,6 +874,7 @@ The `&` represents the parent selector:
 **Q5: How does `&` work in complex scenarios?**
 
 **A:** `&` represents the complete parent selector. It can:
+
 - Appear multiple times: `.theme &` → `.theme .button`
 - Concatenate: `&-large` → `.button-large`
 - Combine with selectors: `& > .child` → `.button > .child`
@@ -870,6 +883,7 @@ The `&` represents the parent selector:
 **Q6: When should you avoid nesting?**
 
 **A:** Avoid nesting when:
+
 - It creates more than 3 levels of depth
 - Specificity becomes problematic
 - Selectors aren't logically related

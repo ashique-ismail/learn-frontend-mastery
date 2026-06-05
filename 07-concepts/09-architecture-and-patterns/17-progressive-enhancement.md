@@ -1,5 +1,17 @@
 # Progressive Enhancement
 
+## The Idea
+
+**In plain English:** Progressive enhancement means building a website so it works for everyone first — even with just basic HTML and no fancy features — and then adding better visuals and interactive behavior on top for people whose devices can handle it. Think of it as layering improvements rather than expecting everyone to have the best setup.
+
+**Real-world analogy:** Imagine a restaurant menu that first exists as a plain printed card (everyone can read it), then gets a laminated color version for most tables (looks nicer), and finally a touchscreen tablet version at premium seats (fully interactive). If the tablet crashes, people at those seats can still use the printed card.
+
+- The plain printed card = semantic HTML (the baseline that works everywhere)
+- The laminated color version = CSS (visual styling layered on top)
+- The interactive touchscreen tablet = JavaScript (behavior added for capable environments)
+
+---
+
 ## Overview
 
 Progressive Enhancement (PE) is a layered approach to web development: start with a solid semantic HTML foundation that works everywhere, then layer CSS for presentation, then JavaScript for behavior. Each layer enhances the experience for capable environments while remaining functional without it.

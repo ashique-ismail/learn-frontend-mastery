@@ -1,5 +1,17 @@
 # Implement Tic-Tac-Toe
 
+## The Idea
+
+**In plain English:** Tic-tac-toe is a two-player game on a 3x3 grid where each player takes turns marking a square with their symbol (X or O), and the first to get three in a row — horizontally, vertically, or diagonally — wins. Implementing it in code means tracking who marked which square, checking after every move whether someone has won, and deciding when the game is over.
+
+**Real-world analogy:** Think of a shared whiteboard in a classroom where two students take turns writing their initials in one of nine boxes. A teacher watches after each turn and scans all eight possible three-in-a-row lines to see if one student has claimed them all.
+
+- The whiteboard grid = the `board` array (9 cells storing X, O, or empty)
+- A student's turn = `currentPlayer` (tracks whose move it is, switching after each mark)
+- The teacher scanning the lines = `calculateWinner` (checks all 8 winning combinations after every move)
+
+---
+
 ## Core Logic
 
 ```ts

@@ -1,5 +1,18 @@
 # Test Coverage
 
+## The Idea
+
+**In plain English:** Test coverage is a way of measuring how much of your code is actually run when your tests execute. Think of it like a highlighter — it shows you which parts of your program your tests "touched" and which parts were completely ignored.
+
+**Real-world analogy:** Imagine a restaurant health inspector who has a checklist of every area in the kitchen — the grill, the fridge, the prep counter, the dishwasher. After the inspection, the report shows which areas were checked and which were skipped. A high score means most areas were inspected, but it does NOT mean the food is delicious — only that someone looked at each station.
+
+- The kitchen areas = lines or branches of your code
+- The inspector's checklist = your test suite
+- The inspection report percentage = your coverage score
+- Checking a station (but not tasting the food) = running code without a meaningful assertion
+
+---
+
 ## Overview
 
 Test coverage measures which parts of your code are executed by tests. While coverage metrics provide useful feedback, they don't guarantee test quality. High coverage doesn't mean good tests, and chasing 100% coverage often leads to wasteful testing. Understanding what coverage means, what it doesn't mean, and how to use it effectively is crucial for a healthy testing strategy.

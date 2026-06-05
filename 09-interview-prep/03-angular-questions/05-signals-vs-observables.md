@@ -1,5 +1,18 @@
 # Signals vs Observables — When to Use What
 
+## The Idea
+
+**In plain English:** Signals and Observables are two ways a web app keeps track of changing information. A Signal is like a scoreboard that always shows the current score — you can check it at any moment. An Observable is like a live commentary feed — it tells you about events as they happen over time, one after another.
+
+**Real-world analogy:** Imagine a sports stadium. The scoreboard updates instantly whenever a goal is scored, and anyone glancing at it sees the current score right away. Meanwhile, a radio commentator broadcasts a play-by-play stream of every event as they unfold throughout the match.
+
+- The scoreboard = a Signal (always holds the current value, readable instantly)
+- The radio broadcast stream = an Observable (a sequence of events delivered over time)
+- Glancing at the scoreboard = reading a Signal synchronously with `mySignal()`
+- Tuning in to the radio commentary = subscribing to an Observable to receive future events
+
+---
+
 ## Core Difference
 
 | | Signals | Observables (RxJS) |

@@ -1,5 +1,18 @@
 # Design a Multi-Tenant SaaS Frontend
 
+## The Idea
+
+**In plain English:** A multi-tenant SaaS (Software as a Service) is a single app that serves many different companies at once, where each company (called a "tenant") sees their own version with their own logo, colors, data, and settings — but they're all running on the same underlying code.
+
+**Real-world analogy:** Think of a shopping mall where many different stores operate under one roof. Each store has its own name, decor, staff, and products — but they all share the same building, electricity, and parking lot.
+
+- The mall building = the shared app code and servers
+- Each individual store = each tenant (company) using the app
+- Each store's unique decor and signage = per-tenant theming and branding
+- The store's private stock room = each tenant's isolated data that other stores cannot access
+
+---
+
 ## What Is Multi-Tenancy?
 
 Multiple customers (tenants) share the same application codebase, but each experiences their own isolated, customised version. Tenants may be companies, organizations, or user groups.

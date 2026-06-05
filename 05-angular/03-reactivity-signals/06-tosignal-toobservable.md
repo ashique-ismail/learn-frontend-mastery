@@ -1,6 +1,20 @@
 # toSignal and toObservable - RxJS Interop in Angular
 
+## The Idea
+
+**In plain English:** toSignal and toObservable are two translator functions in Angular that let you switch between two different ways of handling changing data: Signals (a simple holder that always has a current value you can read instantly) and Observables (a stream that delivers values over time, like a live feed). They let older Observable-based code and newer Signal-based code work side by side.
+
+**Real-world analogy:** Imagine a radio station broadcasting music live (the Observable) and a digital display board at a bus stop that always shows the current song title (the Signal). A technician connects them so the board stays up to date, and a separate device lets the display board trigger new broadcasts when its content changes.
+
+- The radio broadcast stream = the Observable (delivers values over time)
+- The bus stop display board = the Signal (always holds the latest value, readable at any moment)
+- The technician connecting broadcast to board = toSignal() (converts an Observable into a Signal)
+- The device that triggers a broadcast when the board changes = toObservable() (converts a Signal into an Observable)
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [toSignal() Function](#tosignal-function)
 - [toObservable() Function](#toobservable-function)
@@ -19,6 +33,7 @@
 Angular provides seamless interoperability between Signals and RxJS Observables through `toSignal()` and `toObservable()`. These utilities enable gradual migration from RxJS to Signals while maintaining backward compatibility with existing RxJS-based code.
 
 **Key Use Cases:**
+
 - Wrapping HTTP calls in signals
 - Converting existing Observable-based services to signals
 - Mixing reactive paradigms when needed
@@ -345,7 +360,7 @@ export class ReactiveQueryComponent {
 
 ## toObservable() Function
 
-### Basic Usage
+### Basic toObservable Usage
 
 ```typescript
 import { Component, signal } from '@angular/core';
@@ -1245,7 +1260,7 @@ export class DataService {
 
 ### Q2: Why should you provide an initialValue to toSignal()?
 
-**Answer:** Providing initialValue ensures the signal always has a value and improves type safety (Signal<T> instead of Signal<T | undefined>). It prevents undefined errors in templates and makes the signal immediately usable without null checks.
+**Answer:** Providing initialValue ensures the signal always has a value and improves type safety (`Signal<T>` instead of `Signal<T | undefined>`). It prevents undefined errors in templates and makes the signal immediately usable without null checks.
 
 ### Q3: When should you use toObservable()?
 

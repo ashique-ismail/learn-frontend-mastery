@@ -1,5 +1,19 @@
 # Feature Sliced Design (FSD)
 
+## The Idea
+
+**In plain English:** Feature Sliced Design is a way of organizing all the files in a web app so that each piece of code lives in a clearly labelled "floor" of a building, and code on a higher floor can call down to lower floors, but never the other way around. This keeps features from becoming tangled messes where changing one thing accidentally breaks another.
+
+**Real-world analogy:** Think of a large department store with six floors. The ground floor (utilities) sells basic supplies anyone can use. As you go up, each floor sells more specialized things built from what's below — electronics uses cables from the ground floor, but the cables section never needs to stock TVs. Each department on the same floor runs its own checkout and never borrows stock from the department next door.
+
+- The ground floor (Supplies) = `shared/` — generic utilities every part of the app can use
+- The middle floors (Departments) = `entities/`, `features/`, `widgets/` — business objects, user actions, and composed UI sections
+- The top floor (Store Management) = `pages/` and `app/` — the overall layout that assembles everything below
+- Each floor only restocking from floors below = the one-directional import rule (no upward imports)
+- Each department running its own checkout = slice isolation (same-floor sections cannot import from each other)
+
+---
+
 ## Overview
 
 Feature Sliced Design (FSD) is a frontend architectural methodology that organizes code by business features and layers, with strict rules about which layers can depend on which. Unlike component-library-focused methodologies (Atomic Design), FSD addresses the full application architecture — where to put API calls, state, business logic, pages, and shared utilities. It's particularly effective for medium-to-large applications where feature isolation and maintainability are critical.

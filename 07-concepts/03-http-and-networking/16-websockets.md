@@ -1,5 +1,17 @@
 # WebSockets
 
+## The Idea
+
+**In plain English:** A WebSocket is a permanent, two-way telephone line between your browser and a server — once the call is connected, either side can talk at any moment without needing to redial. Unlike a normal web request (where you ask a question and wait for one answer), a WebSocket connection stays open so the server can push new information to you instantly.
+
+**Real-world analogy:** Imagine a walkie-talkie conversation between two people on a film set. Either person can press the button and speak at any time without waiting for the other to finish — the channel stays open all day.
+
+- The walkie-talkie channel staying open all day = the persistent WebSocket connection
+- Either person pressing the button and speaking = the client or server sending a message at any time
+- The initial "Radio check, do you copy?" to confirm both sides are on the same frequency = the HTTP handshake that upgrades to a WebSocket connection
+
+---
+
 ## Overview
 
 WebSockets provide full-duplex, bidirectional communication between client and server over a single TCP connection. Unlike HTTP's request-response model, WebSockets allow both parties to send messages independently at any time. This makes them ideal for real-time applications like chat, live notifications, collaborative editing, and gaming.

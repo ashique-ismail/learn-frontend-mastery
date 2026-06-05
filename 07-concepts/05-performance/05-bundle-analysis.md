@@ -1,5 +1,17 @@
 # Bundle Analysis
 
+## The Idea
+
+**In plain English:** Bundle analysis is the process of looking inside the single compressed file (called a "bundle") that a website sends to your browser, to see exactly which pieces of code are inside it and how much space each piece takes up. A "bundle" is like a packed suitcase — all your website's code squished together — and analysis tells you if you accidentally packed things you don't need.
+
+**Real-world analogy:** Imagine you are packing a suitcase for a weekend trip but you keep stuffing in extra clothes "just in case." At the airport, your bag is overweight and you get charged a fee. A bundle analyzer is like laying every item out on the bed before you pack, so you can spot the bulky winter coat (a huge library like moment.js) you packed for a beach trip, the duplicate socks you packed twice (duplicate dependencies), and the fancy outfit you will never actually wear (unused code).
+
+- The suitcase = the JavaScript bundle sent to the browser
+- Each item of clothing = a library or piece of code inside the bundle
+- The overweight fee = slow page load time caused by a bloated bundle
+
+---
+
 ## Overview
 
 You cannot optimize what you cannot see. Bundle analysis is the process of visualizing what's inside your JavaScript bundles — which libraries, how large each module is, what's duplicated, and what you didn't know was even there. This guide covers the primary analysis tools, how to interpret their output, and what the most common bundle bloat patterns look like and how to fix them.

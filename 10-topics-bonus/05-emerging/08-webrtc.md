@@ -1,5 +1,17 @@
 # WebRTC
 
+## The Idea
+
+**In plain English:** WebRTC lets two browsers talk directly to each other — sending live video, audio, or any data — without anything going through a middleman server. Think of it as the technology that powers video calls you make right inside a browser tab, with no app to install.
+
+**Real-world analogy:** Imagine two people exchanging walkie-talkies at a busy train station. A station announcer (the signaling server) first shouts out to both of them so they can find each other, then hands them each a walkie-talkie. After that, they speak directly to one another — the announcer is no longer involved.
+
+- The station announcer = the signaling server (helps the two browsers locate each other)
+- The walkie-talkie channel = the peer-to-peer (P2P) connection (direct line between browsers)
+- The voices transmitted = the audio, video, or data being streamed in real time
+
+---
+
 ## Introduction
 
 WebRTC (Web Real-Time Communication) enables peer-to-peer audio, video, and data sharing between browsers without plugins or intermediaries. It's the foundation for video conferencing, file sharing, gaming, and real-time collaboration applications on the web.

@@ -1,5 +1,17 @@
 # Angular Signals Store
 
+## The Idea
+
+**In plain English:** A Signals Store is a way to keep track of information (called "state") in your app so that whenever that information changes, only the parts of the screen that use it automatically update — no manual refresh needed. A "signal" is just a special variable that the app watches, and a "store" is the place where you organize and keep those watched variables together.
+
+**Real-world analogy:** Think of a live scoreboard at a sports stadium. The scoreboard shows the current score, time remaining, and player stats. Whenever something changes — a goal is scored, time ticks down — only the relevant section of the board updates instantly, without reprinting the whole thing.
+
+- The scoreboard = the Signals Store (the central place holding all the current data)
+- Each individual section of the board (score, timer, player name) = a signal (a single tracked piece of data)
+- The sections that auto-recalculate from others, like "points per minute" = computed signals (values derived automatically from other signals)
+
+---
+
 ## Overview
 
 Angular Signals represent a fundamental shift in how Angular handles reactivity and state management. Introduced in Angular 16 and matured in Angular 17+, Signals provide a fine-grained reactivity system that enables automatic change detection without Zone.js. The Signals Store pattern leverages this primitive to create lightweight, performant state management solutions with computed values, effects, and seamless integration with Angular's template system.
@@ -1117,6 +1129,7 @@ export class UndoRedoStore {
 ## When to Use Signals Store
 
 **Use Signals Store when:**
+
 - Angular 16+ applications
 - Need fine-grained reactivity
 - Want synchronous state updates
@@ -1125,6 +1138,7 @@ export class UndoRedoStore {
 - Want to eliminate Zone.js
 
 **Consider alternatives when:**
+
 - Need time-travel debugging (use NgRx)
 - Complex async workflows (use Observables)
 - Team unfamiliar with Signals

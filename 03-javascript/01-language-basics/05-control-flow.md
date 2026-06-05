@@ -1,5 +1,17 @@
 # Control Flow and Labeled Statements
 
+## The Idea
+
+**In plain English:** Control flow is how a program decides which instructions to run, in what order, and how many times. Instead of always doing every line from top to bottom, code can make decisions (like "do this only if the user is logged in") or repeat actions (like "keep asking for a password until it's correct").
+
+**Real-world analogy:** Think of a theme park ride operator following a checklist. They check each rider before letting them on, skip anyone who doesn't meet the height requirement, and repeat the whole process for every new group of riders.
+
+- The height check = a condition (if statement)
+- Skipping a rider who is too short = a `continue` or `break` that stops or skips the current step
+- Repeating the process for each new group = a loop
+
+---
+
 ## Overview
 
 Control flow determines the order in which statements are executed in a program. JavaScript provides various control flow statements including conditionals (if/else, switch), loops (for, while, do-while), and jump statements (break, continue, return). Understanding control flow is fundamental to writing any program logic, and mastering advanced patterns like labeled statements can help in complex scenarios.
@@ -853,10 +865,12 @@ for (const user of users) {
 ## Resources
 
 ### Documentation
+
 - [MDN: Control Flow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
 - [MDN: Loops and Iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
 - [MDN: Labeled Statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label)
 
 ### Articles
+
 - [JavaScript Control Flow](https://javascript.info/ifelse)
 - [Understanding Loops](https://javascript.info/while-for)

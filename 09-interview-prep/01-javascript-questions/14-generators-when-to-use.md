@@ -1,5 +1,17 @@
 # Generators & WeakMap/WeakSet Use Cases
 
+## The Idea
+
+**In plain English:** A generator is a special kind of function that can pause itself in the middle and hand you one result at a time, instead of computing everything all at once. A WeakMap and WeakSet are like normal collections that hold objects, except they automatically forget an item the moment nothing else in your program is using it anymore.
+
+**Real-world analogy:** Imagine a vending machine that dispenses one snack each time you press a button, and you can press as many or as few times as you want — it does not load up every snack in advance.
+
+- The button press = calling `.next()` on a generator
+- The machine pausing between presses = the `yield` keyword stopping execution
+- The snack that comes out = the value the generator hands back to you
+
+---
+
 ## Generators
 
 ### What They Are

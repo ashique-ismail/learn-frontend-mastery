@@ -1,5 +1,17 @@
 # Angular Lifecycle Hooks Interview Questions
 
+## The Idea
+
+**In plain English:** Lifecycle hooks are special functions that Angular automatically calls at specific moments during a component's life — like when it first appears on screen, when it receives new data, or when it disappears. Think of them as checkpoints where you can run your own code at exactly the right time.
+
+**Real-world analogy:** Think of opening and running a pop-up food stall at a market. Before you serve customers you set up your equipment, during the day you restock and adjust, and at the end of the day you pack everything away and clean up so you leave no mess behind.
+
+- The stall setup phase = `ngOnInit` (prepare everything before the component is visible)
+- Restocking and adjusting during the day = `ngOnChanges` / `ngDoCheck` (react to new data or check for updates)
+- Packing up and cleaning at the end = `ngOnDestroy` (cancel subscriptions and timers so nothing leaks)
+
+---
+
 ## Table of Contents
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)

@@ -1,5 +1,18 @@
 # useSyncExternalStore
 
+## The Idea
+
+**In plain English:** `useSyncExternalStore` is a React hook that lets your component listen to a data source that lives outside of React — like a global variable, a browser API, or a third-party library — and automatically re-draw the screen whenever that data changes.
+
+**Real-world analogy:** Imagine a scoreboard at a sports arena. The scoreboard subscribes to the official score feed, and whenever the score changes, the board updates instantly so every fan in the arena sees the exact same score at the same time — no one sees an old score while someone else sees the new one.
+
+- The scoreboard = the React component displaying data
+- The official score feed = the external store (data source outside React)
+- Subscribing to the feed = calling `useSyncExternalStore` with a subscribe function
+- Every fan seeing the same score simultaneously = React's tearing prevention (all components see the same snapshot)
+
+---
+
 ## Overview
 
 `useSyncExternalStore` is a React 18+ hook designed to **subscribe to external stores** in a way that's safe with concurrent rendering and SSR. It prevents "tearing" (inconsistent UI due to interrupted renders) and ensures server/client consistency.
@@ -81,17 +94,20 @@ const snapshot = useSyncExternalStore(
 ### Parameters
 
 **subscribe**: `(onStoreChange: () => void) => () => void`
+
 - Called once when component mounts
 - Should subscribe to store and call `onStoreChange` when store changes
 - Must return cleanup function
 
 **getSnapshot**: `() => Snapshot`
+
 - Returns current snapshot of store
 - Called during render
 - Must return immutable value
 - If return value changes (by `Object.is`), component re-renders
 
 **getServerSnapshot**: `() => Snapshot` (optional)
+
 - Used during SSR
 - Should return initial snapshot
 - Must match server-rendered HTML

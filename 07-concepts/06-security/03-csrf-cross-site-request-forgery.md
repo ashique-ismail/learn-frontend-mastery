@@ -1,5 +1,17 @@
 # CSRF (Cross-Site Request Forgery)
 
+## The Idea
+
+**In plain English:** CSRF is a type of attack where a malicious website tricks your browser into secretly sending a request to another website you are already logged into — performing actions you never intended, like transferring money or changing your password. Your browser is the unwitting messenger carrying your login credentials to do the attacker's bidding.
+
+**Real-world analogy:** Imagine you are at work and you left your employee badge on your desk. A sneaky co-worker grabs your badge, walks to the supply room, and signs out expensive equipment in your name — all while you are sitting at your desk totally unaware. The supply room trusts the badge, not the person holding it.
+- The badge = your session cookie (the credential the website trusts)
+- The sneaky co-worker = the malicious website (evil.com)
+- The supply room = the legitimate website (bank.com) that accepts the request
+- Signing out equipment in your name = the forged request (e.g., transferring money from your account)
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [How CSRF Attacks Work](#how-csrf-attacks-work)

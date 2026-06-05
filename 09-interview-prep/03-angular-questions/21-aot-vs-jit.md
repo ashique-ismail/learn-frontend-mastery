@@ -1,5 +1,19 @@
 # AOT vs JIT Compilation
 
+## The Idea
+
+**In plain English:** When you write an Angular app, your HTML-like templates need to be translated into instructions the browser can run. AOT (Ahead-Of-Time) does that translation before the app ships, while JIT (Just-In-Time) does it inside the browser right as the user loads the page.
+
+**Real-world analogy:** Imagine a chef preparing meals for an airline. An AOT chef cooks and packs every meal in the kitchen before the flight departs. A JIT chef boards the plane with raw ingredients and cooks each meal after passengers have already sat down.
+
+- The kitchen before the flight = build time (your development machine)
+- The airplane mid-flight = the user's browser at runtime
+- Cooking the meals in advance = AOT compiling templates before shipping
+- Cooking after boarding = JIT compiling templates on every page load
+- The packed meal ready to eat = pre-compiled JavaScript instructions Ivy produces
+
+---
+
 ## What Gets Compiled?
 
 Angular has two distinct compilation steps:

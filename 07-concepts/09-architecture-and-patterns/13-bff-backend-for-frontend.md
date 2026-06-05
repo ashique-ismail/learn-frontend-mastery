@@ -1,5 +1,17 @@
 # Backend for Frontend (BFF)
 
+## The Idea
+
+**In plain English:** A Backend for Frontend (BFF) is a small server-side helper built specifically for one type of app — like a website or a mobile app — that gathers information from many different places and hands it back in exactly the shape that app needs. Think of a "backend" as a behind-the-scenes computer that fetches and organises data, and a "frontend" as the visible screen the user actually sees.
+
+**Real-world analogy:** Imagine a hotel concierge desk. A guest walks up and says "I need a taxi, dinner reservation, and theatre tickets." The concierge makes three separate calls to a taxi company, a restaurant, and a theatre — and then comes back with one tidy summary for the guest instead of making the guest call all three places themselves.
+
+- The guest = the frontend app (web or mobile)
+- The concierge = the BFF server
+- The taxi company, restaurant, and theatre = the separate backend microservices (user service, orders service, etc.)
+
+---
+
 ## Table of Contents
 1. [Introduction and Origin](#introduction-and-origin)
 2. [What Problem BFF Solves](#what-problem-bff-solves)

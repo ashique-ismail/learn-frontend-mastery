@@ -1,6 +1,19 @@
 # useMemo Hook - Optimizing Expensive Computations
 
+## The Idea
+
+**In plain English:** `useMemo` is a way to tell React "remember the answer to this calculation, and only redo it if the inputs change." Instead of running the same heavy math or search every time the screen updates, React keeps the saved result and reuses it when nothing relevant has changed.
+
+**Real-world analogy:** Imagine a librarian who looks up a list of all books by a specific author. The first time you ask, she searches through thousands of cards — that takes a while. But she writes the result on a sticky note. The next time someone asks the same question, she just reads the sticky note instead of searching again. She only throws out the sticky note and searches fresh when the library gets new books added.
+
+- The sticky note = the cached (memoized) value React stores
+- Searching through the card catalog = the expensive computation that runs inside `useMemo`
+- New books being added = a dependency changing, which tells React to recalculate
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Basic Concepts](#basic-concepts)
 - [Core API](#core-api)

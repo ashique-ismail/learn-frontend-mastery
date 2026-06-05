@@ -1,5 +1,18 @@
 # React Performance Interview Questions
 
+## The Idea
+
+**In plain English:** React performance is about making your app feel fast by avoiding wasted work — like skipping calculations you already did, or not redrawing parts of the screen that haven't changed. A "re-render" just means React re-runs a component's code to update what you see on screen.
+
+**Real-world analogy:** Imagine a whiteboard in a classroom. Every time a teacher updates one small part of the lesson, an overly eager assistant erases and rewrites the entire board — even the parts that didn't change. A smarter assistant would check first: "Did this section actually change?" and only rewrite what's new.
+
+- The whiteboard = the UI (what the user sees)
+- Rewriting the whole board = an unnecessary re-render
+- The smart assistant checking what changed = React.memo / useMemo / useCallback
+- Only rewriting changed sections = React skipping re-renders when props or values are the same
+
+---
+
 ## Overview
 
 Performance questions test your ability to identify bottlenecks, optimize renders, and build fast React applications. Understanding memoization, code splitting, and profiling is essential for senior positions.

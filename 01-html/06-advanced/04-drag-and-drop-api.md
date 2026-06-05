@@ -1,5 +1,17 @@
 # Drag and drop API
 
+## The Idea
+
+**In plain English:** The Drag and Drop API is a built-in browser feature that lets users click and hold an element on a webpage, move it to a new spot, and release it there — just like moving files around on your desktop. An "API" (Application Programming Interface) is just a set of ready-made tools the browser gives you to make something work.
+
+**Real-world analogy:** Imagine sorting physical index cards on a desk. You pick one up, slide it across the desk, and place it in a new position among the others.
+
+- The index card you pick up = the draggable HTML element
+- Your hand holding the card mid-air = the `dataTransfer` object (carries the data while dragging)
+- The spot on the desk where you set the card down = the drop target (the element that listens for the `drop` event)
+
+---
+
 ## Overview
 
 The HTML Drag and Drop API allows elements to be dragged and dropped using mouse or touch. It provides events and data transfer mechanisms for building drag-and-drop interfaces.

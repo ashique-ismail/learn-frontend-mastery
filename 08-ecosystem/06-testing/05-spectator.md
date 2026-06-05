@@ -1,5 +1,17 @@
 # Spectator (Angular Testing)
 
+## The Idea
+
+**In plain English:** Spectator is a helper library that makes writing tests for Angular apps much less repetitive. Instead of writing a lot of setup code every time you want to test a button click or a data fetch, Spectator gives you simple shortcuts so you can focus on what you actually want to check.
+
+**Real-world analogy:** Imagine a driving instructor who has a pre-set checklist and a car already adjusted and ready before each lesson — you just get in and practice the skill you came to work on, rather than spending the whole session adjusting mirrors and reading the manual. Then each observation maps like this:
+
+- The pre-adjusted car = Spectator's `createComponentFactory` that sets up the Angular testing environment for you
+- The checklist of standard tests = Spectator's built-in query and interaction helpers (like `spectator.click` and `spectator.query`)
+- The actual driving lesson = the specific behavior you are testing (does the button work, does the service return the right data)
+
+---
+
 ## What It Is
 
 Spectator is a testing library for Angular that reduces boilerplate in unit and integration tests. It wraps `TestBed` with a more ergonomic API.

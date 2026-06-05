@@ -1,6 +1,20 @@
 # RxJS Error Handling
 
+## The Idea
+
+**In plain English:** Error handling in RxJS is a way to decide what your app should do when something goes wrong while waiting for data — like a failed internet request — so the app can recover gracefully instead of crashing. An "observable" is just a stream of data your app listens to over time.
+
+**Real-world analogy:** Imagine you order a pizza and the delivery driver calls to say they got lost. You have options: ask them to try again (retry), accept a backup pizza from the freezer (fallback value), or cancel the whole order and tell someone (re-throw the error).
+
+- The delivery driver getting lost = an error occurring in the observable stream
+- Asking the driver to try again = the `retry` operator
+- Accepting the freezer pizza = the `catchError` operator returning a fallback value
+- Cancelling and notifying someone = re-throwing the error with `throwError`
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [catchError](#catcherror)
 - [retry](#retry)

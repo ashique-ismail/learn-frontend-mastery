@@ -1,5 +1,17 @@
 # Implement Infinite Scroll Component
 
+## The Idea
+
+**In plain English:** Infinite scroll is a technique where a webpage automatically loads and shows more content as you scroll down, so you never have to click a "next page" button. Instead of loading everything at once, the page quietly fetches a fresh batch of items whenever you get close to the bottom.
+
+**Real-world analogy:** Imagine you are at a buffet where a server watches you eat. When you finish most of what is on your plate, the server immediately brings out a fresh plate of food before you even have to ask — so your plate is never fully empty and you never have to get up to fetch more yourself.
+
+- The server watching your plate = the `IntersectionObserver` monitoring a hidden marker element at the bottom of the list
+- You nearly finishing your plate = the marker element coming into view in the browser window (the "viewport")
+- The server bringing the next plate = the app fetching the next page of data from the server and appending it to the list
+
+---
+
 ## Core Concept
 
 Use `IntersectionObserver` to watch a "sentinel" element at the bottom of the list. When it enters the viewport, load the next page.

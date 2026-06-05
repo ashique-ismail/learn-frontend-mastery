@@ -1,5 +1,17 @@
 # Deep Clone vs Shallow Clone
 
+## The Idea
+
+**In plain English:** When you copy an object in JavaScript, you can either make a "surface copy" (shallow clone) that shares inner parts with the original, or a fully independent copy (deep clone) where nothing is shared. Changing a deep clone never affects the original.
+
+**Real-world analogy:** Imagine photocopying a binder of documents. A shallow copy is like copying only the binder's cover page and then putting sticky notes pointing to the original pages inside — the pages themselves are shared. A deep copy is like photocopying every single page inside too, so you end up with a completely separate binder.
+
+- The binder cover = the top-level object
+- The sticky notes pointing to original pages = references to nested objects
+- Photocopying every page = deep cloning all nested values
+
+---
+
 ## Why It Matters
 
 Mutation bugs from unintended reference sharing are one of the most common JavaScript bugs. Interviewers use this question to test object model understanding and practical cloning knowledge.

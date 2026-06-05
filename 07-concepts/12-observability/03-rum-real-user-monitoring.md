@@ -1,5 +1,17 @@
 # RUM — Real User Monitoring
 
+## The Idea
+
+**In plain English:** RUM (Real User Monitoring) is a way for websites to automatically measure how fast and smooth the experience is for every real person who visits — like collecting a speed report from each visitor's own device and internet connection.
+
+**Real-world analogy:** Imagine a restaurant that hands every customer a short feedback card as they leave, asking how long they waited and how they enjoyed the meal. Instead of one critic reviewing the restaurant in perfect conditions, the owner gets thousands of real reports from real customers on real days.
+
+- The feedback card = the small piece of monitoring code added to a webpage
+- Each customer filling out the card = a real user's browser automatically recording performance data
+- The restaurant owner reviewing all cards = the developer analyzing the collected metrics to find and fix slow experiences
+
+---
+
 ## Overview
 
 Real User Monitoring (RUM) collects performance and behavior metrics from actual users' browsers as they interact with your application. Unlike synthetic monitoring (running scripted tests in a controlled lab environment), RUM captures the true distribution of experiences across different devices, networks, locations, and browser versions. This guide covers the difference between RUM and synthetic monitoring, using the PerformanceObserver API to collect Core Web Vitals, reporting strategies, and privacy considerations.

@@ -1,10 +1,23 @@
 # Solid.js and Fine-Grained Reactivity
 
+## The Idea
+
+**In plain English:** Solid.js is a tool for building interactive web pages where only the exact parts of the page that need to change actually update — instead of rebuilding large chunks every time something small changes. Think of "reactivity" as the page automatically responding to changes in data without you manually telling it what to refresh.
+
+**Real-world analogy:** Imagine a scoreboard at a sports stadium with individual light-up tiles for each player's score. When one player scores a point, only that player's tile lights up and changes — the rest of the board stays exactly as it is.
+
+- The scoreboard = the web page (the DOM)
+- Each individual score tile = a specific DOM node tracked by a signal
+- The act of a player scoring = a signal value changing
+- The tile lighting up = the fine-grained reactive update to only that node
+
+---
+
 ## Overview
 
 Solid.js is a declarative JavaScript library for building user interfaces that achieves exceptional performance by abandoning the virtual DOM entirely. Instead of re-running component functions on every state change, Solid compiles JSX into actual DOM operations and uses a synchronous reactive graph — signals, memos, and effects — to track exactly which DOM nodes depend on which pieces of state. When state changes, only the affected DOM nodes update, with no diffing, no component re-rendering, and no garbage collection pressure from discarded virtual nodes.
 
-```
+```text
 React (Virtual DOM model):
   State change
     └─► Re-run component function
@@ -398,7 +411,7 @@ function ThemedButton() {
 
 ## Comparison with React Hooks
 
-```
+```text
 Concept                | React                    | Solid
 ──────────────────────|──────────────────────────|──────────────────────────
 State                  | useState hook            | createSignal
@@ -459,7 +472,7 @@ function UserProfile() {
 
 ## Performance Characteristics
 
-```
+```text
 Benchmark: JS Framework Benchmark (v1.0, higher = better)
                      | Create 1k rows | Replace 1k rows | Partial update | Memory
 ─────────────────────|────────────────|─────────────────|───────────────|────────

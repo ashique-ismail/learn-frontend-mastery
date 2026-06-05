@@ -1,12 +1,24 @@
 # Prototype Pollution
 
+## The Idea
+
+**In plain English:** Prototype pollution is a security flaw where a hacker tricks a program into secretly adding properties to a shared "blueprint" that every object in JavaScript uses, so those fake properties suddenly appear on everything in the app. A "prototype" is just a template that objects copy their default abilities from.
+
+**Real-world analogy:** Imagine a school where every student's ID card is printed from one master template stored in the office. A sneaky student finds a way to edit that master template and adds "Has hall pass: YES" to it. Now every new ID card printed — for every student — automatically says "Has hall pass: YES," even though none of them actually earned one.
+
+- The master template in the office = `Object.prototype` (the shared blueprint all JavaScript objects inherit from)
+- Adding "Has hall pass: YES" to the template = injecting a property like `isAdmin: true` onto `Object.prototype`
+- Every student's ID card inheriting the fake entry = every object in the app now having that injected property
+
+---
+
 ## Overview
 
 Prototype pollution is a JavaScript vulnerability where an attacker can inject properties into `Object.prototype` — the base prototype that every object inherits from. Because all objects inherit from `Object.prototype`, a polluted prototype affects every object in the application: `{}.__proto__.isAdmin` becoming `true` means every object in the process has `isAdmin === true`. This can bypass authorization checks, cause RCE in server-side code, and corrupt application logic in ways that are extremely hard to debug.
 
 ## How JavaScript Prototypes Work
 
-```
+```text
 Prototype chain:
 
 const obj = {};
@@ -128,7 +140,7 @@ setByPath({}, '__proto__.isAdmin', true);
 
 ## Real-World Impact
 
-```
+```text
 Prototype pollution impacts:
 
 Authorization bypass:

@@ -1,5 +1,17 @@
 # CSS Transitions
 
+## The Idea
+
+**In plain English:** A CSS transition is a way to tell a webpage element to change smoothly over time instead of instantly snapping from one look to another. For example, instead of a button's color jumping from blue to green the moment you hover over it, it gradually fades from one to the other.
+
+**Real-world analogy:** Think of a dimmer switch on a light. When you slowly turn the dial, the light gradually brightens or dims over a few seconds rather than flicking on or off with a hard click.
+
+- The dimmer dial = the `transition` property (it controls how the change happens)
+- The light going from dim to bright = the CSS property changing value (like `opacity: 0` to `opacity: 1`)
+- The time it takes to dim or brighten = `transition-duration` (how long the change takes)
+
+---
+
 ## Transition Properties
 
 ### transition-property

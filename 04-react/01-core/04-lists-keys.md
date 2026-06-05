@@ -1,5 +1,17 @@
 # Lists and Keys: Stable Identity Rules
 
+## The Idea
+
+**In plain English:** When React shows a list of items on screen, it needs a way to tell each item apart so it knows what changed, what was added, and what was removed. A "key" is a unique label you give each item — like a name tag — so React never gets them confused.
+
+**Real-world analogy:** Imagine a teacher handing back graded tests to a class of students. Each test has the student's name written on it, so the teacher knows exactly whose test is whose — even if students change seats.
+
+- The student's name on the test = the `key` prop on each list item
+- Each graded test = each React element in the list
+- The teacher handing back tests = React updating the screen
+
+---
+
 ## Overview
 
 Rendering lists is a fundamental operation in React applications. Keys are special attributes that help React identify which items have changed, been added, or removed. Understanding how keys work is crucial for writing performant and bug-free React applications.
@@ -730,11 +742,11 @@ function GroupedList({ items }) {
 
 React warns about key issues in console:
 
-```
+```text
 Warning: Each child in a list should have a unique "key" prop.
 ```
 
-```
+```text
 Warning: Encountered two children with the same key, `1`.
 Keys should be unique so that components maintain their identity across updates.
 ```

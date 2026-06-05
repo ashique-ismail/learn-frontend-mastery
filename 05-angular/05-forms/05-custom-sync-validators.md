@@ -1,5 +1,18 @@
 # Custom Synchronous Validators in Angular
 
+## The Idea
+
+**In plain English:** A custom synchronous validator is a function you write yourself that checks a form field's value against your own rules (like "this username can't be 'admin'") and instantly tells the form whether the value is acceptable or not — no waiting for a server response.
+
+**Real-world analogy:** Imagine a bouncer at a club entrance who has a personal checklist — not just the standard "must be 18+" rule, but also "no hoodies on Fridays" and "name must not be on the banned list." He checks everything on the spot, right there at the door, without calling anyone.
+
+- The bouncer = the custom validator function
+- The checklist rules = the validation logic you write
+- "Access denied, reason: banned list" = the error object returned when the check fails
+- "Come on in" (no stamp needed) = returning `null` to signal the value is valid
+
+---
+
 ## Overview
 
 While Angular provides many built-in validators, real-world applications often require custom validation logic. Custom synchronous validators allow you to implement domain-specific validation rules, business logic constraints, and complex validation patterns that go beyond simple format checking.

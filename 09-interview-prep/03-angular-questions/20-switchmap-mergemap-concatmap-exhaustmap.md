@@ -1,5 +1,17 @@
 # switchMap vs mergeMap vs concatMap vs exhaustMap in Angular
 
+## The Idea
+
+**In plain English:** When you make multiple requests one after another (like typing in a search box), you need to decide what to do with the previous request that's still waiting for an answer — should you cancel it, wait for it, run both at once, or ignore the new one? These four operators each make a different choice about that situation.
+
+**Real-world analogy:** Imagine you're at a busy coffee counter and each customer shouts a new drink order while the barista is still making the last one. The barista has four possible policies:
+
+- The customer's shout = a new value emitted by the source (like a keystroke or button click)
+- The drink being made = the inner async operation (like an HTTP request)
+- The barista's policy = the flattening operator chosen (switchMap, mergeMap, concatMap, or exhaustMap)
+
+---
+
 ## The Operators in Angular Context
 
 These four flattening operators are the backbone of RxJS-based Angular code. They're used in Effects, HTTP chains, form interactions, and anywhere async operations chain together.

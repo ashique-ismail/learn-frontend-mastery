@@ -1,6 +1,19 @@
 # Injectors Hierarchy in Angular
 
+## The Idea
+
+**In plain English:** Angular's injector hierarchy is a system of layered "supply chains" that automatically delivers the tools (called services) your code needs, checking each level from smallest to largest until it finds what you asked for. A service is just a helper object — like a calculator or a data-fetcher — that your code borrows instead of building itself.
+
+**Real-world analogy:** Imagine a school where students can borrow supplies. First they check their own desk drawer, then their classroom cabinet, then the school office, and finally the district warehouse. Each level can stock its own supplies, and a student gets the nearest one available.
+
+- The student asking for a pencil = a component requesting a service
+- The desk drawer, classroom cabinet, school office, and district warehouse = the Element Injector, Module Injector, Root Injector, and Platform Injector
+- Finding the pencil at the classroom cabinet and stopping there = Angular resolving the dependency at the nearest injector that provides it
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Understanding Injectors](#understanding-injectors)
 - [Injector Hierarchy Structure](#injector-hierarchy-structure)

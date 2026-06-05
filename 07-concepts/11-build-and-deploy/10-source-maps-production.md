@@ -1,5 +1,17 @@
 # Source Maps in Production
 
+## The Idea
+
+**In plain English:** When your website's code gets squished into a tiny, unreadable blob before it goes live, a source map is a secret decoder file that lets developers trace any error back to the exact readable line where it went wrong — without letting strangers read your original code.
+
+**Real-world analogy:** Imagine a published novel that was condensed into a single-page summary for readers, but the editor keeps a private "chapter map" showing which sentence in the summary came from which page of the original manuscript. When a reader reports a confusing sentence, the editor uses that private map to find the exact original passage — but readers never see the full manuscript.
+
+- The single-page summary = the minified JavaScript bundle deployed to your site
+- The private chapter map = the hidden source map file kept off the public server
+- The editor's internal error review = your error monitoring tool (like Sentry) using the map to show readable stack traces
+
+---
+
 ## Overview
 
 Source maps translate minified, bundled JavaScript back to original source code, making error stack traces and debugging readable. The production decision is nuanced: source maps are essential for understanding production errors, but if public, they expose your source code to anyone on the internet. This guide covers the security/debuggability tradeoff, the three main strategies (no source maps, hidden/private, public), integration with error monitoring (Sentry), and how to strip source maps from the public bundle while keeping them for internal use.

@@ -1,5 +1,17 @@
 # Property-Based Testing
 
+## The Idea
+
+**In plain English:** Property-based testing is a way of checking that your code follows certain rules by automatically throwing thousands of random examples at it, instead of you having to come up with test cases by hand. A "property" is just a rule that should always be true no matter what input you give the code.
+
+**Real-world analogy:** Imagine a vending machine inspector whose job is to make sure the machine always gives correct change. Instead of testing a few specific purchases, the inspector randomly tries hundreds of different coin combinations and item prices, and checks that the change dispensed is always correct.
+
+- The inspector trying random purchases = the testing framework generating random inputs
+- The rule "change dispensed = amount paid minus item price" = the property (the invariant)
+- Finding one purchase where the change is wrong = the counterexample that fails the property
+
+---
+
 ## Overview
 
 Example-based testing asks "does this specific input produce this specific output?" Property-based testing asks "does this function hold these invariants for ALL valid inputs?" Instead of hand-picking test cases, property-based testing generates hundreds or thousands of random inputs and verifies that defined properties hold true for each one. When a counterexample is found, the framework automatically shrinks it to the minimal failing case. This guide covers the theory, the `fast-check` library for JavaScript/TypeScript, generators, shrinking, and when property-based testing pays off.

@@ -1,5 +1,17 @@
 # Taiga UI - Lightweight Angular UI Kit
 
+## The Idea
+
+**In plain English:** Taiga UI is a pre-built collection of polished interface pieces (buttons, forms, menus, date pickers, and more) designed specifically for Angular apps — so instead of building every visual element from scratch, you plug in ready-made, professionally styled components that already handle accessibility and mobile touch.
+
+**Real-world analogy:** Imagine outfitting a new restaurant kitchen. Instead of forging every knife, pot, and pan yourself, you order a professional chef's toolkit from a specialist supplier — each tool is lightweight, designed to work together, and you only unpack what you actually need for tonight's menu.
+- The restaurant kitchen = your Angular application
+- The specialist supplier's toolkit = the Taiga UI package library (@taiga-ui/cdk, core, kit)
+- Each individual tool (knife, ladle, tongs) = a UI component (input field, button, date picker)
+- Only unpacking what you need = tree-shaking (unused components are excluded from the final app bundle)
+
+---
+
 ## Overview
 
 Taiga UI is a lightweight, customizable Angular UI Kit with a focus on performance, accessibility, and developer experience. Developed by Tinkoff, Taiga UI provides a comprehensive set of components, directives, and utilities with extensive customization options, design tokens, and excellent mobile support. It emphasizes small bundle sizes, tree-shaking, and modern Angular features.

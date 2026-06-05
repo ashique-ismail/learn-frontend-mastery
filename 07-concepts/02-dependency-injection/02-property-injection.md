@@ -1,5 +1,17 @@
 # Property Injection
 
+## The Idea
+
+**In plain English:** Property injection is a way to give an object the tools it needs (called dependencies) after the object has already been created, by setting them directly on the object like filling in blanks on a form. Unlike handing everything over at the start, you can add or swap out these tools at any point during the object's life.
+
+**Real-world analogy:** Imagine you buy a basic smartphone out of the box. The phone works on its own, but you can slot in optional accessories after purchase — a SIM card, a microSD card, or a phone case — and you can even swap those accessories out later without buying a new phone.
+
+- The smartphone = the object (class instance) created without all accessories upfront
+- The accessories (SIM card, microSD card) = the dependencies set via properties after creation
+- Swapping the SIM card for a different carrier = changing a dependency at runtime
+
+---
+
 ## Overview
 
 Property injection (also called setter injection) is a dependency injection pattern where dependencies are provided through public properties or setter methods after object construction. Unlike constructor injection, property injection allows for optional dependencies and runtime dependency changes, but sacrifices some compile-time safety and immutability guarantees.

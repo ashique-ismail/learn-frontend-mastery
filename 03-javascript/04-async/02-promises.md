@@ -1,5 +1,17 @@
 # Promises: States, Chaining, and Error Handling
 
+## The Idea
+
+**In plain English:** A Promise is a placeholder for a value you don't have yet but expect to receive in the future — your code can keep running while waiting for it, and you attach instructions for what to do once the answer arrives (or something goes wrong).
+
+**Real-world analogy:** Ordering a meal at a restaurant and receiving a buzzer. When you order, the kitchen is still cooking — you don't wait frozen at the counter. The buzzer is your promise that a result is coming. When it goes off, you either pick up your food or find out they ran out.
+
+- The buzzer = the Promise object (a stand-in for the future result)
+- The kitchen finishing your food = the async operation completing (fulfillment)
+- The kitchen running out of ingredients = the async operation failing (rejection)
+
+---
+
 ## Overview
 
 A Promise is an object representing the eventual completion or failure of an asynchronous operation. Introduced natively in ES6 (ES2015) and specified in the Promises/A+ standard, Promises solve the two core problems of callbacks: inversion of control and composition difficulty.

@@ -1,5 +1,17 @@
 # Valibot - Lightweight Schema Validation
 
+## The Idea
+
+**In plain English:** Valibot is a tool that checks whether data (like form inputs) matches a set of rules you define — for example, making sure an email field actually contains an email address. A "schema" is just a blueprint that describes what valid data looks like.
+
+**Real-world analogy:** Imagine a airport security checkpoint. Before you board a plane, a guard checks your ID and bags against a strict checklist: valid passport, no prohibited items, correct boarding gate. Only passengers who pass every check are allowed through.
+
+- The checklist of rules = the Valibot schema
+- Each individual rule (valid passport, no liquids over 100ml) = a validation action like `v.email()` or `v.minLength(3)`
+- The traveller's bag and documents = the data being validated
+
+---
+
 ## Overview
 
 Valibot is a modern, lightweight schema validation library designed for optimal bundle size and tree-shaking. With a modular architecture where every validation function is a separate import, Valibot achieves significantly smaller bundle sizes compared to Zod, Yup, or Joi. It provides TypeScript-first design with excellent type inference and a functional, composable API.
@@ -706,6 +718,7 @@ function validateEmailQuick(email: string): boolean {
 ## When to Use Valibot
 
 **Use Valibot when:**
+
 - Bundle size is critical concern
 - Building client-side applications
 - Need excellent tree-shaking
@@ -715,6 +728,7 @@ function validateEmailQuick(email: string): boolean {
 - Want modern, functional API
 
 **Consider alternatives when:**
+
 - Need extensive ecosystem (use Zod or Yup)
 - Working with legacy codebases (use Joi)
 - Need maximum validation performance (use AJV)

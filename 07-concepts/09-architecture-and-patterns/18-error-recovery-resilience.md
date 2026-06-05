@@ -1,5 +1,18 @@
 # Error Recovery and Resilience Patterns
 
+## The Idea
+
+**In plain English:** Error recovery and resilience is about building apps that gracefully handle failures — like a network request failing or a third-party service going down — so the rest of the app keeps working instead of everything breaking at once. "Resilience" means your app can absorb problems and bounce back without the user noticing (or at least without them losing their work).
+
+**Real-world analogy:** Think of a hospital with separate wings for different departments. If there's a flood in the radiology wing, the emergency room, surgery, and pharmacy all keep running normally — the problem is contained to one section.
+
+- The hospital wing = a UI component or feature section
+- The flood in one wing = a bug or crashed component
+- The separate wings that keep running = other components wrapped in their own error boundaries
+- The emergency backup procedures = fallback UIs and graceful degradation strategies
+
+---
+
 ## Overview
 
 Resilience engineering applies to frontend just as it does to backend. A resilient frontend limits blast radius when things go wrong: a failed API call doesn't crash the page, a third-party script error doesn't block checkout, and a temporary outage recovers automatically without user intervention.

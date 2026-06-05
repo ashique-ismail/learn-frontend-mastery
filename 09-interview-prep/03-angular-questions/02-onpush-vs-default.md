@@ -1,5 +1,18 @@
 # OnPush vs Default Change Detection
 
+## The Idea
+
+**In plain English:** When you build a web app, Angular (a JavaScript framework) constantly watches your app for changes and updates what the user sees on screen. "Change Detection" is the process Angular uses to decide which parts of the screen need to be redrawn — Default checks everything every time, while OnPush is a smarter mode that only checks a section when it has a reason to believe something actually changed.
+
+**Real-world analogy:** Imagine a hotel cleaning staff. In the Default approach, housekeeping knocks on every single door in the hotel to check if the room needs cleaning after any guest does anything — even if only one guest ordered room service. In the OnPush approach, housekeeping only checks a room if a guest specifically pressed the "needs cleaning" button, or if fresh towels were delivered to that room (a new input arrived).
+
+- The hotel rooms = the components in your Angular app
+- Housekeeping checking a room = Angular running change detection on a component
+- The guest pressing the "needs cleaning" button = an event happening inside the component, or a new input reference arriving
+- Fresh towels being delivered = a new data object (with a new reference) being passed in as an Input
+
+---
+
 ## Default Change Detection
 
 Every component uses `ChangeDetectionStrategy.Default` unless you opt out.

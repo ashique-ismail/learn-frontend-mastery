@@ -1,5 +1,17 @@
 # Constructor Injection
 
+## The Idea
+
+**In plain English:** Constructor injection is a way of giving a piece of code (called a "class") everything it needs to do its job by handing those things in at the moment it is created, instead of letting the code go find them on its own. A "class" is just a blueprint for building a reusable piece of a program.
+
+**Real-world analogy:** When a chef is hired at a restaurant, the restaurant manager hands them a knife kit, a recipe book, and the keys to the pantry on their very first day — the chef never has to scavenge for those tools themselves.
+
+- The chef = the class (a piece of code with a job to do)
+- The knife kit, recipe book, and pantry keys = the dependencies (the tools the class needs)
+- The manager handing everything over on day one = the constructor (the moment of creation where all tools are provided)
+
+---
+
 ## Overview
 
 Constructor injection is a dependency injection pattern where dependencies are provided through a class constructor. It's the most explicit and recommended form of dependency injection because it makes dependencies visible, enforces required dependencies at compile time, and promotes immutability.

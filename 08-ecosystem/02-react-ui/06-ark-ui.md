@@ -1,5 +1,17 @@
 # Ark UI
 
+## The Idea
+
+**In plain English:** Ark UI is a toolkit of ready-made interactive pieces (like dropdowns, dialogs, and date pickers) that handle all the tricky behavior — keyboard controls, accessibility, open/close state — but ship with absolutely no visual styling, so you decide exactly how they look.
+
+**Real-world analogy:** Think of a car chassis rolling off a factory line — the engine, steering, brakes, and safety systems are all installed and working, but there is no paint, no seats, and no dashboard yet. A custom car shop (you) then finishes it with whatever color and interior they want.
+
+- The engine and brakes = Ark UI's built-in logic (focus trap, keyboard navigation, ARIA attributes)
+- The unpainted shell = the unstyled component markup Ark provides
+- The custom paint and interior = the CSS classes you add to make it match your design
+
+---
+
 ## What It Is
 
 Ark UI is a **headless component library** built on top of Zag.js (a state machine-based DOM library). It provides accessible, unstyled components that work across React, Solid, Vue, and Svelte with a consistent API.
@@ -160,7 +172,7 @@ Ark exposes state via data attributes for CSS styling:
 ## Comparison with Radix UI
 
 | | Ark UI | Radix UI |
-|---|---|---|
+| --- | --- | --- |
 | Framework support | React, Solid, Vue, Svelte | React only |
 | State machines | Zag.js (explicit state) | Internal hooks |
 | Components | 35+ | 30+ |

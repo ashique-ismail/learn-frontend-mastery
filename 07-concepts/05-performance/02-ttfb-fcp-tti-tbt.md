@@ -1,5 +1,18 @@
 # TTFB, FCP, TTI, and TBT Performance Metrics
 
+## The Idea
+
+**In plain English:** These are four stopwatch measurements that record exactly when different things happen as a webpage loads — when the server starts replying, when you first see anything on screen, when you can actually click and use the page, and how much time the browser was stuck doing heavy work instead of responding to you.
+
+**Real-world analogy:** Imagine ordering food at a restaurant. You sit down, order, and then wait. First the waiter acknowledges your order (that's the first signal back). Then your appetizer arrives and you can see food on the table. Then your main course arrives and you can finally eat a proper meal. During the wait, the kitchen was occasionally so slammed with one big order that all other orders were put on hold for a bit — add up all those hold-pauses and you get a total "kitchen blocked" time.
+
+- The waiter's first acknowledgement = TTFB (Time to First Byte — the server's first response reaches your browser)
+- The appetizer arriving = FCP (First Contentful Paint — you see the first text or image on screen)
+- The main course arriving and being able to eat = TTI (Time to Interactive — you can actually click and use the page)
+- The total time the kitchen was blocked by big orders = TBT (Total Blocking Time — the sum of time JavaScript was hogging the browser and blocking your clicks)
+
+---
+
 ## Overview
 
 Web performance metrics give precise, measurable meaning to "the page is slow." Google's Core Web Vitals and the extended performance metrics — Time to First Byte (TTFB), First Contentful Paint (FCP), Time to Interactive (TTI), and Total Blocking Time (TBT) — each capture a distinct dimension of the user experience. Understanding what drives each metric and how to measure it is essential for making defensible performance improvements.

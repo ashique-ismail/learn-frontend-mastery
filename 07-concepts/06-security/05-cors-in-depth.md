@@ -1,5 +1,16 @@
 # CORS (Cross-Origin Resource Sharing) In-Depth
 
+## The Idea
+
+**In plain English:** CORS is a security rule built into web browsers that controls which websites are allowed to request data from a different website. Without it, any random website could secretly pull your private information from another site you are logged into.
+
+**Real-world analogy:** Imagine a bank (the server) that only accepts phone calls from numbers on its approved caller list. When an unknown number calls asking for account details, the bank refuses and hangs up.
+- The bank = the server hosting the API
+- The approved caller list = the `Access-Control-Allow-Origin` list of trusted origins
+- The unknown caller = a website from a different domain trying to fetch data
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Same-Origin Policy](#same-origin-policy)

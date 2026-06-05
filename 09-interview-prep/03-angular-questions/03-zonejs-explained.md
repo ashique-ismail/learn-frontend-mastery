@@ -1,5 +1,17 @@
 # Zone.js — What It Does
 
+## The Idea
+
+**In plain English:** Zone.js is a library that watches over all the timed and network tasks your app starts (like fetching data or waiting a second before doing something), and automatically tells Angular when those tasks finish so Angular knows to update what's shown on screen. Without it, you'd have to manually tap Angular on the shoulder every single time.
+
+**Real-world analogy:** Imagine a restaurant kitchen where the manager (Angular) needs to know the moment any order is ready so they can send it out. Instead of every chef (async task) hunting down the manager themselves, a floor supervisor (Zone.js) is stationed at every kitchen station and radios the manager the instant any dish is plated.
+
+- The floor supervisor = Zone.js (intercepts and monitors every station)
+- Each kitchen station = a browser async API (setTimeout, fetch, Promise, etc.)
+- The manager being radioed = Angular's change detection being triggered
+
+---
+
 ## The Problem It Solves
 
 Angular needs to know when to check for changes and re-render. Without Zone.js, you'd have to manually call `detectChanges()` after every async operation.

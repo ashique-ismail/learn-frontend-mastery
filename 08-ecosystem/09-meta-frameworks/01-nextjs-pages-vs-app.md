@@ -1,5 +1,19 @@
 # Next.js Pages Router vs App Router
 
+## The Idea
+
+**In plain English:** Next.js is a tool for building websites, and it gives you two different ways to organize the pages of your site — an older, familiar way (Pages Router) and a newer, more powerful way (App Router). Choosing between them is about deciding which system of rules your project follows for turning files into web pages.
+
+**Real-world analogy:** Imagine a hotel where every room is a destination guests can visit. The old hotel (Pages Router) requires every room key to be collected from a single front desk, and a staff member must personally hand you what you need before you enter. The new hotel (App Router) lets you walk straight into any room and grab what you need yourself, with some rooms being staff-only and others open to guests.
+
+- The hotel rooms = the pages/routes of your website
+- Collecting keys at the front desk = `getServerSideProps`/`getStaticProps` fetching data before the page loads
+- Walking in and grabbing things yourself = async Server Components fetching data directly inside the component
+- Staff-only rooms = Server Components (run on the server, never sent to the browser)
+- Rooms open to guests = Client Components (marked with `'use client'`, run in the browser)
+
+---
+
 ## Overview
 
 Next.js has two routing systems:

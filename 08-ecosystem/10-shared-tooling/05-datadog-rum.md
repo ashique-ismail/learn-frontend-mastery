@@ -1,5 +1,19 @@
 # Datadog Real User Monitoring (RUM)
 
+## The Idea
+
+**In plain English:** Datadog RUM is a tool that silently watches real people use your website in production — recording how fast pages load, what errors they hit, and every button they click — and sends all that data to a dashboard so your team can spot and fix problems. "RUM" stands for Real User Monitoring, meaning it tracks actual visitors, not fake test robots.
+
+**Real-world analogy:** Imagine a theme park that hires invisible observers to follow a random sample of guests throughout the day, noting every ride they went on, how long they waited, and whether anything broke down while they were there. At the end of the day, the park manager reviews a report to see which rides had the longest waits or the most complaints.
+
+- The theme park = your web application
+- Each guest being silently followed = a real user whose browser session is tracked
+- The invisible observer following the guest = the RUM JavaScript snippet running in the browser
+- The ride wait times and breakdowns noted = performance metrics and errors captured
+- The manager's daily report dashboard = the Datadog RUM dashboard
+
+---
+
 ## What It Is
 
 Datadog RUM captures real user interactions, performance metrics, and errors from production frontend applications. It correlates frontend performance with backend traces, giving end-to-end visibility in a single platform — especially powerful for teams already using Datadog for backend monitoring.

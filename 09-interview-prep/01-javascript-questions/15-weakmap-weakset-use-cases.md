@@ -1,5 +1,17 @@
 # WeakMap & WeakSet — Use Cases and Internals
 
+## The Idea
+
+**In plain English:** WeakMap and WeakSet are special containers that hold references to objects in a "weak" way — meaning if nothing else in your program is using an object, the computer can automatically delete it from memory even if it's still listed in the container. Think of it as a notepad that erases its own entries when the thing it refers to no longer exists anywhere else.
+
+**Real-world analogy:** Imagine a coat-check at a theatre. Guests hand in their coats and get a ticket (the object). The coat-check clerk writes the ticket number on a sticky note to track any special requests (the WeakMap entry). When a guest leaves, they take their coat — the ticket is gone, and the sticky note automatically falls off because there is nothing left to stick to.
+
+- The coat = the JavaScript object stored elsewhere in your program
+- The sticky note on the coat = the WeakMap entry associating extra data with that object
+- The coat being taken away = all strong references to the object being released, making it eligible for garbage collection
+
+---
+
 ## Table of Contents
 - [Map/Set vs WeakMap/WeakSet — The Core Difference](#mapset-vs-weakmapweakset--the-core-difference)
 - [Weak References Explained](#weak-references-explained)

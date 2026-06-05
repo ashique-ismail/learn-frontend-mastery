@@ -1,5 +1,18 @@
 # Stacking Context Creation Rules
 
+## The Idea
+
+**In plain English:** A stacking context is like a self-contained stack of papers on a desk — elements inside it are layered among themselves, and the entire stack is then placed as one unit on the bigger desk alongside other stacks. The `z-index` property (a number that controls which element appears in front) only competes with other elements inside the same stack, not across different stacks.
+
+**Real-world analogy:** Imagine a theatre stage with multiple shadow boxes (framed display cases) mounted on the back wall, each box containing small figurines arranged at different depths inside it. Even if a figurine in one box is pushed to the very front of its box, it can never appear in front of a figurine sitting in a box mounted higher up on the wall.
+
+- The theatre wall = the browser page
+- Each shadow box = a stacking context
+- The depth of a figurine inside its box = the `z-index` of an element within its stacking context
+- The height of the box on the wall = the `z-index` of the stacking context itself among other contexts
+
+---
+
 ## What Is a Stacking Context?
 
 A stacking context is an isolated layer in the page's painting order. Elements inside a stacking context are painted and stacked relative to each other, and the whole context is treated as a single unit when compositing with the rest of the page.

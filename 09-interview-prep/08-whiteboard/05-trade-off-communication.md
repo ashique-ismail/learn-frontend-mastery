@@ -1,5 +1,16 @@
 # Whiteboard: Trade-off Communication Pattern
 
+## The Idea
+
+**In plain English:** Trade-off communication is the skill of explaining why you chose one option over another by clearly stating what you gain and what you give up — then saying which choice makes sense given the situation. A trade-off is when picking one benefit means accepting a cost somewhere else.
+
+**Real-world analogy:** Imagine you are choosing a route to school. You can take the highway (fast but toll required) or the backroads (free but slower). You pick based on whether you are in a hurry or need to save money, and you explain your choice to a friend rather than just silently driving.
+- The highway = a complex but high-performance solution
+- The backroads = a simpler but slower solution
+- Explaining your reasoning to your friend = communicating the trade-off to your interviewer
+
+---
+
 ## Overview
 
 The single most-evaluated skill in a staff engineer interview is not technical knowledge — it's judgment. Specifically: can you identify trade-offs without being prompted, articulate them clearly, and make a reasoned recommendation? This is what separates someone who "knows the answer" from someone who "thinks like a staff engineer."

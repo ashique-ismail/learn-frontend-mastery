@@ -1,5 +1,17 @@
 # Design a Design System
 
+## The Idea
+
+**In plain English:** A design system is a shared collection of rules, building blocks, and style decisions that a whole team uses so every part of an app looks and behaves consistently. Think of it as an official rulebook plus a box of pre-made parts that any developer can grab and use without reinventing anything.
+
+**Real-world analogy:** Imagine a large fast-food chain like McDonald's. Every franchise around the world follows the same recipe cards, uses the same branded packaging, and arranges the counter the same way — so a Big Mac in Tokyo looks and tastes like one in Toronto.
+
+- The recipe cards = design tokens (the exact colors, spacing, and font sizes written down as named values)
+- The pre-built burger components (bun, patty, sauce) = UI components (Button, Input, Card — ready-made pieces you assemble)
+- The franchise operations manual = documentation (explains how and when to use each piece correctly)
+
+---
+
 ## What Is a Design System?
 
 A design system is the source of truth for UI: design tokens (the values), components (the implementations), and documentation. It ensures visual consistency across a product and speeds up development by providing reusable, tested building blocks.

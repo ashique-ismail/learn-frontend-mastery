@@ -1,5 +1,17 @@
 # C/C++ to WebAssembly
 
+## The Idea
+
+**In plain English:** C and C++ are older programming languages that computers understand very well and can run extremely fast. WebAssembly (WASM) is a special format that web browsers can run at near-native speed. A tool called Emscripten acts as a translator, converting C/C++ code into WebAssembly so that those fast programs can run inside a browser.
+
+**Real-world analogy:** Imagine a master chef (C/C++ code) who only knows how to cook using a professional kitchen in France. A translation service (Emscripten) takes all of the chef's recipes and rewrites them so they work perfectly in a tiny portable camping kitchen (the browser). The food (the result) tastes the same and is made just as skillfully, just in a different setting.
+
+- The master chef's original recipes = the C/C++ source code
+- The translation service rewriting the recipes = Emscripten compiling to WebAssembly
+- The portable camping kitchen = the web browser running WebAssembly
+
+---
+
 ## Introduction
 
 C and C++ were among the first languages to target WebAssembly, thanks to Emscripten, a powerful toolchain that compiles C/C++ code to WebAssembly. This enables developers to port existing C/C++ libraries and applications to the web, bringing decades of optimized code and algorithms to web browsers.

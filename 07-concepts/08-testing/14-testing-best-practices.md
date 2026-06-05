@@ -1,5 +1,18 @@
 # Testing Best Practices
 
+## The Idea
+
+**In plain English:** Testing best practices are a set of rules and habits that help you write tests that are easy to understand, reliable every time they run, and quick to fix when code changes. A "test" is a small piece of code you write to check that another piece of code works the way you expect.
+
+**Real-world analogy:** Imagine a factory quality inspector who checks products coming off an assembly line. Each inspector follows a checklist: they check one thing at a time, they label each check clearly ("does the lid seal?"), they reset the product to its original state before the next check, and they never skip a step just because the last one passed.
+
+- The inspector's checklist = the test suite (collection of tests)
+- Each individual check on the checklist = a single test case
+- Resetting the product to its original state before each check = clearing shared state between tests (beforeEach / afterEach)
+- Labeling each check clearly = writing descriptive test names
+
+---
+
 ## Overview
 
 Writing effective tests requires following established principles and patterns that make tests maintainable, reliable, and valuable. This guide covers best practices for test naming, organization, avoiding flaky tests, maintaining test quality, and building a sustainable testing culture.

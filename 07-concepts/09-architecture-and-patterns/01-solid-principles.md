@@ -1,5 +1,19 @@
 # SOLID Principles
 
+## The Idea
+
+**In plain English:** SOLID is a collection of five guidelines that help you write code that is easy to change, test, and understand. Each guideline tells you how to organize your code so that fixing one thing doesn't accidentally break something else.
+
+**Real-world analogy:** Think of a restaurant kitchen. Each station has one clear job: the grill cook grills, the prep cook chops vegetables, the pastry chef bakes desserts. If you need a new dish on the menu, you add a new station or extend an existing one — you don't tear apart the whole kitchen. And every cook follows the same "hand me a plate" contract, so you can swap one cook for another without retraining the whole team.
+
+- The grill station = a class or component with a single responsibility
+- Adding a new station without rebuilding the kitchen = open for extension, closed for modification
+- Any cook who follows the same contract can take over = substituting one type for another without surprises
+- Each station only receives the ingredients it actually needs = depending only on the interface you use
+- The kitchen manager asks "give me a cooked dish" rather than naming a specific cook = depending on an abstraction, not a specific person
+
+---
+
 ## Overview
 
 SOLID is a set of five object-oriented design principles that help developers create more maintainable, flexible, and scalable software. While originally formulated for backend systems, these principles apply powerfully to frontend development, particularly in component architecture, state management, and application structure.

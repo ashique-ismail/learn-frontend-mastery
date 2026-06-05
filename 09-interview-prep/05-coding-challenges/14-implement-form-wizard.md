@@ -1,5 +1,17 @@
 # Implement Multi-Step Form Wizard
 
+## The Idea
+
+**In plain English:** A multi-step form wizard breaks a long form into smaller pages so users fill in one section at a time and move forward or backward through the steps. Each step saves its answers so nothing is lost when you navigate back.
+
+**Real-world analogy:** Think of filling out paperwork at the doctor's office where the receptionist gives you one page at a time. You finish a page, hand it back, and get the next one — but if you ask to change something on an earlier page, they pull it back out with your previous answers still written on it.
+
+- The individual page of the form = one wizard step (e.g. "Account", "Profile")
+- The folder holding all completed pages = the reducer state storing each step's data
+- Handing back a page and getting the next one = dispatching a NEXT action to advance the current step
+
+---
+
 ## State Machine Approach
 
 A form wizard is a natural fit for a state machine — it has a finite number of steps with clear transitions.

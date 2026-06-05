@@ -1,5 +1,17 @@
 # View Transitions API
 
+## The Idea
+
+**In plain English:** The View Transitions API is a built-in browser tool that automatically creates smooth animations when you swap out content on a webpage — like sliding or fading between two screens — so you don't have to write all that animation code yourself. "Animating" means gradually changing how something looks (position, size, opacity) over a short time instead of it just jumping instantly.
+
+**Real-world analogy:** Imagine flipping through a photo album. You see a photo, then smoothly slide it out while the next photo slides in — it feels connected rather than jarring. Without this, every page flip would just snap to the new photo instantly with no motion at all.
+
+- The old photo sliding out = the browser's captured screenshot of the current page state (`::view-transition-old`)
+- The new photo sliding in = the browser rendering the updated page content (`::view-transition-new`)
+- Your hand performing the flip = the `startViewTransition()` call that triggers the whole process
+
+---
+
 ## Overview
 
 The View Transitions API provides a native browser mechanism for animating between different states of a page — or between entirely different pages — without the complexity of maintaining two DOM trees simultaneously, synchronizing animation libraries, or writing layout thrashing animation code. The browser captures the old state as a screenshot, applies the new DOM state, then animates between them using CSS.

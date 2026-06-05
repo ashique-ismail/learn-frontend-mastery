@@ -1,5 +1,17 @@
 # DRY, KISS, and YAGNI
 
+## The Idea
+
+**In plain English:** DRY, KISS, and YAGNI are three simple rules that help programmers write code that is easy to change and hard to break. DRY means "don't write the same rule twice"; KISS means "don't make things more complicated than they need to be"; YAGNI means "don't build things you don't need yet."
+
+**Real-world analogy:** Imagine you run a small burger restaurant. You have one laminated card behind the counter that says "a combo meal costs $8.99." Every cashier, every receipt printer, and every menu board reads from that one card. If the price changes, you update one card and everything stays consistent (DRY). You also keep your kitchen simple — one grill, one fryer — because you only serve burgers, not a five-course tasting menu (KISS). And even though a customer once joked "you should add sushi," you don't build a sushi station until people are actually ordering sushi (YAGNI).
+
+- The one laminated price card = a single constant or function that holds a business rule
+- The simple kitchen with only the tools you use = code with no unnecessary layers or abstractions
+- Not building the sushi station until there's real demand = not writing features until there is a concrete need
+
+---
+
 ## Overview
 
 DRY (Don't Repeat Yourself), KISS (Keep It Simple, Stupid), and YAGNI (You Ain't Gonna Need It) are three of the most frequently cited software principles — and three of the most frequently misapplied. DRY is about authoritative knowledge, not eliminating all code that looks similar. KISS is about minimizing accidental complexity, not refusing to handle real complexity. YAGNI is about avoiding speculation, not being shortsighted. This guide explores each principle with frontend-specific examples and explains when each one is being violated — including violations in the over-application direction.

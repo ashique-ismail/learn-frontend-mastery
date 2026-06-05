@@ -1,5 +1,18 @@
 # Web Workers, Service Workers, and SharedArrayBuffer
 
+## The Idea
+
+**In plain English:** Your browser runs JavaScript one task at a time on a single "main thread" — like one chef cooking every dish in a kitchen. Web Workers let you hire extra chefs (background threads) to handle heavy tasks without slowing down the main chef, while Service Workers act as a smart middleman between your browser and the internet, able to serve saved meals even when the kitchen (network) is closed.
+
+**Real-world analogy:** Imagine a busy restaurant where one head chef (the main thread) takes orders, cooks food, and plates dishes all by themselves. To handle a big catering order without slowing down the dining room, they hire a back-kitchen crew and a pantry manager. The back-kitchen crew works independently on the big batch job without disturbing the head chef. The pantry manager intercepts every food request and decides whether to pull it from the pantry (cache) or order fresh ingredients (network), even keeping things running when the supplier is unavailable.
+
+- The head chef = the main JavaScript thread (handles UI and user interactions)
+- The back-kitchen crew = Web Workers (run CPU-heavy tasks in the background)
+- The pantry manager = the Service Worker (intercepts network requests and manages the cache)
+- The pantry = the browser cache (stored responses available offline)
+
+---
+
 ## Overview
 
 The browser's JavaScript runtime is single-threaded by design, but the platform provides three worker primitives for off-main-thread execution: **Web Workers** (dedicated background threads), **Service Workers** (network proxy and offline cache), and **Shared Workers** (shared across tabs). **SharedArrayBuffer** enables true shared memory between threads. Mastery of these APIs is a strong signal for senior roles, where interviewers expect knowledge of threading models, security constraints (COEP/COOP), and offline architecture.

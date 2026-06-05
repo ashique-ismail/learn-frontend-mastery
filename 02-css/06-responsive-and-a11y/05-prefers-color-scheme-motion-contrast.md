@@ -1,5 +1,16 @@
 # User Preference Media Queries: Dark Mode, Reduced Motion, High Contrast
 
+## The Idea
+
+**In plain English:** Websites can ask your device "what are your preferences?" and automatically adjust their look and behavior to match — for example, switching to dark colors if you prefer a dark screen, or stopping animations if movement on screen bothers you.
+
+**Real-world analogy:** Think of a restaurant that checks your dietary preferences before you order. When you tell the host you are vegetarian, the kitchen automatically adjusts every dish it serves you — no extra asking required.
+- The host asking for preferences = CSS checking `prefers-color-scheme`, `prefers-reduced-motion`, etc.
+- Your dietary preference = the system setting the user has turned on (e.g., Dark Mode or Reduce Motion)
+- The kitchen adjusting the dish = the browser applying the matching CSS styles automatically
+
+---
+
 ## Learning Objectives
 - Implement dark mode with `prefers-color-scheme`
 - Respect motion preferences with `prefers-reduced-motion`

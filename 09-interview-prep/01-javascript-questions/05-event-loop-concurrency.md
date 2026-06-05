@@ -1,5 +1,17 @@
 # Event Loop and Concurrency - JavaScript Interview Questions
 
+## The Idea
+
+**In plain English:** JavaScript can only do one thing at a time, but the event loop is the behind-the-scenes manager that decides what runs next — it keeps track of tasks waiting in line and runs them in the right order so your page stays responsive while things like timers and data fetches happen in the background.
+
+**Real-world analogy:** Think of a busy coffee shop with a single barista. Customers place orders (tasks), and the barista works through them one at a time. Some orders are quick (like handing over a pre-made pastry) while others need time to brew. The barista doesn't just stand at the espresso machine waiting — they use a notepad to queue up orders and pick up finished drinks as they're ready.
+- The barista = JavaScript's single thread (can only handle one thing at a time)
+- The notepad queue for quick orders = the microtask queue (high-priority callbacks like Promises)
+- The separate waiting area for brewed drinks = the macrotask queue (lower-priority callbacks like setTimeout)
+- The barista checking what's next after each task = the event loop
+
+---
+
 ## Table of Contents
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)

@@ -1,5 +1,17 @@
 # Request Cancellation
 
+## The Idea
+
+**In plain English:** Request cancellation is the ability to tell your browser "stop waiting for that answer I asked for — I don't need it anymore." A request is a message your app sends to a server asking for data; cancellation means you can take that message back before the server finishes replying.
+
+**Real-world analogy:** Imagine you call a pizza place and order a large pepperoni. While waiting, you change your mind and call back to cancel the order before it goes in the oven. The kitchen stops making your pizza so they don't waste ingredients or time.
+
+- The phone call to order = the HTTP request sent to the server
+- Calling back to cancel = calling `AbortController.abort()`
+- The kitchen stopping work = the browser dropping the request and freeing up resources
+
+---
+
 ## Overview
 
 Request cancellation allows you to abort ongoing HTTP requests when they're no longer needed. This prevents wasted bandwidth, improves performance, avoids race conditions, and provides better user experience. Modern browsers support the AbortController API for request cancellation across fetch, XHR, and other async operations.

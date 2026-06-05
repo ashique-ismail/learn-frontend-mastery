@@ -1,5 +1,17 @@
 # Nebular - Customizable Angular UI Library
 
+## The Idea
+
+**In plain English:** Nebular is a ready-made toolkit of pre-styled visual building blocks (buttons, menus, cards, login screens) that you plug into an Angular web app so you don't have to design or style each piece yourself. Angular is a framework — a structured system — for building interactive websites.
+
+**Real-world analogy:** Think of outfitting a new office. Instead of custom-making every desk, chair, and light fixture from scratch, you order a complete office-furniture package from one supplier — and that package even comes with a key-card security system and a staff badge system already built in.
+- The furniture package = Nebular's pre-built UI components (buttons, cards, forms)
+- The matching color scheme and style catalog = Nebular's theme system (swap "default", "dark", "cosmic" themes in one step)
+- The key-card door-lock system = `@nebular/auth` (handles login, registration, and password reset)
+- The staff badge and room-access rules = `@nebular/security` (controls who can see or do what inside the app)
+
+---
+
 ## Overview
 
 Nebular is a customizable Angular UI Library with a focus on beautiful design and a comprehensive set of Angular components, themes, and modules. Developed by Akveo, Nebular provides not just UI components, but also includes authentication (@nebular/auth), security (@nebular/security), and theming modules, making it a complete solution for building modern Angular applications with consistent, customizable design.

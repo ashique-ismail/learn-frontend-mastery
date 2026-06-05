@@ -1,6 +1,19 @@
 # linkedSignal and resource in Angular
 
+## The Idea
+
+**In plain English:** `linkedSignal` and `resource` are tools in Angular that help your app automatically update its data in smart ways — `linkedSignal` lets a value start by copying from another value but still be changed on its own, while `resource` handles fetching data from the internet and keeps track of whether that data is still loading, has arrived, or hit an error.
+
+**Real-world analogy:** Imagine a whiteboard in a classroom. The teacher writes the day's agenda on the board (the source), and a student copies it into their notebook (the linked copy). The student can cross things out or add personal notes independently, but if the teacher erases the board and writes a brand new agenda, the student starts fresh with a clean copy again. Meanwhile, a school librarian is placing a book order online — everyone can see a sign saying "Order Pending", then "Books Arrived", or "Order Failed" depending on what happens.
+
+- The teacher's agenda on the whiteboard = the source signal
+- The student's notebook copy = the `linkedSignal` (starts as a copy, can be edited independently, resets when the source is fully replaced)
+- The librarian's book order process = the `resource` (fetches data asynchronously with visible loading, success, and error states)
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [linkedSignal() Function](#linkedsignal-function)
 - [resource() Function](#resource-function)

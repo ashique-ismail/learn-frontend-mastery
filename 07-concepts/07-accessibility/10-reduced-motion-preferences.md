@@ -1,5 +1,17 @@
 # Reduced Motion Preferences
 
+## The Idea
+
+**In plain English:** Some people get dizzy, nauseous, or can even have seizures when they see things moving on a screen. Reduced motion preferences let a user tell their computer "please show me fewer animations," and websites can listen to that request and tone down or remove their moving effects.
+
+**Real-world analogy:** Imagine a movie theater that offers two versions of a film — the full version with all the shaky-cam action scenes, and a "calm cut" where those intense sequences are replaced with simple still shots. The theater asks each guest at the door which version they prefer, and puts them in the right screening room automatically.
+
+- The guest's preference card at the door = the `prefers-reduced-motion` OS setting
+- The theater checking which room to send the guest to = the CSS `@media (prefers-reduced-motion: reduce)` query
+- Swapping the shaky-cam scenes for still shots = replacing or removing CSS/JS animations in code
+
+---
+
 ## Overview
 
 Vestibular disorders, epilepsy, and motion sensitivity affect a significant portion of users — WCAG estimates around 35% of people have some sensitivity to motion. Animations that feel delightful on a desktop can trigger vertigo, nausea, migraines, or seizures for these users. The `prefers-reduced-motion` media query lets users signal their preference through OS settings, and CSS/JavaScript can honor it. This guide covers the WCAG criteria, implementation patterns, and the difference between "remove animation" and "provide a safe alternative."

@@ -1,5 +1,17 @@
 # Basic Types, Unions, Intersections, and Literals in TypeScript
 
+## The Idea
+
+**In plain English:** TypeScript is a version of JavaScript that lets you label every piece of data with its "kind" (like number, text, or true/false) so the computer can warn you before you run the code if you mix up the kinds by accident. A "type" is just that label — a promise about what kind of value a variable will hold.
+
+**Real-world analogy:** Imagine a school cafeteria with separate trays labeled "hot food", "cold drinks", and "dessert". A staff member checks each item before it goes on a tray and refuses to put a soda on the hot-food tray.
+
+- The tray label = the type (e.g., `string`, `number`)
+- The food item = the value you store in a variable
+- The staff member checking = the TypeScript compiler catching mistakes before the code runs
+
+---
+
 ## Overview
 
 TypeScript's type system is structural and gradually typed, built on top of JavaScript's runtime primitives. Understanding how primitive types, union types, intersection types, and literal types interact is foundational to writing safe, expressive TypeScript code. These constructs form the vocabulary of the type system and appear in every codebase — from simple utilities to complex library APIs.

@@ -1,6 +1,19 @@
 # Functional Guards in Angular (Angular 14+)
 
+## The Idea
+
+**In plain English:** A functional guard is a gatekeeper function in Angular that checks whether a visitor is allowed to enter a particular page — it runs before the page loads and can send the visitor somewhere else if they do not have permission.
+
+**Real-world analogy:** Imagine a cinema where a staff member checks your ticket before letting you into the screening room. If your ticket is valid, you walk in; if not, you are directed back to the ticket booth.
+
+- The staff member = the functional guard (the function that runs the check)
+- Your ticket = the user's authentication or role data (the credential being checked)
+- The screening room = the protected route/page (the destination being guarded)
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Functional Guards Overview](#functional-guards-overview)
 - [Using inject() in Guards](#using-inject-in-guards)
@@ -1235,27 +1248,35 @@ import { authGuard, roleGuard, composeGuards } from './guards';
 ## Interview Questions
 
 ### Q1: What are functional guards and why were they introduced?
+
 **Answer:** Functional guards are route guards implemented as plain functions using the `inject()` API. Introduced in Angular 14+, they provide better tree-shaking, less boilerplate, easier composition, and a more functional programming style compared to class-based guards.
 
 ### Q2: How do you inject dependencies in functional guards?
+
 **Answer:** Use the `inject()` function from `@angular/core` within the guard function body. inject() must be called synchronously in the guard function, not in callbacks or promises.
 
 ### Q3: Can you compose multiple functional guards?
+
 **Answer:** Yes, create a composer function that takes multiple guards and returns a new guard. The composer can run guards sequentially, in parallel, or conditionally based on your requirements.
 
 ### Q4: How do functional guards improve tree-shaking?
+
 **Answer:** Functional guards are plain functions without class overhead. Unused guards are easier for bundlers to detect and remove, resulting in smaller bundle sizes.
 
 ### Q5: Can you convert class guards to functional guards?
+
 **Answer:** Yes, extract the logic from the `canActivate` method into a standalone function and replace constructor injection with `inject()` calls.
 
 ### Q6: How do you test functional guards?
+
 **Answer:** Use `TestBed.runInInjectionContext()` to provide an injection context for the guard, mock dependencies with `TestBed.configureTestingModule()`, and test the guard's return values.
 
 ### Q7: What are the limitations of inject() in guards?
+
 **Answer:** `inject()` must be called synchronously within the injection context. It cannot be used in async callbacks, promises, or after the initial guard execution starts.
 
 ### Q8: How do you create reusable parameterized guards?
+
 **Answer:** Create a factory function that accepts parameters and returns a `CanActivateFn`. The returned function can access parameters via closure while using `inject()` for dependencies.
 
 ## Key Takeaways

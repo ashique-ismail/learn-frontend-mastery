@@ -1,5 +1,19 @@
 # Atomic Design
 
+## The Idea
+
+**In plain English:** Atomic Design is a way of building websites by starting with the tiniest reusable pieces (like a button or a text box) and combining them into bigger and bigger groups until you have a full page — the same way atoms combine into molecules, then into larger structures.
+
+**Real-world analogy:** Think of building with LEGO sets. A single LEGO brick is the smallest piece you can work with. You snap a few bricks together to make a small sub-assembly like a wheel. You combine several sub-assemblies to build a recognizable section like a car door. Doors, a hood, and a chassis all come together as a full vehicle body. Finally, you place the completed car in a town scene that tells the whole story.
+
+- The single LEGO brick = an atom (Button, Input, Badge — smallest UI unit)
+- The small sub-assembly (wheel) = a molecule (SearchBar = Input + Button combined)
+- The recognizable section (car door) = an organism (Header = Logo + Navigation + SearchBar)
+- The full vehicle body = a template (page layout with real components but no real content yet)
+- The completed car in the town scene = a page (the template filled with actual real data)
+
+---
+
 ## Overview
 
 Atomic Design is a methodology for creating design systems by breaking UI into five hierarchical levels: atoms, molecules, organisms, templates, and pages. Coined by Brad Frost, the metaphor comes from chemistry — elements combine into more complex structures. The methodology addresses the core challenge of building consistent, maintainable UIs at scale: understanding which level of the hierarchy a component belongs to and why.

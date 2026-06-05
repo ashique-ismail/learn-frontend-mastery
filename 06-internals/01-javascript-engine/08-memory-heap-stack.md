@@ -1,5 +1,17 @@
 # Memory: Heap and Stack
 
+## The Idea
+
+**In plain English:** When JavaScript runs your code, it needs two places to store information: the stack (a neat, ordered pile for simple values like numbers and true/false), and the heap (a big open storage room for complex things like objects and lists). Knowing which one your data lives in explains why some code behaves in surprising ways.
+
+**Real-world analogy:** Think of a busy restaurant kitchen. The chef has a small whiteboard right next to them where they jot down simple notes like table numbers and prices — that is the stack. Meanwhile, the back storage room holds large, complex things like full ingredient trays that multiple chefs can reach into and change — that is the heap.
+
+- The whiteboard = the stack (small, fast, holds simple values directly)
+- The storage room = the heap (large, slower, holds complex objects)
+- The note pointing to a tray's shelf location = a reference (a variable that points to an object in the heap)
+
+---
+
 ## Learning Objectives
 - Understand how JavaScript manages memory allocation
 - Master the difference between stack and heap memory

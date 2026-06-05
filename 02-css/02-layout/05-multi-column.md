@@ -1,5 +1,16 @@
 # CSS Multi-Column Layout
 
+## The Idea
+
+**In plain English:** CSS Multi-Column Layout lets you split a block of text into side-by-side columns automatically, so long content flows from the bottom of one column to the top of the next — just like reading a newspaper or magazine.
+
+**Real-world analogy:** Think of a printed newspaper spread out on a table. The whole page holds one big story, but the text is divided into several narrow vertical strips so you can read more without your eyes travelling all the way across the page.
+- The newspaper page = the CSS container element
+- Each narrow text strip = a CSS column created by `column-count` or `column-width`
+- The thin line printed between strips = the `column-rule` (the divider CSS draws in the gap)
+
+---
+
 ## Overview
 
 CSS Multi-Column Layout (often called "multicol") allows content to flow into multiple columns, similar to newspaper or magazine layouts. It's specifically designed for flowing text content across columns, not for general page layout.

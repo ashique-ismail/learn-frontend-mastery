@@ -1,6 +1,20 @@
 # File Uploads
 
+## The Idea
+
+**In plain English:** File uploads let a webpage receive actual files from your computer — like photos, documents, or videos — and send them to a server for storage or processing. A "server" is just another computer on the internet that holds your data.
+
+**Real-world analogy:** Think of dropping off a physical package at a post office counter. You hand the clerk your parcel, they check it meets the size and content rules, and then it gets stored in the back warehouse.
+
+- The parcel you hand over = the file selected by the user
+- The counter's size and content rules = client-side validation (file size limit, allowed types)
+- The clerk's stamp of approval = the `accept` attribute filtering what files are allowed
+- The back warehouse = the server that stores the uploaded file
+
+---
+
 ## Learning Objectives
+
 - Master the file input type and its attributes
 - Implement single and multiple file uploads
 - Build drag-and-drop file upload interfaces

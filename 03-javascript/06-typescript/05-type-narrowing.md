@@ -1,5 +1,17 @@
 # Type Narrowing, Type Guards, and Discriminated Unions
 
+## The Idea
+
+**In plain English:** Type narrowing is how TypeScript figures out, at a specific point in your code, that a value must be one specific type rather than several possibilities. Think of it as TypeScript "zooming in" on what a variable actually is after you've checked it with an if-statement or similar condition.
+
+**Real-world analogy:** Imagine a package sorting facility where incoming boxes are labeled "fragile OR heavy" — the worker doesn't know which until they pick it up and feel the weight. Once they check ("this one's light, so it must be fragile"), they now handle it differently than a heavy box. TypeScript does the same thing automatically when it sees your checks.
+
+- The box labeled "fragile OR heavy" = a variable with a union type like `string | number`
+- The worker checking the weight = your `if (typeof value === "string")` condition
+- How the worker handles the box after the check = the narrowed type TypeScript uses inside that `if` block
+
+---
+
 ## Overview
 
 Type narrowing is TypeScript's process of refining a type to a more specific type within a particular code path. When you check whether a value is a string before calling `.toUpperCase()`, TypeScript recognizes that check and narrows the type automatically. TypeScript's control flow analysis tracks narrowing across `if`, `switch`, `while`, `try/catch`, and early returns — making it one of the most practical features for safely working with `unknown`, `any`, and union types.

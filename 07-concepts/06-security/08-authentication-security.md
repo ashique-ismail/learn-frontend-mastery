@@ -1,6 +1,19 @@
 # Authentication Security
 
+## The Idea
+
+**In plain English:** Authentication security is how a website makes sure you are who you say you are — and keeps that proof safe so no one else can steal it and pretend to be you. A "token" is just a digital pass the website gives you after you log in, like a wristband at an event.
+
+**Real-world analogy:** Imagine visiting a theme park. You show your ID at the entrance, get a short-term wristband (valid for the day), and also a special member card locked in your locker (valid for a year). Each ride checks your wristband, not your ID. If your wristband expires, you go back to your locker, get the member card, and swap it for a fresh wristband — without showing your ID again.
+
+- The wristband = the access token (short-lived, used for every request)
+- The member card locked in your locker = the refresh token (long-lived, stored in a secure httpOnly cookie JavaScript cannot touch)
+- Showing your ID at the entrance = the original login with your username and password
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [JWT Security Best Practices](#jwt-security-best-practices)
 - [Token Storage](#token-storage)

@@ -1,5 +1,17 @@
 # em vs rem
 
+## The Idea
+
+**In plain English:** `em` and `rem` are two ways CSS lets you size things (like text or spacing) relative to a font size rather than a fixed pixel number. `rem` always measures against one fixed reference — the root of the page — while `em` measures against whichever element it is sitting inside.
+
+**Real-world analogy:** Imagine a school where every classroom posts its rules in a font size based on the teacher's own preference. The principal's office sets one official font size for the whole building (that's the root). Some rooms post notices scaled to the principal's official size (that's `rem` — always predictable). Other rooms scale their notices to the teacher's personal size, which might already be scaled up from the teacher above them (that's `em` — can snowball unexpectedly).
+
+- The principal's official font size = the `:root` / `<html>` font size
+- A notice scaled to the principal's size = a value in `rem`
+- A notice scaled to the current teacher's size = a value in `em`
+
+---
+
 ## The Difference
 
 **`rem`** — relative to the **root element** (`<html>`) font size. Always the same base.

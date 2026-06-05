@@ -1,5 +1,17 @@
 # Pure vs Impure Pipes
 
+## The Idea
+
+**In plain English:** A pipe in Angular is a tool that transforms data before displaying it on screen — like a filter that changes how something looks without changing the original. A pure pipe only recalculates when it gets brand-new data handed to it, while an impure pipe recalculates constantly, even when the data looks the same from the outside.
+
+**Real-world analogy:** Imagine a vending machine that prints a receipt showing your total. A pure vending machine only reprints the receipt when you actually insert new money. An impure vending machine reprints the receipt every second, whether or not anything changed.
+
+- The receipt = the transformed value shown in the template
+- Inserting new money = passing a new data reference to the pipe
+- Reprinting every second = running `transform()` on every change detection cycle
+
+---
+
 ## Pure Pipes (Default)
 
 A pure pipe's `transform()` method is only called when Angular detects a **pure change** to the input:

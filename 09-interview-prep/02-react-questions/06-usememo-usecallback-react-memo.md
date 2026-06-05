@@ -1,5 +1,17 @@
 # useMemo vs useCallback vs React.memo
 
+## The Idea
+
+**In plain English:** React sometimes re-draws parts of your screen more than it needs to, wasting effort. These three tools are like sticky notes that let React remember a result it already calculated, so it can skip redoing the same work when nothing has changed.
+
+**Real-world analogy:** Imagine a school cafeteria worker who assembles lunch trays. Every day many students order the same "combo meal." Instead of rebuilding each tray from scratch every time, the worker prepares a finished tray once, puts a sticky note on it saying which combo it is, and hands out that saved tray whenever the same order comes in — only making a fresh one if the order actually changes.
+
+- The finished tray sitting on the shelf = the memoized (saved) value or component output
+- The sticky note listing the combo ingredients = the dependency array that tracks what the result depends on
+- The worker checking the note before cooking = React checking whether inputs changed before re-running work
+
+---
+
 ## The Core Distinction
 
 All three are memoization tools, but they operate at different levels:

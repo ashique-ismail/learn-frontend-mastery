@@ -1,5 +1,17 @@
 # Test Doubles: Mocks, Stubs, Spies, and Fakes
 
+## The Idea
+
+**In plain English:** When you test your code, some parts depend on things you don't control — like a live website or a real database. A test double is a stand-in replacement for that real thing, so your tests can run quickly and reliably without depending on the outside world.
+
+**Real-world analogy:** Imagine a movie director filming a car chase. Instead of using the lead actor (who could get hurt), they use a stunt double — someone who looks and acts like the actor for that scene. The director can then check whether the scene works without risking the real actor.
+
+- The lead actor = the real dependency (e.g., a live API or database)
+- The stunt double = the test double (e.g., a mock, stub, or fake)
+- The director checking the scene = your automated test verifying the code works
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [What are Test Doubles](#what-are-test-doubles)

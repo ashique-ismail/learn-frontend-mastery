@@ -1,5 +1,17 @@
 # Context Propagation
 
+## The Idea
+
+**In plain English:** Context propagation is how React automatically delivers shared information (like the current theme or logged-in user) to any component that needs it, anywhere in the app, without every component in between having to manually pass it along. Think of it as a broadcast system rather than a relay race — you announce something once, and only the listeners that care receive it.
+
+**Real-world analogy:** Imagine a school's PA (public address) system. The principal's office broadcasts an announcement over the speakers, and every classroom that has its intercom turned on hears it instantly, while rooms with the intercom off hear nothing.
+
+- The principal's office = the Context Provider (the one that sets and sends the value)
+- The PA announcement = the context value being propagated down the component tree
+- Each classroom's intercom = a component calling `useContext` (the consumer that "tunes in")
+
+---
+
 ## Overview
 
 React Context provides a way to pass data through the component tree without manually passing props at every level. Understanding how context propagates, how React tracks consumers, and the performance characteristics of context updates is essential for using context effectively and avoiding common pitfalls.

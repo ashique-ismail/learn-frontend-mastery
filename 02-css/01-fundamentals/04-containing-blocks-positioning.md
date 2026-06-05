@@ -1,6 +1,19 @@
 # Containing Blocks and Positioning Schemes
 
+## The Idea
+
+**In plain English:** A containing block is the invisible rectangle that an element uses as its reference point when deciding where to place itself and how big to be. When you tell an element "be 50% wide" or "sit at the top-right corner," it looks to its containing block to know 50% of what and which top-right corner.
+
+**Real-world analogy:** Imagine hanging a picture frame inside a room. The room walls are your reference — you measure from the walls to decide where to hang it, and you might say "hang it 10cm from the right wall and 20cm from the top." But if the room is inside a house and you nail the frame to a moving cart inside that room, the cart becomes the new reference, not the outer house walls.
+
+- The room (or cart) = the containing block
+- The picture frame = the positioned element
+- The measurements from the walls = the `top`, `right`, `bottom`, `left` offset values
+
+---
+
 ## Learning Objectives
+
 - Understand what a containing block is and why it matters
 - Master how containing blocks differ across positioning schemes
 - Predict which element acts as the containing block in complex layouts

@@ -1,5 +1,17 @@
 # Progressive Hydration
 
+## The Idea
+
+**In plain English:** Progressive hydration is a technique where a webpage becomes interactive piece by piece, starting with the most important parts first, instead of waiting for everything to load before you can click or type anything. "Hydration" means waking up the static HTML sent from the server so that JavaScript takes over and makes it clickable and responsive.
+
+**Real-world analogy:** Think of a restaurant opening for the day. The staff don't wait until every single table is perfectly set before letting customers in. Instead, they seat guests at the ready tables first, then finish setting the remaining tables while customers are already ordering.
+
+- The tables being set = page components being hydrated (made interactive)
+- The first ready tables where customers sit = critical components that hydrate immediately (search box, navigation)
+- The remaining tables set while guests are dining = lower-priority components that hydrate in the background (comments section, footer widgets)
+
+---
+
 ## Overview
 
 Progressive Hydration is a performance optimization technique where a server-rendered application hydrates its components progressively over time, rather than all at once. This allows critical interactive elements to become functional quickly while deferring less important components, resulting in faster Time to Interactive (TTI) and improved user experience.

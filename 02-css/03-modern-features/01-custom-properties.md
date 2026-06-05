@@ -1,5 +1,17 @@
 # CSS Custom Properties (CSS Variables)
 
+## The Idea
+
+**In plain English:** CSS Custom Properties let you store a value (like a colour or a size) under a name you choose, then reuse that name everywhere in your stylesheet — so if you ever want to change the value, you only update it in one place instead of hunting through hundreds of lines.
+
+**Real-world analogy:** Think of a paint store where every shade has a named label on the tin — for example, "Ocean Blue". When you redecorate the whole house you just say "use Ocean Blue everywhere", and if you decide to switch to "Sky Blue" you only relabel one tin and every room updates automatically.
+
+- The paint tin label ("Ocean Blue") = the variable name (`--primary-color`)
+- The actual paint colour inside the tin = the value stored in the variable (`#3498db`)
+- Every room painted with that tin = every CSS rule that uses `var(--primary-color)`
+
+---
+
 ## Overview
 
 CSS Custom Properties (commonly called "CSS Variables") allow you to define reusable values in CSS that can be referenced throughout your stylesheet. Unlike preprocessor variables (Sass, Less), CSS variables are **live** — they can be modified at runtime via JavaScript and respond to the cascade.

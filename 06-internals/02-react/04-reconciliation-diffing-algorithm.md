@@ -1,5 +1,18 @@
 # Reconciliation & Diffing Algorithm
 
+## The Idea
+
+**In plain English:** Reconciliation is how React figures out the smallest number of changes needed to update what you see on screen when something in your app changes. Instead of wiping the page and rebuilding it from scratch every time, React compares the old version with the new version and only fixes what is different.
+
+**Real-world analogy:** Imagine you have a whiteboard covered in sticky notes, and your teacher gives you an updated list. Rather than erasing everything and rewriting all the notes, you walk along the board comparing each note to the list — keeping the ones that match, moving ones in the wrong spot, adding new ones, and removing ones that are gone.
+
+- The whiteboard = the real browser DOM (what the user sees)
+- Each sticky note = a UI element (a button, a list item, a heading)
+- The updated list from your teacher = the new virtual DOM React just calculated
+- Your comparison walk = the diffing algorithm
+
+---
+
 ## Overview
 
 React's reconciliation algorithm is the process by which React updates the DOM to match the latest render output. When a component's state or props change, React needs to determine what changes are necessary to bring the actual DOM in sync with the virtual DOM. The diffing algorithm is the core mechanism that makes this process efficient, transforming what would be an O(n³) problem into an O(n) solution through clever heuristics.

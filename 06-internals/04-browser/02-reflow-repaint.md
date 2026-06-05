@@ -1,5 +1,17 @@
 # Reflow and Repaint
 
+## The Idea
+
+**In plain English:** When a webpage changes — like a box getting bigger or a button changing color — the browser has to redo some of its drawing work. Reflow means recalculating where everything sits on the page (its size and position), while repaint means redrawing just the colors and visuals without moving anything around.
+
+**Real-world analogy:** Imagine you have a corkboard with sticky notes arranged in rows. If you replace a small note with a much bigger one, every other note has to shift to make room — that's a reflow. But if you just swap out a yellow note for a pink one of the same size, nothing moves; you only repaint that one spot — that's a repaint.
+
+- The size of the sticky notes = the layout dimensions (width, height, padding) of HTML elements
+- Rearranging all the notes after one changes size = reflow (the browser recalculates positions)
+- Swapping the color of one note without moving anything = repaint (only pixels are redrawn)
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [What Triggers Reflow](#what-triggers-reflow)

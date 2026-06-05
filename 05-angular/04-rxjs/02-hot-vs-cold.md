@@ -1,5 +1,17 @@
 # Hot vs Cold Observables
 
+## The Idea
+
+**In plain English:** Some data streams start fresh for every person who tunes in (cold), while others are already running and you just join whatever is happening at that moment (hot). A "stream" here means a series of values delivered over time by a piece of code called an Observable.
+
+**Real-world analogy:** Imagine a cinema versus a live sports broadcast on TV. When you go to the cinema, the movie starts from the beginning just for your showing. If you turn on the TV mid-game, you only see what is happening from that point on — you missed the earlier goals.
+- The cinema movie = a cold Observable (restarts from the beginning for each subscriber)
+- The live sports broadcast = a hot Observable (already running; you join wherever it currently is)
+- Buying a cinema ticket and sitting down = subscribing to a cold Observable
+- Turning on the TV = subscribing to a hot Observable
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Cold Observables](#cold-observables)

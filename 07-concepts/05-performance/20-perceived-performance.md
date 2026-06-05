@@ -1,12 +1,25 @@
 # Perceived Performance
 
+## The Idea
+
+**In plain English:** Perceived performance is about how fast your app *feels* to users, which can be very different from how fast it actually loads. By showing users something useful right away - even if the full content isn't ready yet - you make the wait feel much shorter.
+
+**Real-world analogy:** Imagine waiting at a restaurant. The waiter brings you bread and water immediately, then the appetizer, then the main course - even though your full meal isn't cooked yet. Compare that to sitting at an empty table staring at nothing for the same total time.
+
+- The bread and water = a skeleton screen (placeholder shapes showing where content will appear)
+- The appetizer arriving = partial content loading first (e.g. article text before comments)
+- The full meal = the complete page fully loaded
+- The empty table with no updates = a blank white screen or a spinning circle
+
+---
+
 ## Overview
 
 Perceived performance is how fast your application FEELS to users, which can differ significantly from actual performance metrics. Users perceive an app as faster when they see immediate feedback, progressive loading, and meaningful content quickly - even if total load time is the same. This guide covers skeleton screens, optimistic UI updates, loading states, progressive enhancement, and techniques to improve perceived speed.
 
 ## The Psychology of Perceived Performance
 
-```
+```text
 Actual vs Perceived Performance:
 
 App A (Fast metrics, poor perception):

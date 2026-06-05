@@ -1,5 +1,17 @@
 # JavaScript Runtime Cost Analysis
 
+## The Idea
+
+**In plain English:** When a website loads JavaScript code, the browser has to do a lot of work before anything actually runs — it reads the code letter by letter, translates it into instructions the computer understands, then actually carries out those instructions. Each of those steps takes time and eats up memory, which is why JavaScript is more expensive to load than a plain image.
+
+**Real-world analogy:** Imagine receiving a complex recipe written in a foreign language. You first have to read and translate it word by word into your own language, then figure out the cooking steps from those notes, and finally actually cook the meal — all before you can eat anything.
+
+- The translation step = parsing (browser reads the raw text and turns it into a structured list of instructions)
+- The step of planning how to cook = compiling (browser converts those instructions into a format the computer's processor can run fast)
+- The actual cooking = execution (the code runs, creating data and updating the page)
+
+---
+
 ## Overview
 
 Every byte of JavaScript you ship has a cost that goes beyond download time. A 200KB JavaScript bundle costs more than a 200KB image of the same size. Understanding exactly what that cost is — parse, compile, execute, memory — is what lets you make principled decisions about when to add a dependency, split a bundle, or reach for a Web Worker.

@@ -1,5 +1,17 @@
 # Implement Cancellable Fetch Hook
 
+## The Idea
+
+**In plain English:** A cancellable fetch is a way to request data from the internet and then stop that request mid-way if you no longer need it — for example, because the user navigated away. "Fetching" means asking a server for data; "cancelling" means telling the browser to drop that request before it finishes.
+
+**Real-world analogy:** Imagine you call a pizza delivery place and order a pizza, but while it's being made you decide to leave the house. You call back and cancel the order so the driver doesn't show up at an empty house.
+
+- The phone call to order = the `fetch()` request sent to the server
+- Calling back to cancel = calling `controller.abort()` to stop the request
+- The driver arriving at an empty house = `setState` being called after the component has already unmounted (a wasted, potentially harmful action)
+
+---
+
 ## Why Cancellation Matters
 
 Without cancellation:

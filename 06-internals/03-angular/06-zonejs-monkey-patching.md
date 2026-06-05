@@ -1,5 +1,17 @@
 # Zone.js & Monkey Patching
 
+## The Idea
+
+**In plain English:** Zone.js is a tool that secretly wraps JavaScript's built-in timers and event listeners so it always knows when something async (like a timer or a network request) finishes. "Monkey patching" just means quietly swapping out the real function for a custom one that does extra work behind the scenes, without anyone asking for permission.
+
+**Real-world analogy:** Imagine a hotel where every room phone is secretly replaced by the front desk with a special phone that looks identical but automatically notifies the front desk whenever a guest makes or receives a call — without the guest knowing the phone was swapped.
+
+- The original room phone = the native browser API (e.g., `setTimeout`)
+- The replacement special phone = Zone.js's patched version of that API
+- The notification to the front desk = Zone.js triggering Angular's change detection after the async task finishes
+
+---
+
 ## Overview
 
 Zone.js is a library that provides execution contexts (zones) for asynchronous operations. Angular uses Zone.js to automatically trigger change detection after async operations complete. Understanding how Zone.js works through monkey patching, its architecture, task tracking, and performance implications reveals how Angular achieves automatic view updates.

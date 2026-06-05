@@ -1,5 +1,18 @@
 # Strict Mode in JavaScript
 
+## The Idea
+
+**In plain English:** Strict mode is a setting you can turn on in JavaScript that makes the language more picky — it refuses to let you make certain sloppy mistakes that would otherwise be silently ignored, and instead tells you about them right away with an error.
+
+**Real-world analogy:** Imagine a spell-checker that you can switch from "suggestions only" mode to "strict mode." In suggestions mode, it lets you save a document full of typos without complaining. In strict mode, it stops you the moment you try to save and points out every problem.
+
+- The spell-checker = JavaScript's runtime engine
+- Switching to strict mode = writing `"use strict"` at the top of your file
+- Saving a document with typos = running code that silently creates bugs
+- The error pop-up blocking you = a ReferenceError or TypeError thrown immediately
+
+---
+
 ## Overview
 
 Strict mode is a way to opt into a restricted variant of JavaScript that eliminates some of JavaScript's silent errors by changing them to throw errors, fixes mistakes that make it difficult for JavaScript engines to perform optimizations, and prohibits some syntax likely to be defined in future versions of ECMAScript. Introduced in ES5 (2009), strict mode is now a best practice and is automatically enabled in ES6 modules and classes.
@@ -672,6 +685,7 @@ console.log(x);
 ```
 
 **Answer:**
+
 - Non-strict: Creates global variable `x`, prints 10
 - Strict: ReferenceError at `x = 10`
 
@@ -690,6 +704,7 @@ fn();           // ?
 ```
 
 **Answer:**
+
 - `obj.getValue()`: Returns 42 (this is obj)
 - Non-strict `fn()`: Returns undefined (this is window/global)
 - Strict `fn()`: TypeError (this is undefined)
@@ -709,13 +724,16 @@ function sum(a, b, a) {
 ## Resources
 
 ### Documentation
+
 - [MDN: Strict Mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 - [ECMAScript Strict Mode](https://tc39.es/ecma262/#sec-strict-mode-code)
 
 ### Articles
+
 - [JavaScript Strict Mode Explained](https://javascript.info/strict-mode)
 - [What Does "use strict" Do?](https://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript)
 
 ### Tools
+
 - [ESLint strict rule](https://eslint.org/docs/rules/strict)
 - [Babel: Transform strict mode](https://babeljs.io/docs/en/babel-plugin-transform-strict-mode)

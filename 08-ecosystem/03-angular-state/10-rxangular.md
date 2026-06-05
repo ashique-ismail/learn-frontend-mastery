@@ -1,5 +1,17 @@
 # RxAngular
 
+## The Idea
+
+**In plain English:** RxAngular is a toolkit for Angular apps that makes your web page update faster and smarter — it only redraws the tiny parts of the screen that actually changed, instead of refreshing everything at once. Think of it like a reactive, high-efficiency engine for keeping your UI in sync with live data streams.
+
+**Real-world analogy:** Imagine a large airport departures board with hundreds of flight rows. The old way is to reprint the entire board every time one flight status changes. RxAngular is like having individual digital tiles — when one flight updates, only that tile flips, leaving everything else untouched.
+
+- The departures board = your Angular component template
+- Each flight row tile = a single list item rendered by `rxFor`
+- Flipping only the changed tile = reconciliation (updating only what changed)
+
+---
+
 ## What It Is
 
 RxAngular is a set of Angular libraries focused on performance through reactive programming. It enables zone-less rendering, local state management, and efficient template binding without the boilerplate of `OnPush` + `ChangeDetectorRef`.

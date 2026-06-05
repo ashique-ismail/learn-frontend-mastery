@@ -1,5 +1,17 @@
 # Husky + lint-staged + commitlint
 
+## The Idea
+
+**In plain English:** Husky, lint-staged, and commitlint are tools that automatically check your code and commit messages for problems the moment you try to save your work to git — think of them as a quality gate that runs before your changes are accepted. "Git" is a tool developers use to save and track changes to code over time.
+
+**Real-world analogy:** Imagine a school that checks students' homework before the teacher collects it. A classroom monitor stops each student at the door, quickly scans only the pages they added today (not the whole notebook), and rejects any paper that isn't titled correctly.
+
+- The classroom monitor stopping students = Husky (intercepts git commits via hooks)
+- Scanning only today's added pages = lint-staged (checks only the files you changed, not everything)
+- The rule that papers must be titled correctly = commitlint (enforces a standard format for commit messages)
+
+---
+
 ## What They Do
 
 - **Husky** — runs shell commands on git hooks (pre-commit, commit-msg, pre-push, etc.)

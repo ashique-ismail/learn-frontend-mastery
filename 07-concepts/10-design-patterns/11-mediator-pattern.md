@@ -1,5 +1,18 @@
 # Mediator Pattern
 
+## The Idea
+
+**In plain English:** The Mediator pattern is a way of organizing communication in a program so that separate pieces (called components) never talk to each other directly — instead, they all send messages to one central middleman (the mediator), who figures out who needs to hear what.
+
+**Real-world analogy:** Think of an air traffic control tower at a busy airport. Planes never radio each other directly to coordinate landing and takeoff — they all talk only to the control tower, which decides who goes when and where.
+
+- The control tower = the mediator (the central coordinator in code)
+- Each airplane = a component (a self-contained piece of the program)
+- A radio call from a plane = an event or message sent to the mediator
+- The tower's instructions back to a plane = the mediator triggering an action on a component
+
+---
+
 ## Overview
 
 The Mediator pattern introduces a central coordinator (the mediator) that handles communication between components, preventing them from referring to each other directly. Without a mediator, N components communicating directly with each other requires up to N*(N-1) connections. With a mediator, each component knows only the mediator — N connections total. This reduces coupling dramatically, makes the communication flow visible in one place, and makes components independently testable. In frontend applications, the most common mediator implementations are event buses, pub-sub systems, and centralized state managers.

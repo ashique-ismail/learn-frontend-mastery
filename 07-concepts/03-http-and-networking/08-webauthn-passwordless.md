@@ -1,5 +1,17 @@
 # WebAuthn and Passwordless Authentication
 
+## The Idea
+
+**In plain English:** WebAuthn is a way for websites to let you log in using your fingerprint, face, or a physical security key instead of a password. Your device holds a secret key that never leaves it, and the website only ever sees the matching public key — so there is nothing useful to steal from the server.
+
+**Real-world analogy:** Think of a hotel that gives you a physical key card when you check in. The card has a unique chip inside (your private key) that only opens your room's lock. The hotel programs the lock (stores the public key) and never needs to keep a copy of the chip itself. When you tap the card on the lock, the lock checks whether the card matches — without the card ever "sending" its secret anywhere.
+
+- The key card = the private key stored on your device (fingerprint sensor, security key, or phone)
+- The room lock = the server, which holds the matching public key
+- Tapping the card on the lock = the browser asking your device to sign a one-time challenge so the server can verify it
+
+---
+
 ## Overview
 
 WebAuthn (Web Authentication API) is a W3C standard that enables phishing-resistant, passwordless authentication using public-key cryptography. It is the browser API component of the FIDO2 specification. Instead of a password, the user authenticates via a hardware security key (YubiKey), biometric device (Touch ID, Face ID, Windows Hello), or a passkey synced across devices via iCloud/Google Password Manager.

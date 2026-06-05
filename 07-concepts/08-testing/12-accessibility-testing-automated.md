@@ -1,5 +1,18 @@
 # Automated Accessibility Testing
 
+## The Idea
+
+**In plain English:** Automated accessibility testing is when software automatically scans your website to check if it can be used by people with disabilities — like someone who is blind and uses a screen reader, or someone who can only navigate with a keyboard. Think of it as a spell-checker, but instead of finding typos, it finds missing labels, broken navigation cues, and colors that are too hard to read.
+
+**Real-world analogy:** Imagine a building inspector who visits a new office and checks it against a safety checklist — are there wheelchair ramps, are the exit signs lit, do the fire doors open outward? They catch the obvious rule violations fast, but they cannot tell you whether the ramp is actually comfortable for someone in a wheelchair, or whether the layout makes sense to navigate.
+
+- The building inspector = the automated testing tool (axe-core)
+- The safety checklist = the WCAG accessibility rules
+- Checking for missing exit signs = detecting missing alt text or unlabeled form inputs
+- The things only a person can judge (comfort, layout flow) = the 60-70% of accessibility issues that require manual testing with real users
+
+---
+
 ## Overview
 
 Automated accessibility testing catches the subset of WCAG violations that are programmatically detectable — missing alt text, insufficient color contrast, unlabeled form inputs, broken ARIA usage. WebAIM estimates that automated tools can catch 30-40% of accessibility issues; the rest require manual testing and real-user feedback. This guide covers axe-core, jest-axe, Playwright accessibility assertions, what automated testing reliably catches, and where it falls short.

@@ -1,5 +1,17 @@
 # Web App Manifest
 
+## The Idea
+
+**In plain English:** A Web App Manifest is a small settings file that tells a phone or computer "hey, treat this website like a real app" — giving it a name, icon, and the ability to live on your home screen just like Instagram or Spotify.
+
+**Real-world analogy:** Think of submitting a new business to Google Maps. You fill out a form with the business name, logo, address, and opening hours so Google knows how to display it. The manifest is exactly that form — but for your website, filled out so the device knows how to display it as an app.
+
+- The business name = the `name` / `short_name` fields
+- The logo image = the `icons` array
+- The address (where to open) = the `start_url` field
+
+---
+
 ## Introduction
 
 The Web App Manifest is a JSON file that provides metadata about your Progressive Web App, enabling it to be installed on a user's device and launched like a native application. It controls how your app appears when installed, including the app icon, name, theme colors, and display mode.

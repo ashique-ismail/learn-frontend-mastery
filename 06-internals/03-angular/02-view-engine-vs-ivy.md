@@ -1,5 +1,18 @@
 # View Engine vs Ivy: Architecture and Migration
 
+## The Idea
+
+**In plain English:** Angular has two different "engines" that turn your code into something a browser can display — View Engine was the original, and Ivy is the newer, smarter replacement. Think of them as two different assembly lines that take the same raw ingredients (your components) and produce a finished website, but one is much faster and wastes far less material.
+
+**Real-world analogy:** Imagine a restaurant kitchen. The old kitchen (View Engine) had to read the entire week's menu before cooking a single dish — every chef needed to know every recipe in case something was connected. The new kitchen (Ivy) lets each chef work independently, only knowing the recipes for their own station.
+
+- The chef at a station = a single Angular component
+- The recipe card at that station = the compiled output for that component
+- The old rule "everyone must read the whole menu first" = View Engine's global compilation model
+- The new rule "only read what your station needs" = Ivy's locality principle
+
+---
+
 ## Overview
 
 View Engine was Angular's original compilation and rendering pipeline from versions 2-8, while Ivy is the next-generation engine introduced in Angular 9. Understanding the differences between these two engines reveals the evolution of Angular's architecture and the rationale behind one of the most significant rewrites in framework history.

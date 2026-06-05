@@ -1,10 +1,23 @@
 # CSS Houdini
 
+## The Idea
+
+**In plain English:** CSS Houdini is a set of tools built into the browser that lets developers write code which plugs directly into how the browser draws and animates web pages — instead of fighting against the browser's built-in styling rules, you get to extend them from the inside. Think of "CSS" as the language that controls how a webpage looks, and "Houdini" as the escape hatch that lets your code reach inside the browser's paint-and-layout machinery.
+
+**Real-world analogy:** Imagine a restaurant kitchen where all the standard dishes are cooked by the head chef (the browser) following fixed recipes (built-in CSS). Normally, if you want something the menu doesn't offer, a waiter has to run out to a food truck parked outside, get the dish made there, and carry it back in — slow and clunky. CSS Houdini is like being given your own dedicated station inside the kitchen, with the same stoves and tools as the head chef, so your custom dish is made right alongside everything else at full speed.
+
+- The head chef's fixed recipes = the browser's built-in CSS rendering rules
+- The food truck outside = slow JavaScript workarounds that run on the main thread
+- Your dedicated station inside the kitchen = a Houdini worklet running inside the browser's paint or layout pipeline
+- The dish you cook = a custom visual effect, layout, or animation that performs just like a native CSS feature
+
+---
+
 ## Overview
 
 CSS Houdini is a collection of browser APIs that expose the CSS engine's internals to JavaScript, allowing developers to extend CSS with custom properties, custom paint effects, custom layout algorithms, and custom animation worklets. Before Houdini, any CSS feature that browsers didn't natively support required JavaScript workarounds that were slow, janky, or inaccessible.
 
-```
+```text
 Without Houdini — custom visual effects:
   JS reads element size → calculates pixel positions → draws to canvas
   or
@@ -25,7 +38,7 @@ With Houdini — custom paint worklet:
 
 Houdini consists of several distinct APIs that target different stages of the browser's rendering pipeline:
 
-```
+```text
 Rendering pipeline stage → Houdini API
 ──────────────────────────────────────
 JavaScript / Style      → Properties & Values API (CSS.registerProperty)
@@ -376,7 +389,7 @@ Note: The Animation Worklet API has been largely superseded by the native **CSS 
 
 ## Why Houdini Matters for Performance
 
-```
+```text
 JavaScript animation vs CSS Houdini comparison:
 
 JS canvas overlay (common pattern):
@@ -403,7 +416,7 @@ CSS Paint Worklet:
 Result: 60fps animations even when main thread is busy processing data
 ```
 
-```
+```text
 Performance characteristics:
   Paint Worklet     → Runs off main thread, can't read DOM
   Layout Worklet    → Runs off main thread, receives child sizes not DOM
@@ -413,7 +426,7 @@ Performance characteristics:
 
 ## Browser Support
 
-```
+```text
 Feature                          | Chrome | Edge | Firefox | Safari
 ─────────────────────────────────|────────|──────|─────────|───────
 CSS.registerProperty             | 78+    | 79+  | 128+    | 16.4+
@@ -474,7 +487,7 @@ async function initPaintWorklets(): Promise<void> {
 
 ## Real-World Use Cases
 
-```
+```text
 1. Animated gradient borders
    @property --gradient-angle → conic-gradient → @keyframes
    No JS, no Canvas, pure CSS

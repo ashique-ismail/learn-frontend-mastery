@@ -1,5 +1,18 @@
 # Implement Promise.all, race, allSettled, any
 
+## The Idea
+
+**In plain English:** `Promise.all` and its cousins are tools that let you kick off several tasks at the same time and then decide what to do once some — or all — of them finish. A "Promise" is just JavaScript's way of saying "I'll give you the result later, I promise."
+
+**Real-world analogy:** Imagine you and three friends each order a different dish at a restaurant. You all want to eat together, so you wait until every single plate arrives before anyone picks up a fork. If the kitchen burns one dish, the whole table decides to leave (that's `Promise.all`). Alternatively, the first dish to arrive wins and everyone eats that (that's `Promise.race`).
+
+- The restaurant kitchen = the asynchronous tasks running in the background
+- Each dish order = an individual Promise
+- Waiting for all plates = `Promise.all` collecting every result before resolving
+- The first plate to land on the table = `Promise.race` settling on whichever Promise finishes first
+
+---
+
 ## Why It's Asked
 
 Implementing Promise combinators tests deep understanding of Promise mechanics, async state tracking, and edge cases like empty arrays and early rejection.

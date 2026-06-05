@@ -1,5 +1,17 @@
 # semantic-release
 
+## The Idea
+
+**In plain English:** semantic-release is a tool that automatically figures out what version number your software should get and publishes it — all based on the descriptions you wrote when you saved your code changes. A "version number" is like an edition label (e.g., 1.0.0) that tells users how much has changed since the last release.
+
+**Real-world analogy:** Imagine a newspaper that automatically decides its own edition number based on the type of news submitted by reporters. A reporter files a "BREAKING NEWS" story, and the paper goes from Edition 1 to Edition 2. A reporter files a small correction, and the paper goes from Edition 1.0 to Edition 1.1. The paper also writes its own table of contents and sends itself to subscribers — no editor has to do it manually.
+
+- The reporters filing stories = developers writing commit messages
+- The "BREAKING NEWS" vs "correction" labels = commit types like `feat`, `fix`, or `BREAKING CHANGE`
+- The edition number = the version number (e.g., 2.0.0, 1.1.0, 1.0.1)
+
+---
+
 ## What It Does
 
 semantic-release fully automates the version management and package publishing workflow by analyzing commit messages. It determines version bumps, generates changelogs, creates GitHub releases, and publishes to npm — all in CI, with no manual intervention.

@@ -1,5 +1,16 @@
 # Accessible Forms
 
+## The Idea
+
+**In plain English:** Accessible forms are web forms (like login screens or sign-up pages) designed so that everyone can use them — including people who are blind and use software that reads the screen aloud, or people who only use a keyboard instead of a mouse. This means every question on the form has a clear label, errors are explained in plain language, and the form works without needing to see it visually.
+
+**Real-world analogy:** Imagine filling out a paper job application at a front desk, where a helpful assistant reads each question aloud and tells you exactly what you wrote wrong before you hand it in.
+- The printed label next to each blank line = the `<label>` element that names each input field
+- The assistant saying "This field is required" out loud = `aria-required` and `role="alert"` announcing errors to screen readers
+- The grouping of questions under headings like "Work History" = `<fieldset>` and `<legend>` grouping related fields together
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Why Form Accessibility Matters](#why-form-accessibility-matters)

@@ -1,6 +1,19 @@
 # Signal, Computed, and Effect in Angular
 
+## The Idea
+
+**In plain English:** Signals are a way for your app to remember a value (like a counter or a name) and automatically update anything that depends on it the moment that value changes — no manual refreshing needed. Think of a signal as a special box that shouts "hey, I changed!" to anyone listening whenever you put something new inside.
+
+**Real-world analogy:** Imagine a whiteboard in a classroom that shows the current score of a game. A scorekeeper updates the number on the whiteboard (the signal). Two students in the room have assigned jobs: one always calculates the average score so far and rewrites it on a sticky note (computed), and another student is in charge of ringing a bell whenever the score changes so people pay attention (effect).
+
+- The whiteboard number = the signal (the raw piece of state that can be updated)
+- The sticky note with the running average = the computed value (automatically recalculated whenever the whiteboard changes, read-only)
+- The student ringing the bell = the effect (runs a side action in response to the change)
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Understanding Signals](#understanding-signals)
 - [signal() Function](#signal-function)
@@ -20,6 +33,7 @@
 Angular Signals represent a fundamental shift in how Angular handles reactivity. Introduced in Angular 16 and becoming the default in Angular 19+, signals provide a fine-grained reactivity system that enables better performance, simpler code, and a clearer mental model for state management.
 
 Signals are reactive primitives that notify consumers when their value changes. The three core building blocks are:
+
 - **signal()**: Writable signal for mutable state
 - **computed()**: Read-only derived state
 - **effect()**: Side effects that run when signals change

@@ -1,5 +1,17 @@
 # Tell Me About a Time You Optimized Performance
 
+## The Idea
+
+**In plain English:** Performance optimization means finding out why an app is slow and fixing the actual cause, not just guessing. A "bottleneck" is the one slow part that holds everything else up — like a traffic jam on a single lane road.
+
+**Real-world analogy:** Imagine a busy school cafeteria where the lunch line moves painfully slowly. Instead of telling everyone to eat faster, the manager first watches the line to find where it actually stalls — and discovers every student stops at one broken card reader. Fixing just that one machine speeds up the whole line.
+
+- The card reader = the performance bottleneck (the real cause of slowness)
+- Watching the line before acting = profiling with DevTools before changing any code
+- Fixing only the broken reader = targeted optimization instead of random guessing
+
+---
+
 ## What Interviewers Are Looking For
 
 They want to see your diagnostic process — not just that you "made it faster," but that you measured first, identified the real bottleneck, applied targeted fixes, and verified improvement. The STAR format works well here.

@@ -1,5 +1,17 @@
 # Snapshot Testing
 
+## The Idea
+
+**In plain English:** Snapshot testing is a way to automatically remember exactly what your app looked like at a certain point, and then check later that nothing accidentally changed. Think of it like taking a photograph of your work so you can spot if anything shifted without you meaning it to.
+
+**Real-world analogy:** Imagine a museum curator who photographs every exhibit at the start of the week, then walks through on Friday and compares each display to its photo to make sure nothing was moved, broken, or replaced without approval.
+
+- The photograph = the saved snapshot file
+- The current state of the exhibit = the component's rendered HTML output
+- The curator's Friday comparison = the test runner comparing the new output to the saved snapshot
+
+---
+
 ## Overview
 
 Snapshot testing captures the rendered output of a component and saves it as a reference. Future test runs compare the current output against the saved snapshot, detecting unintended changes. While powerful for preventing regressions, snapshots must be used judiciously to avoid becoming maintenance burdens.

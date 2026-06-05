@@ -1,5 +1,17 @@
 # Effect-TS
 
+## The Idea
+
+**In plain English:** Effect-TS is a TypeScript library that lets you describe what your program should do — including what can go wrong — before actually running it. Instead of code that immediately fires off and throws surprise errors, you build up a blueprint of steps, errors, and dependencies that TypeScript can check and reason about ahead of time.
+
+**Real-world analogy:** Imagine a restaurant kitchen using printed order tickets. The waiter writes down the full order — including allergy notes and substitutions — on a ticket before anything is cooked. The kitchen reads the ticket, knows exactly what could go wrong (no avocado in stock, oven down), and only then starts cooking.
+
+- The order ticket = the Effect (a description of the computation, not yet executed)
+- The allergy notes = typed errors (known failure cases baked into the description)
+- The kitchen staff = the runtime that actually executes the Effect when you call `Effect.runPromise`
+
+---
+
 ## What It Is
 
 Effect is a TypeScript library for building robust, type-safe, scalable applications. It models computations as values, provides typed error handling (no thrown exceptions), structured concurrency, dependency injection, and resource management — all composable and highly testable.

@@ -1,5 +1,16 @@
 # Keyboard navigation patterns
 
+## The Idea
+
+**In plain English:** Keyboard navigation patterns are agreed-upon rules for how every interactive piece of a website should respond when you press keys like Tab, Arrow keys, Enter, or Escape — so that people who cannot use a mouse can still get around and use everything on the page.
+
+**Real-world analogy:** Think of a TV remote control. Every TV brand follows the same basic rules: the up/down arrows change the channel, left/right adjust the volume, OK selects something, and Back closes a menu. Even if you pick up a remote you have never seen before, you instantly know how to use it because everyone follows the same pattern.
+- The remote buttons = keyboard keys (Tab, Arrow keys, Enter, Escape)
+- The TV menu items you navigate = focusable HTML elements (buttons, links, inputs)
+- The universal remote-control rulebook = keyboard navigation patterns (the agreed standards every website should follow)
+
+---
+
 ## Overview
 
 Keyboard navigation patterns define how users interact with UI components using only the keyboard. Following established patterns ensures consistency and usability.

@@ -1,5 +1,18 @@
 # Signals Implementation: Graph, Dependencies, and Scheduling
 
+## The Idea
+
+**In plain English:** Signals are a way for a program to automatically keep track of which pieces of data depend on other pieces, so that when one value changes, only the parts of the app that actually use that value get updated. Think of a "signal" as a special container that holds a value and shouts out to anyone listening whenever that value changes.
+
+**Real-world analogy:** Imagine a school's announcement board system where teachers post grade updates. When a math teacher posts a new grade, only the students enrolled in math (and the counselors tracking those students) are notified — not the entire school.
+
+- The announcement board = the signal (holds the current value)
+- A student's enrollment in a class = a dependency (a computed value or effect that reads the signal)
+- The counselor who monitors multiple students = a computed signal (derives a new value from other signals)
+- The intercom that broadcasts the update = the notification system that marks subscribers as dirty and schedules effects
+
+---
+
 ## Overview
 
 Angular signals represent a fundamental shift in reactive programming, implementing a push-pull hybrid reactive system with fine-grained reactivity. Unlike traditional observables or change detection, signals create a directed acyclic graph (DAG) of dependencies that enables precise, efficient updates with minimal overhead.

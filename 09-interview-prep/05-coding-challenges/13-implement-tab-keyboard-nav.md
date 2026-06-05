@@ -1,5 +1,17 @@
 # Implement Tab Component with Keyboard Navigation
 
+## The Idea
+
+**In plain English:** A tab component lets users switch between different sections of content by clicking labeled buttons at the top, and keyboard navigation means people can also do this using just the arrow keys on their keyboard — no mouse needed. "ARIA" refers to special labels added to HTML that help screen readers (tools used by people who are blind) understand what each part of the interface does.
+
+**Real-world analogy:** Imagine a physical filing cabinet with labeled folder tabs sticking up at the top. You can flip to any folder by pressing on its tab, and once you're in a folder you can read the papers inside.
+
+- The folder tabs sticking up = the tab buttons (the clickable labels)
+- The papers inside each folder = the tab panel (the content shown when a tab is active)
+- Only one folder being open at a time = only one tab panel being visible at a time
+
+---
+
 ## ARIA Tabs Pattern
 
 ```

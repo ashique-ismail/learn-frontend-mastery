@@ -1,5 +1,18 @@
 # Typed Forms in Angular
 
+## The Idea
+
+**In plain English:** Typed forms are a way to build web forms where the computer checks — before the page even loads — that you are using the right kind of data (like a number where a number is expected, or text where text is expected). "Type" just means the category of data: text, number, yes/no, etc.
+
+**Real-world analogy:** Think of a vending machine that only accepts specific coins in each slot. The "25-cent" slot physically cannot fit a dime, so you cannot make a mistake at all — the machine's shape enforces the rule before any money is lost. In the same way, typed forms are shaped so the wrong kind of data cannot fit in the wrong field, and the error is caught immediately.
+
+- The vending machine = the Angular form
+- Each coin slot = a form control (an individual input field)
+- The shape of the slot = the TypeScript type assigned to that control
+- Trying to insert a dime in the quarter slot = passing a string where a number is expected
+
+---
+
 ## Overview
 
 Typed forms, introduced in Angular 14, bring full type safety to reactive forms. Before Angular 14, forms were loosely typed with `any`, making it easy to introduce runtime errors. Typed forms use generics to provide compile-time type checking, autocompletion, and refactoring support for form values and controls.

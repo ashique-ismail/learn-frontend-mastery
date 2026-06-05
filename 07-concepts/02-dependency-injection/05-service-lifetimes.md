@@ -1,5 +1,16 @@
 # Service Lifetimes
 
+## The Idea
+
+**In plain English:** A service lifetime controls how many copies of a helper tool your app creates and how long each copy sticks around. Think of it as deciding whether everyone in town shares one copy of a book, each person gets their own copy, or each reading group gets one copy to share among themselves.
+
+**Real-world analogy:** Imagine a town library system managing copies of a popular reference book:
+- The single shared reference copy at the front desk (never leaves) = Singleton — one instance used by the whole application
+- Photocopies handed out and thrown away after each use = Transient — a fresh instance created every time one is needed
+- One copy loaned to each book club for the duration of their meeting = Scoped — one instance shared within a defined boundary (like a request or component tree), then released
+
+---
+
 ## Overview
 
 Service lifetimes define how long a service instance lives and how many instances are created. Understanding lifetimes is crucial for managing resources, memory, state sharing, and preventing bugs. The three main lifetimes are: Singleton (one instance for entire application), Transient (new instance every time), and Scoped (one instance per scope/request).

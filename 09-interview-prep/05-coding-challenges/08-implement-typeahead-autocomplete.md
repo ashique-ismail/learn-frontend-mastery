@@ -1,5 +1,17 @@
 # Implement a Typeahead / Autocomplete
 
+## The Idea
+
+**In plain English:** A typeahead (also called autocomplete) is a search box that shows you a list of matching suggestions while you type, updating instantly with each new letter so you can pick an option without finishing the full word.
+
+**Real-world analogy:** Think of a librarian assistant standing next to a card catalog. You say the first word of a book title out loud, and the assistant immediately pulls out a short stack of matching cards for you to pick from — then you say another word and they swap in an even smaller stack.
+
+- The words you speak = the characters you type into the input box
+- The assistant listening and pulling cards = the debounced fetch function that requests matching results from the server
+- The stack of cards shown to you = the dropdown list of suggestions rendered on screen
+
+---
+
 ## Core Requirements
 
 1. Show suggestions as the user types (debounced)

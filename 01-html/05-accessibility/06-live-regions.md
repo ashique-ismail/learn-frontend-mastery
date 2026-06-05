@@ -1,5 +1,17 @@
 # Live regions
 
+## The Idea
+
+**In plain English:** A live region is a special area on a webpage that automatically tells screen reader software (a tool that reads the screen aloud for people who can't see it) whenever the content inside it changes, so users do not have to move their cursor there to find out what updated.
+
+**Real-world analogy:** Think of a sports stadium scoreboard operator who calls out score changes over a loudspeaker. Fans in the stands do not have to walk up and look at the scoreboard themselves — the announcement comes to them.
+
+- The loudspeaker = the `aria-live` attribute (it broadcasts changes to whoever is listening)
+- The scoreboard box = the HTML element marked as a live region (the area being watched for changes)
+- The score changing = dynamic content being updated by JavaScript
+
+---
+
 ## Overview
 
 Live regions announce dynamic content changes to screen reader users without requiring focus changes. They're essential for real-time updates like status messages, notifications, and changing content.

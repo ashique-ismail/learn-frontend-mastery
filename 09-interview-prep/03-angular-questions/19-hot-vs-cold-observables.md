@@ -1,5 +1,18 @@
 # Hot vs Cold Observables
 
+## The Idea
+
+**In plain English:** An observable is like a pipeline that delivers data to whoever is listening. A "cold" observable starts a brand-new delivery for every listener who tunes in, while a "hot" observable is a live broadcast that was already running — if you join late, you only catch what's happening from that moment onward.
+
+**Real-world analogy:** Think of a streaming service (cold) versus a live TV channel (hot). When you press play on a movie, the film starts from the beginning just for you — that is cold. But a live news channel is already broadcasting whether anyone is watching or not; if you turn on the TV mid-broadcast, you only see what is airing right now — that is hot.
+
+- The movie on-demand = a cold observable (each viewer gets their own fresh playback from the start)
+- The live news channel = a hot observable (one broadcast shared among all viewers)
+- You pressing play = subscribing to a cold observable (triggers a new, independent execution)
+- You turning on the TV = subscribing to a hot observable (you join an already-running stream)
+
+---
+
 ## The Core Distinction
 
 **Cold Observable**: The producer is created **inside** the observable. Each subscriber gets its own independent execution — own HTTP request, own timer, own data stream.

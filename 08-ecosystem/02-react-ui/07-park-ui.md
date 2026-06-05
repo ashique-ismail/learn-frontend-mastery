@@ -1,5 +1,16 @@
 # Park UI
 
+## The Idea
+
+**In plain English:** Park UI is a set of ready-made website building blocks (like buttons, menus, and pop-up dialogs) that you copy directly into your own project and can edit however you want. It handles all the complicated keyboard and screen-reader behaviour automatically, so you can focus on making things look the way you want.
+
+**Real-world analogy:** Imagine buying a flat-pack furniture kit from a store. The kit comes with pre-cut, pre-finished wooden panels (the styled components), the hardware that makes drawers slide and doors open correctly (the built-in keyboard and accessibility behaviour), and an instruction sheet showing how the pieces connect (the component API). Once you bring the kit home it is yours — you can repaint it, cut it down, or add new shelves without asking the store's permission.
+- The pre-cut panels = the styled component files the CLI copies into your project
+- The drawer slides and door hinges = the Zag.js state machines that handle keyboard navigation and ARIA automatically
+- Taking the kit home = owning the source code permanently so you can change anything
+
+---
+
 ## What It Is
 
 Park UI is a **styled component library** built directly on top of Ark UI primitives. It is **not** a standalone headless library — it is the styled layer in a three-tier stack:

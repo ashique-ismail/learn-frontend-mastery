@@ -1,5 +1,17 @@
 # Browser Process Model
 
+## The Idea
+
+**In plain English:** A browser process model is the way a web browser splits its work across multiple separate programs (called "processes") running at the same time, so that if one part crashes or gets hacked, the rest of the browser keeps working safely.
+
+**Real-world analogy:** Think of a busy restaurant. The manager at the front desk greets customers and coordinates everything, separate cooks work in isolated kitchen stations for each type of dish, and a specialized equipment operator runs the industrial oven for everyone.
+
+- The front desk manager = the Browser Process (coordinates everything, controls access to resources)
+- Each isolated kitchen station = a Renderer Process (handles one website's content, walled off from the others)
+- The shared industrial oven operator = the GPU Process (does graphics work for all stations, but kept separate for safety)
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Multi-Process Architecture](#multi-process-architecture)

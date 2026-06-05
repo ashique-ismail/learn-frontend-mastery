@@ -1,6 +1,19 @@
 # Type Coercion - JavaScript Interview Questions
 
+## The Idea
+
+**In plain English:** Type coercion is when JavaScript automatically converts a value from one kind of data (like a number) into another kind (like text) so it can complete an operation. A "type" is just the category of a value — for example, whether something is a number, a word, or true/false.
+
+**Real-world analogy:** Imagine a vending machine that only accepts dollar bills, but you insert a handful of coins. The machine quietly counts the coins and treats them as if they were dollars so the transaction can go through — you never asked it to do that, it just did it on its own.
+
+- The coins = a value of one type (e.g., a text string like `"5"`)
+- The dollar-bill slot = an operation that expects a different type (e.g., a number)
+- The machine silently converting coins to dollars = JavaScript automatically converting the string to a number
+
+---
+
 ## Table of Contents
+
 - [Core Concepts](#core-concepts)
 - [Common Interview Questions](#common-interview-questions)
 - [Advanced Questions](#advanced-questions)

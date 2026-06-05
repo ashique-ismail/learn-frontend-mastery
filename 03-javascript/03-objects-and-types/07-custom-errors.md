@@ -1,5 +1,17 @@
 # Custom Error Classes
 
+## The Idea
+
+**In plain English:** A custom error is a special kind of mistake message you design yourself so that when something goes wrong in your program, the error tells you exactly what type of problem occurred — not just "something broke." Think of it like creating your own categories of problems instead of using a single generic label for every issue.
+
+**Real-world analogy:** Imagine a hospital triage system where every patient gets tagged with a specific wristband color based on their condition — red for emergency, yellow for urgent, green for minor. A generic hospital just says "patient is sick," but triage lets doctors instantly know how to respond.
+
+- The wristband color = the custom error class name (e.g. `UnauthorizedError`, `NotFoundError`)
+- The patient's chart with details = the extra fields on the error (e.g. `status`, `url`, `field`)
+- The doctor checking the wristband color = `instanceof` in a catch block to handle each error type differently
+
+---
+
 ## Overview
 
 JavaScript's built-in `Error` class is a starting point, not an endpoint. Custom error classes let you carry structured context, enable `instanceof` checks in catch blocks, and communicate failure semantics precisely — the difference between "something went wrong" and "the user's session expired with a 401 from /api/profile".

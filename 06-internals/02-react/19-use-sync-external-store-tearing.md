@@ -1,6 +1,20 @@
 # useSyncExternalStore and Tearing in Concurrent React
 
+## The Idea
+
+**In plain English:** React can pause drawing your page mid-way to handle something more urgent, and if outside data changes during that pause, different parts of the page can end up showing mismatched information — like a price tag and a shopping cart showing different totals at the same moment. `useSyncExternalStore` is a special React tool that prevents this by making sure the whole page either uses the old data or the new data, never a mix of both.
+
+**Real-world analogy:** Imagine a restaurant scoreboard that shows live sports scores. A waiter is updating three separate chalkboard signs around the room with the current score. Halfway through updating the second sign, the game scores change. Now sign 1 shows the old score, sign 2 is mid-update, and sign 3 still has the old score — customers in different parts of the room see different "current" scores at the same moment.
+
+- The scoreboard signs around the room = the different React components on the page
+- The waiter pausing mid-update = React yielding (pausing) a render to handle higher-priority work
+- The score changing while the waiter is mid-round = an external data store updating during a concurrent render
+- A single announcer who freezes all signs, updates them all at once, then unfreezes = `useSyncExternalStore`, which ensures every component sees the same consistent snapshot
+
+---
+
 ## Table of Contents
+
 - [Overview](#overview)
 - [The Tearing Problem](#the-tearing-problem)
 - [Why Concurrent Mode Makes Tearing Possible](#why-concurrent-mode-makes-tearing-possible)

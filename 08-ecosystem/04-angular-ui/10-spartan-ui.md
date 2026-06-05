@@ -1,5 +1,17 @@
 # Spartan/ui
 
+## The Idea
+
+**In plain English:** Spartan/ui is a free collection of ready-made building blocks for Angular apps — things like buttons, forms, and dialogs — where instead of installing a locked-down library, you copy the actual code into your project so you can change anything you want. Angular is a JavaScript framework, which is a set of tools that helps developers build websites.
+
+**Real-world analogy:** Imagine buying a flat-pack furniture kit (like IKEA) where every piece arrives pre-cut and pre-painted, but you get the raw boards and paint too — so you can sand them down and repaint them any color you like. Then consider that some boards handle the structure (holding weight) while other boards handle the looks (the finish and color).
+
+- The structural boards = the `brain` layer (handles behavior, keyboard controls, and accessibility — no colors)
+- The painted finish boards = the `helm` layer (adds Tailwind CSS styling on top of the brain)
+- Getting the raw boards to customize freely = copy-pasting the source code into your own project
+
+---
+
 ## What It Is
 
 Spartan/ui is Angular's equivalent of shadcn/ui — an open-source collection of Angular component source code that you copy into your project. It uses the same "brain + helm" (headless + styled) architecture.

@@ -1,5 +1,18 @@
 # Behavioral: Tell Me About Your Projects
 
+## The Idea
+
+**In plain English:** In a job interview, you will often be asked to talk about projects you have worked on. This topic is about how to tell those project stories in a clear, confident, and convincing way so the interviewer understands what you did and why it mattered.
+
+**Real-world analogy:** Think of a chef being asked by a food critic: "Tell me about a dish you're proud of." The chef doesn't just say "I cooked pasta." They explain the problem (the restaurant needed a signature dish), what they did (experimented with a new sauce technique), and the result (customers kept coming back for it). Talking about your projects in an interview works the same way:
+
+- The chef = you, the developer
+- The food critic = the interviewer
+- The signature dish = your project
+- The story of creating the dish = the STAR method (Situation, Task, Action, Result)
+
+---
+
 ## Overview
 
 Master the STAR method (Situation, Task, Action, Result) for effectively discussing your projects in interviews. Learn to structure project stories, quantify impact, and demonstrate technical leadership.

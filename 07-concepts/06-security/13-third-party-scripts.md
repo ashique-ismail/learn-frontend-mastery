@@ -1,5 +1,18 @@
 # Third-Party Scripts Security
 
+## The Idea
+
+**In plain English:** When you add a third-party script (like an analytics tool or a chat widget) to your site, you're giving that external code full access to your page. If that script is compromised, every visitor to your site is at risk — so you need to load it carefully and limit what it can do.
+
+**Real-world analogy:** Think of hiring a contractor to work in your home. You trust a reputable firm (a well-known vendor), but you still don't give them the keys to your safe (sensitive user data). You check their ID when they arrive (Subresource Integrity hash) and only let them into the rooms they need access to (Content Security Policy).
+
+- Hiring the contractor = loading a `<script src="...">` from a third party
+- Checking their ID = using a Subresource Integrity (`integrity=`) attribute
+- Restricting which rooms they enter = Content Security Policy limiting script sources
+- Finding out the firm was compromised = a supply-chain attack on the vendor's CDN
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Third-Party Security Risks](#third-party-security-risks)

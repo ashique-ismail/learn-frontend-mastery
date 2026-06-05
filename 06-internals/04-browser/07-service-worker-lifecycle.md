@@ -1,5 +1,18 @@
 # Service Worker Lifecycle
 
+## The Idea
+
+**In plain English:** A service worker is a tiny background script that sits between your browser and the internet — it can intercept network requests, cache files, and make your web app work even when you're offline.
+
+**Real-world analogy:** Think of a personal assistant who intercepts all your mail before it reaches you. They check whether you already have a copy filed away; if yes, they hand it to you instantly. If not, they fetch it from the post office and file a copy for next time. When the post office is closed (no internet), they still hand you the copy on file.
+
+- The personal assistant = the service worker script
+- Intercepting mail = the `fetch` event handler
+- The filing cabinet = the browser's Cache Storage API
+- The post office being closed = the user going offline
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Service Worker Registration](#service-worker-registration)

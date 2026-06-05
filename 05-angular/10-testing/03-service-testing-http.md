@@ -1,5 +1,17 @@
 # Service Testing with HTTP in Angular
 
+## The Idea
+
+**In plain English:** When your app talks to a server to fetch or save data, you need a way to test that conversation without actually sending real messages over the internet. Service testing with HTTP lets you pretend to be the server so you can check that your app sends the right requests and handles the answers correctly.
+
+**Real-world analogy:** Imagine a customer (your app) calling a restaurant (the server) to place an order. During a practice drill, a trainer plays the role of the restaurant instead of a real call going out. The trainer can say "yes, here's your order" or "sorry, we're closed" to test how the customer reacts in each situation.
+
+- The customer = your Angular service making HTTP calls
+- The trainer pretending to be the restaurant = `HttpTestingController` intercepting requests
+- The practice drill script = your test file defining what requests to expect and what responses to send
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [HttpTestingController Fundamentals](#httptestingcontroller-fundamentals)

@@ -1,5 +1,17 @@
 # How Do You Design a Component API?
 
+## The Idea
+
+**In plain English:** Designing a component API means deciding what "controls" you expose to whoever uses your component — like choosing which buttons and knobs to put on a TV remote so it's easy to use without being overwhelming. An API (Application Programming Interface) is just the set of inputs a piece of code accepts from the outside world.
+
+**Real-world analogy:** Think of ordering a custom sandwich at a deli counter. You tell the worker: bread type, fillings, and any extras — but you don't tell them how to slice the bread or in which order to stack the ingredients. That's their job inside the kitchen.
+
+- The order form (bread, fillings, extras) = the component's props (the inputs you expose)
+- The items you can pick from the menu = the allowed values for each prop (e.g. "primary" | "secondary")
+- The kitchen workflow hidden from you = the component's internal implementation
+
+---
+
 ## What Interviewers Want to See
 
 Design thinking: you balance flexibility, simplicity, and consistency. They want to know you think about the component's consumers, not just its internal implementation.

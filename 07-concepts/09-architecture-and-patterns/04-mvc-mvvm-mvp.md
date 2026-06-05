@@ -1,5 +1,17 @@
 # MVC, MVVM, and MVP Patterns
 
+## The Idea
+
+**In plain English:** MVC, MVVM, and MVP are three popular ways to organize the code inside an app so that the part that stores data, the part that shows things on screen, and the part that decides what happens when you click a button are each kept in separate, tidy boxes. Keeping those three concerns separate makes apps easier to change, test, and grow over time.
+
+**Real-world analogy:** Think of ordering food at a sit-down restaurant. You (the customer) tell the waiter what you want. The waiter carries that request to the kitchen, the chef cooks the meal, and the waiter brings the finished plate back to you. You never walk into the kitchen yourself, and the chef never comes out to take your order.
+
+- The dining room (what you see) = the View
+- The waiter (who shuttles requests and results) = the Controller / ViewModel / Presenter (depending on the pattern)
+- The kitchen and its recipes (where the real work and data live) = the Model
+
+---
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [MVC (Model-View-Controller)](#mvc-model-view-controller)

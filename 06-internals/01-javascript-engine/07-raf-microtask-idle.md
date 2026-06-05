@@ -1,5 +1,17 @@
 # requestAnimationFrame, requestIdleCallback, and queueMicrotask
 
+## The Idea
+
+**In plain English:** Browsers need to juggle many jobs at once — running your code, drawing the screen, and handling idle time. These three tools let you tell the browser *when* a piece of work should run: right now before anything else, right before the next screen redraw, or only when the browser has nothing better to do.
+
+**Real-world analogy:** Imagine a busy restaurant kitchen with a head chef (the browser). Orders (tasks) come in and the chef works through them one at a time. Some prep work has different urgency levels: a sauce correction must happen immediately before the next dish leaves the pass, plating a new dish happens right before it goes out to the table, and restocking shelves happens only between rushes when there are no orders pending.
+
+- The sauce correction = `queueMicrotask` (runs immediately after the current job, before anything else gets started)
+- The plating step = `requestAnimationFrame` (runs right before the dish is served, i.e. right before the screen is redrawn)
+- The shelf restocking = `requestIdleCallback` (runs only during quiet gaps when the kitchen is not busy)
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [The Event Loop Refresher](#the-event-loop-refresher)

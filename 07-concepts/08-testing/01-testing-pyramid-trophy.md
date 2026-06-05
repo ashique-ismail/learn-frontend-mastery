@@ -1,5 +1,16 @@
 # Testing Pyramid vs Testing Trophy
 
+## The Idea
+
+**In plain English:** Testing your code means checking that it works correctly before real users ever touch it. The "Testing Pyramid" and "Testing Trophy" are two different strategies that tell you how many of each type of check to write — from tiny isolated checks (unit tests) all the way up to checks that simulate a real person clicking through your app (end-to-end tests).
+
+**Real-world analogy:** Think of building a skyscraper. Before opening it to the public, you run different levels of checks.
+- The inspector checking each individual bolt = a unit test (one small piece in isolation)
+- The engineer testing that a whole floor's wiring, plumbing, and walls work together = an integration test (multiple pieces connected)
+- The fire drill where everyone walks through the full evacuation route = an end-to-end test (the entire real-world journey from start to finish)
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [The Testing Pyramid](#the-testing-pyramid)

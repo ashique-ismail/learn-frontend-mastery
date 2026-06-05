@@ -1,5 +1,17 @@
 # fp-ts
 
+## The Idea
+
+**In plain English:** fp-ts is a TypeScript library that gives you special "containers" to safely handle situations where a value might be missing or an operation might fail — instead of your program crashing unexpectedly, you plan for both outcomes up front. A container is just a wrapper around a value that carries extra information about whether the value is there or not.
+
+**Real-world analogy:** Imagine ordering a package online. The delivery service gives you a tracking box: it either shows "delivered with your item inside" or "delivery failed with a reason why." You deal with both cases before you even open the door.
+
+- The tracking box = the `Either` or `Option` container in fp-ts
+- "Delivered with your item" = `Right` (success) or `Some` (value present)
+- "Delivery failed with a reason" = `Left` (error) or `None` (value absent)
+
+---
+
 ## What It Is
 
 fp-ts brings functional programming patterns to TypeScript — type-safe representations for missing values (Option), errors (Either), async operations (Task/TaskEither), and composable functions (pipe/flow).

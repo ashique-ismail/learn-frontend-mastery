@@ -1,5 +1,17 @@
 # Design Resumable/Chunked File Upload
 
+## The Idea
+
+**In plain English:** Chunked file upload is a way of sending a large file to a server by breaking it into many small pieces and sending each piece separately, so that if something goes wrong you only need to resend the missing pieces rather than starting over from scratch.
+
+**Real-world analogy:** Imagine mailing a very long novel to a friend by tearing out each chapter, putting each chapter in its own envelope, and mailing them all separately. If one envelope gets lost in the mail, you only resend that one chapter — not the whole book.
+
+- The novel = the large file you want to upload
+- Each chapter in its own envelope = a chunk (a fixed-size slice of the file sent as one request)
+- The post office tracking number on each envelope = the chunk index (a number that tells the server which piece this is and where it fits)
+
+---
+
 ## Why Chunked Uploads?
 
 For large files (videos, archives, datasets):

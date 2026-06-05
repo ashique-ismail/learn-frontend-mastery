@@ -1,5 +1,17 @@
 # Angular DI vs React Context: A Comparative Analysis
 
+## The Idea
+
+**In plain English:** Angular has a built-in system (called Dependency Injection) that automatically finds and hands your code the tools it needs, like a smart storage room that fetches what you ask for. React's Context is simpler — it is just a way to pass a value from a parent component down to any child, but you have to build and hand over the tools yourself.
+
+**Real-world analogy:** Imagine a hospital where each doctor can request equipment. In one version (Angular), the hospital has a central supply department — a doctor simply says "I need a heart monitor" and staff automatically locate, retrieve, and deliver it, even sourcing it from a sub-department if needed. In another version (React Context), a senior nurse carries a kit bag and any doctor in the ward can reach in and grab what's there, but someone had to pack that bag manually before the shift.
+- The central supply department = Angular's injector tree (auto-resolves and delivers dependencies)
+- The doctor requesting equipment = a component or service using `inject()`
+- The nurse's kit bag = a React Context Provider holding manually created service instances
+- The ward = the component subtree that can access that Provider's value
+
+---
+
 ## Overview
 
 Angular ships a full-featured hierarchical dependency injection system as a first-class framework primitive. React has no built-in DI system — Context is a value-propagation mechanism that developers press into service as a lightweight DI substitute. Understanding both systems deeply clarifies when React Context is sufficient, when it breaks down, and what patterns bridge the gap. This guide compares the two side-by-side across architecture, scoping, testing, and real-world scenarios.

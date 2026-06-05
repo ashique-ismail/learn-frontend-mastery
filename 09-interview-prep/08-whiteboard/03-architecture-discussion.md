@@ -1,5 +1,18 @@
 # Whiteboard: Architecture Discussion
 
+## The Idea
+
+**In plain English:** Architecture discussion is when you explain how you would organize and connect all the different parts of a software system — like deciding how many rooms a building needs, what each room is for, and how people move between them — before you start building.
+
+**Real-world analogy:** Imagine planning a new shopping mall. Before construction begins, you sit down with the owners and draw a map: where the food court goes, how many entrances there are, which shops sit near each other, and how delivery trucks reach the back of each store. Every choice has a reason ("the food court goes in the middle so foot traffic passes all stores") and a trade-off ("a bigger food court means fewer retail spots").
+
+- The mall blueprint = the system architecture diagram
+- Each section of the mall (food court, clothing stores, parking) = each software service or module
+- The corridors and escalators connecting sections = the APIs and data flows between services
+- The mall management deciding which shops get prime spots = the team making trade-off decisions about performance, cost, and complexity
+
+---
+
 ## Overview
 
 Master discussing architecture decisions, trade-offs, scalability considerations, technology choices, and balancing competing concerns like performance vs maintainability during whiteboard interviews.

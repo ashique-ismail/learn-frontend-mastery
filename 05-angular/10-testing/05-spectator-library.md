@@ -1,5 +1,17 @@
 # Spectator Testing Library for Angular
 
+## The Idea
+
+**In plain English:** Spectator is a helper tool that makes writing tests for Angular apps much easier by cutting out repetitive setup code. A "test" is a small program you write to automatically check that your app does what it is supposed to do.
+
+**Real-world analogy:** Imagine you work at a factory quality-checking toys. Normally you have to manually assemble a special inspection rig, plug in each sensor by hand, and calibrate everything before you can even start checking one toy. Spectator is like a pre-built inspection trolley that arrives ready to go — you just place the toy on it and press "check."
+
+- The toy = the Angular component or service you want to test
+- The manual inspection rig setup = the verbose TestBed configuration Spectator replaces
+- The pre-built trolley = the `createComponentFactory` / `createServiceFactory` functions Spectator provides
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Installation and Setup](#installation-and-setup)

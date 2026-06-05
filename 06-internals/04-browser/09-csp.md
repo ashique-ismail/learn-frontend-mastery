@@ -1,5 +1,18 @@
 # Content Security Policy (CSP)
 
+## The Idea
+
+**In plain English:** A Content Security Policy is a set of rules you attach to your webpage that tells the browser exactly which sources of scripts, images, and styles are allowed to load — blocking everything else, even if an attacker sneaks malicious code onto your page.
+
+**Real-world analogy:** Think of a school's approved vendor list. The cafeteria is only allowed to serve food from pre-approved suppliers. Even if someone sneaks in a random food truck, the cafeteria manager turns it away because it's not on the approved list.
+
+- The school cafeteria = your webpage loading resources
+- The approved vendor list = the CSP header you set on your server
+- The random food truck = a malicious script injected by an attacker
+- The cafeteria manager enforcing the list = the browser blocking disallowed sources
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [CSP Directives](#csp-directives)

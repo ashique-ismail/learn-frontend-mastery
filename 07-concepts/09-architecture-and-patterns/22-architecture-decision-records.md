@@ -1,5 +1,18 @@
 # Architecture Decision Records (ADRs)
 
+## The Idea
+
+**In plain English:** An Architecture Decision Record (ADR) is a short document that captures an important choice your software team made — what they decided, why they decided it, and what trade-offs came with that choice. Think of it as a permanent sticky note that future teammates can read to understand why the project is built the way it is.
+
+**Real-world analogy:** Imagine a city council deciding whether to build a new bridge or widen an existing road to reduce traffic. They hold a meeting, weigh the options, vote, and file official meeting minutes explaining the outcome and reasoning.
+
+- The meeting minutes = the ADR document
+- The traffic problem they needed to solve = the context section
+- The final vote to build the bridge = the decision section
+- The notes about increased construction cost but faster commute times = the consequences section
+
+---
+
 ## Overview
 
 Architecture Decision Records (ADRs) are documents that capture important architectural decisions made during the development of a software system, along with their context and consequences. ADRs provide a historical record of why certain technical choices were made, helping teams understand past decisions and avoid repeating discussions.

@@ -1,6 +1,19 @@
 # Angular Element Injector vs Environment Injector
 
+## The Idea
+
+**In plain English:** Angular uses two separate lookup systems called "injectors" to find and hand out shared tools (called services) to different parts of your app. One system is tied to the visual building blocks on screen (components), and the other is tied to the overall app structure (modules and routes).
+
+**Real-world analogy:** Imagine a large hospital with two separate supply systems. Each ward (like the pediatrics ward or the surgery ward) has its own supply closet stocked with ward-specific equipment. There is also a central hospital warehouse that stocks items shared across the whole hospital. When a nurse needs supplies, she first checks her ward's closet; only if it's not there does she go to the central warehouse.
+
+- The ward's supply closet = the element injector (scoped to a component and its children)
+- The central hospital warehouse = the environment injector (app-wide or route-wide)
+- A nurse looking for supplies = a component requesting a service via dependency injection
+
+---
+
 ## Table of Contents
+
 - [Overview](#overview)
 - [The Two Injector Trees](#the-two-injector-trees)
 - [Environment Injector](#environment-injector)

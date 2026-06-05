@@ -1,5 +1,18 @@
 # Tree Shaking and Dead Code Elimination
 
+## The Idea
+
+**In plain English:** Tree shaking is how a build tool automatically finds and removes code from your app that you imported but never actually used, so your website only ships the parts it truly needs. "Dead code" just means code that exists in your project but is never called or reached.
+
+**Real-world analogy:** Imagine you order a massive cookbook with 500 recipes, but you only ever cook 3 of them. Before printing your personal copy, a smart assistant tears out every page you will never use and only keeps the 3 recipes you need, making the book much lighter to carry.
+
+- The full cookbook = a large JavaScript library you imported
+- Each recipe = an individual exported function or component in that library
+- The 3 recipes you actually cook = the specific functions your code imports and calls
+- The assistant removing unused pages = the bundler performing tree shaking
+
+---
+
 ## Overview
 
 Tree shaking is the bundler process of statically analyzing your import graph and removing exports that are never used. The name comes from the metaphor of shaking a dependency tree — dead branches fall off. When it works, tree shaking is one of the most impactful ways to reduce JavaScript bundle size. When it doesn't work (and there are many ways it silently fails), you ship kilobytes of code users never execute. This guide explains the prerequisites, how bundlers implement it, and why it so frequently fails silently.

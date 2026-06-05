@@ -1,5 +1,17 @@
 # Implement Debounce and Throttle
 
+## The Idea
+
+**In plain English:** Debounce and throttle are two techniques that control how often a function runs when something triggers it repeatedly. Debounce waits until the triggering stops before running, while throttle sets a speed limit so the function can only run once per fixed time window no matter how many triggers happen.
+
+**Real-world analogy:** Imagine an elevator door. When people keep pressing the "open door" button, the door waits until no one has pressed it for a few seconds before it finally closes (debounce). But a security camera recording button might work differently — no matter how many times you press it, it will only start a new recording once every 60 seconds (throttle).
+
+- The elevator door delay = debounce waiting period (the function only runs after triggers stop)
+- The button presses = the repeated events (like keystrokes or scroll events) firing rapidly
+- The 60-second camera lockout = the throttle time limit (the fixed window between allowed executions)
+
+---
+
 ## Overview
 
 Implement debounce and throttle functions from scratch, understanding their differences, use cases, and implementation patterns.

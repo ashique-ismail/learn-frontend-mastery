@@ -1,6 +1,19 @@
 # Injection Tokens in Angular
 
+## The Idea
+
+**In plain English:** An injection token is a unique name tag you create so Angular can find and hand over a specific value (like a setting or configuration) to any part of your app that asks for it. Think of it as a labeled locker key — the label is the token, and the locker holds the value.
+
+**Real-world analogy:** Imagine a hotel where guests can request specific amenities by calling the front desk with a room-service code. You dial code "42" to get extra towels — not "towels" as a word, because another guest might also say "towels" and mean something different. The unique numeric code removes all ambiguity.
+
+- The room-service code (e.g., 42) = the InjectionToken (a unique identifier)
+- The amenity delivered (extra towels) = the value or service provided to your component
+- The front desk matching code to amenity = Angular's dependency injection system resolving the token to the correct provider
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Understanding Injection Tokens](#understanding-injection-tokens)
 - [Built-in Injection Tokens](#built-in-injection-tokens)
@@ -1049,17 +1062,21 @@ A: Create tokens that check for parent injector values using @SkipSelf() and mer
 ## Resources
 
 ### Official Documentation
+
 - [InjectionToken API](https://angular.dev/api/core/InjectionToken)
 - [Dependency Injection Guide](https://angular.dev/guide/di)
 
 ### Articles and Tutorials
+
 - [Understanding Injection Tokens](https://blog.angular.io/injection-tokens-explained)
 - [Advanced DI Patterns](https://angular.io/guide/dependency-injection-providers)
 
 ### Video Tutorials
+
 - [Injection Tokens Deep Dive](https://www.youtube.com/watch?v=injection-tokens)
 - [Custom Tokens in Angular](https://www.youtube.com/watch?v=custom-tokens)
 
 ### Community Resources
+
 - [Angular Discord](https://discord.gg/angular)
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/angular-di)

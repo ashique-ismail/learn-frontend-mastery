@@ -1,5 +1,17 @@
 # Classes, Inheritance, super, and Private Fields
 
+## The Idea
+
+**In plain English:** A class is a reusable blueprint for creating objects that share the same properties and behaviors. Inheritance lets one blueprint extend another, so a more specific blueprint (like "Dog") automatically gets everything from a general one (like "Animal") without rewriting it.
+
+**Real-world analogy:** Think of a car manufacturer's design template. A general "Vehicle" template defines that every vehicle has an engine and wheels. A "SportsCar" template inherits from it and adds a turbocharger on top. Every actual car that rolls off the factory floor is an instance built from one of those templates.
+
+- The Vehicle template = the parent class (base blueprint with shared features)
+- The SportsCar template = the child class (inherits from Vehicle, adds its own extras)
+- A specific car rolling off the line = an instance (an object created from the class)
+
+---
+
 ## Overview
 
 ES6 classes gave JavaScript a syntactic layer over its prototype system that aligns with classical OOP idioms while preserving the underlying prototype delegation model. ES2022 added private class fields (`#`) and static class blocks, completing a feature set that covers most real-world OOP needs. Understanding classes deeply means understanding both the sugar — what the syntax does for you — and the mechanics — how prototypes, `super`, descriptors, and the `new` operator interact under the hood. This file covers the full class system at senior-engineer depth, including tricky behavior around `this`, `super` binding, private fields, and inheritance edge cases.
@@ -243,6 +255,7 @@ dog instanceof Animal; // true
 ### Prototype Chain Established by extends
 
 `extends` sets up two prototype chains:
+
 1. Instance chain: `dog.__proto__ === Dog.prototype` and `Dog.prototype.__proto__ === Animal.prototype`
 2. Constructor chain: `Dog.__proto__ === Animal` (for static inheritance)
 
@@ -449,7 +462,7 @@ class Config {
 ## Comparison Table
 
 | Feature | ES6 Class | ES5 Constructor | Factory |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Syntax clarity | High | Low | High |
 | `new` required | Yes (enforced) | Yes (not enforced) | No |
 | Prototype chain | Auto via extends | Manual | None by default |
@@ -581,6 +594,7 @@ arr.map(x => x * 2) instanceof MyArray; // true — Symbol.species
 ## Resources
 
 ### Official Documentation
+
 - [MDN: Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 - [MDN: Private class features](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
 - [MDN: super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super)
@@ -588,6 +602,7 @@ arr.map(x => x * 2) instanceof MyArray; // true — Symbol.species
 - [TC39: Static Class Block](https://github.com/tc39/proposal-class-static-block)
 
 ### Articles and Books
+
 - [You Don't Know JS: Objects & Classes](https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed/objects-classes)
 - [JavaScript Mixins (2ality)](https://2ality.com/2016/05/mixins.html)
 - [ES6 Classes in Depth (MDN Hacks)](https://hacks.mozilla.org/2015/07/es6-in-depth-classes/)

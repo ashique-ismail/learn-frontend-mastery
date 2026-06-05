@@ -1,5 +1,17 @@
 # Angular Directives and Pipes - Interview Questions
 
+## The Idea
+
+**In plain English:** Directives are special instructions you attach to HTML elements that tell Angular to change how those elements look or behave, or whether they even appear on the page at all. Pipes are formatters that transform raw data (like a number or date) into a nicely displayed version before it shows up on screen.
+
+**Real-world analogy:** Think of a restaurant kitchen. You place a food order (your raw data), and before it reaches the customer the chef applies specific finishing instructions: "plate this dish on a round plate only if it's ready" and "garnish with parsley before serving."
+
+- The finishing instructions on the order = directives (rules that control how/whether something appears)
+- The garnish step = a pipe (a transformation applied to the data before display)
+- The raw dish coming out of the oven = the original data in your component
+
+---
+
 ## Overview
 
 This guide covers common interview questions about Angular directives and pipes, including structural vs attribute directives, custom directive implementation, pure vs impure pipes, and performance considerations.

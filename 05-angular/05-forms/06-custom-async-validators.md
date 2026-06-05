@@ -1,5 +1,18 @@
 # Custom Async Validators in Angular
 
+## The Idea
+
+**In plain English:** A custom async validator is a rule you write yourself that checks whether a form field's value is acceptable by asking an outside source (like a server) and waiting for an answer before deciding if the input is valid or not. "Async" just means it doesn't get the answer instantly — it has to wait, like sending a question and getting a reply.
+
+**Real-world analogy:** Imagine you're signing up for a library card and you want to pick a unique library ID. You write your chosen ID on a slip of paper and hand it to the librarian, who disappears into a back room to check the records. You stand at the counter and wait. A minute later they return and tell you whether that ID is already taken or is free to use.
+
+- The slip of paper = the form field value you typed
+- The librarian checking the back room = the HTTP request sent to the server
+- The waiting time at the counter = the "pending" state while Angular waits for the response
+- The librarian's answer ("taken" or "available") = the validation result (error object or null)
+
+---
+
 ## Overview
 
 Async validators enable validation that requires asynchronous operations like HTTP requests, database queries, or time-delayed checks. Common use cases include checking username availability, validating email uniqueness, verifying discount codes, and validating against external APIs.

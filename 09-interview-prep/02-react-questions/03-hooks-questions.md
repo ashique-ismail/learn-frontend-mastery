@@ -1,6 +1,19 @@
 # React Hooks - Interview Questions
 
+## The Idea
+
+**In plain English:** React Hooks are special functions that let you add memory and behaviour to a reusable piece of UI (called a component) without writing a full class. "Memory" here means the component can remember a value — like a score or a username — and update the screen when that value changes.
+
+**Real-world analogy:** Think of a vending machine at school. The machine tracks how many of each snack is left, reacts when you press a button, and cleans up (locks the dispenser door) when the transaction is done. Each of those jobs is handled by a separate built-in mechanism inside the machine, not bolted on from the outside.
+
+- The snack count display = `useState` (stores and shows a value that can change)
+- The sensor that reacts when you press a button = `useEffect` (runs code in response to something changing)
+- The lock that engages after the transaction = the cleanup function returned by `useEffect` (tidies up when the job is done)
+
+---
+
 ## Table of Contents
+
 - [Common Questions](#common-questions)
 - [Advanced Questions](#advanced-questions)
 - [Custom Hooks](#custom-hooks)

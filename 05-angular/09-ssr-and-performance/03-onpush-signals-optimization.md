@@ -1,6 +1,19 @@
 # OnPush Change Detection with Signals Optimization
 
+## The Idea
+
+**In plain English:** Angular normally checks every part of your app for changes whenever anything happens, which gets slow. OnPush with Signals is a smarter system that only updates the exact pieces of your screen that actually changed, making your app much faster.
+
+**Real-world analogy:** Imagine a large office building where a security guard (Angular's default change detection) walks through every single room checking if anything moved, every time a door opens anywhere. With OnPush and Signals, each room instead has a motion sensor (a Signal) that silently watches for changes and only calls the guard when something in that specific room actually moves.
+
+- The security guard doing full rounds = Angular's default change detection checking all components
+- Each room's motion sensor = a Signal watching a specific piece of data
+- The sensor triggering only on real movement = OnPush skipping checks when nothing changed
+
+---
+
 ## Table of Contents
+
 1. [Introduction](#introduction)
 2. [Understanding Change Detection](#understanding-change-detection)
 3. [OnPush Change Detection Strategy](#onpush-change-detection-strategy)
@@ -1026,21 +1039,25 @@ user.update(u => ({ ...u, name: 'New Name' }));
 ## Resources
 
 ### Official Documentation
+
 - [Change Detection](https://angular.dev/best-practices/runtime-performance)
 - [Signals](https://angular.dev/guide/signals)
 - [OnPush Strategy](https://angular.dev/api/core/ChangeDetectionStrategy)
 
 ### Articles
+
 - "OnPush Change Detection Deep Dive" - Angular Blog
 - "Signals and Performance" - Web.dev
 - "Zone-less Angular" - Angular University
 
 ### Video Tutorials
+
 - "Change Detection Explained" - ng-conf
 - "Mastering Signals" - Angular Connect
 - "OnPush Performance Patterns" - Angular YouTube
 
 ### Tools
+
 - Angular DevTools - Profile change detection
 - Chrome DevTools - Performance profiling
 - Profiler API - Measure component render time

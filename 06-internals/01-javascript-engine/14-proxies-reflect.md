@@ -1,5 +1,17 @@
 # Proxies and Reflect
 
+## The Idea
+
+**In plain English:** A Proxy is a middleman that sits in front of an object and intercepts every action performed on it — like reading a value, writing a value, or checking if something exists — so you can add custom behavior without changing the original object. Reflect is a built-in helper that lets you easily perform the "normal" version of any of those same actions.
+
+**Real-world analogy:** Imagine a hotel front desk that handles all requests for a guest's room. If you want to leave something in the room, drop off food, or check whether the guest is in, you go through the front desk — not directly to the room. The front desk can approve, block, log, or modify any request before it reaches the guest.
+
+- The guest's room = the original JavaScript object (the target)
+- The front desk = the Proxy (intercepts all interactions)
+- The rules the front desk follows = the handler traps (custom logic for get, set, delete, etc.)
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [Proxy Basics](#proxy-basics)

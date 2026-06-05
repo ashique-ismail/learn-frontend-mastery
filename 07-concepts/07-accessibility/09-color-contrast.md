@@ -1,5 +1,17 @@
 # Color Contrast
 
+## The Idea
+
+**In plain English:** Color contrast is about how easy it is to tell two colors apart — specifically, how different the text color is from the background color behind it. When the contrast is too low (like light gray text on a white background), people with poor eyesight or color blindness struggle to read it.
+
+**Real-world analogy:** Imagine writing a note in yellow chalk on a white whiteboard versus writing in black marker. The yellow chalk is nearly invisible because it blends into the white background — that is low contrast. The black marker stands out clearly — that is high contrast.
+
+- The whiteboard = the background color of a webpage element
+- The chalk or marker color = the text (or foreground) color
+- How easily you can read the writing = the contrast ratio, a number that measures the difference in brightness between the two colors
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Why Color Contrast Matters](#why-color-contrast-matters)

@@ -1,5 +1,17 @@
 # Standalone Components in Angular
 
+## The Idea
+
+**In plain English:** A standalone component is a self-contained building block of an Angular web page that carries its own list of tools and helpers it needs, so you never have to register it in a separate "group membership" file. Think of it as a Lego piece that comes with its own instruction sheet instead of relying on a shared one kept in a box somewhere else.
+
+**Real-world analogy:** Imagine a food truck that prepares and serves its own complete menu without depending on a central restaurant kitchen. Each food truck lists exactly the equipment and ingredients it brought along.
+
+- The food truck = the standalone component
+- The equipment list on the truck = the `imports` array inside `@Component`
+- The central restaurant kitchen (that old approach needed) = the NgModule
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [What Are Standalone Components](#what-are-standalone-components)

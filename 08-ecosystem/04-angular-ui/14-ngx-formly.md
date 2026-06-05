@@ -1,5 +1,17 @@
 # ngx-formly
 
+## The Idea
+
+**In plain English:** ngx-formly is a tool that lets you describe an entire web form (all its fields, labels, and rules) as a simple list of instructions written in JavaScript — and it automatically builds the form for you, so you never have to write the HTML buttons and boxes by hand.
+
+**Real-world analogy:** Imagine ordering a custom cake from a bakery using a printed order form. You fill in checkboxes and fields (flavor: chocolate, layers: 3, message: "Happy Birthday") and hand it to the baker, who follows those instructions to build the exact cake — you never touch the oven.
+
+- The order form you fill in = the JSON/field config you write in code
+- The baker reading the form and baking the cake = ngx-formly reading your config and generating the HTML form
+- The finished cake = the live, interactive form rendered in the browser
+
+---
+
 ## What It Is
 
 ngx-formly is a dynamic form generation library for Angular. Instead of writing form templates manually, you define forms as JSON configuration and Formly renders them.

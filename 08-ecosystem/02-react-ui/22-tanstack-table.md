@@ -1,5 +1,17 @@
 # TanStack Table v8
 
+## The Idea
+
+**In plain English:** TanStack Table is a tool that handles all the smart behavior behind a data table — like sorting rows, filtering results, and flipping through pages — without deciding what it looks like. You give it your data and rules, and it tells you exactly what to display; you draw the table yourself.
+
+**Real-world analogy:** Think of a school librarian who manages a giant card catalog. You ask her to sort books by author, filter to only sci-fi, and show you page 3 of the results. She hands you a neat, ordered list — but she never builds the bookshelf or prints the shelf labels. That is your job.
+
+- The librarian = TanStack Table (handles all sorting, filtering, and pagination logic)
+- The card catalog rules = column definitions (describe what each column is and how to sort/filter it)
+- The bookshelf and labels you build = the HTML table elements (`<table>`, `<th>`, `<td>`) you render yourself
+
+---
+
 ## What It Is
 
 TanStack Table (formerly React Table) is a **headless** table library — it provides all the logic for sorting, filtering, pagination, row selection, and more, but zero UI. You render the table HTML yourself.

@@ -1,5 +1,17 @@
 # Video, audio, and tracks
 
+## The Idea
+
+**In plain English:** HTML lets you embed video and audio files directly into a webpage, and also attach extra text layers (called tracks) so viewers can read captions, subtitles, or chapter titles while the media plays.
+
+**Real-world analogy:** Think of a DVD you rent from a library. The disc holds the movie, but you can also choose a subtitle language, turn on captions for the hard-of-hearing, or jump to a specific chapter using the menu.
+
+- The DVD disc = the `<video>` or `<audio>` element (the container)
+- The movie files burned on the disc = the `<source>` elements (the actual media files in different formats)
+- The subtitle/caption/chapter options on the DVD menu = the `<track>` elements (the extra text layers attached to the media)
+
+---
+
 ## Overview
 
 HTML5 provides native `<video>` and `<audio>` elements with rich controls, accessibility features through tracks, and extensive JavaScript APIs.

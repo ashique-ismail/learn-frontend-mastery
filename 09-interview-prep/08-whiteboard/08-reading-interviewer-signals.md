@@ -1,5 +1,17 @@
 # Whiteboard: Reading Interviewer Signals and Meta-Skills
 
+## The Idea
+
+**In plain English:** During a technical interview, the interviewer is constantly sending you subtle cues — through their questions, silences, and reactions — that tell you what they really want to see from you. Reading these signals means picking up on those hints and adjusting how you're explaining or solving things in real time.
+
+**Real-world analogy:** Imagine you're explaining a board game to a friend. You watch their face: when they look confused you slow down, when they nod eagerly you know you can move on, and when they say "interesting..." you dig deeper into that rule. The game explanation is the interview, and their face is the interviewer's signals.
+
+- The friend's confused look = the interviewer asking "tell me more about that"
+- The friend's eager nod = the interviewer saying "let's move on"
+- The friend saying "interesting..." = the interviewer pushing back or challenging your answer
+
+---
+
 ## Overview
 
 Technical knowledge gets you in the room. Interview meta-skills decide whether you leave with an offer. This document covers the implicit communication layer of a technical interview: how to read what the interviewer is actually evaluating, how to adapt in real time, and how to handle the moments that most candidates handle badly.

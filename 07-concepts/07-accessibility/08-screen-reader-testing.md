@@ -1,5 +1,16 @@
 # Screen Reader Testing
 
+## The Idea
+
+**In plain English:** Screen reader testing is the process of checking that a website works correctly when someone uses a screen reader — a program that reads the text and controls on a web page out loud, so that people who are blind or have low vision can use it without needing to see the screen.
+
+**Real-world analogy:** Imagine a tour guide at a museum who describes every painting and exhibit to a visitor who cannot see them. The tour guide has to say exactly what each thing is — not just "there's something on the wall" but "this is a painting of a sunset over the ocean." If the guide skips an exhibit or says something vague, the visitor misses out. Testing your website with a screen reader is like rehearsing with that tour guide to make sure they can describe every single exhibit clearly and in the right order.
+- The tour guide = the screen reader software (e.g., NVDA, VoiceOver)
+- The paintings and exhibits = the HTML elements on your web page (buttons, images, forms)
+- The descriptions the guide gives = the accessible labels and roles in your code (alt text, aria-label, semantic HTML)
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Why Screen Reader Testing Matters](#why-screen-reader-testing-matters)

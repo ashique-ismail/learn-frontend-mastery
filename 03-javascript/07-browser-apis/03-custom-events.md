@@ -1,5 +1,17 @@
 # Custom Events
 
+## The Idea
+
+**In plain English:** Custom events are a way for one part of your webpage to send a message to another part, without them needing to know anything about each other. Think of it as a broadcast — you shout something out, and anyone who is listening can react to it.
+
+**Real-world analogy:** Imagine a school PA system. The front office makes an announcement over the speakers, and every classroom that cares about it reacts in their own way — some classes line up for lunch, others stay put.
+
+- The front office making the announcement = the code that dispatches (fires) the custom event
+- The PA speakers broadcasting through the building = the DOM's event bubbling system carrying the event up the page
+- Each classroom deciding how to react = the event listeners attached by different parts of the app
+
+---
+
 ## Overview
 
 Custom events allow JavaScript to implement a publish-subscribe communication pattern on top of the native browser event system. Rather than coupling components through direct method calls or shared state, components can dispatch events on DOM elements and any interested party can listen. This is a first-class browser API—`CustomEvent` and `EventTarget` are built-in—and understanding them deeply demonstrates familiarity with component architecture, decoupling, and the event-driven model that underpins the browser.
@@ -274,7 +286,7 @@ document.addEventListener(CART_EVENTS.ADD, (e) => {
 ## Comparison Table
 
 | Mechanism | Coupling | Data Passing | Multiple Listeners | DOM-Free |
-|-----------|----------|--------------|--------------------|----------|
+| --------- | -------- | ------------ | ------------------ | -------- |
 | Direct method call | Tight | Arguments | No | Yes |
 | Callback | Medium | Arguments | One per registration | Yes |
 | CustomEvent (DOM) | Loose | `event.detail` | Yes | No (needs element) |

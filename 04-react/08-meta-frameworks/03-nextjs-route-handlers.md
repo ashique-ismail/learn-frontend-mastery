@@ -1,5 +1,17 @@
 # Next.js Route Handlers
 
+## The Idea
+
+**In plain English:** A route handler is a special function you write on the server side of your website that listens for incoming requests at a specific web address (called a "route") and decides what data to send back. Think of it as the part of your website that handles questions like "give me the list of users" or "save this new message."
+
+**Real-world analogy:** Imagine a restaurant where customers place orders at specific windows — one window for takeout, one for catering, one for complaints. Each window has a dedicated staff member who listens for requests, looks up what is needed, and hands back the right response.
+
+- The restaurant window address (e.g., "Window 3 - Takeout") = the route URL (e.g., `/api/orders`)
+- The type of request the customer makes (order food, cancel order, update order) = the HTTP method (GET, POST, DELETE)
+- The staff member who handles the request and prepares the response = the route handler function
+
+---
+
 ## Overview
 
 Route Handlers allow you to create custom request handlers for API routes using the Web Request and Response APIs. They replace API Routes from the Pages Router and provide a more powerful, flexible way to handle HTTP requests.

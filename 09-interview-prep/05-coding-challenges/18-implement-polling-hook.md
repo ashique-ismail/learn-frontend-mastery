@@ -1,5 +1,17 @@
 # Implement Polling Hook with Exponential Backoff
 
+## The Idea
+
+**In plain English:** Polling is when your app repeatedly asks a server "got any updates?" on a timer, instead of waiting for the server to push updates to you. A polling hook is a reusable piece of code that handles this automatic checking — including waiting longer and longer between retries if something goes wrong (that waiting-longer strategy is called "exponential backoff").
+
+**Real-world analogy:** Imagine you ordered a pizza and keep calling the restaurant to ask "is my order ready yet?" At first you call every 5 minutes, but if the line is busy (error), you wait 5 min, then 10 min, then 20 min before calling again — so you don't flood them with calls when they're already struggling.
+
+- The phone call = the fetch request sent to the server
+- Calling on a timer = the polling interval (how often the hook checks)
+- Waiting longer after a busy signal = exponential backoff (doubling the delay after each error)
+
+---
+
 ## The Core Pattern
 
 Use `setTimeout` (not `setInterval`) so the next poll only starts after the current one completes — preventing overlapping requests.

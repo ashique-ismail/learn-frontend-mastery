@@ -1,6 +1,19 @@
 # Router Events in Angular
 
+## The Idea
+
+**In plain English:** Router Events are notifications your app receives every time someone navigates from one page to another — like a play-by-play announcer calling out each step of the journey, from "navigation started" to "navigation finished." You can listen to these announcements and react, for example by showing a loading spinner while the new page is loading.
+
+**Real-world analogy:** Think of a flight departures board at an airport. When a flight is preparing to leave, the board updates through a sequence of statuses — "Boarding," "Gate Closed," "Departed," "Landed." Staff watching the board can react at each stage (a gate agent starts checking tickets when "Boarding" appears; a baggage handler prepares when "Departed" shows up).
+
+- The departures board = the `router.events` stream
+- Each status update on the board = a router event (e.g., `NavigationStart`, `NavigationEnd`)
+- The staff who watch and react to the board = your component or service that subscribes to router events
+
+---
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Router Events Overview](#router-events-overview)
 - [Navigation Events](#navigation-events)
@@ -1078,27 +1091,35 @@ this.router.events.pipe(
 ## Interview Questions
 
 ### Q1: What are router events in Angular?
+
 **Answer:** Router events are a stream of events emitted during the navigation lifecycle, including NavigationStart, NavigationEnd, NavigationCancel, NavigationError, and others. They allow tracking and responding to navigation state changes.
 
 ### Q2: How do you show a loading indicator during navigation?
+
 **Answer:** Subscribe to router events, show loader on NavigationStart, and hide on NavigationEnd, NavigationCancel, or NavigationError events.
 
 ### Q3: What's the difference between NavigationEnd and RoutesRecognized?
+
 **Answer:** RoutesRecognized fires after URL parsing when routes are identified. NavigationEnd fires after the entire navigation completes, including guards, resolvers, and component activation.
 
 ### Q4: How do you track page views for analytics?
+
 **Answer:** Subscribe to NavigationEnd events and send the URL to your analytics service for each successful navigation.
 
 ### Q5: Why should you filter router events?
+
 **Answer:** The router emits many events during navigation. Filtering prevents unnecessary processing and improves performance by only handling relevant events.
 
 ### Q6: How do you prevent memory leaks with router events?
+
 **Answer:** Use takeUntil pattern with a Subject that completes in ngOnDestroy, or subscribe in a service with providedIn: 'root'.
 
 ### Q7: What event indicates lazy module loading?
+
 **Answer:** RouteConfigLoadStart indicates lazy loading begins, and RouteConfigLoadEnd indicates it completes.
 
 ### Q8: How do you detect navigation errors?
+
 **Answer:** Subscribe to NavigationError events which provide the URL and error object for failed navigations.
 
 ## Key Takeaways

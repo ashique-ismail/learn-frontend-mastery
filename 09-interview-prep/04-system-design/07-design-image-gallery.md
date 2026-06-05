@@ -1,5 +1,18 @@
 # System Design: Image Gallery
 
+## The Idea
+
+**In plain English:** An image gallery is a web page that displays a large collection of photos in an organized grid, loading them smartly so the page stays fast — and lets you click any photo to view it up close with zoom and navigation controls. "Lazy loading" means photos are only fetched from the server when they are about to scroll into your view, rather than all at once.
+
+**Real-world analogy:** Think of a museum with hundreds of rooms full of paintings. Instead of opening every room and turning on every light the moment you arrive, a smart museum only lights up the room you are currently walking through and the next one ahead. When you spot a painting you love, you can step into a special viewing booth that enlarges it and lets you move between paintings with arrow buttons.
+
+- The museum hallway you are walking through = the scrollable webpage
+- Lighting up only the next room = lazy loading (fetching images only when they are near the viewport)
+- The viewing booth with zoom controls = the lightbox modal component
+- The map of all room numbers (without the art) = the virtual scroll list that tracks positions without rendering every image at once
+
+---
+
 ## Overview
 
 Design a responsive image gallery with lazy loading, virtualization, lightbox modal, infinite scroll, and performance optimization. This covers architecture for handling thousands of images efficiently with great user experience.
@@ -7,6 +20,7 @@ Design a responsive image gallery with lazy loading, virtualization, lightbox mo
 ## Requirements
 
 ### Functional Requirements
+
 - Grid layout (responsive columns)
 - Lazy loading images
 - Lightbox/modal view
@@ -17,6 +31,7 @@ Design a responsive image gallery with lazy loading, virtualization, lightbox mo
 - Image metadata display
 
 ### Non-Functional Requirements
+
 - Load < 100 images initially
 - Lazy load on scroll
 - Support 10,000+ images
@@ -284,7 +299,7 @@ export class ImageGalleryComponent implements OnInit, AfterViewInit {
     </div>
   `,
   animations: [
-    trigger('fadeIn', [
+    trigger('@fadeIn', [
       transition(':enter', [
         style({ opacity: 0 }),
         animate('200ms', style({ opacity: 1 }))
@@ -587,14 +602,17 @@ self.addEventListener('fetch', (event) => {
 ## Trade-offs
 
 **Masonry vs Grid Layout:**
+
 - Masonry: More visual interest, complex layout calculations
 - Grid: Simpler, better performance, predictable
 
 **Client-side vs Server-side Optimization:**
+
 - Client: More control, slower initial load
 - Server: Faster delivery, less flexibility
 
 **Native lazy loading vs Intersection Observer:**
+
 - Native: Simpler, less control over threshold
 - Intersection Observer: More control, broader feature support
 

@@ -1,6 +1,19 @@
 # Pipes in Angular
 
+## The Idea
+
+**In plain English:** A pipe is a built-in tool in Angular that takes a value and reformats it for display — for example, turning a plain number into a currency or a date into a readable string — without changing the original data stored in your program.
+
+**Real-world analogy:** Think of a coffee machine: you pour in raw coffee beans, the machine processes them, and out comes a finished cup of coffee. The beans themselves are never permanently changed — the machine just transforms what comes out for you to use.
+
+- The coffee beans = the raw data value in your component
+- The coffee machine = the pipe (e.g., `date`, `currency`, `uppercase`)
+- The finished cup of coffee = the formatted value displayed in the template
+
+---
+
 ## Table of Contents
+
 1. [Introduction](#introduction)
 2. [Understanding Pipes](#understanding-pipes)
 3. [Built-in Pipes](#built-in-pipes)
@@ -1278,21 +1291,25 @@ export class TypedPipe implements PipeTransform {
 ## Resources
 
 ### Official Documentation
+
 - [Angular Pipes](https://angular.dev/guide/pipes)
 - [Async Pipe API](https://angular.dev/api/common/AsyncPipe)
 - [Creating Custom Pipes](https://angular.dev/guide/pipes/transform-data)
 
 ### Articles
+
 - "Understanding Angular Pipes" - Angular University
 - "Pure vs Impure Pipes Deep Dive" - Thoughtram
 - "Async Pipe Best Practices" - Netanel Basal
 
 ### Video Tutorials
+
 - "Mastering Angular Pipes" - ng-conf
 - "Custom Pipes Patterns" - Angular Connect
 - "Performance with Pipes" - Angular Denver
 
 ### Tools
+
 - Angular DevTools - Profile pipe executions
 - RxJS Marbles - Visualize async pipe behavior
 - VS Code Angular Language Service - Pipe intellisense

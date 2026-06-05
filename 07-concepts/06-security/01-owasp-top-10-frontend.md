@@ -1,5 +1,17 @@
 # OWASP Top 10 for Frontend
 
+## The Idea
+
+**In plain English:** The OWASP Top 10 is a list of the ten most common security mistakes that attackers exploit when breaking into websites and apps. Think of it as a "most-wanted" list of dangers that every developer should know and guard against.
+
+**Real-world analogy:** Imagine a bank publishes a report every few years listing the ten most common ways robbers have broken in — through unlocked back doors, fake uniforms, stolen master keys, and so on. Security teams study that list and patch every weakness on it before a robber shows up.
+
+- The bank = a web application
+- The published list of break-in methods = the OWASP Top 10
+- The unlocked back door / fake uniform / stolen key = individual vulnerabilities (e.g., broken access control, weak passwords, injected scripts)
+
+---
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [A01 Broken Access Control](#a01-broken-access-control)

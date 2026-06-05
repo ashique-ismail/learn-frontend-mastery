@@ -1,5 +1,17 @@
 # Offline Strategies
 
+## The Idea
+
+**In plain English:** An offline strategy is a plan your web app follows to keep working even when there is no internet connection — it decides whether to serve saved data from the device, wait and send changes later, or show a helpful message until the connection comes back.
+
+**Real-world analogy:** Imagine writing notes in a paper notebook during a flight with no Wi-Fi. When you land and reconnect, you copy those notes into a shared Google Doc so everyone sees your updates.
+
+- The paper notebook = the browser's local cache (stores data on your device when offline)
+- Writing notes during the flight = queuing actions so nothing is lost while disconnected
+- Copying notes into the shared doc after landing = syncing local changes back to the server when the connection returns
+
+---
+
 ## Introduction
 
 Offline strategies are critical for creating resilient Progressive Web Apps that work regardless of network conditions. A well-designed offline strategy ensures users can continue working even when connectivity is poor or absent, with changes syncing automatically when connectivity returns.
@@ -634,7 +646,7 @@ app.init().then(() => {
 ## Browser Support
 
 | Feature | Chrome | Firefox | Safari | Edge |
-|---------|--------|---------|--------|------|
+| ------- | ------ | ------- | ------ | ---- |
 | Service Workers | 40+ | 44+ | 11.1+ | 17+ |
 | IndexedDB | 24+ | 16+ | 10+ | 12+ |
 | Background Sync | 49+ | ❌ | ❌ | 79+ |

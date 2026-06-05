@@ -1,5 +1,18 @@
 # HTTP Caching Strategies in Angular
 
+## The Idea
+
+**In plain English:** Caching means saving a copy of data you already fetched so you can use that saved copy next time instead of asking the server all over again — making your app faster and reducing unnecessary network trips. A "strategy" is just the set of rules that decides when to save data, when to throw it away, and when to ask the server for a fresh copy.
+
+**Real-world analogy:** Imagine you work at a coffee shop and you check today's menu board every time a customer asks what's on offer. After the first look, you memorise the menu. For the rest of the shift you answer from memory — until the manager changes the board, at which point you have to look again.
+- The menu board = the server (the original source of truth)
+- Your memory of the menu = the cache (the saved copy)
+- "Memorising after the first look" = storing the HTTP response the first time it arrives
+- "The manager changing the board" = a mutation (create, update, delete) that makes the cached data stale
+- "Looking at the board again" = re-fetching from the server to get fresh data
+
+---
+
 > Senior-level reference — patterns, tradeoffs, and pitfalls that distinguish candidates who have shipped production caching from those who have only read about it.
 
 ---
