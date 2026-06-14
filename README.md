@@ -48,6 +48,10 @@ Structured preparation across six question categories — JavaScript fundamental
 ### [10. Bonus Topics](./10-topics-bonus/)
 Web Components and framework interop, WebAssembly (Rust and C++ to Wasm), Progressive Web Apps, WebGPU/WebGL/Three.js, and emerging patterns: AI-assisted UI, CRDTs (Yjs/Automerge), local-first architecture, Qwik resumability, Solid.js fine-grained reactivity, HTMX, Module Federation, WebRTC, View Transitions API, CSS Houdini, and the Temporal API.
 
+### [11. Real-World Scenarios](./11-real-world-scenarios/)
+
+End-to-end walkthroughs for 70+ complex UI problems — multi-level responsive navigation, virtualized tables, real-time feeds, file upload pipelines, mobile-specific patterns, and more. Each scenario covers the CSS/HTML foundation, the React implementation, and the Angular implementation, with accessibility checklists and production pitfalls. Prefixed by category: `NAV-`, `LAYOUT-`, `FORM-`, `DATA-`, `MODAL-`, `PERF-`, `A11Y-`, `ANIM-`, `AUTH-`, `UPLOAD-`, `RT-`, `MOBILE-`.
+
 ---
 
 ## Suggested Reading Order
